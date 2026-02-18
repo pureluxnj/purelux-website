@@ -16,17 +16,67 @@ body{font-family:'Inter',sans-serif;background:#0f172a;color:#f8fafc;line-height
 header{text-align:center;padding:80px 0;}
 h1{font-size:2.5rem;margin-bottom:20px;}
 .lead{color:#cbd5e1;margin-bottom:30px;}
-.btn{display:inline-block;padding:14px 28px;background:#2563eb;color:#fff;text-decoration:none;border-radius:8px;font-weight:600;margin:5px;}
+.btn{display:inline-block;padding:14px 28px;background:#2563eb;color:#fff;text-decoration:none;border-radius:8px;font-weight:600;margin:5px;border:none;cursor:pointer;}
 .btn:hover{background:#1d4ed8;}
 section{padding:60px 0;}
 h2{margin-bottom:25px;}
 .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
 .card{background:#1e293b;padding:20px;border-radius:10px;}
-.form input,.form textarea,.form select{
-width:100%;padding:12px;margin-bottom:15px;border-radius:6px;border:none;
-}
 footer{text-align:center;padding:40px 0;background:#020617;color:#94a3b8;}
-@media(max-width:600px){h1{font-size:2rem;}}
+
+/* FORM STYLING */
+#quote .form{
+  max-width:900px;
+  margin:20px auto 0;
+  background:#1e293b;
+  padding:25px;
+  border-radius:12px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+#quote .form input,
+#quote .form select,
+#quote .form textarea{
+  width:100%;
+  padding:12px 14px;
+  border-radius:8px;
+  border:1px solid rgba(148,163,184,0.2);
+  background:#0b1220;
+  color:#f8fafc;
+  font-size:14px;
+}
+
+#quote .form input::placeholder,
+#quote .form textarea::placeholder{
+  color:#64748b;
+}
+
+#quote .form textarea{
+  resize:vertical;
+  grid-column:1 / -1;
+}
+
+#quote .form select{
+  grid-column:1 / -1;
+}
+
+#quote .form button{
+  grid-column:1 / -1;
+  justify-self:center;
+  margin-top:5px;
+}
+
+/* Mobile */
+@media (max-width:800px){
+  #quote .form{
+    grid-template-columns:1fr;
+  }
+}
+@media(max-width:600px){
+  h1{font-size:2rem;}
+}
 </style>
 </head>
 
@@ -68,7 +118,7 @@ Call or Text: <a href="tel:+18622877496">(862) 287-7496</a>
 
 <section class="container" id="quote">
 <h2>Request a Quote</h2>
-<form action="https://formspree.io/f/xjgeoond" method="POST">
+<form action="https://formspree.io/f/xjgeoond" method="POST" class="form">
 <input type="text" name="name" placeholder="Your Name" required>
 <input type="text" name="phone" placeholder="Phone Number" required>
 <input type="email" name="email" placeholder="Email Address" required>
