@@ -51,7 +51,7 @@
       -webkit-font-smoothing:antialiased;
       text-rendering:optimizeLegibility;
     }
-    .container{width:min(720px, 92%); margin-inline:auto;}
+    .container{width:min(780px, 92%); margin-inline:auto;}
 
     .topbar{
       background: rgba(2,6,23,.65);
@@ -79,7 +79,7 @@
     .lead{
       color:var(--muted);
       font-size:.98rem;
-      max-width:540px;
+      max-width:580px;
     }
     .back-link{
       display:inline-flex;
@@ -88,7 +88,8 @@
       font-size:.9rem;
       color:var(--muted2);
       text-decoration:none;
-      margin-bottom:12px;
+      margin-top:10px;
+      margin-bottom:16px;
     }
     .back-link span{
       display:inline-block;
@@ -96,11 +97,11 @@
     }
 
     .form-wrap{
-      margin-top: 12px;
+      margin-top: 8px;
       background: linear-gradient(180deg, rgba(18,28,47,.95), rgba(8,12,22,.95));
       border: 1px solid rgba(148,163,184,.16);
       border-radius: var(--radius2);
-      padding: 20px 18px;
+      padding: 22px 18px 20px;
       box-shadow: var(--shadow);
     }
     form.form{
@@ -118,7 +119,7 @@
     }
     input, select, textarea{
       width:100%;
-      padding: 12px 14px;
+      padding: 11px 13px;
       border-radius: 12px;
       border: 1px solid rgba(148,163,184,.20);
       background: rgba(11,18,32,.9);
@@ -134,6 +135,18 @@
       box-shadow: 0 0 0 4px rgba(56,189,248,.12);
     }
     .span-2{grid-column: 1 / -1;}
+    .hint-small{
+      font-size: 11.5px;
+      color: var(--muted2);
+    }
+    .group-label{
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing:.08em;
+      color: var(--muted2);
+      margin-top: 4px;
+    }
+
     .submit-row{
       grid-column: 1 / -1;
       display:flex;
@@ -184,13 +197,14 @@
     <header>
       <h1>Request a Cleaning Quote</h1>
       <p class="lead">
-        Tell us a bit about your home and the service you need. We’ll reply with availability and a clear estimate.
+        Tell us about your home and what you need done. The more detail you share, the more accurate your estimate will be.
       </p>
     </header>
 
     <section class="form-wrap">
       <form id="quote-form" class="form" action="https://formspree.io/f/xjgeoond" method="POST">
 
+        <!-- CONTACTO BÁSICO -->
         <div class="field">
           <label for="name">Name</label>
           <input id="name" type="text" name="name" placeholder="Your name" required>
@@ -207,25 +221,155 @@
         </div>
 
         <div class="field span-2">
-          <label for="service">Service</label>
+          <label for="city">City / Area</label>
+          <input id="city" type="text" name="city" placeholder="e.g. North Haledon, Wayne, Glen Rock" required>
+        </div>
+
+        <!-- DETALLES DE LA PROPIEDAD -->
+        <div class="field">
+          <label for="service">Service needed</label>
           <select id="service" name="service" required>
             <option value="">Select service</option>
-            <option>Deep Cleaning</option>
-            <option>Recurring Cleaning</option>
+            <option>Initial Deep Cleaning</option>
+            <option>Recurring Maintenance</option>
             <option>Move In / Move Out</option>
-            <option>Post-Construction</option>
+            <option>Post-Construction Cleaning</option>
+            <option>One-Time Standard Cleaning</option>
           </select>
         </div>
 
-        <div class="field span-2">
-          <label for="message">Project details</label>
-          <textarea id="message" name="message" placeholder="Bedrooms/Bathrooms, condition, preferred date, and any priority areas."></textarea>
+        <div class="field">
+          <label for="home_type">Home type</label>
+          <select id="home_type" name="home_type" required>
+            <option value="">Select type</option>
+            <option>Apartment / Condo</option>
+            <option>Single Family Home</option>
+            <option>Townhouse</option>
+            <option>Duplex</option>
+            <option>Other</option>
+          </select>
         </div>
+
+        <div class="field">
+          <label for="bedrooms">Bedrooms</label>
+          <select id="bedrooms" name="bedrooms" required>
+            <option value="">Select</option>
+            <option>Studio</option>
+            <option>1 Bedroom</option>
+            <option>2 Bedrooms</option>
+            <option>3 Bedrooms</option>
+            <option>4 Bedrooms</option>
+            <option>5+ Bedrooms</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="bathrooms">Bathrooms</label>
+          <select id="bathrooms" name="bathrooms" required>
+            <option value="">Select</option>
+            <option>1 Bathroom</option>
+            <option>1.5 Bathrooms</option>
+            <option>2 Bathrooms</option>
+            <option>2.5 Bathrooms</option>
+            <option>3 Bathrooms</option>
+            <option>3.5+ Bathrooms</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="square_feet">Approx. square footage</label>
+          <select id="square_feet" name="square_feet">
+            <option value="">Select</option>
+            <option>Under 1,000 sq ft</option>
+            <option>1,000 – 1,499 sq ft</option>
+            <option>1,500 – 1,999 sq ft</option>
+            <option>2,000 – 2,499 sq ft</option>
+            <option>2,500 – 2,999 sq ft</option>
+            <option>3,000+ sq ft</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="frequency">How often?</label>
+          <select id="frequency" name="frequency">
+            <option value="">One-time or recurring?</option>
+            <option>One-time only</option>
+            <option>Weekly</option>
+            <option>Every 2 weeks</option>
+            <option>Every 4 weeks</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+
+        <!-- CONDICIÓN Y DETALLES -->
+        <div class="field">
+          <label for="condition">Current condition</label>
+          <select id="condition" name="condition">
+            <option value="">How does the home look?</option>
+            <option>Light cleaning (kept up, just needs detail)</option>
+            <option>Average (regular use, needs full reset)</option>
+            <option>Heavy (hasn't been cleaned in a while)</option>
+            <option>Post-construction / post-renovation</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="pets">Pets in the home?</label>
+          <select id="pets" name="pets">
+            <option value="">Select</option>
+            <option>No pets</option>
+            <option>Yes - 1 pet</option>
+            <option>Yes - 2+ pets</option>
+          </select>
+          <div class="hint-small">If yes, please mention pet type in the details below.</div>
+        </div>
+
+        <div class="field span-2">
+          <label for="floors">Floor types</label>
+          <input id="floors" type="text" name="floors" placeholder="e.g. hardwood, tile, vinyl, carpet">
+        </div>
+
+        <div class="field">
+          <label for="parking">Parking / Access</label>
+          <select id="parking" name="parking">
+            <option value="">Select</option>
+            <option>Driveway / private parking</option>
+            <option>Free street parking available</option>
+            <option>Paid street parking only</option>
+            <option>Building garage / paid lot</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="timeline">When do you need it?</label>
+          <select id="timeline" name="timeline">
+            <option value="">Select</option>
+            <option>This week</option>
+            <option>Within 1–2 weeks</option>
+            <option>Within a month</option>
+            <option>Flexible / just getting quotes</option>
+          </select>
+        </div>
+
+        <!-- MENSAJE Y REFERENCIA -->
+        <div class="field span-2">
+          <label for="message">Specific details / priority areas</label>
+          <textarea id="message" name="message" placeholder="Tell us about any priority areas, heavy build-up, special requests, or notes about access / building rules."></textarea>
+        </div>
+
+        <div class="field span-2">
+          <label for="referral">How did you hear about us?</label>
+          <input id="referral" type="text" name="referral" placeholder="Google, referral, Nextdoor, Thumbtack, Instagram, etc.">
+        </div>
+
+        <!-- Campo oculto para saber que viene del website -->
+        <input type="hidden" name="source" value="Website Quote Page" />
 
         <div class="submit-row">
           <button type="submit" class="btn-submit">Send Request</button>
           <div class="hint">
-            Prefer text? Message us at <strong>(862) 287-7496</strong>.
+            Prefer text? Message us at <strong>(862) 287-7496</strong>.  
+            We usually reply the same day with availability and an estimate range.
           </div>
         </div>
       </form>
