@@ -216,8 +216,8 @@
     </header>
 
     <section class="form-wrap">
-      <!-- IMPORTANTE: enctype para permitir fotos -->
-      <form id="quote-form" class="form" action="https://formspree.io/f/xjgeoond" method="POST" enctype="multipart/form-data">
+      <!-- SIN archivos: method POST normal -->
+      <form id="quote-form" class="form" action="https://formspree.io/f/xjgeoond" method="POST">
 
         <!-- CONTACTO -->
         <div class="field">
@@ -381,21 +381,6 @@
           </div>
           <div class="hint-small">
             Check any extras you’d like included. We’ll factor these into your quote.
-          </div>
-        </div>
-
-        <!-- FOTOS OPCIONALES -->
-        <div class="field span-2">
-          <label for="photos">Photos (optional)</label>
-          <input
-            id="photos"
-            type="file"
-            name="photos"
-            accept="image/*"
-            multiple
-          >
-          <div class="hint-small">
-            Optional: you can upload a few photos of the main areas or problem spots to help us estimate more accurately.
           </div>
         </div>
 
