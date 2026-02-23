@@ -139,24 +139,28 @@
       font-size: 11.5px;
       color: var(--muted2);
     }
-    addon-options{
+    .options-grid{
       display:flex;
       flex-wrap:wrap;
       gap:8px 18px;
-      margin-top:2px;
+      font-size:13px;
+      color:var(--muted);
     }
-    .addon-options label{
+    .options-grid label{
       display:inline-flex;
       align-items:center;
       gap:6px;
-      font-size:13px;
-      color:var(--muted);
+      font-weight:400;
+      text-transform:none;
+      letter-spacing:0;
+    }
+    .options-grid input[type="checkbox"]{
+      width:auto;
+      height:auto;
+      accent-color:#38bdf8;
       cursor:pointer;
     }
-    .addon-options input[type="checkbox"]{
-      width:14px;
-      height:14px;
-    }
+
     .submit-row{
       grid-column: 1 / -1;
       display:flex;
@@ -360,6 +364,24 @@
             <option>Within a month</option>
             <option>Flexible / just getting quotes</option>
           </select>
+        </div>
+
+        <!-- ADD-ONS (OPCIONALES) -->
+        <div class="field span-2">
+          <label>Add-ons (optional)</label>
+          <div class="options-grid">
+            <label><input type="checkbox" name="addon_inside_fridge" value="Yes"> Inside fridge</label>
+            <label><input type="checkbox" name="addon_inside_oven" value="Yes"> Inside oven</label>
+            <label><input type="checkbox" name="addon_inside_cabinets" value="Yes"> Inside kitchen cabinets</label>
+            <label><input type="checkbox" name="addon_inside_windows" value="Yes"> Interior windows / glass doors</label>
+            <label><input type="checkbox" name="addon_baseboards" value="Yes"> Detailed baseboards</label>
+            <label><input type="checkbox" name="addon_doors_trim" value="Yes"> Doors & trim detail</label>
+            <label><input type="checkbox" name="addon_balcony_patio" value="Yes"> Balcony / small patio sweep</label>
+            <label><input type="checkbox" name="addon_finished_basement" value="Yes"> Finished basement included</label>
+          </div>
+          <div class="hint-small">
+            Check any extras you’d like included. We’ll factor these into your quote.
+          </div>
         </div>
 
         <!-- FOTOS OPCIONALES -->
