@@ -139,14 +139,6 @@
       font-size: 11.5px;
       color: var(--muted2);
     }
-    .group-label{
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing:.08em;
-      color: var(--muted2);
-      margin-top: 4px;
-    }
-
     .submit-row{
       grid-column: 1 / -1;
       display:flex;
@@ -202,9 +194,10 @@
     </header>
 
     <section class="form-wrap">
-      <form id="quote-form" class="form" action="https://formspree.io/f/xjgeoond" method="POST">
+      <!-- IMPORTANTE: enctype para permitir fotos -->
+      <form id="quote-form" class="form" action="https://formspree.io/f/xjgeoond" method="POST" enctype="multipart/form-data">
 
-        <!-- CONTACTO BÁSICO -->
+        <!-- CONTACTO -->
         <div class="field">
           <label for="name">Name</label>
           <input id="name" type="text" name="name" placeholder="Your name" required>
@@ -225,7 +218,7 @@
           <input id="city" type="text" name="city" placeholder="e.g. North Haledon, Wayne, Glen Rock" required>
         </div>
 
-        <!-- DETALLES DE LA PROPIEDAD -->
+        <!-- SERVICIO Y PROPIEDAD -->
         <div class="field">
           <label for="service">Service needed</label>
           <select id="service" name="service" required>
@@ -301,7 +294,7 @@
           </select>
         </div>
 
-        <!-- CONDICIÓN Y DETALLES -->
+        <!-- CONDICIÓN, PISOS, MASCOTAS -->
         <div class="field">
           <label for="condition">Current condition</label>
           <select id="condition" name="condition">
@@ -321,7 +314,7 @@
             <option>Yes - 1 pet</option>
             <option>Yes - 2+ pets</option>
           </select>
-          <div class="hint-small">If yes, please mention pet type in the details below.</div>
+          <div class="hint-small">If yes, mention pet type in the details below.</div>
         </div>
 
         <div class="field span-2">
@@ -351,7 +344,22 @@
           </select>
         </div>
 
-        <!-- MENSAJE Y REFERENCIA -->
+        <!-- FOTOS OPCIONALES -->
+        <div class="field span-2">
+          <label for="photos">Photos (optional)</label>
+          <input
+            id="photos"
+            type="file"
+            name="photos"
+            accept="image/*"
+            multiple
+          >
+          <div class="hint-small">
+            Optional: you can upload a few photos of the main areas or problem spots to help us estimate more accurately.
+          </div>
+        </div>
+
+        <!-- DETALLES Y REFERENCIA -->
         <div class="field span-2">
           <label for="message">Specific details / priority areas</label>
           <textarea id="message" name="message" placeholder="Tell us about any priority areas, heavy build-up, special requests, or notes about access / building rules."></textarea>
@@ -362,7 +370,7 @@
           <input id="referral" type="text" name="referral" placeholder="Google, referral, Nextdoor, Thumbtack, Instagram, etc.">
         </div>
 
-        <!-- Campo oculto para saber que viene del website -->
+        <!-- Campo oculto para tracking -->
         <input type="hidden" name="source" value="Website Quote Page" />
 
         <div class="submit-row">
