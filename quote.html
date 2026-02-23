@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-250P5PG0YX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-250P5PG0YX');
+  </script>
+
+  <title>Request a Quote | Purelux Cleaning</title>
+  <meta name="description" content="Request a custom cleaning quote from Purelux Cleaning. Deep cleaning, recurring, move-in/move-out and post-construction in North NJ." />
+
+  <link rel="canonical" href="https://pureluxnj.com/quote.html" />
+
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="shortcut icon" href="/favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #0b1220;
+      --bg2:#070c16;
+      --card:#121c2f;
+      --border: rgba(148,163,184,.18);
+      --text:#f8fafc;
+      --muted:#cbd5e1;
+      --muted2:#94a3b8;
+      --brand:#38bdf8;
+      --shadow: 0 18px 45px rgba(0,0,0,.35);
+      --radius: 14px;
+      --radius2: 18px;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{
+      font-family:'Inter',sans-serif;
+      background: radial-gradient(1100px 600px at 50% -10%, rgba(37,99,235,.22), transparent 55%),
+                  radial-gradient(900px 500px at 10% 20%, rgba(56,189,248,.18), transparent 55%),
+                  linear-gradient(180deg, var(--bg), var(--bg2));
+      color:var(--text);
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    .container{width:min(720px, 92%); margin-inline:auto;}
+
+    .topbar{
+      background: rgba(2,6,23,.65);
+      border-bottom: 1px solid rgba(148,163,184,.10);
+      backdrop-filter: blur(10px);
+      padding:10px 0;
+      font-size:13px;
+      text-align:center;
+      color:var(--muted2);
+    }
+    .topbar a{color:var(--brand);text-decoration:none;font-weight:700;}
+    .topbar a:hover{text-decoration:underline;}
+
+    header{
+      padding: 34px 0 18px;
+      text-align:left;
+    }
+    h1{
+      font-family:'Fraunces', serif;
+      font-weight:700;
+      letter-spacing:-0.02em;
+      font-size: clamp(1.8rem, 3vw, 2.3rem);
+      margin-bottom:8px;
+    }
+    .lead{
+      color:var(--muted);
+      font-size:.98rem;
+      max-width:540px;
+    }
+    .back-link{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      font-size:.9rem;
+      color:var(--muted2);
+      text-decoration:none;
+      margin-bottom:12px;
+    }
+    .back-link span{
+      display:inline-block;
+      transform:translateY(1px);
+    }
+
+    .form-wrap{
+      margin-top: 12px;
+      background: linear-gradient(180deg, rgba(18,28,47,.95), rgba(8,12,22,.95));
+      border: 1px solid rgba(148,163,184,.16);
+      border-radius: var(--radius2);
+      padding: 20px 18px;
+      box-shadow: var(--shadow);
+    }
+    form.form{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .field{display:flex;flex-direction:column;gap:6px;}
+    label{
+      font-size: 12px;
+      color: var(--muted2);
+      font-weight: 700;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+    }
+    input, select, textarea{
+      width:100%;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(148,163,184,.20);
+      background: rgba(11,18,32,.9);
+      color: var(--text);
+      font-size: 14px;
+      transition: box-shadow .15s ease, border-color .15s ease;
+    }
+    input::placeholder, textarea::placeholder{color:#64748b;}
+    textarea{resize:vertical; min-height:110px;}
+    input:focus, select:focus, textarea:focus{
+      outline:none;
+      border-color: rgba(56,189,248,.55);
+      box-shadow: 0 0 0 4px rgba(56,189,248,.12);
+    }
+    .span-2{grid-column: 1 / -1;}
+    .submit-row{
+      grid-column: 1 / -1;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      margin-top: 4px;
+    }
+    .btn-submit{
+      width: 100%;
+      background: linear-gradient(180deg, rgba(37,99,235,1), rgba(29,78,216,1));
+      border: 1px solid rgba(255,255,255,.06);
+      color:#fff;
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-weight: 800;
+      letter-spacing: .01em;
+      box-shadow: 0 14px 34px rgba(37,99,235,.25);
+      cursor:pointer;
+    }
+    .btn-submit:disabled{opacity:.7; cursor:not-allowed;}
+    .hint{color: var(--muted2);font-size: 12.5px;line-height: 1.35;margin-top:6px;}
+
+    footer{
+      padding: 24px 0 20px;
+      color: var(--muted2);
+      text-align:center;
+      font-size: 13px;
+    }
+
+    @media (max-width: 720px){
+      header{padding: 26px 0 16px;}
+      form.form{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    Call or Text: <a href="tel:+18622877496">(862) 287-7496</a> • Email: <a href="mailto:info@pureluxnj.com">info@pureluxnj.com</a>
+  </div>
+
+  <main class="container">
+    <a href="/" class="back-link"><span>←</span> Back to homepage</a>
+
+    <header>
+      <h1>Request a Cleaning Quote</h1>
+      <p class="lead">
+        Tell us a bit about your home and the service you need. We’ll reply with availability and a clear estimate.
+      </p>
+    </header>
+
+    <section class="form-wrap">
+      <form id="quote-form" class="form" action="https://formspree.io/f/xjgeoond" method="POST">
+
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" type="text" name="name" placeholder="Your name" required>
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input id="phone" type="text" name="phone" placeholder="(###) ###-####" required>
+        </div>
+
+        <div class="field span-2">
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" placeholder="you@email.com" required>
+        </div>
+
+        <div class="field span-2">
+          <label for="service">Service</label>
+          <select id="service" name="service" required>
+            <option value="">Select service</option>
+            <option>Deep Cleaning</option>
+            <option>Recurring Cleaning</option>
+            <option>Move In / Move Out</option>
+            <option>Post-Construction</option>
+          </select>
+        </div>
+
+        <div class="field span-2">
+          <label for="message">Project details</label>
+          <textarea id="message" name="message" placeholder="Bedrooms/Bathrooms, condition, preferred date, and any priority areas."></textarea>
+        </div>
+
+        <div class="submit-row">
+          <button type="submit" class="btn-submit">Send Request</button>
+          <div class="hint">
+            Prefer text? Message us at <strong>(862) 287-7496</strong>.
+          </div>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Purelux Cleaning • Serving Bergen & Passaic County, NJ
+  </footer>
+
+  <script>
+    const form = document.getElementById("quote-form");
+
+    if (form) {
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const button = form.querySelector("button[type='submit']");
+        const originalText = button ? button.innerText : "";
+        if (button) {
+          button.disabled = true;
+          button.innerText = "Sending...";
+        }
+
+        const data = new FormData(form);
+
+        try {
+          const res = await fetch(form.action, {
+            method: "POST",
+            body: data,
+            headers: { "Accept": "application/json" }
+          });
+
+          if (res.ok) {
+            window.location.href = "/thank-you.html";
+          } else {
+            alert("Something went wrong. Please try again or text us at (862) 287-7496.");
+            if (button) {
+              button.disabled = false;
+              button.innerText = originalText || "Send Request";
+            }
+          }
+        } catch (err) {
+          alert("Network error. Please try again.");
+          if (button) {
+            button.disabled = false;
+            button.innerText = originalText || "Send Request";
+          }
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
