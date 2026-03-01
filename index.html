@@ -1,1004 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- SEO -->
-  <title>Purelux Cleaning | Professional Residential & Post-Construction Cleaning in North NJ</title>
-  <meta name="description" content="Premium residential and post-construction cleaning in Bergen & Passaic County, NJ. Structured 3-person team, detailed checklists, and consistent results." />
-  <link rel="canonical" href="https://pureluxnj.com/" />
-
-  <!-- Google Site Verification -->
-  <meta name="google-site-verification" content="XJCpK6DNuANQPyUq7Ung0WDxGDByVxANvxex2sr0zQQ" />
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png?v=3">
-
-  <style>
-    :root {
-      --bg: #020617;
-      --bg-soft: #020819;
-      --card: #020b25;
-      --card-soft: #020f33;
-      --border-soft: #1f2937;
-      --accent: #38bdf8;
-      --accent-soft: rgba(56, 189, 248, 0.12);
-      --text-main: #e5e7eb;
-      --text-soft: #9ca3af;
-      --text-muted: #6b7280;
-      --danger: #f97373;
-      --radius-lg: 18px;
-      --radius-xl: 26px;
-      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.75);
-      --max-width: 1120px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #0b1120 0, #020617 55%, #020617 100%);
-      color: var(--text-main);
-      min-height: 100vh;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .page {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 24px 16px 56px;
-    }
-
-    /* Top bar */
-    .topbar {
-      display: flex;
-      justify-content: flex-end;
-      font-size: 13px;
-      color: var(--text-soft);
-      margin-bottom: 8px;
-    }
-
-    .topbar span + span::before {
-      content: "•";
-      margin: 0 8px;
-      color: var(--text-muted);
-    }
-
-    .topbar a {
-      color: var(--accent);
-      font-weight: 500;
-    }
-
-    /* Header / Branding */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 18px;
-      margin-bottom: 20px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.13), transparent 50%), rgba(15, 23, 42, 0.9);
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.7);
-      position: sticky;
-      top: 12px;
-      z-index: 20;
-      backdrop-filter: blur(20px);
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .brand-mark {
-      width: 32px;
-      height: 32px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 17px;
-      background: radial-gradient(circle at top, #1d4ed8, #020617);
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.85);
-    }
-
-    .brand-text-main {
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      font-size: 13px;
-      text-transform: uppercase;
-      color: #e5e7eb;
-    }
-
-    .brand-sub {
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-
-    .header-cta {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 12px;
-    }
-
-    .header-pill {
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      color: var(--text-soft);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .header-pill span {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--accent);
-    }
-
-    .header-cta a.btn-sm {
-      padding: 7px 13px;
-      border-radius: 999px;
-      border: 1px solid rgba(56, 189, 248, 0.35);
-      background: linear-gradient(90deg, #38bdf8, #0ea5e9);
-      color: #0b1120;
-      font-size: 12px;
-      font-weight: 600;
-      box-shadow: 0 16px 30px rgba(56, 189, 248, 0.45);
-      white-space: nowrap;
-    }
-
-    /* Layout main */
-    main {
-      margin-top: 10px;
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-    }
-
-    /* Hero */
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-      gap: 28px;
-      align-items: center;
-    }
-
-    .hero-left {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    .breadcrumb {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--accent);
-      display: flex;
-      gap: 12px;
-      align-items: center;
-    }
-
-    .breadcrumb-dot {
-      width: 4px;
-      height: 4px;
-      border-radius: 999px;
-      background: var(--accent);
-    }
-
-    .hero-title {
-      font-size: clamp(28px, 4vw, 34px);
-      line-height: 1.15;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-    }
-
-    .hero-title span {
-      color: var(--accent);
-    }
-
-    .hero-subtitle {
-      font-size: 14px;
-      color: var(--text-soft);
-      max-width: 530px;
-    }
-
-    .hero-cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      align-items: center;
-    }
-
-    .btn-primary {
-      padding: 10px 18px;
-      border-radius: 999px;
-      border: none;
-      background: linear-gradient(90deg, #38bdf8, #0ea5e9);
-      color: #0b1120;
-      font-weight: 600;
-      font-size: 14px;
-      cursor: pointer;
-      box-shadow: 0 18px 40px rgba(56, 189, 248, 0.45);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .btn-primary span {
-      font-size: 18px;
-      transform: translateY(1px);
-    }
-
-    .btn-secondary {
-      padding: 10px 16px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      background: rgba(15, 23, 42, 0.85);
-      color: var(--text-main);
-      font-size: 13px;
-      font-weight: 500;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .hero-trust {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      font-size: 11px;
-      color: var(--text-muted);
-      margin-top: 4px;
-    }
-
-    .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 10px;
-    }
-
-    .hero-badge {
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.45);
-      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.24), transparent 60%);
-      font-size: 11px;
-      color: var(--text-soft);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .hero-badge strong {
-      color: var(--text-main);
-      font-weight: 600;
-    }
-
-    .hero-badge span {
-      font-size: 14px;
-    }
-
-    .hero-right {
-      border-radius: var(--radius-xl);
-      border: 1px solid rgba(148, 163, 184, 0.42);
-      background: radial-gradient(circle at top, rgba(37, 99, 235, 0.35), transparent 55%), #020617;
-      box-shadow: var(--shadow-soft);
-      padding: 18px 18px 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .hero-right-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 12px;
-      color: var(--text-soft);
-    }
-
-    .hero-right-header span:first-child {
-      font-weight: 500;
-      color: var(--text-main);
-    }
-
-    .hero-right-points {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 8px;
-      font-size: 12px;
-      color: var(--text-soft);
-    }
-
-    .hero-point {
-      display: flex;
-      gap: 8px;
-      align-items: flex-start;
-      padding: 8px 9px;
-      border-radius: 12px;
-      background: rgba(15, 23, 42, 0.8);
-      border: 1px solid rgba(148, 163, 184, 0.3);
-    }
-
-    .hero-point-icon {
-      width: 16px;
-      height: 16px;
-      border-radius: 999px;
-      background: rgba(56, 189, 248, 0.16);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
-      color: var(--accent);
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-
-    .hero-point-title {
-      font-weight: 500;
-      color: var(--text-main);
-      margin-bottom: 2px;
-    }
-
-    .hero-meta {
-      font-size: 11px;
-      color: var(--text-muted);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 8px;
-      margin-top: 4px;
-    }
-
-    .hero-meta span {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .hero-meta strong {
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    /* Sections */
-    section {
-      border-radius: var(--radius-xl);
-      background: radial-gradient(circle at top left, rgba(15, 118, 255, 0.25), transparent 60%), var(--bg-soft);
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      box-shadow: var(--shadow-soft);
-      padding: 22px 18px 20px;
-    }
-
-    section + section {
-      margin-top: 20px;
-    }
-
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 16px;
-      margin-bottom: 16px;
-    }
-
-    .section-title {
-      font-size: 17px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: #e5e7eb;
-    }
-
-    .section-subtitle {
-      font-size: 13px;
-      color: var(--text-soft);
-      max-width: 420px;
-    }
-
-    /* Services */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .service-card {
-      background: linear-gradient(to bottom right, rgba(15, 23, 42, 0.98), #020617);
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(31, 41, 55, 0.9);
-      padding: 13px 12px 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .service-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--accent);
-    }
-
-    .service-title {
-      font-size: 14px;
-      font-weight: 600;
-      color: #e5e7eb;
-    }
-
-    .service-body {
-      font-size: 12px;
-      color: var(--text-soft);
-    }
-
-    .service-foot {
-      font-size: 11px;
-      color: var(--text-muted);
-      margin-top: 4px;
-    }
-
-    /* Projects */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .project-card {
-      background: linear-gradient(to bottom right, #020617, #000814);
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(31, 41, 55, 0.95);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      min-height: 230px;
-    }
-
-    .project-media {
-      height: 128px;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
-    /* AQUÍ MAPEAMOS TUS ARCHIVOS REALES */
-    .project-1 { background-image: url("./images/Bedroom detailed cleaning and organization service – Northern NJ.png"); }
-    .project-2 { background-image: url("./images/oven-deep-cleaning-monroe-nj-purelux-cleaning.png"); }
-    .project-3 { background-image: url("./images/Detail Restoration – Purelux Cleaning.png"); }
-    .project-4 { background-image: url("./images/child room- glen rock.jpeg"); }
-    .project-5 { background-image: url("./images/child room- glen rock(2).jpeg"); }
-
-    .project-body {
-      padding: 11px 11px 10px;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      flex-grow: 1;
-    }
-
-    .project-tag {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--accent);
-    }
-
-    .project-title {
-      font-size: 13px;
-      font-weight: 600;
-      color: #e5e7eb;
-    }
-
-    .project-meta {
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-
-    .project-desc {
-      font-size: 12px;
-      color: var(--text-soft);
-      margin-top: 4px;
-      flex-grow: 1;
-    }
-
-    /* How it works */
-    .how-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 8px;
-    }
-
-    .how-card {
-      background: linear-gradient(to bottom right, rgba(15, 23, 42, 0.98), #020617);
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(31, 41, 55, 0.9);
-      padding: 12px 12px 11px;
-      font-size: 12px;
-      color: var(--text-soft);
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .how-step {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--accent);
-    }
-
-    .how-title {
-      color: #e5e7eb;
-      font-weight: 600;
-      font-size: 13px;
-    }
-
-    /* Why Purelux */
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .why-card {
-      background: linear-gradient(to bottom right, rgba(15, 23, 42, 0.98), #020617);
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(31, 41, 55, 0.9);
-      padding: 13px 12px 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      font-size: 12px;
-      color: var(--text-soft);
-    }
-
-    .why-title {
-      font-size: 13px;
-      font-weight: 600;
-      color: #e5e7eb;
-    }
-
-    /* Reviews placeholder */
-    .reviews-placeholder {
-      font-size: 12px;
-      color: var(--text-muted);
-      padding: 12px;
-      border-radius: var(--radius-lg);
-      border: 1px dashed rgba(148, 163, 184, 0.5);
-      background: rgba(15, 23, 42, 0.65);
-    }
-
-    /* Footer */
-    footer {
-      margin-top: 26px;
-      font-size: 11px;
-      color: var(--text-muted);
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    footer span {
-      white-space: nowrap;
-    }
-
-    @media (max-width: 960px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-        border-radius: 18px;
-      }
-
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .services-grid,
-      .projects-grid,
-      .how-grid,
-      .why-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 720px) {
-      .page {
-        padding: 16px 12px 40px;
-      }
-
-      header {
-        position: static;
-      }
-
-      .services-grid,
-      .projects-grid,
-      .how-grid,
-      .why-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .section-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .topbar {
-        justify-content: center;
-        text-align: center;
-      }
-
-      footer {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Purelux Cleaning | Professional Residential & Post-Construction Cleaning in North NJ</title>
+<meta name="description" content="Premium residential and post-construction cleaning in Bergen & Passaic County, NJ. Structured 3-person team with consistent, checklist-driven results." />
+<link rel="canonical" href="https://pureluxnj.com/" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+
+<style>
+:root{
+--bg:#020617;
+--bg-soft:#020819;
+--accent:#38bdf8;
+--text-main:#e5e7eb;
+--text-soft:#9ca3af;
+--text-muted:#6b7280;
+--radius:18px;
+--shadow:0 18px 45px rgba(15,23,42,.75);
+--max-width:1120px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+
+body{
+font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+background:radial-gradient(circle at top,#0b1120 0,#020617 60%);
+color:var(--text-main);
+min-height:100vh;
+}
+
+a{text-decoration:none;color:inherit;}
+
+.page{max-width:var(--max-width);margin:0 auto;padding:24px 16px 56px;}
+
+.topbar{
+display:flex;
+justify-content:flex-end;
+font-size:13px;
+color:var(--text-soft);
+margin-bottom:8px;
+}
+
+.topbar span+span::before{
+content:"•";
+margin:0 8px;
+color:var(--text-muted);
+}
+
+.topbar a{color:var(--accent);font-weight:500;}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:14px 18px;
+margin-bottom:24px;
+border-radius:999px;
+border:1px solid rgba(148,163,184,.35);
+background:rgba(15,23,42,.9);
+box-shadow:var(--shadow);
+position:sticky;
+top:12px;
+z-index:20;
+backdrop-filter:blur(20px);
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.brand-mark{
+width:36px;
+height:36px;
+border-radius:999px;
+border:1px solid rgba(148,163,184,.6);
+display:flex;
+align-items:center;
+justify-content:center;
+background:radial-gradient(circle at top,#1d4ed8,#020617);
+box-shadow:0 10px 25px rgba(15,23,42,.85);
+}
+
+.brand-mark img{
+width:22px;
+height:22px;
+object-fit:contain;
+display:block;
+}
+
+.brand-text-main{
+font-weight:600;
+letter-spacing:.04em;
+font-size:13px;
+text-transform:uppercase;
+}
+
+.brand-sub{
+font-size:11px;
+color:var(--text-muted);
+}
+
+.btn{
+padding:8px 16px;
+border-radius:999px;
+background:linear-gradient(90deg,#38bdf8,#0ea5e9);
+color:#0b1120;
+font-weight:600;
+font-size:13px;
+box-shadow:0 12px 30px rgba(56,189,248,.4);
+}
+
+section{
+border-radius:var(--radius);
+background:var(--bg-soft);
+border:1px solid rgba(148,163,184,.3);
+box-shadow:var(--shadow);
+padding:22px 18px;
+margin-top:24px;
+}
+
+.section-title{
+font-size:16px;
+font-weight:600;
+text-transform:uppercase;
+margin-bottom:12px;
+}
+
+.hero{
+display:grid;
+grid-template-columns:1.3fr 1fr;
+gap:28px;
+align-items:center;
+}
+
+.hero h1{
+font-size:30px;
+line-height:1.2;
+margin-bottom:14px;
+}
+
+.hero span{color:var(--accent);}
+
+.hero p{
+font-size:14px;
+color:var(--text-soft);
+margin-bottom:18px;
+}
+
+.projects-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:12px;
+}
+
+.project-card{
+background:#000814;
+border-radius:var(--radius);
+border:1px solid rgba(31,41,55,.9);
+overflow:hidden;
+display:flex;
+flex-direction:column;
+}
+
+.project-media{
+height:140px;
+background-size:cover;
+background-position:center;
+}
+
+/* TUS ARCHIVOS EXACTOS */
+.project-1{background-image:url("./images/Bedroom detailed cleaning and organization service – Northern NJ.png");}
+.project-2{background-image:url("./images/oven-deep-cleaning-monroe-nj-purelux-cleaning.png");}
+.project-3{background-image:url("./images/Detail Restoration – Purelux Cleaning.png");}
+.project-4{background-image:url("./images/child room- glen rock.jpeg");}
+
+.project-body{
+padding:12px;
+font-size:13px;
+color:var(--text-soft);
+}
+
+footer{
+margin-top:28px;
+font-size:11px;
+color:var(--text-muted);
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+}
+
+@media(max-width:960px){
+.hero{grid-template-columns:1fr;}
+.projects-grid{grid-template-columns:repeat(2,1fr);}
+}
+
+@media(max-width:720px){
+.projects-grid{grid-template-columns:1fr;}
+header{position:static;}
+}
+</style>
 </head>
 
 <body>
-  <div class="page">
-    <div class="topbar">
-      <span>Call or Text: <a href="tel:18622877596">862-287-7596</a></span>
-      <span>Email: <a href="mailto:info@pureluxnj.com">info@pureluxnj.com</a></span>
-    </div>
+<div class="page">
 
-    <header>
-      <div class="brand">
-        <div class="brand-mark">P</div>
-        <div>
-          <div class="brand-text-main">Purelux Cleaning</div>
-          <div class="brand-sub">Serving Bergen &amp; Passaic County, NJ</div>
-        </div>
-      </div>
+<div class="topbar">
+<span>Call or Text: <a href="tel:18622877596">862-287-7596</a></span>
+<span>Email: <a href="mailto:info@pureluxnj.com">info@pureluxnj.com</a></span>
+</div>
 
-      <div class="header-cta">
-        <div class="header-pill">
-          <span>System-Driven</span>
-          <div>Structured 3-person team • Checklist execution</div>
-        </div>
-        <a href="/quote.html" class="btn-sm">Get a Fast Quote</a>
-      </div>
-    </header>
+<header>
+<div class="brand">
+<div class="brand-mark">
+<img src="/favicon.png" alt="Purelux logo">
+</div>
+<div>
+<div class="brand-text-main">Purelux Cleaning</div>
+<div class="brand-sub">Serving Bergen & Passaic County, NJ</div>
+</div>
+</div>
+<a href="/quote.html" class="btn">Get a Fast Quote</a>
+</header>
 
-    <main>
-      <!-- HERO -->
-      <section class="hero">
-        <div class="hero-left">
-          <div class="breadcrumb">
-            <div class="breadcrumb-dot"></div> Structured • Consistent • Detail-Driven
-          </div>
+<section class="hero">
+<div>
+<h1>Professional Residential & <span>Post-Construction</span> Cleaning in North NJ</h1>
+<p>Structured 3-person team delivering consistent, checklist-driven results for homeowners and realtors who expect precision.</p>
+<a href="/quote.html" class="btn">Get My Custom Quote</a>
+</div>
+<div>
+<p><strong>Premium Deep Cleaning</strong><br>
+Average range: $450–$900*<br><br>
+✔ Structured workflow<br>
+✔ Fully insured<br>
+✔ No shortcuts</p>
+</div>
+</section>
 
-          <h1 class="hero-title">
-            Professional Residential &amp; <span>Post-Construction</span> Cleaning in North NJ
-          </h1>
+<section>
+<div class="section-title">Recent Projects – Northern NJ</div>
+<div class="projects-grid">
 
-          <p class="hero-subtitle">
-            Purelux is a structured 3-person team delivering consistent results—deep cleaning, recurring maintenance,
-            move-in/move-out turnovers, and post-construction resets for homeowners who don’t want “random cleaner”
-            results.
-          </p>
+<div class="project-card">
+<div class="project-media project-1"></div>
+<div class="project-body">Bedroom Detailed Cleaning – Glen Rock, NJ</div>
+</div>
 
-          <div class="hero-cta-row">
-            <a href="/quote.html" class="btn-primary">
-              Get My Custom Quote <span>↗</span>
-            </a>
-            <a href="#services" class="btn-secondary">
-              View Services &amp; Typical Ranges
-            </a>
-          </div>
+<div class="project-card">
+<div class="project-media project-2"></div>
+<div class="project-body">Oven Deep Cleaning – Wayne, NJ</div>
+</div>
 
-          <div class="hero-trust">
-            <span>Serving North Haledon, Wayne, Glen Rock, Clifton &amp; nearby areas.</span>
-            <span>Limited weekly availability – we book out quickly.</span>
-          </div>
+<div class="project-card">
+<div class="project-media project-3"></div>
+<div class="project-body">Bathroom Detail Restoration – North Haledon, NJ</div>
+</div>
 
-          <div class="hero-badges">
-            <div class="hero-badge">
-              <span>★</span><strong>5-Star Rated</strong> in Bergen &amp; Passaic County
-            </div>
-            <div class="hero-badge">
-              <span>✓</span><strong>Fully Insured</strong> &amp; checklist-driven workflow
-            </div>
-            <div class="hero-badge">
-              <span>🧼</span>Same standards every visit – no shortcuts
-            </div>
-          </div>
-        </div>
+<div class="project-card">
+<div class="project-media project-4"></div>
+<div class="project-body">Kids Room Cleaning – Ridgewood, NJ</div>
+</div>
 
-        <aside class="hero-right">
-          <div class="hero-right-header">
-            <span>Premium Deep Cleaning, Without Guesswork</span>
-            <span>Average deep cleans range from $450–$900*</span>
-          </div>
-          <div class="hero-right-points">
-            <div class="hero-point">
-              <div class="hero-point-icon">1</div>
-              <div>
-                <div class="hero-point-title">Full-property reset</div>
-                <div>
-                  Kitchens, bathrooms, baseboards, doors, trim, switches, and more. Ideal as a “Day 1” reset before
-                  recurring maintenance.
-                </div>
-              </div>
-            </div>
-            <div class="hero-point">
-              <div class="hero-point-icon">2</div>
-              <div>
-                <div class="hero-point-title">Structured 3-Person Team</div>
-                <div>
-                  Each tech owns a zone—no chaos, no guessing. Same workflow every time for consistent results, not
-                  “hit or miss” cleanings.
-                </div>
-              </div>
-            </div>
-            <div class="hero-point">
-              <div class="hero-point-icon">3</div>
-              <div>
-                <div class="hero-point-title">Ideal for Busy Homeowners &amp; Realtors</div>
-                <div>
-                  Perfect for listings, turnovers, and families who want the home handled—without managing cleaners.
-                </div>
-              </div>
-            </div>
-          </div>
+</div>
+</section>
 
-          <div class="hero-meta">
-            <span><strong>*</strong>Ranges vary by size, condition &amp; add-ons</span>
-            <span>Ask about recurring maintenance after your first deep clean.</span>
-          </div>
-        </aside>
-      </section>
+<footer>
+<span>© 2026 Purelux Cleaning · North NJ</span>
+<span>Fully Insured · Structured System · Detail Driven</span>
+</footer>
 
-      <!-- SERVICES -->
-      <section id="services">
-        <div class="section-header">
-          <div class="section-title">Our Services</div>
-          <div class="section-subtitle">
-            Clear scope. No surprises. We start with a full deep clean or post-construction reset, then move into
-            recurring maintenance on a reliable schedule.
-          </div>
-        </div>
-
-        <div class="services-grid">
-          <article class="service-card">
-            <div class="service-label">Deep Cleaning</div>
-            <div class="service-title">Full-Property Reset</div>
-            <div class="service-body">
-              Detailed cleaning for kitchens, baths, baseboards, trim, fixtures, and high-touch surfaces. Ideal when
-              things haven’t been cleaned “properly” in a while.
-            </div>
-            <div class="service-foot">Typical range: $450–$900+ depending on size &amp; buildup.</div>
-          </article>
-
-          <article class="service-card">
-            <div class="service-label">Recurring Cleaning</div>
-            <div class="service-title">Weekly, Bi-Weekly &amp; Monthly</div>
-            <div class="service-body">
-              Maintenance visits built on the original deep clean. Same structure each time so the home never “falls
-              behind” again.
-            </div>
-            <div class="service-foot">Best for busy households that want consistent standards.</div>
-          </article>
-
-          <article class="service-card">
-            <div class="service-label">Move In / Move Out</div>
-            <div class="service-title">Turnover-Ready Homes</div>
-            <div class="service-body">
-              Vacant home resets for buyers, sellers, and tenants. Inside cabinets, appliances, and detailed
-              bathrooms—so the next chapter starts fresh.
-            </div>
-            <div class="service-foot">Popular for realtors &amp; landlords across North NJ.</div>
-          </article>
-
-          <article class="service-card">
-            <div class="service-label">Post-Construction</div>
-            <div class="service-title">Dust &amp; Debris Removal</div>
-            <div class="service-body">
-              Multi-stage dust removal, detailed vacuuming, and wipe-downs for newly renovated spaces so they’re
-              actually livable—not just “done.”
-            </div>
-            <div class="service-foot">Ask about multi-visit options for ongoing projects.</div>
-          </article>
-        </div>
-      </section>
-
-      <!-- RECENT PROJECTS -->
-      <section>
-        <div class="section-header">
-          <div class="section-title">Recent Projects – Northern New Jersey</div>
-          <div class="section-subtitle">
-            A few examples of our recent work across North Haledon, Wayne, Glen Rock, Clifton, and nearby towns. We
-            focus on disciplined, consistent results—not just “photo ready” angles.
-          </div>
-        </div>
-
-        <div class="projects-grid">
-          <article class="project-card">
-            <div class="project-media project-1"></div>
-            <div class="project-body">
-              <div class="project-tag">Bedroom Detail • Glen Rock, NJ</div>
-              <div class="project-title">Bedroom Declutter &amp; Detailed Cleaning</div>
-              <div class="project-meta">Deep clean + organization before listing photos.</div>
-              <div class="project-desc">
-                Full reset of bedroom surfaces, trim, windowsills, and floors to bring the room back to “photo ready”
-                before professional staging.
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-media project-2"></div>
-            <div class="project-body">
-              <div class="project-tag">Kitchen • Wayne, NJ</div>
-              <div class="project-title">Oven Deep Cleaning &amp; Degrease</div>
-              <div class="project-meta">Move-out preparation for long-term homeowner.</div>
-              <div class="project-desc">
-                Heavy grease removal from racks, glass, and interior walls, plus a full wipe-down of surrounding
-                cabinets and appliances.
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-media project-3"></div>
-            <div class="project-body">
-              <div class="project-tag">Bathroom • North Haledon, NJ</div>
-              <div class="project-title">Bathroom Detail Restoration</div>
-              <div class="project-meta">Deep clean after years of mineral buildup.</div>
-              <div class="project-desc">
-                Grout, glass, fixtures, and floors brought back from dull and spotted to bright and refreshed, with
-                attention to edges and corners.
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-media project-4"></div>
-            <div class="project-body">
-              <div class="project-tag">Kids' Room • Ridgewood, NJ</div>
-              <div class="project-title">Kids Room Cleaning &amp; Organization</div>
-              <div class="project-meta">Ongoing maintenance for a busy family.</div>
-              <div class="project-desc">
-                Toy organization, dust removal, and floor reset so the space feels safe, calm, and easy to keep up
-                between visits.
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- HOW IT WORKS -->
-      <section>
-        <div class="section-header">
-          <div class="section-title">How It Works</div>
-          <div class="section-subtitle">
-            Clear steps, no confusion. We run a system so you don’t have to manage cleaners—just approve the scope and
-            let us execute.
-          </div>
-        </div>
-
-        <div class="how-grid">
-          <article class="how-card">
-            <div class="how-step">Step 1</div>
-            <div class="how-title">Request Your Quote</div>
-            <div>
-              Share a few details about your home, priorities, and timing. Photos help us be more precise with your
-              estimate.
-            </div>
-          </article>
-
-          <article class="how-card">
-            <div class="how-step">Step 2</div>
-            <div class="how-title">Confirm Scope &amp; Pricing</div>
-            <div>
-              We align on scope, visit length, and any add-ons (inside fridge, oven, cabinets, windows, etc.) before we
-              schedule.
-            </div>
-          </article>
-
-          <article class="how-card">
-            <div class="how-step">Step 3</div>
-            <div class="how-title">Structured 3-Person Visit</div>
-            <div>
-              Our team arrives on time, each person owning a zone. We follow the same checklist so nothing is left to
-              chance.
-            </div>
-          </article>
-
-          <article class="how-card">
-            <div class="how-step">Step 4</div>
-            <div class="how-title">Walkthrough &amp; Maintenance Plan</div>
-            <div>
-              We do a final walkthrough, handle any touch-ups, and, if you’d like, set up a recurring maintenance
-              schedule.
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- WHY PURELUX -->
-      <section>
-        <div class="section-header">
-          <div class="section-title">Why Purelux?</div>
-          <div class="section-subtitle">
-            We don’t improvise. We operate with a structured workflow and quality control checklist to ensure
-            consistency on every visit.
-          </div>
-        </div>
-
-        <div class="why-grid">
-          <article class="why-card">
-            <div class="why-title">System, Not Guesswork</div>
-            <div>
-              Every visit follows a defined checklist—baseboards, fixtures, switches, and details that are usually
-              skipped by “quick” cleanings.
-            </div>
-          </article>
-
-          <article class="why-card">
-            <div class="why-title">Structured 3-Person Team</div>
-            <div>
-              We don’t rotate random faces. A structured crew means faster execution, better communication, and fewer
-              surprises for you.
-            </div>
-          </article>
-
-          <article class="why-card">
-            <div class="why-title">Premium, Not Price-Shoppy</div>
-            <div>
-              We’re not trying to be the cheapest quote—you’re paying for reliability, detail, and the peace of mind of
-              a properly run system.
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- REVIEWS -->
-      <section>
-        <div class="section-header">
-          <div class="section-title">Reviews</div>
-          <div class="section-subtitle">
-            Clients come back for consistency—because details don’t lie. Soon we’ll feature a selection of recent
-            5-star reviews here.
-          </div>
-        </div>
-
-        <div class="reviews-placeholder">
-          Plug coming soon: we’ll surface real Google reviews directly on this page so visitors can see what your
-          neighbors are saying about Purelux.
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <span>© 2026 Purelux Cleaning · Serving Bergen &amp; Passaic County, NJ</span>
-      <span>Fully insured · Structured workflow · Detail-driven results</span>
-    </footer>
-  </div>
+</div>
 </body>
 </html>
