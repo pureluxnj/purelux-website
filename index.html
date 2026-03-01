@@ -14,19 +14,24 @@
 
   <style>
     :root {
+      /* Paleta base: mantiene tus azules, pero un poco más luminosa */
       --bg: #020617;
-      --bg-soft: #020819;
-      --card: #020b25;
-      --card-soft: #020f33;
-      --border-soft: #1f2937;
-      --accent: #38bdf8;
-      --accent-soft: rgba(56, 189, 248, 0.12);
+      --bg-soft: #061328;          /* fondo de secciones */
+      --panel: #071a34;            /* tarjetas principales */
+      --panel-soft: #0b2242;
+      --border-soft: #1f2a3d;
+
+      --accent: #38bdf8;           /* celeste logo */
+      --accent-strong: #0ea5e9;
+      --accent-soft: rgba(56, 189, 248, 0.14);
+
       --text-main: #e5e7eb;
       --text-soft: #9ca3af;
       --text-muted: #6b7280;
+
       --radius-lg: 18px;
       --radius-xl: 26px;
-      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.75);
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.7);
       --max-width: 1120px;
     }
 
@@ -39,7 +44,8 @@
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
         "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #0b1120 0, #020617 55%, #020617 100%);
+      background:
+        radial-gradient(circle at top, #0f172a 0, #020617 55%, #020617 100%);
       color: var(--text-main);
       min-height: 100vh;
       -webkit-font-smoothing: antialiased;
@@ -85,8 +91,10 @@
       margin-bottom: 20px;
       border-radius: 999px;
       border: 1px solid rgba(148, 163, 184, 0.35);
-      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.13), transparent 50%), rgba(15, 23, 42, 0.9);
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.7);
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 55%),
+        linear-gradient(90deg, #020617, #051427);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.8);
       position: sticky;
       top: 12px;
       z-index: 20;
@@ -99,24 +107,27 @@
       gap: 10px;
     }
 
- .brand-mark {
-  width: 50px;
-  height: 50px;
-  border-radius: 999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: #0b1f3a;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
-}
+    .brand-mark {
+      width: 52px;
+      height: 52px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top, #1d4ed8, #020617);
+      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.9);
+    }
 
-.brand-mark img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: scale(1.25);
-}
+    .brand-mark img {
+      width: 86%;
+      height: 86%;
+      object-fit: contain;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+      display: block;
+    }
 
     .brand-text-main {
       font-weight: 600;
@@ -139,13 +150,14 @@
     }
 
     .header-pill {
-      padding: 6px 10px;
+      padding: 6px 11px;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
+      border: 1px solid rgba(148, 163, 184, 0.45);
       color: var(--text-soft);
       display: flex;
       align-items: center;
       gap: 6px;
+      background: radial-gradient(circle at top left, rgba(15, 118, 255, 0.15), transparent 60%);
     }
 
     .header-pill span {
@@ -156,14 +168,14 @@
     }
 
     .header-cta a.btn-sm {
-      padding: 7px 13px;
+      padding: 7px 14px;
       border-radius: 999px;
-      border: 1px solid rgba(56, 189, 248, 0.35);
-      background: linear-gradient(90deg, #38bdf8, #0ea5e9);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      background: linear-gradient(90deg, var(--accent), var(--accent-strong));
       color: #0b1120;
       font-size: 12px;
       font-weight: 600;
-      box-shadow: 0 16px 30px rgba(56, 189, 248, 0.45);
+      box-shadow: 0 16px 34px rgba(56, 189, 248, 0.5);
       white-space: nowrap;
     }
 
@@ -181,6 +193,13 @@
       grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
       gap: 28px;
       align-items: center;
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.2), transparent 60%),
+        linear-gradient(145deg, #050f23, #020617);
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      box-shadow: var(--shadow-soft);
+      padding: 22px 18px 20px;
     }
 
     .hero-left {
@@ -234,12 +253,12 @@
       padding: 10px 18px;
       border-radius: 999px;
       border: none;
-      background: linear-gradient(90deg, #38bdf8, #0ea5e9);
+      background: linear-gradient(90deg, var(--accent), var(--accent-strong));
       color: #0b1120;
       font-weight: 600;
       font-size: 14px;
       cursor: pointer;
-      box-shadow: 0 18px 40px rgba(56, 189, 248, 0.45);
+      box-shadow: 0 18px 40px rgba(56, 189, 248, 0.55);
       display: inline-flex;
       align-items: center;
       gap: 8px;
@@ -254,7 +273,7 @@
       padding: 10px 16px;
       border-radius: 999px;
       border: 1px solid rgba(148, 163, 184, 0.5);
-      background: rgba(15, 23, 42, 0.85);
+      background: rgba(15, 23, 42, 0.92);
       color: var(--text-main);
       font-size: 13px;
       font-weight: 500;
@@ -283,7 +302,9 @@
       padding: 6px 10px;
       border-radius: 999px;
       border: 1px solid rgba(148, 163, 184, 0.45);
-      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.24), transparent 60%);
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.22), transparent 60%),
+        rgba(6, 22, 48, 0.9);
       font-size: 11px;
       color: var(--text-soft);
       display: flex;
@@ -303,7 +324,9 @@
     .hero-right {
       border-radius: var(--radius-xl);
       border: 1px solid rgba(148, 163, 184, 0.42);
-      background: radial-gradient(circle at top, rgba(37, 99, 235, 0.35), transparent 55%), #020617;
+      background:
+        radial-gradient(circle at top, rgba(59, 130, 246, 0.35), transparent 55%),
+        linear-gradient(145deg, #020617, #050f23);
       box-shadow: var(--shadow-soft);
       padding: 18px 18px 16px;
       display: flex;
@@ -338,15 +361,15 @@
       align-items: flex-start;
       padding: 8px 9px;
       border-radius: 12px;
-      background: rgba(15, 23, 42, 0.8);
-      border: 1px solid rgba(148, 163, 184, 0.3);
+      background: rgba(8, 25, 53, 0.96);
+      border: 1px solid rgba(148, 163, 184, 0.35);
     }
 
     .hero-point-icon {
       width: 16px;
       height: 16px;
       border-radius: 999px;
-      background: rgba(56, 189, 248, 0.16);
+      background: var(--accent-soft);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -386,8 +409,10 @@
     /* Sections */
     section {
       border-radius: var(--radius-xl);
-      background: radial-gradient(circle at top left, rgba(15, 118, 255, 0.25), transparent 60%), var(--bg-soft);
-      border: 1px solid rgba(148, 163, 184, 0.35);
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), transparent 60%),
+        var(--bg-soft);
+      border: 1px solid rgba(148, 163, 184, 0.32);
       box-shadow: var(--shadow-soft);
       padding: 22px 18px 20px;
     }
@@ -426,15 +451,15 @@
     }
 
     .service-card {
-      background: linear-gradient(to bottom right, rgba(15, 23, 42, 0.98), #020617);
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 65%),
+        linear-gradient(145deg, #050f22, #020617);
       border-radius: var(--radius-lg);
       border: 1px solid rgba(31, 41, 55, 0.9);
       padding: 13px 12px 12px;
       display: flex;
       flex-direction: column;
       gap: 6px;
-      position: relative;
-      overflow: hidden;
     }
 
     .service-label {
@@ -469,7 +494,9 @@
     }
 
     .project-card {
-      background: linear-gradient(to bottom right, #020617, #000814);
+      background:
+        radial-gradient(circle at top, rgba(15, 23, 42, 0.65), transparent 70%),
+        linear-gradient(145deg, #020617, #020b1f);
       border-radius: var(--radius-lg);
       border: 1px solid rgba(31, 41, 55, 0.95);
       overflow: hidden;
@@ -533,7 +560,9 @@
     }
 
     .how-card {
-      background: linear-gradient(to bottom right, rgba(15, 23, 42, 0.98), #020617);
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.14), transparent 65%),
+        linear-gradient(145deg, #050f23, #020617);
       border-radius: var(--radius-lg);
       border: 1px solid rgba(31, 41, 55, 0.9);
       padding: 12px 12px 11px;
@@ -565,7 +594,9 @@
     }
 
     .why-card {
-      background: linear-gradient(to bottom right, rgba(15, 23, 42, 0.98), #020617);
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 65%),
+        linear-gradient(145deg, #050f22, #020617);
       border-radius: var(--radius-lg);
       border: 1px solid rgba(31, 41, 55, 0.9);
       padding: 13px 12px 12px;
@@ -582,14 +613,46 @@
       color: #e5e7eb;
     }
 
-    /* Reviews placeholder */
-    .reviews-placeholder {
-      font-size: 12px;
-      color: var(--text-muted);
-      padding: 12px;
-      border-radius: var(--radius-lg);
-      border: 1px dashed rgba(148, 163, 184, 0.5);
-      background: rgba(15, 23, 42, 0.65);
+    /* Reviews */
+    .reviews-inner {
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px dashed rgba(148, 163, 184, 0.6);
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), transparent 70%),
+        rgba(6, 18, 35, 0.95);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .reviews-stars {
+      color: #facc15;
+      font-size: 15px;
+    }
+
+    .reviews-title {
+      font-size: 14px;
+      color: #e5e7eb;
+      font-weight: 600;
+    }
+
+    .reviews-text {
+      font-size: 13px;
+      color: var(--text-soft);
+    }
+
+    .reviews-cta {
+      align-self: flex-start;
+      margin-top: 4px;
+      padding: 9px 18px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+      color: #0b1120;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      box-shadow: 0 16px 30px rgba(56, 189, 248, 0.45);
     }
 
     /* Footer */
@@ -981,51 +1044,30 @@
         </div>
       </section>
 
-      <!-- REVIEWS -->
+      <!-- REVIEWS (CTA + LINK A GOOGLE) -->
       <section>
-  <div class="section-header">
-    <div class="section-title">Reviews</div>
-    <div class="section-subtitle">
-      Clients come back for consistency—because details don’t lie.
-    </div>
-  </div>
+        <div class="section-header">
+          <div class="section-title">Reviews</div>
+          <div class="section-subtitle">
+            Clients come back for consistency—because details don’t lie.
+          </div>
+        </div>
 
-  <div style="
-    display:flex;
-    flex-direction:column;
-    gap:16px;
-    padding:18px;
-    border-radius:18px;
-    border:1px solid rgba(148,163,184,0.4);
-    background: rgba(15,23,42,0.7);
-  ">
-
-    <div style="font-size:14px; color:#e5e7eb; font-weight:600;">
-      ⭐⭐⭐⭐⭐ Loved your cleaning?
-    </div>
-
-    <div style="font-size:13px; color:#9ca3af;">
-      Your review helps local homeowners trust Purelux and keeps our standards high.
-    </div>
-
-    <a href=https://g.page/r/CQmQSZcac93rEBM/review
-       target="_blank"
-       style="
-        align-self:flex-start;
-        padding:10px 18px;
-        border-radius:999px;
-        background: linear-gradient(90deg,#38bdf8,#0ea5e9);
-        color:#0b1120;
-        font-weight:600;
-        font-size:14px;
-        text-decoration:none;
-        box-shadow:0 16px 30px rgba(56,189,248,0.4);
-       ">
-      Leave a Google Review →
-    </a>
-
-  </div>
-</section>
+        <div class="reviews-inner">
+          <div class="reviews-stars">★★★★★</div>
+          <div class="reviews-title">Loved your cleaning?</div>
+          <div class="reviews-text">
+            Your review helps local homeowners trust Purelux and keeps our standards high.
+          </div>
+          <a
+            href="TU_LINK_DE_REVIEW_DE_GOOGLE_AQUI"
+            target="_blank"
+            class="reviews-cta"
+          >
+            Leave a Google Review →
+          </a>
+        </div>
+      </section>
     </main>
 
     <footer>
