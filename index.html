@@ -107,24 +107,24 @@
       gap: 10px;
     }
 
-.brand-mark {
-  width: 50px;
-  height: 50px;
-  border-radius: 999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: #0b1f3a;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
-}
+    .brand-mark {
+      width: 50px;
+      height: 50px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #0b1f3a;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+    }
 
-.brand-mark img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: scale(1.25);
-}
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.25);
+    }
 
     .brand-text-main {
       font-weight: 600;
@@ -453,10 +453,38 @@
         linear-gradient(145deg, #050f22, #020617);
       border-radius: var(--radius-lg);
       border: 1px solid rgba(31, 41, 55, 0.9);
-      padding: 13px 12px 12px;
+      padding: 10px 10px 12px;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 8px;
+    }
+
+    /* imagen arriba de cada servicio */
+    .service-media {
+      height: 80px;
+      border-radius: 14px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border: 1px solid rgba(30, 64, 175, 0.85);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.8);
+    }
+
+    /* mapeo a tus artes de servicios */
+    .service-deep {
+      background-image: url("./images/DEEP CLEANING PORTRAIT.png");
+    }
+
+    .service-recurring {
+      background-image: url("./images/RECURIN CLEANING PORTRAIT.png");
+    }
+
+    .service-move {
+      background-image: url("./images/MOVE IN-OUT PORTRAIT.png");
+    }
+
+    .service-post {
+      background-image: url("./images/POST-CONTRUCTION PORTRAIT.png");
     }
 
     .service-label {
@@ -848,7 +876,10 @@
         </div>
 
         <div class="services-grid">
+          <!-- Deep Cleaning -->
           <article class="service-card">
+            <div class="service-media service-deep"></div>
+
             <div class="service-label">Deep Cleaning</div>
             <div class="service-title">Full-Property Reset</div>
             <div class="service-body">
@@ -858,7 +889,10 @@
             <div class="service-foot">Typical range: $450–$900+ depending on size &amp; buildup.</div>
           </article>
 
+          <!-- Recurring Cleaning -->
           <article class="service-card">
+            <div class="service-media service-recurring"></div>
+
             <div class="service-label">Recurring Cleaning</div>
             <div class="service-title">Weekly, Bi-Weekly &amp; Monthly</div>
             <div class="service-body">
@@ -868,7 +902,10 @@
             <div class="service-foot">Best for busy households that want consistent standards.</div>
           </article>
 
+          <!-- Move In / Move Out -->
           <article class="service-card">
+            <div class="service-media service-move"></div>
+
             <div class="service-label">Move In / Move Out</div>
             <div class="service-title">Turnover-Ready Homes</div>
             <div class="service-body">
@@ -878,7 +915,10 @@
             <div class="service-foot">Popular for realtors &amp; landlords across North NJ.</div>
           </article>
 
+          <!-- Post-Construction -->
           <article class="service-card">
+            <div class="service-media service-post"></div>
+
             <div class="service-label">Post-Construction</div>
             <div class="service-title">Dust &amp; Debris Removal</div>
             <div class="service-body">
