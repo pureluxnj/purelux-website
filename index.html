@@ -456,39 +456,22 @@
       padding: 10px 10px 12px;
       display: flex;
       flex-direction: column;
-      gap: 10px; /* antes 8px */
+      gap: 10px;
     }
 
-    /* imagen arriba de cada servicio */
-  .service-media {
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid rgba(30, 64, 175, 0.85);
-  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.9);
-  margin-bottom: 6px;
-}
-
-.service-media img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-    /* mapeo a tus artes de servicios */
-    .service-deep {
-      background-image: url("./images/DEEP CLEANING PORTRAIT.png");
+    /* Imagen arriba de cada servicio */
+    .service-media {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(30, 64, 175, 0.85);
+      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.9);
+      margin-bottom: 6px;
     }
 
-    .service-recurring {
-      background-image: url("./images/RECURIN CLEANING PORTRAIT.png");
-    }
-
-    .service-move {
-      background-image: url("./images/MOVE IN-OUT PORTRAIT.png");
-    }
-
-    .service-post {
-      background-image: url("./images/POST-CONTRUCTION PORTRAIT.png");
+    .service-media img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
     .service-label {
@@ -528,27 +511,26 @@
         linear-gradient(145deg, #020617, #020b1f);
       border-radius: var(--radius-lg);
       border: 1px solid rgba(31, 41, 55, 0.95);
-      overflow: hidden;
       display: flex;
       flex-direction: column;
-      min-height: 230px;
+      padding: 10px 10px 12px;
     }
 
     .project-media {
-      height: 128px;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(30, 64, 175, 0.85);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.8);
+      margin-bottom: 8px;
     }
 
-    /* Mapeo a tus archivos reales de /images */
-    .project-1 { background-image: url("./images/Bedroom detailed cleaning and organization service – Northern NJ.png"); }
-    .project-2 { background-image: url("./images/oven-deep-cleaning-monroe-nj-purelux-cleaning.png"); }
-    .project-3 { background-image: url("./images/Detail Restoration – Purelux Cleaning.png"); }
-    .project-4 { background-image: url("./images/child room- glen rock.jpeg"); }
+    .project-media img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
     .project-body {
-      padding: 11px 11px 10px;
       display: flex;
       flex-direction: column;
       gap: 4px;
@@ -883,8 +865,8 @@
           <!-- Deep Cleaning -->
           <article class="service-card">
             <div class="service-media">
-  <img src="./images/DEEP CLEANING PORTRAIT.png" alt="Deep Cleaning Service">
-</div>
+              <img src="./images/DEEP CLEANING PORTRAIT.png" alt="Deep Cleaning Service">
+            </div>
             <div class="service-label">Deep Cleaning</div>
             <div class="service-title">Full-Property Reset</div>
             <div class="service-body">
@@ -897,9 +879,8 @@
           <!-- Recurring Cleaning -->
           <article class="service-card">
             <div class="service-media">
-  <img src="./images/DEEP CLEANING PORTRAIT.png" alt="Deep Cleaning Service">
-</div>
-
+              <img src="./images/RECURRIN CLEANING PORTRAIT.png" alt="Recurring Cleaning Service">
+            </div>
             <div class="service-label">Recurring Cleaning</div>
             <div class="service-title">Weekly, Bi-Weekly &amp; Monthly</div>
             <div class="service-body">
@@ -912,9 +893,8 @@
           <!-- Move In / Move Out -->
           <article class="service-card">
             <div class="service-media">
-  <img src="./images/DEEP CLEANING PORTRAIT.png" alt="Deep Cleaning Service">
-</div>
-
+              <img src="./images/MOVE IN-OUT PORTRAIT.png" alt="Move In / Move Out Cleaning Service">
+            </div>
             <div class="service-label">Move In / Move Out</div>
             <div class="service-title">Turnover-Ready Homes</div>
             <div class="service-body">
@@ -927,9 +907,8 @@
           <!-- Post-Construction -->
           <article class="service-card">
             <div class="service-media">
-  <img src="./images/DEEP CLEANING PORTRAIT.png" alt="Deep Cleaning Service">
-</div>
-
+              <img src="./images/POST-CONTRUCTION PORTRAIT.png" alt="Post-construction Cleaning Service">
+            </div>
             <div class="service-label">Post-Construction</div>
             <div class="service-title">Dust &amp; Debris Removal</div>
             <div class="service-body">
@@ -952,8 +931,14 @@
         </div>
 
         <div class="projects-grid">
+          <!-- Proyecto 1 -->
           <article class="project-card">
-            <div class="project-media project-1"></div>
+            <div class="project-media">
+              <img
+                src="./images/Bedroom detailed cleaning and organization service – Northern NJ.png"
+                alt="Bedroom declutter and detailed cleaning in Northern NJ"
+              >
+            </div>
             <div class="project-body">
               <div class="project-tag">Bedroom Detail • Glen Rock, NJ</div>
               <div class="project-title">Bedroom Declutter &amp; Detailed Cleaning</div>
@@ -965,8 +950,14 @@
             </div>
           </article>
 
+          <!-- Proyecto 2 -->
           <article class="project-card">
-            <div class="project-media project-2"></div>
+            <div class="project-media">
+              <img
+                src="./images/oven-deep-cleaning-monroe-nj-purelux-cleaning.png"
+                alt="Oven deep cleaning and degrease"
+              >
+            </div>
             <div class="project-body">
               <div class="project-tag">Kitchen • Wayne, NJ</div>
               <div class="project-title">Oven Deep Cleaning &amp; Degrease</div>
@@ -978,8 +969,14 @@
             </div>
           </article>
 
+          <!-- Proyecto 3 -->
           <article class="project-card">
-            <div class="project-media project-3"></div>
+            <div class="project-media">
+              <img
+                src="./images/Detail Restoration – Purelux Cleaning.png"
+                alt="Bathroom detail restoration"
+              >
+            </div>
             <div class="project-body">
               <div class="project-tag">Bathroom • North Haledon, NJ</div>
               <div class="project-title">Bathroom Detail Restoration</div>
@@ -991,8 +988,14 @@
             </div>
           </article>
 
+          <!-- Proyecto 4 -->
           <article class="project-card">
-            <div class="project-media project-4"></div>
+            <div class="project-media">
+              <img
+                src="./images/child room- glen rock.jpeg"
+                alt="Kids room cleaning and organization"
+              >
+            </div>
             <div class="project-body">
               <div class="project-tag">Kids' Room • Ridgewood, NJ</div>
               <div class="project-title">Kids Room Cleaning &amp; Organization</div>
