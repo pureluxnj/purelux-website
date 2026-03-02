@@ -460,15 +460,18 @@
     }
 
     /* imagen arriba de cada servicio */
-   .service-media {
-  height: 130px;              /* MUCHO más alto */
+  .service-media {
   border-radius: 16px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  overflow: hidden;
   border: 1px solid rgba(30, 64, 175, 0.85);
   box-shadow: 0 12px 26px rgba(15, 23, 42, 0.9);
-  margin-bottom: 4px;         /* un pequeño respiro antes del texto */
+  margin-bottom: 6px;
+}
+
+.service-media img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
     /* mapeo a tus artes de servicios */
@@ -886,8 +889,9 @@
         <div class="services-grid">
           <!-- Deep Cleaning -->
           <article class="service-card">
-            <div class="service-media service-deep"></div>
-
+            <div class="service-media">
+  <img src="./images/DEEP CLEANING PORTRAIT.png" alt="Deep Cleaning Service">
+</div>
             <div class="service-label">Deep Cleaning</div>
             <div class="service-title">Full-Property Reset</div>
             <div class="service-body">
@@ -899,7 +903,9 @@
 
           <!-- Recurring Cleaning -->
           <article class="service-card">
-            <div class="service-media service-recurring"></div>
+            <div class="service-media">
+  <img src="./images/DEEP CLEANING PORTRAIT.png" alt="Deep Cleaning Service">
+</div>
 
             <div class="service-label">Recurring Cleaning</div>
             <div class="service-title">Weekly, Bi-Weekly &amp; Monthly</div>
@@ -912,7 +918,9 @@
 
           <!-- Move In / Move Out -->
           <article class="service-card">
-            <div class="service-media service-move"></div>
+            <div class="service-media">
+  <img src="./images/DEEP CLEANING PORTRAIT.png" alt="Deep Cleaning Service">
+</div>
 
             <div class="service-label">Move In / Move Out</div>
             <div class="service-title">Turnover-Ready Homes</div>
@@ -925,7 +933,9 @@
 
           <!-- Post-Construction -->
           <article class="service-card">
-            <div class="service-media service-post"></div>
+            <div class="service-media">
+  <img src="./images/DEEP CLEANING PORTRAIT.png" alt="Deep Cleaning Service">
+</div>
 
             <div class="service-label">Post-Construction</div>
             <div class="service-title">Dust &amp; Debris Removal</div>
