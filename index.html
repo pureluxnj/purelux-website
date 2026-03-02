@@ -456,12 +456,12 @@
       padding: 10px 10px 12px;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 10px; /* antes 8px */
     }
 
     /* imagen arriba de cada servicio */
     .service-media {
-      height: 80px;
+      height: 96px; /* antes 80px */
       border-radius: 14px;
       background-size: cover;
       background-position: center;
@@ -744,6 +744,11 @@
       footer {
         flex-direction: column;
         align-items: flex-start;
+      }
+
+      /* en móvil bajamos un poco la altura de la imagen */
+      .service-media {
+        height: 80px;
       }
     }
   </style>
