@@ -747,10 +747,13 @@
         align-items: flex-start;
       }
 
-      /* en móvil bajamos un poco la altura de la imagen */
-      .service-media {
-        height: 100px;
-      }
+      /* en móvil: mostrar el logo completo, sin cortarlo */
+.service-media {
+  height: 140px;                      /* más alto para que quepa el arte */
+  background-size: contain;           /* que entre completo */
+  background-position: top center;    /* enfocado arriba (logo) */
+  background-color: #020617;          /* relleno oscuro detrás si sobra espacio */
+}
     }
   </style>
 </head>
