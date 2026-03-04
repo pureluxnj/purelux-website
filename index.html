@@ -12,405 +12,559 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png?v=3">
 
-  <!-- Premium Typography (keeps your site looking “expensive”) -->
+  <!-- Fonts (fix “ugly letters”) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg:#020617;
-      --bg2:#061328;
-      --panel:#071a34;
-      --panel2:#0b2242;
+      /* Your brand vibe: Navy + Light Blue (logo) */
+      --bg: #020617;
+      --bg2:#040b1b;
+      --panel: rgba(7, 18, 43, 0.72);
+      --panel2: rgba(6, 16, 38, 0.82);
+      --stroke: rgba(148,163,184,.22);
+      --stroke2: rgba(56,189,248,.22);
 
-      --border: rgba(148,163,184,.22);
-      --border2: rgba(148,163,184,.14);
-
-      --accent:#38bdf8;
+      --accent:#38bdf8;        /* logo light blue */
       --accent2:#0ea5e9;
-      --accentGlow: rgba(56,189,248,.28);
+      --accentSoft: rgba(56,189,248,.14);
 
       --text:#e5e7eb;
-      --text2:#cbd5e1;
       --muted:#9ca3af;
       --muted2:#6b7280;
 
-      --shadow: 0 26px 70px rgba(2,6,23,.55);
-      --shadow2: 0 14px 35px rgba(2,6,23,.55);
+      --radiusXL: 26px;
+      --radiusLG: 18px;
+      --radiusMD: 14px;
 
-      --r-lg: 18px;
-      --r-xl: 26px;
+      --shadow: 0 22px 70px rgba(0,0,0,.55);
+      --shadow2: 0 18px 45px rgba(0,0,0,.45);
+
       --max: 1120px;
 
-      --font-sans: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      --font-serif: "Fraunces", ui-serif, Georgia, serif;
+      /* Typography */
+      --fontBody: "Inter", system-ui, -apple-system, Segoe UI, sans-serif;
+      --fontHead: "Fraunces", ui-serif, Georgia, serif;
     }
 
-    *{box-sizing:border-box; margin:0; padding:0}
+    *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{
-      font-family: var(--font-sans);
+      font-family: var(--fontBody);
       color: var(--text);
       background:
-        radial-gradient(900px 400px at 50% -10%, rgba(56,189,248,.18), transparent 55%),
-        radial-gradient(700px 380px at 20% 10%, rgba(59,130,246,.18), transparent 58%),
-        radial-gradient(900px 420px at 90% 20%, rgba(14,165,233,.12), transparent 55%),
-        linear-gradient(180deg, #020617 0%, #020617 100%);
-      -webkit-font-smoothing: antialiased;
+        radial-gradient(1200px 700px at 30% 10%, rgba(56,189,248,.18), transparent 55%),
+        radial-gradient(900px 600px at 80% 35%, rgba(14,165,233,.12), transparent 60%),
+        radial-gradient(1200px 900px at 50% 80%, rgba(2,6,23,1), rgba(2,6,23,1)),
+        linear-gradient(180deg, var(--bg2), var(--bg));
       min-height:100vh;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
-    a{color:inherit; text-decoration:none}
-    img{max-width:100%; display:block}
-    .page{max-width:var(--max); margin:0 auto; padding:24px 16px 64px}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
 
-    /* Top bar */
+    .page{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 22px 16px 70px;
+    }
+
+    /* Topbar */
     .topbar{
-      display:flex; justify-content:flex-end; gap:14px;
-      font-size:12px; color: var(--muted);
-      margin-bottom:10px;
-      opacity:.95;
+      display:flex;
+      justify-content:flex-end;
+      gap:10px;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 10px;
     }
-    .topbar a{color:var(--accent); font-weight:600}
-    .topbar .dot{opacity:.6}
+    .topbar span + span::before{
+      content:"•";
+      margin:0 10px;
+      color: var(--muted2);
+    }
+    .topbar a{color: var(--accent); font-weight: 600}
 
-    /* Sticky Header */
+    /* Header */
     header{
-      position: sticky; top: 12px; z-index: 50;
-      display:flex; justify-content:space-between; align-items:center;
-      padding: 12px 14px;
+      position: sticky;
+      top: 12px;
+      z-index: 50;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap: 14px;
+      padding: 12px 16px;
       border-radius: 999px;
-      border: 1px solid var(--border);
+      border: 1px solid var(--stroke);
       background:
-        radial-gradient(circle at 15% 0%, rgba(56,189,248,.18), transparent 55%),
-        linear-gradient(90deg, rgba(2,6,23,.90), rgba(5,20,39,.82));
+        radial-gradient(900px 220px at 15% 10%, rgba(56,189,248,.18), transparent 60%),
+        linear-gradient(90deg, rgba(2,6,23,.86), rgba(4,11,27,.82));
       backdrop-filter: blur(18px);
       box-shadow: var(--shadow2);
     }
 
-    .brand{display:flex; align-items:center; gap:10px}
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      min-width: 260px;
+    }
     .brand-mark{
-      width:48px; height:48px; border-radius:999px; overflow:hidden;
-      background: rgba(11,31,58,.9);
-      border: 1px solid rgba(56,189,248,.18);
-      box-shadow: 0 12px 30px rgba(0,0,0,.45);
-    }
-    .brand-mark img{width:100%; height:100%; object-fit:cover; transform:scale(1.2)}
-    .brand-name{
-      font-family: var(--font-serif);
-      font-weight:700;
-      letter-spacing:.02em;
-      font-size:14px;
-      line-height:1.05;
-    }
-    .brand-sub{font-size:11px; color: var(--muted2); margin-top:2px}
-
-    .nav{
-      display:flex; align-items:center; gap:10px;
-      font-size:12px; color: var(--muted);
-    }
-    .nav a{
-      padding: 8px 10px;
+      width: 44px;
+      height: 44px;
       border-radius: 999px;
-      border: 1px solid transparent;
-      transition: .15s ease;
+      overflow:hidden;
+      background: rgba(9,24,54,.95);
+      border: 1px solid rgba(56,189,248,.22);
+      box-shadow: 0 14px 30px rgba(0,0,0,.45);
+      display:flex;
+      align-items:center;
+      justify-content:center;
     }
-    .nav a:hover{
-      border-color: rgba(56,189,248,.25);
-      background: rgba(56,189,248,.08);
-      color: var(--text);
+    .brand-mark img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.2);
+    }
+    .brand-name{
+      font-size: 12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-weight: 700;
+    }
+    .brand-sub{
+      font-size: 11px;
+      color: var(--muted2);
+      margin-top: 2px;
     }
 
-    .header-cta{display:flex; align-items:center; gap:10px}
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
     .pill{
-      display:flex; align-items:center; gap:8px;
-      padding: 8px 12px;
+      display:flex;
+      align-items:center;
+      gap: 8px;
+      padding: 7px 10px;
       border-radius: 999px;
       border: 1px solid rgba(148,163,184,.22);
-      background: rgba(2,6,23,.35);
-      color: var(--text2);
-      font-size:12px;
+      background: rgba(8, 20, 45, .7);
+      color: var(--muted);
+      font-size: 12px;
       white-space: nowrap;
     }
-    .pill b{color: var(--accent); font-weight:700; letter-spacing:.12em; font-size:10px; text-transform:uppercase}
+    .pill b{
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      font-size: 10px;
+    }
 
     .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:8px;
-      border-radius:999px;
-      padding: 10px 16px;
-      font-weight:700;
-      cursor:pointer;
-      border: 1px solid transparent;
-      transition: .15s ease;
-      white-space:nowrap;
-    }
-    .btn-primary{
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      color: #04121f;
-      box-shadow: 0 18px 45px rgba(56,189,248,.35);
-    }
-    .btn-primary:hover{transform: translateY(-1px)}
-    .btn-ghost{
-      background: rgba(2,6,23,.50);
-      border-color: rgba(148,163,184,.25);
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      border: 1px solid rgba(148,163,184,.22);
+      background: rgba(9, 22, 48, .72);
       color: var(--text);
+      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+      cursor:pointer;
+      white-space: nowrap;
     }
-    .btn-ghost:hover{
-      border-color: rgba(56,189,248,.30);
-      background: rgba(56,189,248,.08);
+    .btn:hover{
+      transform: translateY(-1px);
+      border-color: rgba(56,189,248,.35);
+      box-shadow: 0 16px 30px rgba(0,0,0,.35);
     }
 
-    main{display:flex; flex-direction:column; gap:26px; margin-top:18px}
+    .btn-primary{
+      border: 1px solid rgba(56,189,248,.45);
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      color: #04101f;
+      box-shadow: 0 18px 38px rgba(56,189,248,.32);
+    }
+    .btn-primary:hover{
+      box-shadow: 0 22px 52px rgba(56,189,248,.36);
+    }
 
-    /* Shared section style */
-    section{
-      border-radius: var(--r-xl);
-      border: 1px solid var(--border);
+    /* Sections container style */
+    section.block{
+      margin-top: 18px;
+      border-radius: var(--radiusXL);
+      border: 1px solid var(--stroke);
       background:
-        radial-gradient(circle at 15% 0%, rgba(56,189,248,.14), transparent 52%),
-        linear-gradient(180deg, rgba(6,19,40,.90), rgba(2,6,23,.92));
+        radial-gradient(900px 420px at 22% 10%, rgba(56,189,248,.12), transparent 60%),
+        radial-gradient(900px 420px at 80% 40%, rgba(14,165,233,.10), transparent 60%),
+        linear-gradient(180deg, rgba(6,16,38,.84), rgba(2,6,23,.92));
       box-shadow: var(--shadow);
-      padding: 22px 18px 20px;
+      padding: 20px;
     }
 
     /* HERO */
     .hero{
       display:grid;
-      grid-template-columns: minmax(0,1.25fr) minmax(0,1fr);
-      gap: 22px;
-      align-items:stretch;
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+      gap: 16px;
+      align-items: stretch;
       overflow:hidden;
+      position: relative;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      border-radius: var(--radiusXL);
+      pointer-events:none;
+      background:
+        linear-gradient(90deg, rgba(56,189,248,.22), transparent 25%, transparent 75%, rgba(56,189,248,.14));
+      mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+      -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+      padding: 1px;
+      opacity:.55;
+    }
+
+    .hero-left{
+      padding: 8px 10px 6px;
+      display:flex;
+      flex-direction:column;
+      gap: 14px;
     }
 
     .kicker{
-      display:flex; align-items:center; gap:10px;
-      font-size:11px;
-      letter-spacing:.18em;
-      text-transform:uppercase;
+      display:flex;
+      align-items:center;
+      gap: 10px;
       color: var(--accent);
-      opacity:.95;
-    }
-    .kicker .dot{
-      width:6px; height:6px; border-radius:999px;
-      background: var(--accent);
-      box-shadow: 0 0 0 4px rgba(56,189,248,.10);
-    }
-
-    .hero h1{
-      font-family: var(--font-serif);
-      font-size: clamp(30px, 4vw, 40px);
-      line-height:1.05;
-      letter-spacing: .01em;
-      margin-top:10px;
-    }
-    .hero h1 span{color: var(--accent)}
-    .hero p{
-      margin-top: 10px;
-      color: var(--text2);
-      font-size: 14px;
-      line-height:1.65;
-      max-width: 58ch;
-    }
-
-    .cta-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
-    .trust-row{
-      margin-top: 12px;
-      display:flex; flex-wrap:wrap; gap:10px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .badge-row{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px}
-    .badge{
-      display:flex; align-items:center; gap:8px;
-      padding: 8px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,.20);
-      background: rgba(2,6,23,.40);
-      color: var(--text2);
-      font-size:12px;
-    }
-    .badge b{color: var(--text); font-weight:800}
-    .badge i{
-      width:18px; height:18px; border-radius:999px;
-      display:inline-flex; align-items:center; justify-content:center;
-      background: rgba(56,189,248,.10);
-      color: var(--accent);
-      font-style:normal;
-      font-weight:900;
-    }
-
-    /* HERO RIGHT PANEL */
-    .hero-right{
-      border-radius: var(--r-xl);
-      border: 1px solid rgba(148,163,184,.20);
-      background:
-        radial-gradient(circle at 50% 0%, rgba(59,130,246,.22), transparent 56%),
-        linear-gradient(180deg, rgba(2,6,23,.55), rgba(2,6,23,.75));
-      padding: 16px;
-      display:flex; flex-direction:column; gap:12px;
-      position: relative;
-    }
-    .hero-right:before{
-      content:"";
-      position:absolute; inset:-2px;
-      border-radius: calc(var(--r-xl) + 2px);
-      background: radial-gradient(400px 120px at 30% 0%, rgba(56,189,248,.18), transparent 70%);
-      pointer-events:none;
-      z-index:0;
-    }
-    .hero-right > *{position:relative; z-index:1}
-
-    .hero-right-top{
-      display:flex; justify-content:space-between; gap:12px;
-      align-items:flex-start;
-      color: var(--text2);
-      font-size: 12px;
-    }
-    .hero-right-top .title{font-weight:800; color: var(--text)}
-    .hero-right-top .range{color: var(--muted); text-align:right}
-
-    .points{display:grid; gap:10px; margin-top:2px}
-    .point{
-      display:flex; gap:10px;
-      border-radius: 16px;
-      border: 1px solid rgba(148,163,184,.16);
-      background: rgba(2,6,23,.35);
-      padding: 12px;
-    }
-    .num{
-      width:22px; height:22px; border-radius:999px;
-      display:flex; align-items:center; justify-content:center;
-      background: rgba(56,189,248,.12);
-      color: var(--accent);
-      font-weight:900;
-      flex: 0 0 auto;
-    }
-    .point b{display:block; font-weight:800; color: var(--text); margin-bottom:3px; font-size:12px}
-    .point span{color: var(--text2); font-size:12px; line-height:1.55}
-
-    .hero-meta{
-      display:flex; justify-content:space-between; gap:10px;
-      margin-top:6px;
-      color: var(--muted);
-      font-size:11px;
-    }
-    .hero-meta strong{color: var(--accent)}
-
-    /* Section header */
-    .section-head{
-      display:flex; justify-content:space-between; gap:14px;
-      align-items:baseline;
-      margin-bottom: 14px;
-    }
-    .section-title{
-      font-size: 12px;
+      font-weight: 700;
       letter-spacing: .18em;
-      text-transform:uppercase;
-      color: var(--text);
-      font-weight:900;
-    }
-    .section-sub{
-      color: var(--muted);
-      font-size: 13px;
-      line-height:1.55;
-      max-width: 62ch;
-    }
-
-    /* SERVICES GRID */
-    .grid-4{display:grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 12px}
-    .card{
-      border-radius: var(--r-lg);
-      border: 1px solid rgba(148,163,184,.14);
-      background:
-        radial-gradient(circle at 15% 0%, rgba(56,189,248,.10), transparent 60%),
-        linear-gradient(180deg, rgba(2,6,23,.55), rgba(2,6,23,.72));
-      padding: 10px;
-      box-shadow: 0 10px 26px rgba(2,6,23,.35);
-      display:flex; flex-direction:column; gap:10px;
-      min-height: 100%;
-    }
-    .media{
-      border-radius: 16px;
-      overflow:hidden;
-      border: 1px solid rgba(56,189,248,.18);
-      box-shadow: 0 12px 28px rgba(2,6,23,.55);
-    }
-
-    .label{
-      font-size: 10px;
-      letter-spacing:.18em;
       text-transform: uppercase;
-      color: var(--accent);
-      font-weight:800;
+      font-size: 10px;
     }
-    .title{
-      font-weight: 900;
-      color: var(--text);
-      font-size: 14px;
-      line-height:1.25;
+    .kdot{
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 18px rgba(56,189,248,.6);
     }
-    .body{
-      color: var(--text2);
-      font-size: 12px;
-      line-height:1.6;
+
+    h1{
+      font-family: var(--fontHead);
+      font-weight: 700;
+      letter-spacing: .01em;
+      line-height: 1.05;
+      font-size: clamp(30px, 3.7vw, 42px);
     }
-    .foot{
+    h1 .accent{ color: var(--accent); }
+
+    .lead{
       color: var(--muted);
-      font-size: 11px;
-      margin-top: 2px;
+      font-size: 14px;
+      line-height: 1.55;
+      max-width: 560px;
     }
 
-    /* PROJECTS */
-    .projects .card{padding:10px}
-    .proj-meta{color: var(--muted); font-size:11px}
-    .proj-desc{color: var(--text2); font-size:12px; line-height:1.6; margin-top:4px}
-
-    /* HOW / WHY */
-    .grid-3{display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px}
-    .grid-4b{display:grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 12px}
-    .step{
-      font-size:10px; letter-spacing:.18em; text-transform:uppercase;
-      color: var(--accent); font-weight:900;
-    }
-
-    /* Reviews */
-    .reviews-box{
-      border-radius: 18px;
-      border: 1px dashed rgba(148,163,184,.30);
-      background:
-        radial-gradient(circle at 10% 0%, rgba(56,189,248,.10), transparent 70%),
-        rgba(2,6,23,.45);
-      padding: 18px;
-      display:flex; flex-direction:column; gap:10px;
-    }
-    .stars{color:#facc15; letter-spacing:1px}
-    .reviews-box .headline{font-weight:900; color:var(--text)}
-    .reviews-box .copy{color: var(--text2); font-size:13px; line-height:1.6}
-
-    footer{
-      margin-top: 22px;
-      display:flex; justify-content:space-between; gap:12px;
+    .cta-row{
+      display:flex;
       flex-wrap:wrap;
+      gap: 10px;
+      align-items:center;
+      margin-top: 4px;
+    }
+
+    .trust-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      margin-top: 8px;
       color: var(--muted2);
       font-size: 11px;
     }
 
+    .badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,.20);
+      background: rgba(7, 18, 43, .55);
+      color: var(--muted);
+      font-size: 11px;
+    }
+    .badge strong{color: var(--text)}
+    .badge i{
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      background: var(--accentSoft);
+      color: var(--accent);
+      font-style: normal;
+      font-size: 12px;
+    }
+
+    .hero-right{
+      border-radius: var(--radiusXL);
+      border: 1px solid rgba(148,163,184,.18);
+      background:
+        radial-gradient(600px 260px at 20% 10%, rgba(56,189,248,.12), transparent 55%),
+        radial-gradient(700px 260px at 80% 40%, rgba(14,165,233,.10), transparent 60%),
+        linear-gradient(180deg, rgba(7,18,43,.78), rgba(2,6,23,.78));
+      box-shadow: 0 16px 40px rgba(0,0,0,.35);
+      padding: 14px;
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+    }
+
+    .hero-right-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .hero-right-head b{
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .points{
+      display:grid;
+      gap: 9px;
+    }
+
+    .point{
+      display:flex;
+      gap: 10px;
+      padding: 10px;
+      border-radius: var(--radiusMD);
+      border: 1px solid rgba(148,163,184,.18);
+      background: rgba(5, 14, 35, .60);
+    }
+    .pnum{
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: rgba(56,189,248,.16);
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 12px;
+      flex-shrink:0;
+      margin-top: 1px;
+    }
+    .ptitle{
+      font-weight: 700;
+      color: var(--text);
+      font-size: 12px;
+      margin-bottom: 3px;
+    }
+    .ptext{
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .hero-foot{
+      margin-top: 4px;
+      display:flex;
+      justify-content:space-between;
+      gap: 10px;
+      color: var(--muted2);
+      font-size: 11px;
+    }
+    .hero-foot strong{ color: var(--accent) }
+
+    /* SECTION HEADERS */
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:baseline;
+      gap: 18px;
+      margin-bottom: 12px;
+    }
+    .section-title{
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: var(--text);
+    }
+    .section-sub{
+      color: var(--muted);
+      font-size: 12px;
+      max-width: 520px;
+      line-height: 1.45;
+    }
+
+    /* GRIDS */
+    .grid4{
+      display:grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 12px;
+    }
+
+    .card{
+      border-radius: var(--radiusLG);
+      border: 1px solid rgba(148,163,184,.18);
+      background:
+        radial-gradient(600px 240px at 20% 15%, rgba(56,189,248,.10), transparent 60%),
+        linear-gradient(180deg, rgba(7,18,43,.70), rgba(2,6,23,.88));
+      overflow:hidden;
+      box-shadow: 0 16px 40px rgba(0,0,0,.35);
+      display:flex;
+      flex-direction:column;
+      min-height: 100%;
+    }
+
+    .media{
+      border-bottom: 1px solid rgba(148,163,184,.14);
+      background: rgba(2,6,23,.35);
+    }
+    .media img{ width:100%; height:auto; display:block; }
+
+    .card-body{
+      padding: 12px 12px 12px;
+      display:flex;
+      flex-direction:column;
+      gap: 7px;
+      flex:1;
+    }
+
+    .label{
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .title{
+      font-weight: 800;
+      font-size: 13px;
+      color: var(--text);
+    }
+    .text{
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+    .foot{
+      color: var(--muted2);
+      font-size: 11px;
+      margin-top: 2px;
+    }
+
+    /* How / Why */
+    .grid3{display:grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap:12px;}
+    .mini{
+      border-radius: var(--radiusLG);
+      border: 1px solid rgba(148,163,184,.16);
+      background: rgba(5, 14, 35, .55);
+      padding: 12px;
+      box-shadow: 0 16px 36px rgba(0,0,0,.28);
+    }
+    .mini .step{
+      color: var(--accent);
+      font-weight: 900;
+      letter-spacing:.16em;
+      text-transform: uppercase;
+      font-size: 10px;
+      margin-bottom: 6px;
+    }
+    .mini .mtitle{
+      font-weight: 800;
+      color: var(--text);
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+    .mini .mtext{
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    /* Reviews */
+    .reviewBox{
+      border-radius: var(--radiusXL);
+      border: 1px dashed rgba(148,163,184,.35);
+      background:
+        radial-gradient(800px 260px at 20% 15%, rgba(56,189,248,.12), transparent 60%),
+        rgba(2,6,23,.60);
+      padding: 16px;
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+    }
+    .stars{color:#facc15; letter-spacing:.12em}
+    .reviewTitle{font-weight: 800; font-size: 14px}
+    .reviewText{color: var(--muted); font-size: 12.5px; line-height: 1.45}
+
+    /* Footer */
+    footer{
+      margin-top: 22px;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap: 10px;
+      color: var(--muted2);
+      font-size: 11px;
+      padding: 0 6px;
+    }
+
     /* Responsive */
     @media (max-width: 980px){
-      header{border-radius: 18px; flex-direction:column; align-items:flex-start; gap:10px; position:static}
-      .nav{flex-wrap:wrap}
-      .hero{grid-template-columns:1fr}
-      .grid-4, .grid-4b{grid-template-columns: repeat(2, minmax(0,1fr))}
-      .grid-3{grid-template-columns: repeat(2, minmax(0,1fr))}
-      .topbar{justify-content:center}
+      header{
+        position: static;
+        border-radius: var(--radiusLG);
+      }
+      .hero{
+        grid-template-columns: 1fr;
+      }
+      .grid4{grid-template-columns: repeat(2,minmax(0,1fr));}
+      .grid3{grid-template-columns: repeat(2,minmax(0,1fr));}
+      .topbar{justify-content:center; text-align:center;}
     }
     @media (max-width: 720px){
-      .page{padding: 16px 12px 44px}
-      .grid-4, .grid-4b, .grid-3{grid-template-columns: 1fr}
+      .grid4{grid-template-columns: 1fr;}
+      .grid3{grid-template-columns: 1fr;}
       .section-head{flex-direction:column; align-items:flex-start}
-      .hero-right-top{flex-direction:column}
+      .brand{min-width: auto}
+      .pill{display:none} /* cleaner on mobile */
     }
   </style>
 </head>
@@ -419,7 +573,6 @@
   <div class="page">
     <div class="topbar">
       <span>Call or Text: <a href="tel:18622877596">862-287-7596</a></span>
-      <span class="dot">•</span>
       <span>Email: <a href="mailto:info@pureluxnj.com">info@pureluxnj.com</a></span>
     </div>
 
@@ -434,292 +587,305 @@
         </div>
       </div>
 
-      <nav class="nav">
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#how">How It Works</a>
-        <a href="#reviews">Reviews</a>
-        <a href="gallery.html">Gallery</a>
-      </nav>
-
-      <div class="header-cta">
-        <div class="pill"><b>System-Driven</b> Structured 3-person team • Checklist execution</div>
-        <a class="btn btn-ghost" href="gallery.html">View Gallery</a>
-        <a class="btn btn-primary" href="quote.html">Get a Fast Quote</a>
+      <div class="nav-actions">
+        <div class="pill">
+          <b>System-Driven</b>
+          <span>Structured 3-person team • Checklist execution</span>
+        </div>
+        <a class="btn" href="gallery.html">View Gallery</a>
+        <a class="btn btn-primary" href="quote.html">Get a Fast Quote ↗</a>
       </div>
     </header>
 
-    <main>
-      <!-- HERO -->
-      <section class="hero" id="top">
-        <div>
-          <div class="kicker"><span class="dot"></span> Structured • Consistent • Detail-Driven</div>
+    <!-- HERO -->
+    <section class="block hero" id="top">
+      <div class="hero-left">
+        <div class="kicker"><span class="kdot"></span> STRUCTURED • CONSISTENT • DETAIL-DRIVEN</div>
 
-          <h1>
-            Professional Residential &amp; <span>Post-Construction</span><br>
-            Cleaning in North NJ
-          </h1>
+        <h1>
+          Professional Residential &amp; <span class="accent">Post-Construction</span><br>
+          Cleaning in North NJ
+        </h1>
 
-          <p>
-            Purelux is a structured 3-person team delivering consistent results—deep cleaning, recurring maintenance,
-            move-in/move-out turnovers, and post-construction resets for homeowners who don’t want “random cleaner” results.
-          </p>
+        <p class="lead">
+          Purelux is a structured 3-person team delivering consistent results—deep cleaning, recurring maintenance,
+          move-in/move-out turnovers, and post-construction resets for homeowners who don’t want “random cleaner” results.
+        </p>
 
-          <div class="cta-row">
-            <a class="btn btn-primary" href="quote.html">Get My Custom Quote ↗</a>
-            <a class="btn btn-ghost" href="#services">View Services &amp; Typical Ranges</a>
-          </div>
-
-          <div class="trust-row">
-            <span>Serving North Haledon, Wayne, Glen Rock, Clifton &amp; nearby areas.</span>
-            <span>Limited weekly availability – we book out quickly.</span>
-          </div>
-
-          <div class="badge-row">
-            <div class="badge"><i>★</i> <b>5-Star Rated</b> in Bergen &amp; Passaic County</div>
-            <div class="badge"><i>✓</i> <b>Fully Insured</b> &amp; checklist-driven workflow</div>
-            <div class="badge"><i>🧼</i> Same standards every visit – no shortcuts</div>
-          </div>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="quote.html">Get My Custom Quote ↗</a>
+          <a class="btn" href="#services">View Services &amp; Typical Ranges</a>
         </div>
 
-        <aside class="hero-right">
-          <div class="hero-right-top">
+        <div class="trust-row">
+          <span>Serving North Haledon, Wayne, Glen Rock, Clifton &amp; nearby areas.</span>
+          <span>Limited weekly availability – we book out quickly.</span>
+        </div>
+
+        <div class="badges">
+          <div class="badge"><i>★</i><strong>5-Star Rated</strong> in Bergen &amp; Passaic County</div>
+          <div class="badge"><i>✓</i><strong>Fully Insured</strong> &amp; checklist-driven workflow</div>
+          <div class="badge"><i>🧼</i>Same standards every visit – no shortcuts</div>
+        </div>
+      </div>
+
+      <aside class="hero-right">
+        <div class="hero-right-head">
+          <div><b>Premium Deep Cleaning, Without Guesswork</b></div>
+          <div>Average deep cleans range from <b>$450–$900*</b></div>
+        </div>
+
+        <div class="points">
+          <div class="point">
+            <div class="pnum">1</div>
             <div>
-              <div class="title">Premium Deep Cleaning, Without Guesswork</div>
-              <div style="margin-top:4px; color: var(--muted); font-size:12px;">Structured execution → inspection-ready results.</div>
-            </div>
-            <div class="range">Average deep cleans range from<br><b style="color:var(--text)">$450–$900*</b></div>
-          </div>
-
-          <div class="points">
-            <div class="point">
-              <div class="num">1</div>
-              <div>
-                <b>Full-property reset</b>
-                <span>Kitchens, bathrooms, baseboards, doors, trim, switches, and more. Ideal as a “Day 1” reset before recurring maintenance.</span>
-              </div>
-            </div>
-            <div class="point">
-              <div class="num">2</div>
-              <div>
-                <b>Structured 3-Person Team</b>
-                <span>Each tech owns a zone—no chaos, no guessing. Same workflow every time for consistent results, not “hit or miss” cleanings.</span>
-              </div>
-            </div>
-            <div class="point">
-              <div class="num">3</div>
-              <div>
-                <b>Ideal for Busy Homeowners &amp; Realtors</b>
-                <span>Perfect for listings, turnovers, and families who want the home handled—without managing cleaners.</span>
+              <div class="ptitle">Full-property reset</div>
+              <div class="ptext">
+                Kitchens, bathrooms, baseboards, doors, trim, switches, and detail zones.
+                Ideal as a “Day 1” reset before recurring maintenance.
               </div>
             </div>
           </div>
 
-          <div class="hero-meta">
-            <span><strong>*</strong>Ranges vary by size, condition &amp; add-ons</span>
-            <span>Ask about recurring maintenance after your first deep clean.</span>
+          <div class="point">
+            <div class="pnum">2</div>
+            <div>
+              <div class="ptitle">Structured 3-Person Team</div>
+              <div class="ptext">
+                Each tech owns a zone—no chaos, no guessing. Same workflow every time for consistent results,
+                not “hit or miss” cleanings.
+              </div>
+            </div>
           </div>
-        </aside>
-      </section>
 
-      <!-- SERVICES -->
-      <section id="services">
-        <div class="section-head">
-          <div class="section-title">Our Services</div>
-          <div class="section-sub">
-            Clear scope. No surprises. We start with a full deep clean or post-construction reset, then move into recurring maintenance on a reliable schedule.
+          <div class="point">
+            <div class="pnum">3</div>
+            <div>
+              <div class="ptitle">Ideal for Busy Homeowners &amp; Realtors</div>
+              <div class="ptext">
+                Perfect for listings, turnovers, and families who want the home handled—without managing cleaners.
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="grid-4">
-          <article class="card">
-            <div class="media">
-              <img src="./images/DEEP CLEANING PORTRAIT.png" alt="Deep Cleaning Service">
-            </div>
-            <div class="label">Deep Cleaning</div>
+        <div class="hero-foot">
+          <span><strong>*</strong>Ranges vary by size, condition &amp; add-ons</span>
+          <span>Ask about recurring maintenance after your first deep clean.</span>
+        </div>
+      </aside>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="block" id="services">
+      <div class="section-head">
+        <div class="section-title">OUR SERVICES</div>
+        <div class="section-sub">
+          Clear scope. No surprises. We start with a full deep clean or post-construction reset, then move into recurring maintenance on a reliable schedule.
+        </div>
+      </div>
+
+      <div class="grid4">
+        <article class="card">
+          <div class="media">
+            <!-- KEEP SAME IMAGE NAMES -->
+            <img src="./images/DEEP CLEANING PORTRAIT.png" alt="Deep Cleaning Service">
+          </div>
+          <div class="card-body">
+            <div class="label">DEEP CLEANING</div>
             <div class="title">Full-Property Reset</div>
-            <div class="body">
-              Detailed cleaning for kitchens, baths, baseboards, trim, fixtures, and high-touch surfaces. Ideal when things haven’t been cleaned “properly” in a while.
+            <div class="text">
+              Detailed cleaning for kitchens, baths, baseboards, trim, fixtures, and high-touch surfaces.
+              Ideal when things haven’t been cleaned “properly” in a while.
             </div>
             <div class="foot">Typical range: $450–$900+ depending on size &amp; buildup.</div>
-          </article>
+          </div>
+        </article>
 
-          <article class="card">
-            <div class="media">
-              <img src="./images/RECURIN CLEANING PORTRAIT.png" alt="Recurring Cleaning Service">
-            </div>
-            <div class="label">Recurring Cleaning</div>
+        <article class="card">
+          <div class="media">
+            <img src="./images/RECURIN CLEANING PORTRAIT.png" alt="Recurring Cleaning Service">
+          </div>
+          <div class="card-body">
+            <div class="label">RECURRING CLEANING</div>
             <div class="title">Weekly, Bi-Weekly &amp; Monthly</div>
-            <div class="body">
+            <div class="text">
               Maintenance visits built on the original deep clean. Same structure each time so the home never “falls behind” again.
             </div>
             <div class="foot">Best for busy households that want consistent standards.</div>
-          </article>
+          </div>
+        </article>
 
-          <article class="card">
-            <div class="media">
-              <img src="./images/MOVE IN-OUT PORTRAIT.png" alt="Move In / Move Out Cleaning Service">
-            </div>
-            <div class="label">Move In / Move Out</div>
+        <article class="card">
+          <div class="media">
+            <img src="./images/MOVE IN-OUT PORTRAIT.png" alt="Move In / Move Out Cleaning Service">
+          </div>
+          <div class="card-body">
+            <div class="label">MOVE IN / MOVE OUT</div>
             <div class="title">Turnover-Ready Homes</div>
-            <div class="body">
+            <div class="text">
               Vacant home resets for buyers, sellers, and tenants. Inside cabinets, appliances, and detailed bathrooms—so the next chapter starts fresh.
             </div>
             <div class="foot">Popular for realtors &amp; landlords across North NJ.</div>
-          </article>
+          </div>
+        </article>
 
-          <article class="card">
-            <div class="media">
-              <img src="./images/POST-CONTRUCTION PORTRAIT.png" alt="Post-construction Cleaning Service">
-            </div>
-            <div class="label">Post-Construction</div>
+        <article class="card">
+          <div class="media">
+            <img src="./images/POST-CONTRUCTION PORTRAIT.png" alt="Post-construction Cleaning Service">
+          </div>
+          <div class="card-body">
+            <div class="label">POST-CONSTRUCTION</div>
             <div class="title">Dust &amp; Debris Removal</div>
-            <div class="body">
+            <div class="text">
               Multi-stage dust removal, detailed vacuuming, and wipe-downs for newly renovated spaces so they’re actually livable—not just “done.”
             </div>
             <div class="foot">Ask about multi-visit options for ongoing projects.</div>
-          </article>
-        </div>
-      </section>
-
-      <!-- PROJECTS -->
-      <section class="projects" id="projects">
-        <div class="section-head">
-          <div class="section-title">Recent Projects – Northern New Jersey</div>
-          <div class="section-sub">
-            A few examples of our recent work across North Haledon, Wayne, Glen Rock, Clifton, and nearby towns. We focus on disciplined execution—not just “photo ready” angles.
           </div>
-        </div>
+        </article>
+      </div>
+    </section>
 
-        <div class="grid-4">
-          <article class="card">
-            <div class="media">
-              <img src="./images/Bedroom detailed cleaning and organization service – Northern NJ.png" alt="Bedroom declutter and detailed cleaning in Northern NJ">
-            </div>
-            <div class="label">Bedroom Detail • Glen Rock, NJ</div>
+    <!-- RECENT PROJECTS -->
+    <section class="block" id="projects">
+      <div class="section-head">
+        <div class="section-title">RECENT PROJECTS – NORTHERN NEW JERSEY</div>
+        <div class="section-sub">
+          A few examples of our recent work across North Haledon, Wayne, Glen Rock, Clifton, and nearby towns. We focus on disciplined execution—not just “photo ready” angles.
+        </div>
+      </div>
+
+      <div class="grid4">
+        <article class="card">
+          <div class="media">
+            <img src="./images/Bedroom detailed cleaning and organization service – Northern NJ.png" alt="Bedroom declutter and detailed cleaning in Northern NJ">
+          </div>
+          <div class="card-body">
+            <div class="label">BEDROOM DETAIL • GLEN ROCK, NJ</div>
             <div class="title">Bedroom Declutter &amp; Detailed Cleaning</div>
-            <div class="proj-meta">Deep clean + organization before listing photos.</div>
-            <div class="proj-desc">
+            <div class="text">
               Full reset of bedroom surfaces, trim, windowsills, and floors to bring the room back to “photo ready” before professional staging.
             </div>
-          </article>
+          </div>
+        </article>
 
-          <article class="card">
-            <div class="media">
-              <img src="./images/oven-deep-cleaning-monroe-nj-purelux-cleaning.png" alt="Oven deep cleaning and degrease">
-            </div>
-            <div class="label">Kitchen • Wayne, NJ</div>
+        <article class="card">
+          <div class="media">
+            <img src="./images/oven-deep-cleaning-monroe-nj-purelux-cleaning.png" alt="Oven deep cleaning and degrease">
+          </div>
+          <div class="card-body">
+            <div class="label">KITCHEN • WAYNE, NJ</div>
             <div class="title">Oven Deep Cleaning &amp; Degrease</div>
-            <div class="proj-meta">Move-out preparation for long-term homeowner.</div>
-            <div class="proj-desc">
+            <div class="text">
               Heavy grease removal from racks, glass, and interior walls, plus a full wipe-down of surrounding cabinets and appliances.
             </div>
-          </article>
+          </div>
+        </article>
 
-          <article class="card">
-            <div class="media">
-              <img src="./images/Detail Restoration – Purelux Cleaning.png" alt="Bathroom detail restoration">
-            </div>
-            <div class="label">Bathroom • North Haledon, NJ</div>
+        <article class="card">
+          <div class="media">
+            <img src="./images/Detail Restoration – Purelux Cleaning.png" alt="Bathroom detail restoration">
+          </div>
+          <div class="card-body">
+            <div class="label">BATHROOM • NORTH HALEDON, NJ</div>
             <div class="title">Bathroom Detail Restoration</div>
-            <div class="proj-meta">Deep clean after years of mineral buildup.</div>
-            <div class="proj-desc">
+            <div class="text">
               Grout, glass, fixtures, and floors brought back from dull and spotted to bright and refreshed, with attention to edges and corners.
             </div>
-          </article>
+          </div>
+        </article>
 
-          <article class="card">
-            <div class="media">
-              <img src="./images/child room- glen rock.jpeg" alt="Kids room cleaning and organization">
-            </div>
-            <div class="label">Kids' Room • Ridgewood, NJ</div>
+        <article class="card">
+          <div class="media">
+            <img src="./images/child room- glen rock.jpeg" alt="Kids room cleaning and organization">
+          </div>
+          <div class="card-body">
+            <div class="label">KIDS’ ROOM • RIDGEWOOD, NJ</div>
             <div class="title">Kids Room Cleaning &amp; Organization</div>
-            <div class="proj-meta">Ongoing maintenance for a busy family.</div>
-            <div class="proj-desc">
+            <div class="text">
               Toy organization, dust removal, and floor reset so the space feels safe, calm, and easy to keep up between visits.
             </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- HOW IT WORKS -->
-      <section id="how">
-        <div class="section-head">
-          <div class="section-title">How It Works</div>
-          <div class="section-sub">
-            Clear steps, no confusion. We run a system so you don’t have to manage cleaners—just approve the scope and let us execute.
           </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="block" id="how">
+      <div class="section-head">
+        <div class="section-title">HOW IT WORKS</div>
+        <div class="section-sub">
+          Clear steps, no confusion. We run a system so you don’t have to manage cleaners—just approve the scope and let us execute.
         </div>
+      </div>
 
-        <div class="grid-4b">
-          <article class="card">
-            <div class="step">Step 1</div>
-            <div class="title">Request Your Quote</div>
-            <div class="body">Share details about your home, priorities, and timing. Photos help us price accurately.</div>
-          </article>
-
-          <article class="card">
-            <div class="step">Step 2</div>
-            <div class="title">Confirm Scope &amp; Pricing</div>
-            <div class="body">We align on scope, visit length, and any add-ons (fridge, oven, cabinets, windows, etc.) before scheduling.</div>
-          </article>
-
-          <article class="card">
-            <div class="step">Step 3</div>
-            <div class="title">Structured 3-Person Visit</div>
-            <div class="body">Our team arrives on time; each person owns a zone. Same checklist → nothing left to chance.</div>
-          </article>
-
-          <article class="card">
-            <div class="step">Step 4</div>
-            <div class="title">Walkthrough &amp; Maintenance Plan</div>
-            <div class="body">Final walkthrough + touch-ups. If you want, we set up recurring maintenance so the home stays “always ready.”</div>
-          </article>
+      <div class="grid4">
+        <div class="mini">
+          <div class="step">STEP 1</div>
+          <div class="mtitle">Request Your Quote</div>
+          <div class="mtext">Share details about your home, priorities, and timing. Photos help us price accurately.</div>
         </div>
-      </section>
-
-      <!-- WHY PURELUX -->
-      <section>
-        <div class="section-head">
-          <div class="section-title">Why Purelux?</div>
-          <div class="section-sub">
-            We don’t improvise. We operate with a structured workflow and quality control checklist to ensure consistency on every visit.
-          </div>
+        <div class="mini">
+          <div class="step">STEP 2</div>
+          <div class="mtitle">Confirm Scope &amp; Pricing</div>
+          <div class="mtext">We align on scope, visit length, and any add-ons (inside fridge, oven, cabinets, windows, etc.).</div>
         </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <div class="title">System, Not Guesswork</div>
-            <div class="body">Every visit follows a defined checklist—baseboards, fixtures, switches, and details that “quick” cleanings skip.</div>
-          </article>
-          <article class="card">
-            <div class="title">Structured 3-Person Team</div>
-            <div class="body">We don’t rotate random faces. A structured crew means faster execution, better communication, fewer surprises.</div>
-          </article>
-          <article class="card">
-            <div class="title">Premium, Not Price-Shoppy</div>
-            <div class="body">You’re not paying for “cheap.” You’re paying for reliability, detail, and peace of mind from a properly run system.</div>
-          </article>
+        <div class="mini">
+          <div class="step">STEP 3</div>
+          <div class="mtitle">Structured 3-Person Visit</div>
+          <div class="mtext">Each person owns a zone. Same checklist, every time—nothing left to chance.</div>
         </div>
-      </section>
-
-      <!-- REVIEWS -->
-      <section id="reviews">
-        <div class="section-head">
-          <div class="section-title">Reviews</div>
-          <div class="section-sub">Clients come back for consistency—because details don’t lie.</div>
+        <div class="mini">
+          <div class="step">STEP 4</div>
+          <div class="mtitle">Walkthrough &amp; Maintenance Plan</div>
+          <div class="mtext">Final walkthrough + touch-ups. Optional recurring plan to keep the home “always ready.”</div>
         </div>
+      </div>
+    </section>
 
-        <div class="reviews-box">
-          <div class="stars">★★★★★</div>
-          <div class="headline">Loved your cleaning?</div>
-          <div class="copy">Your review helps local homeowners trust Purelux and keeps our standards high.</div>
-          <a class="btn btn-primary" href="TU_LINK_DE_REVIEW_DE_GOOGLE_AQUI" target="_blank" rel="noopener">
-            Leave a Google Review →
-          </a>
+    <!-- WHY PURELUX -->
+    <section class="block" id="why">
+      <div class="section-head">
+        <div class="section-title">WHY PURELUX?</div>
+        <div class="section-sub">
+          We don’t improvise. We operate with a structured workflow and quality-control checklist to ensure consistency on every visit.
         </div>
-      </section>
-    </main>
+      </div>
+
+      <div class="grid3">
+        <div class="mini">
+          <div class="mtitle">System, Not Guesswork</div>
+          <div class="mtext">Every visit follows a defined checklist—baseboards, fixtures, switches, and detail zones others skip.</div>
+        </div>
+        <div class="mini">
+          <div class="mtitle">Structured 3-Person Team</div>
+          <div class="mtext">Consistent crew, faster execution, better communication, and fewer surprises.</div>
+        </div>
+        <div class="mini">
+          <div class="mtitle">Premium, Not Price-Shoppy</div>
+          <div class="mtext">You’re paying for reliability, detail, and the peace of mind of a properly run system.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="block" id="reviews">
+      <div class="section-head">
+        <div class="section-title">REVIEWS</div>
+        <div class="section-sub">Clients come back for consistency—because details don’t lie.</div>
+      </div>
+
+      <div class="reviewBox">
+        <div class="stars">★★★★★</div>
+        <div class="reviewTitle">Loved your cleaning?</div>
+        <div class="reviewText">
+          Your review helps local homeowners trust Purelux and keeps our standards high.
+        </div>
+        <a class="btn btn-primary" href="TU_LINK_DE_REVIEW_DE_GOOGLE_AQUI" target="_blank" rel="noopener">
+          Leave a Google Review →
+        </a>
+      </div>
+    </section>
 
     <footer>
       <span>© 2026 Purelux Cleaning · Serving Bergen &amp; Passaic County, NJ</span>
