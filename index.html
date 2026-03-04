@@ -9,16 +9,22 @@
   <meta name="description" content="Premium residential and post-construction cleaning in Bergen & Passaic County, NJ. Structured 3-person team, detailed checklists, and consistent results." />
   <link rel="canonical" href="https://pureluxnj.com/" />
 
-  <!-- Favicon -->
+  <!-- Favicon / Logo -->
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png?v=3">
+
+  <!-- Premium Fonts (Inter + Fraunces) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
 
   <style>
     :root {
+      /* Paleta base */
       --bg: #020617;
       --bg-soft: #061328;
       --panel: #071a34;
       --panel-soft: #0b2242;
-      --border-soft: rgba(148, 163, 184, 0.28);
+      --border-soft: #1f2a3d;
 
       --accent: #38bdf8;
       --accent-strong: #0ea5e9;
@@ -35,36 +41,45 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      text-rendering: geometricPrecision;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+
       background: radial-gradient(circle at top, #0f172a 0, #020617 55%, #020617 100%);
       color: var(--text-main);
       min-height: 100vh;
-      -webkit-font-smoothing: antialiased;
     }
+
     a { color: inherit; text-decoration: none; }
+
     .page { max-width: var(--max-width); margin: 0 auto; padding: 24px 16px 56px; }
 
     /* Top bar */
     .topbar {
       display: flex;
       justify-content: flex-end;
-      gap: 10px;
       font-size: 13px;
       color: var(--text-soft);
-      margin-bottom: 10px;
-      flex-wrap: wrap;
+      margin-bottom: 8px;
     }
-    .topbar span + span::before { content: "•"; margin: 0 8px; color: var(--text-muted); }
-    .topbar a { color: var(--accent); font-weight: 600; }
+    .topbar span + span::before {
+      content: "•";
+      margin: 0 8px;
+      color: var(--text-muted);
+    }
+    .topbar a { color: var(--accent); font-weight: 700; }
 
-    /* Header / Nav */
+    /* Header / Branding */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 12px 16px;
+      padding: 14px 18px;
       margin-bottom: 20px;
       border-radius: 999px;
       border: 1px solid rgba(148, 163, 184, 0.35);
@@ -74,133 +89,114 @@
       box-shadow: 0 18px 40px rgba(15, 23, 42, 0.8);
       position: sticky;
       top: 12px;
-      z-index: 50;
-      backdrop-filter: blur(18px);
+      z-index: 20;
+      backdrop-filter: blur(20px);
     }
 
-    .brand { display: flex; align-items: center; gap: 10px; min-width: 240px; }
+    .brand { display: flex; align-items: center; gap: 10px; }
+
     .brand-mark {
-      width: 46px; height: 46px; border-radius: 999px;
+      width: 50px; height: 50px;
+      border-radius: 999px;
       display: flex; align-items: center; justify-content: center;
-      overflow: hidden; background: #0b1f3a;
+      overflow: hidden;
+      background: #0b1f3a;
       box-shadow: 0 12px 30px rgba(0,0,0,0.6);
-      border: 1px solid rgba(56, 189, 248, 0.22);
     }
-    .brand-mark img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.2); }
+    .brand-mark img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.25); }
 
     .brand-text-main {
-      font-weight: 700;
-      letter-spacing: 0.06em;
+      font-weight: 900;
+      letter-spacing: 0.10em;
       font-size: 12px;
       text-transform: uppercase;
       color: #e5e7eb;
-      line-height: 1.1;
     }
-    .brand-sub { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+    .brand-sub { font-size: 11px; color: var(--text-muted); }
 
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 0 8px;
-    }
-    .nav a {
-      font-size: 12px;
-      color: var(--text-soft);
-      padding: 8px 10px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      transition: 0.15s ease;
-      white-space: nowrap;
-    }
-    .nav a:hover {
-      color: var(--text-main);
-      border-color: rgba(56, 189, 248, 0.28);
-      background: rgba(6, 22, 48, 0.55);
-    }
+    .header-cta { display: flex; align-items: center; gap: 10px; font-size: 12px; }
 
-    .header-cta { display: flex; align-items: center; gap: 10px; }
-    .btn-secondary {
-      padding: 9px 14px;
+    .header-pill {
+      padding: 7px 12px;
       border-radius: 999px;
       border: 1px solid rgba(148, 163, 184, 0.45);
-      background: rgba(15, 23, 42, 0.92);
-      color: var(--text-main);
-      font-size: 12px;
-      font-weight: 600;
-      display: inline-flex;
+      color: rgba(229,231,235,0.78);
+      display: flex;
       align-items: center;
       gap: 8px;
+      background: radial-gradient(circle at top left, rgba(15, 118, 255, 0.15), transparent 60%);
+    }
+    .header-pill span {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 900;
+      color: var(--accent);
       white-space: nowrap;
     }
+
     .btn-sm {
-      padding: 9px 14px;
+      padding: 8px 14px;
       border-radius: 999px;
       border: 1px solid rgba(56, 189, 248, 0.4);
       background: linear-gradient(90deg, var(--accent), var(--accent-strong));
       color: #0b1120;
       font-size: 12px;
-      font-weight: 800;
-      box-shadow: 0 16px 34px rgba(56, 189, 248, 0.45);
+      font-weight: 900;
+      letter-spacing: -0.01em;
+      box-shadow: 0 16px 34px rgba(56, 189, 248, 0.5);
       white-space: nowrap;
     }
 
-    main { margin-top: 10px; display: flex; flex-direction: column; gap: 22px; }
-
-    /* Sections */
-    section {
-      border-radius: var(--radius-xl);
-      background:
-        radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), transparent 60%),
-        var(--bg-soft);
-      border: 1px solid var(--border-soft);
-      box-shadow: var(--shadow-soft);
-      padding: 22px 18px 20px;
-    }
+    main { margin-top: 10px; display: flex; flex-direction: column; gap: 32px; }
 
     /* Hero */
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
-      gap: 22px;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 28px;
       align-items: center;
       background:
-        radial-gradient(circle at top left, rgba(56, 189, 248, 0.22), transparent 60%),
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.2), transparent 60%),
         linear-gradient(145deg, #050f23, #020617);
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      box-shadow: var(--shadow-soft);
+      padding: 22px 18px 20px;
     }
+
+    .hero-left { display: flex; flex-direction: column; gap: 18px; }
 
     .breadcrumb {
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.18em;
+      font-weight: 900;
       color: var(--accent);
-      display: inline-flex;
-      gap: 10px;
+      display: flex;
+      gap: 12px;
       align-items: center;
-      margin-bottom: 10px;
     }
     .breadcrumb-dot { width: 4px; height: 4px; border-radius: 999px; background: var(--accent); }
 
     .hero-title {
-      font-size: clamp(30px, 4vw, 38px);
-      line-height: 1.12;
+      font-family: "Fraunces", serif;
+      font-size: clamp(34px, 4.2vw, 46px);
+      line-height: 1.05;
       font-weight: 800;
-      letter-spacing: 0.01em;
-      margin-bottom: 10px;
+      letter-spacing: -0.02em;
     }
     .hero-title span { color: var(--accent); }
 
     .hero-subtitle {
-      font-size: 14px;
-      color: var(--text-soft);
-      max-width: 560px;
-      line-height: 1.55;
-      margin-bottom: 14px;
+      font-size: 15px;
+      line-height: 1.65;
+      color: rgba(229,231,235,0.78);
+      max-width: 58ch;
     }
 
     .hero-cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+
     .btn-primary {
       padding: 11px 18px;
       border-radius: 999px;
@@ -208,230 +204,342 @@
       background: linear-gradient(90deg, var(--accent), var(--accent-strong));
       color: #0b1120;
       font-weight: 900;
+      letter-spacing: -0.01em;
       font-size: 14px;
       cursor: pointer;
       box-shadow: 0 18px 40px rgba(56, 189, 248, 0.55);
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      white-space: nowrap;
     }
     .btn-primary span { font-size: 18px; transform: translateY(1px); }
-    .btn-ghost {
-      padding: 11px 16px;
+
+    .btn-secondary {
+      padding: 10px 16px;
       border-radius: 999px;
       border: 1px solid rgba(148, 163, 184, 0.5);
       background: rgba(15, 23, 42, 0.92);
       color: var(--text-main);
       font-size: 13px;
-      font-weight: 700;
+      font-weight: 800;
+      letter-spacing: -0.01em;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      white-space: nowrap;
     }
 
-    .hero-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+    .hero-trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 12.5px;
+      line-height: 1.55;
+      color: rgba(229,231,235,0.66);
+      margin-top: 4px;
+    }
+
+    .hero-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+
     .hero-badge {
-      padding: 8px 12px;
+      padding: 7px 10px;
       border-radius: 999px;
       border: 1px solid rgba(148, 163, 184, 0.45);
-      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.22), transparent 60%), rgba(6, 22, 48, 0.9);
-      font-size: 12px;
-      color: var(--text-soft);
-      display: inline-flex;
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.22), transparent 60%),
+        rgba(6, 22, 48, 0.9);
+      font-size: 11.5px;
+      color: rgba(229,231,235,0.72);
+      display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
     }
-    .hero-badge strong { color: var(--text-main); font-weight: 800; }
+    .hero-badge strong { color: var(--text-main); font-weight: 900; }
 
     .hero-right {
       border-radius: var(--radius-xl);
-      border: 1px solid rgba(148, 163, 184, 0.38);
+      border: 1px solid rgba(148, 163, 184, 0.42);
       background:
         radial-gradient(circle at top, rgba(59, 130, 246, 0.35), transparent 55%),
         linear-gradient(145deg, #020617, #050f23);
       box-shadow: var(--shadow-soft);
-      padding: 16px 16px 14px;
+      padding: 18px 18px 16px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 14px;
     }
+
     .hero-right-header {
-      display: flex; justify-content: space-between; gap: 10px;
-      font-size: 12px; color: var(--text-soft);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      font-size: 12.5px;
+      color: rgba(229,231,235,0.70);
     }
-    .hero-right-header span:first-child { font-weight: 800; color: var(--text-main); }
-    .hero-right-points { display: grid; grid-template-columns: 1fr; gap: 8px; }
+    .hero-right-header span:first-child { font-weight: 900; color: var(--text-main); }
+    .hero-right-header span:last-child { color: rgba(229,231,235,0.55); }
+
+    .hero-right-points { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; font-size: 12.5px; }
+
     .hero-point {
-      display: flex; gap: 10px; align-items: flex-start;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
       padding: 10px 10px;
       border-radius: 14px;
       background: rgba(8, 25, 53, 0.96);
       border: 1px solid rgba(148, 163, 184, 0.25);
-      color: var(--text-soft);
-      font-size: 12px;
-      line-height: 1.45;
+      color: rgba(229,231,235,0.70);
+      line-height: 1.55;
     }
+
     .hero-point-icon {
-      width: 18px; height: 18px; border-radius: 999px;
+      width: 20px; height: 20px;
+      border-radius: 999px;
       background: var(--accent-soft);
       display: flex; align-items: center; justify-content: center;
-      font-size: 12px; font-weight: 900; color: var(--accent);
-      flex-shrink: 0; margin-top: 1px;
+      font-size: 12px;
+      font-weight: 900;
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 1px;
     }
-    .hero-point-title { font-weight: 900; color: var(--text-main); margin-bottom: 3px; }
+
+    .hero-point-title {
+      font-weight: 900;
+      color: var(--text-main);
+      margin-bottom: 3px;
+      letter-spacing: -0.01em;
+    }
+
     .hero-meta {
-      font-size: 11px;
-      color: var(--text-muted);
+      font-size: 11.5px;
+      color: rgba(229,231,235,0.55);
       display: flex;
       justify-content: space-between;
-      gap: 10px;
+      align-items: center;
+      gap: 8px;
       margin-top: 4px;
+      line-height: 1.45;
     }
     .hero-meta strong { color: var(--accent); font-weight: 900; }
 
-    /* Section header */
-    .section-header { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 16px; }
-    .section-title {
-      font-size: 16px;
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #e5e7eb;
+    /* Sections */
+    section {
+      border-radius: var(--radius-xl);
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), transparent 60%),
+        var(--bg-soft);
+      border: 1px solid rgba(148, 163, 184, 0.32);
+      box-shadow: var(--shadow-soft);
+      padding: 22px 18px 20px;
     }
-    .section-subtitle { font-size: 13px; color: var(--text-soft); max-width: 520px; line-height: 1.5; }
+    section + section { margin-top: 20px; }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: "Inter", sans-serif;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(229,231,235,0.95);
+    }
+
+    .section-subtitle {
+      font-size: 12.5px;
+      line-height: 1.6;
+      color: rgba(229,231,235,0.70);
+      max-width: 440px;
+    }
 
     /* Services */
     .services-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+
     .service-card {
-      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 65%), linear-gradient(145deg, #050f22, #020617);
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 65%),
+        linear-gradient(145deg, #050f22, #020617);
       border-radius: var(--radius-lg);
       border: 1px solid rgba(31, 41, 55, 0.9);
       padding: 10px 10px 12px;
       display: flex;
       flex-direction: column;
       gap: 10px;
-      transition: transform 0.15s ease;
     }
-    .service-card:hover { transform: translateY(-2px); }
+
     .service-media {
       border-radius: 16px;
       overflow: hidden;
       border: 1px solid rgba(30, 64, 175, 0.85);
       box-shadow: 0 12px 26px rgba(15, 23, 42, 0.9);
       margin-bottom: 6px;
-      aspect-ratio: 16/10;
-      background: rgba(2,6,23,0.55);
     }
-    .service-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .service-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--accent); }
-    .service-title { font-size: 14px; font-weight: 900; color: #e5e7eb; }
-    .service-body { font-size: 12px; color: var(--text-soft); line-height: 1.5; }
-    .service-foot { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
-    .service-actions { margin-top: 6px; display: flex; gap: 8px; flex-wrap: wrap; }
-    .mini-cta {
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(56, 189, 248, 0.35);
-      background: rgba(6, 22, 48, 0.6);
-      color: var(--text-main);
-      font-size: 12px;
+    .service-media img { width: 100%; height: auto; display: block; }
+
+    .service-label {
+      font-size: 10.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-weight: 900;
+      color: var(--accent);
+    }
+
+    .service-title {
+      font-family: "Fraunces", serif;
+      font-size: 15px;
       font-weight: 800;
-      display: inline-flex;
-      gap: 8px;
-      align-items: center;
+      letter-spacing: -0.02em;
+      color: rgba(229,231,235,0.98);
     }
-    .mini-cta:hover { background: rgba(6, 22, 48, 0.85); }
+
+    .service-body {
+      font-size: 12.5px;
+      line-height: 1.6;
+      color: rgba(229,231,235,0.72);
+    }
+
+    .service-foot {
+      font-size: 11.5px;
+      line-height: 1.45;
+      color: rgba(229,231,235,0.55);
+      margin-top: 4px;
+    }
 
     /* Projects */
     .projects-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+
     .project-card {
-      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.65), transparent 70%), linear-gradient(145deg, #020617, #020b1f);
+      background:
+        radial-gradient(circle at top, rgba(15, 23, 42, 0.65), transparent 70%),
+        linear-gradient(145deg, #020617, #020b1f);
       border-radius: var(--radius-lg);
       border: 1px solid rgba(31, 41, 55, 0.95);
       display: flex;
       flex-direction: column;
       padding: 10px 10px 12px;
-      transition: transform 0.15s ease;
     }
-    .project-card:hover { transform: translateY(-2px); }
+
     .project-media {
       border-radius: 14px;
       overflow: hidden;
       border: 1px solid rgba(30, 64, 175, 0.85);
       box-shadow: 0 10px 24px rgba(15, 23, 42, 0.8);
       margin-bottom: 8px;
-      aspect-ratio: 16/10;
-      background: rgba(2,6,23,0.55);
     }
-    .project-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .project-body { display: flex; flex-direction: column; gap: 4px; flex-grow: 1; }
-    .project-tag { font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--accent); }
-    .project-title { font-size: 13px; font-weight: 900; color: #e5e7eb; }
-    .project-meta { font-size: 11px; color: var(--text-muted); }
-    .project-desc { font-size: 12px; color: var(--text-soft); margin-top: 4px; flex-grow: 1; line-height: 1.5; }
+    .project-media img { width: 100%; height: auto; display: block; }
 
-    .center-cta { display: flex; justify-content: center; margin-top: 14px; }
-    .btn-wide {
-      padding: 11px 18px;
-      border-radius: 999px;
-      border: 1px solid rgba(56, 189, 248, 0.35);
-      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.22), transparent 60%), rgba(6, 22, 48, 0.6);
-      color: var(--text-main);
-      font-size: 13px;
+    .project-body { display: flex; flex-direction: column; gap: 4px; flex-grow: 1; }
+
+    .project-tag {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
       font-weight: 900;
-      display: inline-flex;
-      gap: 10px;
-      align-items: center;
+      color: var(--accent);
     }
+
+    .project-title {
+      font-family: "Fraunces", serif;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: rgba(229,231,235,0.98);
+    }
+
+    .project-meta { font-size: 11.5px; color: rgba(229,231,235,0.55); }
+    .project-desc { font-size: 12.5px; line-height: 1.6; color: rgba(229,231,235,0.70); margin-top: 4px; flex-grow: 1; }
 
     /* How it works */
     .how-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 8px; }
+
     .how-card {
-      background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.14), transparent 65%), linear-gradient(145deg, #050f23, #020617);
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.14), transparent 65%),
+        linear-gradient(145deg, #050f23, #020617);
       border-radius: var(--radius-lg);
       border: 1px solid rgba(31, 41, 55, 0.9);
       padding: 12px 12px 11px;
-      font-size: 12px;
-      color: var(--text-soft);
+      font-size: 12.5px;
+      line-height: 1.6;
+      color: rgba(229,231,235,0.70);
       display: flex;
       flex-direction: column;
       gap: 6px;
-      line-height: 1.5;
     }
-    .how-step { font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--accent); font-weight: 900; }
-    .how-title { color: #e5e7eb; font-weight: 900; font-size: 13px; }
 
-    /* Why */
+    .how-step {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 900;
+      color: var(--accent);
+    }
+
+    .how-title {
+      font-family: "Fraunces", serif;
+      color: rgba(229,231,235,0.98);
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: -0.02em;
+    }
+
+    /* Why Purelux */
     .why-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+
     .why-card {
-      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 65%), linear-gradient(145deg, #050f22, #020617);
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 65%),
+        linear-gradient(145deg, #050f22, #020617);
       border-radius: var(--radius-lg);
       border: 1px solid rgba(31, 41, 55, 0.9);
       padding: 13px 12px 12px;
       display: flex;
       flex-direction: column;
       gap: 6px;
-      font-size: 12px;
-      color: var(--text-soft);
-      line-height: 1.5;
+      font-size: 12.5px;
+      line-height: 1.6;
+      color: rgba(229,231,235,0.70);
     }
-    .why-title { font-size: 13px; font-weight: 900; color: #e5e7eb; }
+
+    .why-title {
+      font-family: "Fraunces", serif;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: rgba(229,231,235,0.98);
+    }
 
     /* Reviews */
     .reviews-inner {
       padding: 18px;
       border-radius: 18px;
       border: 1px dashed rgba(148, 163, 184, 0.6);
-      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), transparent 70%), rgba(6, 18, 35, 0.95);
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), transparent 70%),
+        rgba(6, 18, 35, 0.95);
       display: flex;
       flex-direction: column;
       gap: 10px;
     }
-    .reviews-stars { color: #facc15; font-size: 16px; }
-    .reviews-title { font-size: 15px; color: #e5e7eb; font-weight: 900; }
-    .reviews-text { font-size: 13px; color: var(--text-soft); line-height: 1.5; }
+
+    .reviews-stars { color: #facc15; font-size: 15px; }
+    .reviews-title {
+      font-family: "Fraunces", serif;
+      font-size: 16px;
+      color: rgba(229,231,235,0.98);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .reviews-text { font-size: 13px; line-height: 1.6; color: rgba(229,231,235,0.70); }
+
     .reviews-cta {
       align-self: flex-start;
       margin-top: 4px;
@@ -441,36 +549,16 @@
       color: #0b1120;
       font-weight: 900;
       font-size: 14px;
+      letter-spacing: -0.01em;
       text-decoration: none;
       box-shadow: 0 16px 30px rgba(56, 189, 248, 0.45);
-    }
-
-    /* Floating CTA (mobile-friendly) */
-    .float-cta {
-      position: fixed;
-      right: 16px;
-      bottom: 16px;
-      z-index: 60;
-      display: none;
-    }
-    .float-cta a {
-      padding: 12px 16px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-strong));
-      color: #0b1120;
-      font-weight: 1000;
-      box-shadow: 0 18px 40px rgba(56, 189, 248, 0.55);
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 14px;
     }
 
     /* Footer */
     footer {
       margin-top: 26px;
       font-size: 11px;
-      color: var(--text-muted);
+      color: rgba(229,231,235,0.50);
       display: flex;
       justify-content: space-between;
       gap: 12px;
@@ -478,26 +566,19 @@
     }
     footer span { white-space: nowrap; }
 
-    @media (max-width: 1040px) {
-      .services-grid, .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-
     @media (max-width: 960px) {
       header { flex-direction: column; align-items: flex-start; gap: 10px; border-radius: 18px; }
-      .nav { justify-content: flex-start; }
       .hero { grid-template-columns: minmax(0, 1fr); }
-      .how-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .why-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .services-grid, .projects-grid, .how-grid, .why-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
     @media (max-width: 720px) {
       .page { padding: 16px 12px 40px; }
       header { position: static; }
-      .topbar { justify-content: center; text-align: center; }
-      .services-grid, .projects-grid, .how-grid, .why-grid { grid-template-columns: 1fr; }
+      .services-grid, .projects-grid, .how-grid, .why-grid { grid-template-columns: minmax(0, 1fr); }
       .section-header { flex-direction: column; align-items: flex-start; }
+      .topbar { justify-content: center; text-align: center; }
       footer { flex-direction: column; align-items: flex-start; }
-      .float-cta { display: block; }
     }
   </style>
 </head>
@@ -520,17 +601,13 @@
         </div>
       </div>
 
-      <!-- NAV MENU (NEW) -->
-      <nav class="nav" aria-label="Primary">
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#how">How It Works</a>
-        <a href="#reviews">Reviews</a>
-      </nav>
-
       <div class="header-cta">
+        <div class="header-pill">
+          <span>System-Driven</span>
+          <div>Structured 3-person team • Checklist execution</div>
+        </div>
         <a href="gallery.html" class="btn-secondary">View Gallery</a>
-        <a href="quote.html" class="btn-sm">Get a Fast Quote ↗</a>
+        <a href="quote.html" class="btn-sm">Get a Fast Quote</a>
       </div>
     </header>
 
@@ -543,7 +620,7 @@
           </div>
 
           <h1 class="hero-title">
-            Premium Home Cleaning in <span>Bergen &amp; Passaic County</span>
+            Professional Residential &amp; <span>Post-Construction</span> Cleaning in North NJ
           </h1>
 
           <p class="hero-subtitle">
@@ -556,22 +633,33 @@
             <a href="/quote.html" class="btn-primary">
               Get My Custom Quote <span>↗</span>
             </a>
-            <a href="#services" class="btn-ghost">
-              View Services
+            <a href="#services" class="btn-secondary">
+              View Services &amp; Typical Ranges
             </a>
           </div>
 
+          <div class="hero-trust">
+            <span>Serving North Haledon, Wayne, Glen Rock, Clifton &amp; nearby areas.</span>
+            <span>Limited weekly availability – we book out quickly.</span>
+          </div>
+
           <div class="hero-badges">
-            <div class="hero-badge">🛡️ <strong>Insured</strong> &amp; professional workflow</div>
-            <div class="hero-badge">⭐ <strong>5-Star Rated</strong> local clients</div>
-            <div class="hero-badge">🧼 <strong>Same standards</strong> every visit</div>
+            <div class="hero-badge">
+              <span>★</span><strong>5-Star Rated</strong> in Bergen &amp; Passaic County
+            </div>
+            <div class="hero-badge">
+              <span>✓</span><strong>Fully Insured</strong> &amp; checklist-driven workflow
+            </div>
+            <div class="hero-badge">
+              <span>🧼</span>Same standards every visit – no shortcuts
+            </div>
           </div>
         </div>
 
         <aside class="hero-right">
           <div class="hero-right-header">
             <span>Premium Deep Cleaning, Without Guesswork</span>
-            <span>Typical deep cleans: $450–$900*</span>
+            <span>Average deep cleans range from $450–$900*</span>
           </div>
 
           <div class="hero-right-points">
@@ -579,29 +667,37 @@
               <div class="hero-point-icon">1</div>
               <div>
                 <div class="hero-point-title">Full-property reset</div>
-                <div>Kitchens, bathrooms, baseboards, doors/trim, switches, and detail zones.</div>
+                <div>
+                  Kitchens, bathrooms, baseboards, doors, trim, switches, and more. Ideal as a “Day 1” reset before
+                  recurring maintenance.
+                </div>
               </div>
             </div>
 
             <div class="hero-point">
               <div class="hero-point-icon">2</div>
               <div>
-                <div class="hero-point-title">Structured 3-person team</div>
-                <div>Each tech owns a zone—no chaos. Same system, every time.</div>
+                <div class="hero-point-title">Structured 3-Person Team</div>
+                <div>
+                  Each tech owns a zone—no chaos, no guessing. Same workflow every time for consistent results, not
+                  “hit or miss” cleanings.
+                </div>
               </div>
             </div>
 
             <div class="hero-point">
               <div class="hero-point-icon">3</div>
               <div>
-                <div class="hero-point-title">Perfect for homeowners & realtors</div>
-                <div>Listings, turnovers, and busy families who want the home handled—fast.</div>
+                <div class="hero-point-title">Ideal for Busy Homeowners &amp; Realtors</div>
+                <div>
+                  Perfect for listings, turnovers, and families who want the home handled—without managing cleaners.
+                </div>
               </div>
             </div>
           </div>
 
           <div class="hero-meta">
-            <span><strong>*</strong>Ranges vary by size/condition/add-ons</span>
+            <span><strong>*</strong>Ranges vary by size, condition &amp; add-ons</span>
             <span>Ask about recurring maintenance after your first deep clean.</span>
           </div>
         </aside>
@@ -627,13 +723,9 @@
             <div class="service-title">Full-Property Reset</div>
             <div class="service-body">
               Detailed cleaning for kitchens, baths, baseboards, trim, fixtures, and high-touch surfaces. Ideal when
-              things haven’t been cleaned properly in a while.
+              things haven’t been cleaned “properly” in a while.
             </div>
             <div class="service-foot">Typical range: $450–$900+ depending on size &amp; buildup.</div>
-            <div class="service-actions">
-              <a class="mini-cta" href="quote.html">Get a Quote ↗</a>
-              <a class="mini-cta" href="gallery.html">See Results</a>
-            </div>
           </article>
 
           <!-- Recurring Cleaning -->
@@ -644,14 +736,10 @@
             <div class="service-label">Recurring Cleaning</div>
             <div class="service-title">Weekly, Bi-Weekly &amp; Monthly</div>
             <div class="service-body">
-              Maintenance visits built on the original deep clean. Same structure each time so the home never falls
-              behind again.
+              Maintenance visits built on the original deep clean. Same structure each time so the home never “falls
+              behind” again.
             </div>
             <div class="service-foot">Best for busy households that want consistent standards.</div>
-            <div class="service-actions">
-              <a class="mini-cta" href="quote.html">Get a Quote ↗</a>
-              <a class="mini-cta" href="#how">How It Works</a>
-            </div>
           </article>
 
           <!-- Move In / Move Out -->
@@ -662,14 +750,10 @@
             <div class="service-label">Move In / Move Out</div>
             <div class="service-title">Turnover-Ready Homes</div>
             <div class="service-body">
-              Vacant home resets for buyers, sellers, and tenants. Cabinets, appliances, and detailed bathrooms—so the
-              next chapter starts fresh.
+              Vacant home resets for buyers, sellers, and tenants. Inside cabinets, appliances, and detailed
+              bathrooms—so the next chapter starts fresh.
             </div>
             <div class="service-foot">Popular for realtors &amp; landlords across North NJ.</div>
-            <div class="service-actions">
-              <a class="mini-cta" href="quote.html">Get a Quote ↗</a>
-              <a class="mini-cta" href="gallery.html">View Gallery</a>
-            </div>
           </article>
 
           <!-- Post-Construction -->
@@ -684,20 +768,17 @@
               actually livable—not just “done.”
             </div>
             <div class="service-foot">Ask about multi-visit options for ongoing projects.</div>
-            <div class="service-actions">
-              <a class="mini-cta" href="quote.html">Get a Quote ↗</a>
-              <a class="mini-cta" href="#projects">Recent Projects</a>
-            </div>
           </article>
         </div>
       </section>
 
       <!-- RECENT PROJECTS -->
-      <section id="projects">
+      <section>
         <div class="section-header">
           <div class="section-title">Recent Projects – Northern New Jersey</div>
           <div class="section-subtitle">
-            Real work, real results. We focus on disciplined execution—not just “photo angles.”
+            A few examples of our recent work across North Haledon, Wayne, Glen Rock, Clifton, and nearby towns. We
+            focus on disciplined, consistent results—not just “photo ready” angles.
           </div>
         </div>
 
@@ -705,14 +786,18 @@
           <!-- Proyecto 1 -->
           <article class="project-card">
             <div class="project-media">
-              <img src="./images/Bedroom detailed cleaning and organization service – Northern NJ.png" alt="Bedroom declutter and detailed cleaning in Northern NJ">
+              <img
+                src="./images/Bedroom detailed cleaning and organization service – Northern NJ.png"
+                alt="Bedroom declutter and detailed cleaning in Northern NJ"
+              >
             </div>
             <div class="project-body">
               <div class="project-tag">Bedroom Detail • Glen Rock, NJ</div>
               <div class="project-title">Bedroom Declutter &amp; Detailed Cleaning</div>
               <div class="project-meta">Deep clean + organization before listing photos.</div>
               <div class="project-desc">
-                Full reset of surfaces, trim, windowsills, and floors to bring the room back to “photo ready.”
+                Full reset of bedroom surfaces, trim, windowsills, and floors to bring the room back to “photo ready”
+                before professional staging.
               </div>
             </div>
           </article>
@@ -720,14 +805,18 @@
           <!-- Proyecto 2 -->
           <article class="project-card">
             <div class="project-media">
-              <img src="./images/oven-deep-cleaning-monroe-nj-purelux-cleaning.png" alt="Oven deep cleaning and degrease">
+              <img
+                src="./images/oven-deep-cleaning-monroe-nj-purelux-cleaning.png"
+                alt="Oven deep cleaning and degrease"
+              >
             </div>
             <div class="project-body">
               <div class="project-tag">Kitchen • Wayne, NJ</div>
               <div class="project-title">Oven Deep Cleaning &amp; Degrease</div>
               <div class="project-meta">Move-out preparation for long-term homeowner.</div>
               <div class="project-desc">
-                Heavy grease removal from racks, glass, and interior walls, plus surrounding cabinets/appliances wipe-down.
+                Heavy grease removal from racks, glass, and interior walls, plus a full wipe-down of surrounding
+                cabinets and appliances.
               </div>
             </div>
           </article>
@@ -735,14 +824,18 @@
           <!-- Proyecto 3 -->
           <article class="project-card">
             <div class="project-media">
-              <img src="./images/Detail Restoration – Purelux Cleaning.png" alt="Bathroom detail restoration">
+              <img
+                src="./images/Detail Restoration – Purelux Cleaning.png"
+                alt="Bathroom detail restoration"
+              >
             </div>
             <div class="project-body">
               <div class="project-tag">Bathroom • North Haledon, NJ</div>
               <div class="project-title">Bathroom Detail Restoration</div>
               <div class="project-meta">Deep clean after years of mineral buildup.</div>
               <div class="project-desc">
-                Grout, glass, fixtures, and floors brought back from dull to bright—edges and corners included.
+                Grout, glass, fixtures, and floors brought back from dull and spotted to bright and refreshed, with
+                attention to edges and corners.
               </div>
             </div>
           </article>
@@ -750,30 +843,31 @@
           <!-- Proyecto 4 -->
           <article class="project-card">
             <div class="project-media">
-              <img src="./images/child room- glen rock.jpeg" alt="Kids room cleaning and organization">
+              <img
+                src="./images/child room- glen rock.jpeg"
+                alt="Kids room cleaning and organization"
+              >
             </div>
             <div class="project-body">
               <div class="project-tag">Kids' Room • Ridgewood, NJ</div>
               <div class="project-title">Kids Room Cleaning &amp; Organization</div>
               <div class="project-meta">Ongoing maintenance for a busy family.</div>
               <div class="project-desc">
-                Toy organization, dust removal, and floor reset so the space feels calm, safe, and easy to maintain.
+                Toy organization, dust removal, and floor reset so the space feels safe, calm, and easy to keep up
+                between visits.
               </div>
             </div>
           </article>
         </div>
-
-        <div class="center-cta">
-          <a class="btn-wide" href="gallery.html">View More Projects →</a>
-        </div>
       </section>
 
       <!-- HOW IT WORKS -->
-      <section id="how">
+      <section>
         <div class="section-header">
           <div class="section-title">How It Works</div>
           <div class="section-subtitle">
-            Clear steps, no confusion. You approve scope—then we execute.
+            Clear steps, no confusion. We run a system so you don’t have to manage cleaners—just approve the scope and
+            let us execute.
           </div>
         </div>
 
@@ -781,25 +875,37 @@
           <article class="how-card">
             <div class="how-step">Step 1</div>
             <div class="how-title">Request Your Quote</div>
-            <div>Share details about your home, priorities, and timing. Photos help us price accurately.</div>
+            <div>
+              Share a few details about your home, priorities, and timing. Photos help us be more precise with your
+              estimate.
+            </div>
           </article>
 
           <article class="how-card">
             <div class="how-step">Step 2</div>
             <div class="how-title">Confirm Scope &amp; Pricing</div>
-            <div>We align on scope, visit length, and any add-ons (inside fridge, oven, cabinets, windows, etc.).</div>
+            <div>
+              We align on scope, visit length, and any add-ons (inside fridge, oven, cabinets, windows, etc.) before we
+              schedule.
+            </div>
           </article>
 
           <article class="how-card">
             <div class="how-step">Step 3</div>
             <div class="how-title">Structured 3-Person Visit</div>
-            <div>Each person owns a zone. We follow the same checklist—nothing left to chance.</div>
+            <div>
+              Our team arrives on time, each person owning a zone. We follow the same checklist so nothing is left to
+              chance.
+            </div>
           </article>
 
           <article class="how-card">
             <div class="how-step">Step 4</div>
             <div class="how-title">Walkthrough &amp; Maintenance Plan</div>
-            <div>Final walkthrough + touch-ups. Optional recurring plan to keep the home “always ready.”</div>
+            <div>
+              We do a final walkthrough, handle any touch-ups, and, if you’d like, set up a recurring maintenance
+              schedule.
+            </div>
           </article>
         </div>
       </section>
@@ -809,33 +915,45 @@
         <div class="section-header">
           <div class="section-title">Why Purelux?</div>
           <div class="section-subtitle">
-            We don’t improvise. We operate with a structured workflow and quality-control checklist.
+            We don’t improvise. We operate with a structured workflow and quality control checklist to ensure
+            consistency on every visit.
           </div>
         </div>
 
         <div class="why-grid">
           <article class="why-card">
             <div class="why-title">System, Not Guesswork</div>
-            <div>Every visit follows a checklist—baseboards, fixtures, switches, and detail zones others skip.</div>
+            <div>
+              Every visit follows a defined checklist—baseboards, fixtures, switches, and details that are usually
+              skipped by “quick” cleanings.
+            </div>
           </article>
 
           <article class="why-card">
             <div class="why-title">Structured 3-Person Team</div>
-            <div>Consistent crew, faster execution, better communication, fewer surprises.</div>
+            <div>
+              We don’t rotate random faces. A structured crew means faster execution, better communication, and fewer
+              surprises for you.
+            </div>
           </article>
 
           <article class="why-card">
             <div class="why-title">Premium, Not Price-Shoppy</div>
-            <div>You’re paying for reliability, detail, and peace of mind of a properly run system.</div>
+            <div>
+              We’re not trying to be the cheapest quote—you’re paying for reliability, detail, and the peace of mind of
+              a properly run system.
+            </div>
           </article>
         </div>
       </section>
 
       <!-- REVIEWS -->
-      <section id="reviews">
+      <section>
         <div class="section-header">
           <div class="section-title">Reviews</div>
-          <div class="section-subtitle">Clients come back for consistency—because details don’t lie.</div>
+          <div class="section-subtitle">
+            Clients come back for consistency—because details don’t lie.
+          </div>
         </div>
 
         <div class="reviews-inner">
@@ -855,11 +973,6 @@
       <span>© 2026 Purelux Cleaning · Serving Bergen &amp; Passaic County, NJ</span>
       <span>Fully insured · Structured workflow · Detail-driven results</span>
     </footer>
-  </div>
-
-  <!-- Floating CTA for Mobile -->
-  <div class="float-cta">
-    <a href="quote.html">Get a Fast Quote ↗</a>
   </div>
 </body>
 </html>
