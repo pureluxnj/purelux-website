@@ -12,19 +12,17 @@
   <!-- Favicon / Logo -->
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png?v=3">
 
-  <!-- Premium Fonts (Inter + Fraunces) -->
+  <!-- Inter (clean, premium, modern) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      /* Paleta base */
       --bg: #020617;
       --bg-soft: #061328;
       --panel: #071a34;
       --panel-soft: #0b2242;
-      --border-soft: #1f2a3d;
 
       --accent: #38bdf8;
       --accent-strong: #0ea5e9;
@@ -44,37 +42,31 @@
 
     body {
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-weight: 500;
-      letter-spacing: -0.01em;
-      text-rendering: geometricPrecision;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-
       background: radial-gradient(circle at top, #0f172a 0, #020617 55%, #020617 100%);
       color: var(--text-main);
       min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: geometricPrecision;
+      letter-spacing: -0.01em;
     }
 
     a { color: inherit; text-decoration: none; }
 
     .page { max-width: var(--max-width); margin: 0 auto; padding: 24px 16px 56px; }
 
-    /* Top bar */
+    /* Topbar */
     .topbar {
       display: flex;
       justify-content: flex-end;
       font-size: 13px;
-      color: var(--text-soft);
+      color: rgba(229,231,235,0.65);
       margin-bottom: 8px;
     }
-    .topbar span + span::before {
-      content: "•";
-      margin: 0 8px;
-      color: var(--text-muted);
-    }
+    .topbar span + span::before { content: "•"; margin: 0 8px; color: rgba(229,231,235,0.35); }
     .topbar a { color: var(--accent); font-weight: 700; }
 
-    /* Header / Branding */
+    /* Header */
     header {
       display: flex;
       justify-content: space-between;
@@ -98,33 +90,33 @@
     .brand-mark {
       width: 50px; height: 50px;
       border-radius: 999px;
-      display: flex; align-items: center; justify-content: center;
       overflow: hidden;
       background: #0b1f3a;
       box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+      display: flex; align-items: center; justify-content: center;
     }
     .brand-mark img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.25); }
 
     .brand-text-main {
       font-weight: 900;
-      letter-spacing: 0.10em;
+      letter-spacing: 0.12em;
       font-size: 12px;
       text-transform: uppercase;
-      color: #e5e7eb;
+      color: rgba(229,231,235,0.95);
     }
-    .brand-sub { font-size: 11px; color: var(--text-muted); }
+    .brand-sub { font-size: 11px; color: rgba(229,231,235,0.55); }
 
-    .header-cta { display: flex; align-items: center; gap: 10px; font-size: 12px; }
+    .header-cta { display: flex; align-items: center; gap: 10px; }
 
     .header-pill {
       padding: 7px 12px;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.45);
-      color: rgba(229,231,235,0.78);
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      border: 1px solid rgba(148, 163, 184, 0.40);
+      color: rgba(229,231,235,0.70);
+      display: flex; align-items: center; gap: 8px;
       background: radial-gradient(circle at top left, rgba(15, 118, 255, 0.15), transparent 60%);
+      font-size: 12px;
+      line-height: 1.2;
     }
     .header-pill span {
       font-size: 11px;
@@ -138,19 +130,18 @@
     .btn-sm {
       padding: 8px 14px;
       border-radius: 999px;
-      border: 1px solid rgba(56, 189, 248, 0.4);
+      border: 1px solid rgba(56, 189, 248, 0.35);
       background: linear-gradient(90deg, var(--accent), var(--accent-strong));
       color: #0b1120;
       font-size: 12px;
       font-weight: 900;
-      letter-spacing: -0.01em;
-      box-shadow: 0 16px 34px rgba(56, 189, 248, 0.5);
+      box-shadow: 0 16px 34px rgba(56, 189, 248, 0.45);
       white-space: nowrap;
     }
 
     main { margin-top: 10px; display: flex; flex-direction: column; gap: 32px; }
 
-    /* Hero */
+    /* HERO */
     .hero {
       display: grid;
       grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
@@ -171,28 +162,29 @@
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.18em;
-      font-weight: 900;
       color: var(--accent);
-      display: flex;
-      gap: 12px;
-      align-items: center;
+      display: flex; gap: 12px; align-items: center;
+      font-weight: 800;
     }
     .breadcrumb-dot { width: 4px; height: 4px; border-radius: 999px; background: var(--accent); }
 
+    /* FIX PRINCIPAL: título moderno (no serif), mejor line-height y tracking */
     .hero-title {
-      font-family: "Fraunces", serif;
-      font-size: clamp(34px, 4.2vw, 46px);
-      line-height: 1.05;
-      font-weight: 800;
-      letter-spacing: -0.02em;
+      font-size: clamp(32px, 4.2vw, 44px);
+      line-height: 1.08;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: rgba(229,231,235,0.98);
+      max-width: 22ch;
     }
     .hero-title span { color: var(--accent); }
 
     .hero-subtitle {
-      font-size: 15px;
+      font-size: 14.5px;
       line-height: 1.65;
-      color: rgba(229,231,235,0.78);
-      max-width: 58ch;
+      color: rgba(229,231,235,0.72);
+      max-width: 62ch;
+      font-weight: 500;
     }
 
     .hero-cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
@@ -204,62 +196,55 @@
       background: linear-gradient(90deg, var(--accent), var(--accent-strong));
       color: #0b1120;
       font-weight: 900;
-      letter-spacing: -0.01em;
       font-size: 14px;
       cursor: pointer;
       box-shadow: 0 18px 40px rgba(56, 189, 248, 0.55);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+      display: inline-flex; align-items: center; gap: 8px;
     }
     .btn-primary span { font-size: 18px; transform: translateY(1px); }
 
     .btn-secondary {
       padding: 10px 16px;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
+      border: 1px solid rgba(148, 163, 184, 0.45);
       background: rgba(15, 23, 42, 0.92);
-      color: var(--text-main);
+      color: rgba(229,231,235,0.92);
       font-size: 13px;
       font-weight: 800;
-      letter-spacing: -0.01em;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+      display: inline-flex; align-items: center; gap: 8px;
     }
 
     .hero-trust {
       display: flex;
       flex-wrap: wrap;
       gap: 16px;
-      font-size: 12.5px;
-      line-height: 1.55;
-      color: rgba(229,231,235,0.66);
+      font-size: 12px;
+      color: rgba(229,231,235,0.58);
       margin-top: 4px;
+      line-height: 1.5;
     }
 
-    .hero-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .hero-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
 
     .hero-badge {
       padding: 7px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.45);
+      border: 1px solid rgba(148, 163, 184, 0.35);
       background:
         radial-gradient(circle at top left, rgba(56, 189, 248, 0.22), transparent 60%),
         rgba(6, 22, 48, 0.9);
-      font-size: 11.5px;
-      color: rgba(229,231,235,0.72);
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      font-size: 11px;
+      color: rgba(229,231,235,0.70);
+      display: flex; align-items: center; gap: 6px;
+      line-height: 1.2;
     }
-    .hero-badge strong { color: var(--text-main); font-weight: 900; }
+    .hero-badge strong { color: rgba(229,231,235,0.95); font-weight: 900; }
 
     .hero-right {
       border-radius: var(--radius-xl);
-      border: 1px solid rgba(148, 163, 184, 0.42);
+      border: 1px solid rgba(148, 163, 184, 0.38);
       background:
-        radial-gradient(circle at top, rgba(59, 130, 246, 0.35), transparent 55%),
+        radial-gradient(circle at top, rgba(59, 130, 246, 0.30), transparent 55%),
         linear-gradient(145deg, #020617, #050f23);
       box-shadow: var(--shadow-soft);
       padding: 18px 18px 16px;
@@ -272,14 +257,14 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 10px;
-      font-size: 12.5px;
-      color: rgba(229,231,235,0.70);
+      gap: 12px;
+      font-size: 12px;
+      color: rgba(229,231,235,0.62);
     }
-    .hero-right-header span:first-child { font-weight: 900; color: var(--text-main); }
-    .hero-right-header span:last-child { color: rgba(229,231,235,0.55); }
+    .hero-right-header span:first-child { font-weight: 900; color: rgba(229,231,235,0.92); }
+    .hero-right-header span:last-child { color: rgba(229,231,235,0.48); }
 
-    .hero-right-points { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; font-size: 12.5px; }
+    .hero-right-points { display: grid; grid-template-columns: 1fr; gap: 8px; font-size: 12px; color: rgba(229,231,235,0.65); line-height: 1.5; }
 
     .hero-point {
       display: flex;
@@ -288,9 +273,7 @@
       padding: 10px 10px;
       border-radius: 14px;
       background: rgba(8, 25, 53, 0.96);
-      border: 1px solid rgba(148, 163, 184, 0.25);
-      color: rgba(229,231,235,0.70);
-      line-height: 1.55;
+      border: 1px solid rgba(148, 163, 184, 0.22);
     }
 
     .hero-point-icon {
@@ -299,74 +282,58 @@
       background: var(--accent-soft);
       display: flex; align-items: center; justify-content: center;
       font-size: 12px;
-      font-weight: 900;
       color: var(--accent);
+      font-weight: 900;
       flex-shrink: 0;
       margin-top: 1px;
     }
 
-    .hero-point-title {
-      font-weight: 900;
-      color: var(--text-main);
-      margin-bottom: 3px;
-      letter-spacing: -0.01em;
-    }
+    .hero-point-title { font-weight: 900; color: rgba(229,231,235,0.92); margin-bottom: 3px; letter-spacing: -0.01em; }
 
     .hero-meta {
-      font-size: 11.5px;
-      color: rgba(229,231,235,0.55);
+      font-size: 11px;
+      color: rgba(229,231,235,0.48);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       margin-top: 4px;
-      line-height: 1.45;
+      line-height: 1.4;
     }
     .hero-meta strong { color: var(--accent); font-weight: 900; }
 
     /* Sections */
     section {
       border-radius: var(--radius-xl);
-      background:
-        radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), transparent 60%),
-        var(--bg-soft);
+      background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), transparent 60%), var(--bg-soft);
       border: 1px solid rgba(148, 163, 184, 0.32);
       box-shadow: var(--shadow-soft);
       padding: 22px 18px 20px;
     }
     section + section { margin-top: 20px; }
 
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 16px;
-      margin-bottom: 16px;
-    }
+    .section-header { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 16px; }
 
     .section-title {
-      font-family: "Inter", sans-serif;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 900;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: rgba(229,231,235,0.95);
+      color: rgba(229,231,235,0.92);
     }
 
     .section-subtitle {
       font-size: 12.5px;
-      line-height: 1.6;
-      color: rgba(229,231,235,0.70);
+      color: rgba(229,231,235,0.65);
       max-width: 440px;
+      line-height: 1.6;
     }
 
     /* Services */
     .services-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
 
     .service-card {
-      background:
-        radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 65%),
-        linear-gradient(145deg, #050f22, #020617);
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 65%), linear-gradient(145deg, #050f22, #020617);
       border-radius: var(--radius-lg);
       border: 1px solid rgba(31, 41, 55, 0.9);
       padding: 10px 10px 12px;
@@ -384,42 +351,19 @@
     }
     .service-media img { width: 100%; height: auto; display: block; }
 
-    .service-label {
-      font-size: 10.5px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-weight: 900;
-      color: var(--accent);
-    }
+    .service-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--accent); font-weight: 900; }
 
-    .service-title {
-      font-family: "Fraunces", serif;
-      font-size: 15px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: rgba(229,231,235,0.98);
-    }
+    /* FIX: títulos de cards sin serif */
+    .service-title { font-size: 14px; font-weight: 900; letter-spacing: -0.02em; color: rgba(229,231,235,0.95); }
 
-    .service-body {
-      font-size: 12.5px;
-      line-height: 1.6;
-      color: rgba(229,231,235,0.72);
-    }
-
-    .service-foot {
-      font-size: 11.5px;
-      line-height: 1.45;
-      color: rgba(229,231,235,0.55);
-      margin-top: 4px;
-    }
+    .service-body { font-size: 12px; color: rgba(229,231,235,0.70); line-height: 1.6; }
+    .service-foot { font-size: 11px; color: rgba(229,231,235,0.50); margin-top: 4px; line-height: 1.45; }
 
     /* Projects */
     .projects-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
 
     .project-card {
-      background:
-        radial-gradient(circle at top, rgba(15, 23, 42, 0.65), transparent 70%),
-        linear-gradient(145deg, #020617, #020b1f);
+      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.65), transparent 70%), linear-gradient(145deg, #020617, #020b1f);
       border-radius: var(--radius-lg);
       border: 1px solid rgba(31, 41, 55, 0.95);
       display: flex;
@@ -437,108 +381,63 @@
     .project-media img { width: 100%; height: auto; display: block; }
 
     .project-body { display: flex; flex-direction: column; gap: 4px; flex-grow: 1; }
+    .project-tag { font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--accent); font-weight: 900; }
 
-    .project-tag {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-weight: 900;
-      color: var(--accent);
-    }
-
-    .project-title {
-      font-family: "Fraunces", serif;
-      font-size: 14px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: rgba(229,231,235,0.98);
-    }
-
-    .project-meta { font-size: 11.5px; color: rgba(229,231,235,0.55); }
-    .project-desc { font-size: 12.5px; line-height: 1.6; color: rgba(229,231,235,0.70); margin-top: 4px; flex-grow: 1; }
+    .project-title { font-size: 13px; font-weight: 900; letter-spacing: -0.02em; color: rgba(229,231,235,0.95); }
+    .project-meta { font-size: 11px; color: rgba(229,231,235,0.50); }
+    .project-desc { font-size: 12px; color: rgba(229,231,235,0.68); margin-top: 4px; flex-grow: 1; line-height: 1.6; }
 
     /* How it works */
     .how-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 8px; }
 
     .how-card {
-      background:
-        radial-gradient(circle at top left, rgba(37, 99, 235, 0.14), transparent 65%),
-        linear-gradient(145deg, #050f23, #020617);
+      background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.14), transparent 65%), linear-gradient(145deg, #050f23, #020617);
       border-radius: var(--radius-lg);
       border: 1px solid rgba(31, 41, 55, 0.9);
       padding: 12px 12px 11px;
-      font-size: 12.5px;
-      line-height: 1.6;
-      color: rgba(229,231,235,0.70);
+      font-size: 12px;
+      color: rgba(229,231,235,0.68);
       display: flex;
       flex-direction: column;
       gap: 6px;
+      line-height: 1.6;
     }
 
-    .how-step {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-weight: 900;
-      color: var(--accent);
-    }
+    .how-step { font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--accent); font-weight: 900; }
+    .how-title { color: rgba(229,231,235,0.95); font-weight: 900; font-size: 13px; letter-spacing: -0.02em; }
 
-    .how-title {
-      font-family: "Fraunces", serif;
-      color: rgba(229,231,235,0.98);
-      font-weight: 800;
-      font-size: 14px;
-      letter-spacing: -0.02em;
-    }
-
-    /* Why Purelux */
+    /* Why */
     .why-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 
     .why-card {
-      background:
-        radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 65%),
-        linear-gradient(145deg, #050f22, #020617);
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 65%), linear-gradient(145deg, #050f22, #020617);
       border-radius: var(--radius-lg);
       border: 1px solid rgba(31, 41, 55, 0.9);
       padding: 13px 12px 12px;
       display: flex;
       flex-direction: column;
       gap: 6px;
-      font-size: 12.5px;
+      font-size: 12px;
+      color: rgba(229,231,235,0.68);
       line-height: 1.6;
-      color: rgba(229,231,235,0.70);
     }
 
-    .why-title {
-      font-family: "Fraunces", serif;
-      font-size: 14px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: rgba(229,231,235,0.98);
-    }
+    .why-title { font-size: 13px; font-weight: 900; color: rgba(229,231,235,0.95); letter-spacing: -0.02em; }
 
     /* Reviews */
     .reviews-inner {
       padding: 18px;
       border-radius: 18px;
       border: 1px dashed rgba(148, 163, 184, 0.6);
-      background:
-        radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), transparent 70%),
-        rgba(6, 18, 35, 0.95);
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), transparent 70%), rgba(6, 18, 35, 0.95);
       display: flex;
       flex-direction: column;
       gap: 10px;
     }
 
     .reviews-stars { color: #facc15; font-size: 15px; }
-    .reviews-title {
-      font-family: "Fraunces", serif;
-      font-size: 16px;
-      color: rgba(229,231,235,0.98);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
-    .reviews-text { font-size: 13px; line-height: 1.6; color: rgba(229,231,235,0.70); }
+    .reviews-title { font-size: 14px; color: rgba(229,231,235,0.95); font-weight: 900; letter-spacing: -0.02em; }
+    .reviews-text { font-size: 13px; color: rgba(229,231,235,0.68); line-height: 1.6; }
 
     .reviews-cta {
       align-self: flex-start;
@@ -549,7 +448,6 @@
       color: #0b1120;
       font-weight: 900;
       font-size: 14px;
-      letter-spacing: -0.01em;
       text-decoration: none;
       box-shadow: 0 16px 30px rgba(56, 189, 248, 0.45);
     }
@@ -558,7 +456,7 @@
     footer {
       margin-top: 26px;
       font-size: 11px;
-      color: rgba(229,231,235,0.50);
+      color: rgba(229,231,235,0.45);
       display: flex;
       justify-content: space-between;
       gap: 12px;
@@ -567,15 +465,14 @@
     footer span { white-space: nowrap; }
 
     @media (max-width: 960px) {
-      header { flex-direction: column; align-items: flex-start; gap: 10px; border-radius: 18px; }
-      .hero { grid-template-columns: minmax(0, 1fr); }
+      header { flex-direction: column; align-items: flex-start; gap: 10px; border-radius: 18px; position: static; }
+      .hero { grid-template-columns: 1fr; }
       .services-grid, .projects-grid, .how-grid, .why-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
     @media (max-width: 720px) {
       .page { padding: 16px 12px 40px; }
-      header { position: static; }
-      .services-grid, .projects-grid, .how-grid, .why-grid { grid-template-columns: minmax(0, 1fr); }
+      .services-grid, .projects-grid, .how-grid, .why-grid { grid-template-columns: 1fr; }
       .section-header { flex-direction: column; align-items: flex-start; }
       .topbar { justify-content: center; text-align: center; }
       footer { flex-direction: column; align-items: flex-start; }
@@ -714,7 +611,6 @@
         </div>
 
         <div class="services-grid">
-          <!-- Deep Cleaning -->
           <article class="service-card">
             <div class="service-media">
               <img src="./images/DEEP CLEANING PORTRAIT.png" alt="Deep Cleaning Service">
@@ -728,7 +624,6 @@
             <div class="service-foot">Typical range: $450–$900+ depending on size &amp; buildup.</div>
           </article>
 
-          <!-- Recurring Cleaning -->
           <article class="service-card">
             <div class="service-media">
               <img src="./images/RECURIN CLEANING PORTRAIT.png" alt="Recurring Cleaning Service">
@@ -742,7 +637,6 @@
             <div class="service-foot">Best for busy households that want consistent standards.</div>
           </article>
 
-          <!-- Move In / Move Out -->
           <article class="service-card">
             <div class="service-media">
               <img src="./images/MOVE IN-OUT PORTRAIT.png" alt="Move In / Move Out Cleaning Service">
@@ -756,7 +650,6 @@
             <div class="service-foot">Popular for realtors &amp; landlords across North NJ.</div>
           </article>
 
-          <!-- Post-Construction -->
           <article class="service-card">
             <div class="service-media">
               <img src="./images/POST-CONTRUCTION PORTRAIT.png" alt="Post-construction Cleaning Service">
@@ -783,13 +676,9 @@
         </div>
 
         <div class="projects-grid">
-          <!-- Proyecto 1 -->
           <article class="project-card">
             <div class="project-media">
-              <img
-                src="./images/Bedroom detailed cleaning and organization service – Northern NJ.png"
-                alt="Bedroom declutter and detailed cleaning in Northern NJ"
-              >
+              <img src="./images/Bedroom detailed cleaning and organization service – Northern NJ.png" alt="Bedroom declutter and detailed cleaning in Northern NJ">
             </div>
             <div class="project-body">
               <div class="project-tag">Bedroom Detail • Glen Rock, NJ</div>
@@ -802,13 +691,9 @@
             </div>
           </article>
 
-          <!-- Proyecto 2 -->
           <article class="project-card">
             <div class="project-media">
-              <img
-                src="./images/oven-deep-cleaning-monroe-nj-purelux-cleaning.png"
-                alt="Oven deep cleaning and degrease"
-              >
+              <img src="./images/oven-deep-cleaning-monroe-nj-purelux-cleaning.png" alt="Oven deep cleaning and degrease">
             </div>
             <div class="project-body">
               <div class="project-tag">Kitchen • Wayne, NJ</div>
@@ -821,13 +706,9 @@
             </div>
           </article>
 
-          <!-- Proyecto 3 -->
           <article class="project-card">
             <div class="project-media">
-              <img
-                src="./images/Detail Restoration – Purelux Cleaning.png"
-                alt="Bathroom detail restoration"
-              >
+              <img src="./images/Detail Restoration – Purelux Cleaning.png" alt="Bathroom detail restoration">
             </div>
             <div class="project-body">
               <div class="project-tag">Bathroom • North Haledon, NJ</div>
@@ -840,13 +721,9 @@
             </div>
           </article>
 
-          <!-- Proyecto 4 -->
           <article class="project-card">
             <div class="project-media">
-              <img
-                src="./images/child room- glen rock.jpeg"
-                alt="Kids room cleaning and organization"
-              >
+              <img src="./images/child room- glen rock.jpeg" alt="Kids room cleaning and organization">
             </div>
             <div class="project-body">
               <div class="project-tag">Kids' Room • Ridgewood, NJ</div>
@@ -875,37 +752,25 @@
           <article class="how-card">
             <div class="how-step">Step 1</div>
             <div class="how-title">Request Your Quote</div>
-            <div>
-              Share a few details about your home, priorities, and timing. Photos help us be more precise with your
-              estimate.
-            </div>
+            <div>Share a few details about your home, priorities, and timing. Photos help us be more precise with your estimate.</div>
           </article>
 
           <article class="how-card">
             <div class="how-step">Step 2</div>
             <div class="how-title">Confirm Scope &amp; Pricing</div>
-            <div>
-              We align on scope, visit length, and any add-ons (inside fridge, oven, cabinets, windows, etc.) before we
-              schedule.
-            </div>
+            <div>We align on scope, visit length, and any add-ons (inside fridge, oven, cabinets, windows, etc.) before we schedule.</div>
           </article>
 
           <article class="how-card">
             <div class="how-step">Step 3</div>
             <div class="how-title">Structured 3-Person Visit</div>
-            <div>
-              Our team arrives on time, each person owning a zone. We follow the same checklist so nothing is left to
-              chance.
-            </div>
+            <div>Our team arrives on time, each person owning a zone. We follow the same checklist so nothing is left to chance.</div>
           </article>
 
           <article class="how-card">
             <div class="how-step">Step 4</div>
             <div class="how-title">Walkthrough &amp; Maintenance Plan</div>
-            <div>
-              We do a final walkthrough, handle any touch-ups, and, if you’d like, set up a recurring maintenance
-              schedule.
-            </div>
+            <div>We do a final walkthrough, handle any touch-ups, and, if you’d like, set up a recurring maintenance schedule.</div>
           </article>
         </div>
       </section>
@@ -923,26 +788,17 @@
         <div class="why-grid">
           <article class="why-card">
             <div class="why-title">System, Not Guesswork</div>
-            <div>
-              Every visit follows a defined checklist—baseboards, fixtures, switches, and details that are usually
-              skipped by “quick” cleanings.
-            </div>
+            <div>Every visit follows a defined checklist—baseboards, fixtures, switches, and details that are usually skipped by “quick” cleanings.</div>
           </article>
 
           <article class="why-card">
             <div class="why-title">Structured 3-Person Team</div>
-            <div>
-              We don’t rotate random faces. A structured crew means faster execution, better communication, and fewer
-              surprises for you.
-            </div>
+            <div>We don’t rotate random faces. A structured crew means faster execution, better communication, and fewer surprises for you.</div>
           </article>
 
           <article class="why-card">
             <div class="why-title">Premium, Not Price-Shoppy</div>
-            <div>
-              We’re not trying to be the cheapest quote—you’re paying for reliability, detail, and the peace of mind of
-              a properly run system.
-            </div>
+            <div>We’re not trying to be the cheapest quote—you’re paying for reliability, detail, and the peace of mind of a properly run system.</div>
           </article>
         </div>
       </section>
@@ -951,20 +807,14 @@
       <section>
         <div class="section-header">
           <div class="section-title">Reviews</div>
-          <div class="section-subtitle">
-            Clients come back for consistency—because details don’t lie.
-          </div>
+          <div class="section-subtitle">Clients come back for consistency—because details don’t lie.</div>
         </div>
 
         <div class="reviews-inner">
           <div class="reviews-stars">★★★★★</div>
           <div class="reviews-title">Loved your cleaning?</div>
-          <div class="reviews-text">
-            Your review helps local homeowners trust Purelux and keeps our standards high.
-          </div>
-          <a href="TU_LINK_DE_REVIEW_DE_GOOGLE_AQUI" target="_blank" class="reviews-cta">
-            Leave a Google Review →
-          </a>
+          <div class="reviews-text">Your review helps local homeowners trust Purelux and keeps our standards high.</div>
+          <a href="TU_LINK_DE_REVIEW_DE_GOOGLE_AQUI" target="_blank" class="reviews-cta">Leave a Google Review →</a>
         </div>
       </section>
     </main>
