@@ -14,8 +14,7 @@
   </script>
 
   <title>Request a Quote | Purelux Cleaning</title>
-  <meta name="description" content="Request a custom cleaning quote from Purelux Cleaning. Deep cleaning, recurring, move-in/move-out and post-construction in North NJ." />
-
+  <meta name="description" content="Request a custom cleaning quote from Purelux Cleaning. Deep cleaning, recurring, move-in/move-out and post-construction cleaning in North NJ." />
   <link rel="canonical" href="https://pureluxnj.com/quote.html" />
 
   <link rel="icon" type="image/png" href="/favicon.png" />
@@ -23,137 +22,346 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg: #0b1220;
-      --bg2:#070c16;
-      --card:#121c2f;
-      --border: rgba(148,163,184,.18);
+      --bg:#030712;
+      --bg2:#06101f;
+      --card:rgba(10,18,34,.88);
+      --card2:rgba(8,15,28,.92);
+      --border:rgba(148,163,184,.16);
+      --border2:rgba(56,189,248,.22);
       --text:#f8fafc;
       --muted:#cbd5e1;
       --muted2:#94a3b8;
       --brand:#38bdf8;
-      --shadow: 0 18px 45px rgba(0,0,0,.35);
-      --radius: 14px;
-      --radius2: 18px;
+      --brand2:#2563eb;
+      --brandSoft:rgba(56,189,248,.10);
+      --shadow:0 24px 60px rgba(0,0,0,.42);
+      --radius:16px;
+      --radius2:24px;
+      --max:1080px;
     }
-    *{margin:0;padding:0;box-sizing:border-box;}
-    html{scroll-behavior:smooth;}
+
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
     body{
       font-family:'Inter',sans-serif;
-      background: radial-gradient(1100px 600px at 50% -10%, rgba(37,99,235,.22), transparent 55%),
-                  radial-gradient(900px 500px at 10% 20%, rgba(56,189,248,.18), transparent 55%),
-                  linear-gradient(180deg, var(--bg), var(--bg2));
       color:var(--text);
-      line-height:1.65;
+      line-height:1.6;
+      background:
+        radial-gradient(1200px 700px at 30% 0%, rgba(37,99,235,.16), transparent 50%),
+        radial-gradient(900px 600px at 80% 20%, rgba(56,189,248,.12), transparent 55%),
+        linear-gradient(180deg, var(--bg2), var(--bg));
       -webkit-font-smoothing:antialiased;
       text-rendering:optimizeLegibility;
+      min-height:100vh;
     }
-    .container{width:min(780px, 92%); margin-inline:auto;}
+
+    a{color:inherit;text-decoration:none}
 
     .topbar{
-      background: rgba(2,6,23,.65);
-      border-bottom: 1px solid rgba(148,163,184,.10);
-      backdrop-filter: blur(10px);
+      background:rgba(2,6,23,.62);
+      border-bottom:1px solid rgba(148,163,184,.08);
+      backdrop-filter:blur(10px);
       padding:10px 0;
       font-size:13px;
       text-align:center;
       color:var(--muted2);
     }
-    .topbar a{color:var(--brand);text-decoration:none;font-weight:700;}
-    .topbar a:hover{text-decoration:underline;}
+    .topbar a{
+      color:var(--brand);
+      font-weight:800;
+    }
+    .topbar a:hover{text-decoration:underline}
 
-    header{
-      padding: 34px 0 18px;
-      text-align:left;
+    .container{
+      width:min(var(--max), 92%);
+      margin-inline:auto;
     }
-    h1{
-      font-family:'Fraunces', serif;
-      font-weight:700;
-      letter-spacing:-0.02em;
-      font-size: clamp(1.8rem, 3vw, 2.3rem);
-      margin-bottom:8px;
-    }
-    .lead{
-      color:var(--muted);
-      font-size:.98rem;
-      max-width:580px;
-    }
+
     .back-link{
       display:inline-flex;
       align-items:center;
-      gap:6px;
-      font-size:.9rem;
+      gap:7px;
+      font-size:.92rem;
       color:var(--muted2);
       text-decoration:none;
-      margin-top:10px;
-      margin-bottom:16px;
+      margin-top:22px;
+      margin-bottom:14px;
+      transition:color .15s ease, transform .15s ease;
     }
-    .back-link span{
-      display:inline-block;
-      transform:translateY(1px);
+    .back-link:hover{
+      color:var(--text);
+      transform:translateX(-2px);
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns:minmax(0, 1.08fr) minmax(320px, .92fr);
+      gap:18px;
+      align-items:stretch;
+      margin-bottom:18px;
+    }
+
+    .hero-copy,
+    .hero-side{
+      border-radius:var(--radius2);
+      border:1px solid var(--border);
+      background:
+        radial-gradient(800px 260px at 18% 10%, rgba(56,189,248,.10), transparent 58%),
+        linear-gradient(180deg, rgba(13,22,41,.92), rgba(6,12,24,.96));
+      box-shadow:var(--shadow);
+    }
+
+    .hero-copy{
+      padding:28px 26px 24px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-kicker{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:var(--brand);
+      font-weight:800;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      font-size:10px;
+      margin-bottom:14px;
+    }
+    .hero-dot{
+      width:6px;
+      height:6px;
+      border-radius:999px;
+      background:var(--brand);
+      box-shadow:0 0 16px rgba(56,189,248,.55);
+    }
+
+    h1{
+      font-family:'Fraunces',serif;
+      font-weight:700;
+      letter-spacing:-.03em;
+      line-height:1.02;
+      font-size:clamp(2rem, 4vw, 3.15rem);
+      margin-bottom:12px;
+      max-width:680px;
+    }
+
+    .hero-copy p{
+      color:var(--muted);
+      font-size:1rem;
+      max-width:620px;
+      margin-bottom:18px;
+    }
+
+    .trust-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:8px;
+    }
+
+    .trust-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,.16);
+      background:rgba(7,18,43,.50);
+      color:var(--muted);
+      font-size:12px;
+    }
+    .trust-badge i{
+      width:18px;
+      height:18px;
+      border-radius:999px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      background:var(--brandSoft);
+      color:var(--brand);
+      font-style:normal;
+      font-size:12px;
+    }
+
+    .hero-side{
+      padding:20px 18px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      justify-content:center;
+    }
+
+    .side-head{
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      align-items:flex-start;
+      font-size:12px;
+      color:var(--muted2);
+    }
+    .side-head b{
+      color:var(--text);
+      font-weight:800;
+    }
+
+    .info-stack{
+      display:grid;
+      gap:10px;
+    }
+
+    .info-card{
+      border-radius:14px;
+      border:1px solid rgba(148,163,184,.14);
+      background:rgba(7,18,43,.52);
+      padding:12px;
+    }
+    .info-label{
+      color:var(--brand);
+      font-size:10px;
+      font-weight:900;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      margin-bottom:5px;
+    }
+    .info-title{
+      font-size:13px;
+      font-weight:800;
+      color:var(--text);
+      margin-bottom:4px;
+    }
+    .info-text{
+      font-size:12px;
+      color:var(--muted);
+      line-height:1.45;
+    }
+
+    .quote-layout{
+      display:grid;
+      grid-template-columns:minmax(0, 1fr) 290px;
+      gap:18px;
+      align-items:start;
     }
 
     .form-wrap{
-      margin-top: 8px;
-      background: linear-gradient(180deg, rgba(18,28,47,.95), rgba(8,12,22,.95));
-      border: 1px solid rgba(148,163,184,.16);
-      border-radius: var(--radius2);
-      padding: 22px 18px 20px;
-      box-shadow: var(--shadow);
+      background:
+        radial-gradient(800px 280px at 20% 0%, rgba(56,189,248,.08), transparent 55%),
+        linear-gradient(180deg, rgba(18,28,47,.95), rgba(8,12,22,.98));
+      border:1px solid rgba(148,163,184,.16);
+      border-radius:var(--radius2);
+      padding:20px 18px 18px;
+      box-shadow:var(--shadow);
     }
+
+    .form-section{
+      border:1px solid rgba(148,163,184,.12);
+      background:rgba(6,13,25,.48);
+      border-radius:18px;
+      padding:16px;
+      margin-bottom:14px;
+    }
+
+    .section-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:baseline;
+      gap:16px;
+      margin-bottom:12px;
+    }
+
+    .section-title{
+      font-size:12px;
+      color:var(--text);
+      font-weight:900;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+
+    .section-note{
+      font-size:12px;
+      color:var(--muted2);
+      line-height:1.45;
+      max-width:420px;
+      text-align:right;
+    }
+
     form.form{
       display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
     }
-    .field{display:flex;flex-direction:column;gap:6px;}
+
+    .field{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+
     label{
-      font-size: 12px;
-      color: var(--muted2);
-      font-weight: 700;
-      letter-spacing: .02em;
-      text-transform: uppercase;
+      font-size:12px;
+      color:var(--muted2);
+      font-weight:800;
+      letter-spacing:.02em;
+      text-transform:uppercase;
     }
+
     input, select, textarea{
       width:100%;
-      padding: 11px 13px;
-      border-radius: 12px;
-      border: 1px solid rgba(148,163,184,.20);
-      background: rgba(11,18,32,.9);
-      color: var(--text);
-      font-size: 14px;
-      transition: box-shadow .15s ease, border-color .15s ease;
+      padding:12px 13px;
+      border-radius:13px;
+      border:1px solid rgba(148,163,184,.18);
+      background:rgba(7,14,27,.96);
+      color:var(--text);
+      font-size:14px;
+      transition:border-color .15s ease, box-shadow .15s ease, transform .15s ease;
     }
-    input::placeholder, textarea::placeholder{color:#64748b;}
-    textarea{resize:vertical; min-height:110px;}
+
+    input::placeholder, textarea::placeholder{color:#64748b}
+    textarea{
+      resize:vertical;
+      min-height:120px;
+    }
+
     input:focus, select:focus, textarea:focus{
       outline:none;
-      border-color: rgba(56,189,248,.55);
-      box-shadow: 0 0 0 4px rgba(56,189,248,.12);
+      border-color:rgba(56,189,248,.52);
+      box-shadow:0 0 0 4px rgba(56,189,248,.10);
     }
-    .span-2{grid-column: 1 / -1;}
+
+    .span-2{grid-column:1 / -1}
+
     .hint-small{
-      font-size: 11.5px;
-      color: var(--muted2);
+      font-size:11.5px;
+      color:var(--muted2);
+      line-height:1.35;
+      margin-top:2px;
     }
+
     .options-grid{
       display:flex;
       flex-wrap:wrap;
-      gap:8px 18px;
+      gap:10px 18px;
       font-size:13px;
       color:var(--muted);
     }
+
     .options-grid label{
       display:inline-flex;
       align-items:center;
-      gap:6px;
-      font-weight:400;
+      gap:7px;
+      font-weight:500;
       text-transform:none;
       letter-spacing:0;
+      font-size:13px;
+      color:var(--muted);
+      cursor:pointer;
     }
+
     .options-grid input[type="checkbox"]{
       width:auto;
       height:auto;
@@ -161,40 +369,154 @@
       cursor:pointer;
     }
 
-    .submit-row{
-      grid-column: 1 / -1;
-      display:flex;
+    .quote-side{
+      position:sticky;
+      top:90px;
+      display:grid;
+      gap:12px;
+    }
+
+    .side-panel{
+      border-radius:20px;
+      border:1px solid rgba(148,163,184,.14);
+      background:
+        radial-gradient(600px 220px at 18% 8%, rgba(56,189,248,.10), transparent 55%),
+        linear-gradient(180deg, rgba(11,19,35,.96), rgba(5,10,20,.96));
+      box-shadow:var(--shadow);
+      padding:16px;
+    }
+
+    .side-panel .panel-title{
+      font-size:12px;
+      color:var(--brand);
+      font-weight:900;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      margin-bottom:8px;
+    }
+
+    .side-panel h3{
+      font-size:18px;
+      line-height:1.15;
+      margin-bottom:8px;
+      font-weight:800;
+    }
+
+    .side-panel p{
+      font-size:13px;
+      color:var(--muted);
+      line-height:1.5;
+    }
+
+    .mini-list{
+      display:grid;
       gap:10px;
-      align-items:center;
-      justify-content:space-between;
-      flex-wrap:wrap;
-      margin-top: 4px;
+      margin-top:10px;
     }
+
+    .mini-line{
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid rgba(148,163,184,.12);
+      background:rgba(7,18,43,.42);
+    }
+
+    .mini-line strong{
+      display:block;
+      color:var(--text);
+      font-size:13px;
+      margin-bottom:3px;
+    }
+
+    .mini-line span{
+      color:var(--muted2);
+      font-size:12px;
+      line-height:1.4;
+    }
+
+    .submit-wrap{
+      grid-column:1 / -1;
+      display:grid;
+      gap:10px;
+      margin-top:2px;
+    }
+
     .btn-submit{
-      width: 100%;
-      background: linear-gradient(180deg, rgba(37,99,235,1), rgba(29,78,216,1));
-      border: 1px solid rgba(255,255,255,.06);
+      width:100%;
+      background:linear-gradient(180deg, rgba(59,130,246,1), rgba(37,99,235,1));
+      border:1px solid rgba(255,255,255,.06);
       color:#fff;
-      padding: 12px 16px;
-      border-radius: 12px;
-      font-weight: 800;
-      letter-spacing: .01em;
-      box-shadow: 0 14px 34px rgba(37,99,235,.25);
+      padding:14px 16px;
+      border-radius:14px;
+      font-weight:800;
+      font-size:15px;
+      letter-spacing:.01em;
+      box-shadow:0 18px 36px rgba(37,99,235,.28);
       cursor:pointer;
+      transition:transform .15s ease, box-shadow .15s ease, filter .15s ease;
     }
-    .btn-submit:disabled{opacity:.7; cursor:not-allowed;}
-    .hint{color: var(--muted2);font-size: 12.5px;line-height: 1.35;margin-top:6px;}
+
+    .btn-submit:hover{
+      transform:translateY(-1px);
+      box-shadow:0 22px 44px rgba(37,99,235,.34);
+      filter:brightness(1.02);
+    }
+
+    .btn-submit:disabled{
+      opacity:.72;
+      cursor:not-allowed;
+    }
+
+    .hint{
+      color:var(--muted2);
+      font-size:12.5px;
+      line-height:1.45;
+    }
+
+    .hint strong{color:var(--text)}
 
     footer{
-      padding: 24px 0 20px;
-      color: var(--muted2);
+      padding:24px 0 20px;
+      color:var(--muted2);
       text-align:center;
-      font-size: 13px;
+      font-size:13px;
+    }
+
+    @media (max-width: 980px){
+      .hero{
+        grid-template-columns:1fr;
+      }
+      .quote-layout{
+        grid-template-columns:1fr;
+      }
+      .quote-side{
+        position:static;
+      }
     }
 
     @media (max-width: 720px){
-      header{padding: 26px 0 16px;}
-      form.form{grid-template-columns:1fr;}
+      header{padding:26px 0 16px}
+      form.form{grid-template-columns:1fr}
+      .section-row{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .section-note{
+        text-align:left;
+        max-width:none;
+      }
+      .hero-copy,
+      .hero-side,
+      .form-wrap{
+        padding-left:16px;
+        padding-right:16px;
+      }
+      .trust-row{
+        gap:8px;
+      }
+      .trust-badge{
+        font-size:11px;
+      }
     }
   </style>
 </head>
@@ -206,206 +528,323 @@
   </div>
 
   <main class="container">
-    <a href="/" class="back-link"><span>←</span> Back to homepage</a>
+    <a href="/" class="back-link">← Back to homepage</a>
 
-    <header>
-      <h1>Request a Cleaning Quote</h1>
-      <p class="lead">
-        Tell us about your home and what you need done. The more detail you share, the more accurate your estimate will be.
-      </p>
-    </header>
-
-    <section class="form-wrap">
-      <!-- SIN archivos: method POST normal -->
-      <form id="quote-form" class="form" action="https://formspree.io/f/xjgeoond" method="POST">
-
-        <!-- CONTACTO -->
-        <div class="field">
-          <label for="name">Name</label>
-          <input id="name" type="text" name="name" placeholder="Your name" required>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="hero-kicker">
+          <span class="hero-dot"></span>
+          FAST QUOTE • PREMIUM SERVICE • STRUCTURED PROCESS
         </div>
 
-        <div class="field">
-          <label for="phone">Phone</label>
-          <input id="phone" type="text" name="phone" placeholder="(###) ###-####" required>
+        <h1>Request a Cleaning Quote</h1>
+
+        <p>
+          Tell us about your home, your priorities, and the type of cleaning you need. The more detail you share, the more accurate your estimate range will be.
+        </p>
+
+        <div class="trust-row">
+          <div class="trust-badge"><i>✓</i>Deep cleaning, recurring, move-out & post-construction</div>
+          <div class="trust-badge"><i>★</i>Structured 3-person workflow</div>
+          <div class="trust-badge"><i>🧼</i>Fast response with estimate range</div>
+        </div>
+      </div>
+
+      <aside class="hero-side">
+        <div class="side-head">
+          <div><b>What happens next?</b></div>
+          <div>Usually same-day reply</div>
         </div>
 
-        <div class="field span-2">
-          <label for="email">Email</label>
-          <input id="email" type="email" name="email" placeholder="you@email.com" required>
-        </div>
-
-        <div class="field span-2">
-          <label for="city">City / Area</label>
-          <input id="city" type="text" name="city" placeholder="e.g. North Haledon, Wayne, Glen Rock" required>
-        </div>
-
-        <!-- SERVICIO Y PROPIEDAD -->
-        <div class="field">
-          <label for="service">Service needed</label>
-          <select id="service" name="service" required>
-            <option value="">Select service</option>
-            <option>Initial Deep Cleaning</option>
-            <option>Recurring Maintenance</option>
-            <option>Move In / Move Out</option>
-            <option>Post-Construction Cleaning</option>
-            <option>One-Time Standard Cleaning</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="home_type">Home type</label>
-          <select id="home_type" name="home_type" required>
-            <option value="">Select type</option>
-            <option>Apartment / Condo</option>
-            <option>Single Family Home</option>
-            <option>Townhouse</option>
-            <option>Duplex</option>
-            <option>Other</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="bedrooms">Bedrooms</label>
-          <select id="bedrooms" name="bedrooms" required>
-            <option value="">Select</option>
-            <option>Studio</option>
-            <option>1 Bedroom</option>
-            <option>2 Bedrooms</option>
-            <option>3 Bedrooms</option>
-            <option>4 Bedrooms</option>
-            <option>5+ Bedrooms</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="bathrooms">Bathrooms</label>
-          <select id="bathrooms" name="bathrooms" required>
-            <option value="">Select</option>
-            <option>1 Bathroom</option>
-            <option>1.5 Bathrooms</option>
-            <option>2 Bathrooms</option>
-            <option>2.5 Bathrooms</option>
-            <option>3 Bathrooms</option>
-            <option>3.5+ Bathrooms</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="square_feet">Approx. square footage</label>
-          <select id="square_feet" name="square_feet">
-            <option value="">Select</option>
-            <option>Under 1,000 sq ft</option>
-            <option>1,000 – 1,499 sq ft</option>
-            <option>1,500 – 1,999 sq ft</option>
-            <option>2,000 – 2,499 sq ft</option>
-            <option>2,500 – 2,999 sq ft</option>
-            <option>3,000+ sq ft</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="frequency">How often?</label>
-          <select id="frequency" name="frequency">
-            <option value="">One-time or recurring?</option>
-            <option>One-time only</option>
-            <option>Weekly</option>
-            <option>Every 2 weeks</option>
-            <option>Every 4 weeks</option>
-            <option>Not sure yet</option>
-          </select>
-        </div>
-
-        <!-- CONDICIÓN, PISOS, MASCOTAS -->
-        <div class="field">
-          <label for="condition">Current condition</label>
-          <select id="condition" name="condition">
-            <option value="">How does the home look?</option>
-            <option>Light cleaning (kept up, just needs detail)</option>
-            <option>Average (regular use, needs full reset)</option>
-            <option>Heavy (hasn't been cleaned in a while)</option>
-            <option>Post-construction / post-renovation</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="pets">Pets in the home?</label>
-          <select id="pets" name="pets">
-            <option value="">Select</option>
-            <option>No pets</option>
-            <option>Yes - 1 pet</option>
-            <option>Yes - 2+ pets</option>
-          </select>
-          <div class="hint-small">If yes, mention pet type in the details below.</div>
-        </div>
-
-        <div class="field span-2">
-          <label for="floors">Floor types</label>
-          <input id="floors" type="text" name="floors" placeholder="e.g. hardwood, tile, vinyl, carpet">
-        </div>
-
-        <div class="field">
-          <label for="parking">Parking / Access</label>
-          <select id="parking" name="parking">
-            <option value="">Select</option>
-            <option>Driveway / private parking</option>
-            <option>Free street parking available</option>
-            <option>Paid street parking only</option>
-            <option>Building garage / paid lot</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="timeline">When do you need it?</label>
-          <select id="timeline" name="timeline">
-            <option value="">Select</option>
-            <option>This week</option>
-            <option>Within 1–2 weeks</option>
-            <option>Within a month</option>
-            <option>Flexible / just getting quotes</option>
-          </select>
-        </div>
-
-        <!-- ADD-ONS (OPCIONALES) -->
-        <div class="field span-2">
-          <label>Add-ons (optional)</label>
-          <div class="options-grid">
-            <label><input type="checkbox" name="addon_inside_fridge" value="Yes"> Inside fridge</label>
-            <label><input type="checkbox" name="addon_inside_oven" value="Yes"> Inside oven</label>
-            <label><input type="checkbox" name="addon_inside_cabinets" value="Yes"> Inside kitchen cabinets</label>
-            <label><input type="checkbox" name="addon_inside_windows" value="Yes"> Interior windows / glass doors</label>
-            <label><input type="checkbox" name="addon_baseboards" value="Yes"> Detailed baseboards</label>
-            <label><input type="checkbox" name="addon_doors_trim" value="Yes"> Doors & trim detail</label>
-            <label><input type="checkbox" name="addon_balcony_patio" value="Yes"> Balcony / small patio sweep</label>
-            <label><input type="checkbox" name="addon_finished_basement" value="Yes"> Finished basement included</label>
+        <div class="info-stack">
+          <div class="info-card">
+            <div class="info-label">Step 1</div>
+            <div class="info-title">You send your details</div>
+            <div class="info-text">Home size, service type, condition, add-ons, and anything important about access or timing.</div>
           </div>
-          <div class="hint-small">
-            Check any extras you’d like included. We’ll factor these into your quote.
+
+          <div class="info-card">
+            <div class="info-label">Step 2</div>
+            <div class="info-title">We review scope & pricing</div>
+            <div class="info-text">If needed, we may ask for photos to tighten pricing and avoid surprises on service day.</div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-label">Step 3</div>
+            <div class="info-title">You get availability + estimate range</div>
+            <div class="info-text">Clear next steps, clear pricing direction, and no back-and-forth guessing.</div>
           </div>
         </div>
+      </aside>
+    </section>
 
-        <!-- DETALLES Y REFERENCIA -->
-        <div class="field span-2">
-          <label for="message">Specific details / priority areas</label>
-          <textarea id="message" name="message" placeholder="Tell us about any priority areas, heavy build-up, special requests, or notes about access / building rules."></textarea>
+    <section class="quote-layout">
+      <div class="form-wrap">
+        <form id="quote-form" class="form" action="https://formspree.io/f/xjgeoond" method="POST">
+
+          <div class="form-section span-2">
+            <div class="section-row">
+              <div class="section-title">Contact Information</div>
+              <div class="section-note">Start with the basics so we can reach you quickly with an estimate range.</div>
+            </div>
+
+            <div class="form">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" type="text" name="name" placeholder="Your name" required>
+              </div>
+
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input id="phone" type="text" name="phone" placeholder="(###) ###-####" required>
+              </div>
+
+              <div class="field span-2">
+                <label for="email">Email</label>
+                <input id="email" type="email" name="email" placeholder="you@email.com" required>
+              </div>
+
+              <div class="field span-2">
+                <label for="city">City / Area</label>
+                <input id="city" type="text" name="city" placeholder="e.g. North Haledon, Wayne, Glen Rock" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section span-2">
+            <div class="section-row">
+              <div class="section-title">Project Scope</div>
+              <div class="section-note">Tell us what kind of job this is and what type of property we’re pricing.</div>
+            </div>
+
+            <div class="form">
+              <div class="field">
+                <label for="service">Service needed</label>
+                <select id="service" name="service" required>
+                  <option value="">Select service</option>
+                  <option>Initial Deep Cleaning</option>
+                  <option>Recurring Maintenance</option>
+                  <option>Move In / Move Out</option>
+                  <option>Post-Construction Cleaning</option>
+                  <option>One-Time Standard Cleaning</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="home_type">Home type</label>
+                <select id="home_type" name="home_type" required>
+                  <option value="">Select type</option>
+                  <option>Apartment / Condo</option>
+                  <option>Single Family Home</option>
+                  <option>Townhouse</option>
+                  <option>Duplex</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="bedrooms">Bedrooms</label>
+                <select id="bedrooms" name="bedrooms" required>
+                  <option value="">Select</option>
+                  <option>Studio</option>
+                  <option>1 Bedroom</option>
+                  <option>2 Bedrooms</option>
+                  <option>3 Bedrooms</option>
+                  <option>4 Bedrooms</option>
+                  <option>5+ Bedrooms</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="bathrooms">Bathrooms</label>
+                <select id="bathrooms" name="bathrooms" required>
+                  <option value="">Select</option>
+                  <option>1 Bathroom</option>
+                  <option>1.5 Bathrooms</option>
+                  <option>2 Bathrooms</option>
+                  <option>2.5 Bathrooms</option>
+                  <option>3 Bathrooms</option>
+                  <option>3.5+ Bathrooms</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="square_feet">Approx. square footage</label>
+                <select id="square_feet" name="square_feet">
+                  <option value="">Select</option>
+                  <option>Under 1,000 sq ft</option>
+                  <option>1,000 – 1,499 sq ft</option>
+                  <option>1,500 – 1,999 sq ft</option>
+                  <option>2,000 – 2,499 sq ft</option>
+                  <option>2,500 – 2,999 sq ft</option>
+                  <option>3,000+ sq ft</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="frequency">How often?</label>
+                <select id="frequency" name="frequency">
+                  <option value="">One-time or recurring?</option>
+                  <option>One-time only</option>
+                  <option>Weekly</option>
+                  <option>Every 2 weeks</option>
+                  <option>Every 4 weeks</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section span-2">
+            <div class="section-row">
+              <div class="section-title">Condition, Access & Add-ons</div>
+              <div class="section-note">These details help us price correctly and avoid underquoting or surprises.</div>
+            </div>
+
+            <div class="form">
+              <div class="field">
+                <label for="condition">Current condition</label>
+                <select id="condition" name="condition">
+                  <option value="">How does the home look?</option>
+                  <option>Light cleaning (kept up, just needs detail)</option>
+                  <option>Average (regular use, needs full reset)</option>
+                  <option>Heavy (hasn't been cleaned in a while)</option>
+                  <option>Post-construction / post-renovation</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="pets">Pets in the home?</label>
+                <select id="pets" name="pets">
+                  <option value="">Select</option>
+                  <option>No pets</option>
+                  <option>Yes - 1 pet</option>
+                  <option>Yes - 2+ pets</option>
+                </select>
+                <div class="hint-small">If yes, mention pet type in the details below.</div>
+              </div>
+
+              <div class="field span-2">
+                <label for="floors">Floor types</label>
+                <input id="floors" type="text" name="floors" placeholder="e.g. hardwood, tile, vinyl, carpet">
+              </div>
+
+              <div class="field">
+                <label for="parking">Parking / Access</label>
+                <select id="parking" name="parking">
+                  <option value="">Select</option>
+                  <option>Driveway / private parking</option>
+                  <option>Free street parking available</option>
+                  <option>Paid street parking only</option>
+                  <option>Building garage / paid lot</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="timeline">When do you need it?</label>
+                <select id="timeline" name="timeline">
+                  <option value="">Select</option>
+                  <option>This week</option>
+                  <option>Within 1–2 weeks</option>
+                  <option>Within a month</option>
+                  <option>Flexible / just getting quotes</option>
+                </select>
+              </div>
+
+              <div class="field span-2">
+                <label>Add-ons (optional)</label>
+                <div class="options-grid">
+                  <label><input type="checkbox" name="addon_inside_fridge" value="Yes"> Inside fridge</label>
+                  <label><input type="checkbox" name="addon_inside_oven" value="Yes"> Inside oven</label>
+                  <label><input type="checkbox" name="addon_inside_cabinets" value="Yes"> Inside kitchen cabinets</label>
+                  <label><input type="checkbox" name="addon_inside_windows" value="Yes"> Interior windows / glass doors</label>
+                  <label><input type="checkbox" name="addon_baseboards" value="Yes"> Detailed baseboards</label>
+                  <label><input type="checkbox" name="addon_doors_trim" value="Yes"> Doors & trim detail</label>
+                  <label><input type="checkbox" name="addon_balcony_patio" value="Yes"> Balcony / small patio sweep</label>
+                  <label><input type="checkbox" name="addon_finished_basement" value="Yes"> Finished basement included</label>
+                </div>
+                <div class="hint-small">
+                  Check any extras you’d like included. We’ll factor these into your quote.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section span-2">
+            <div class="section-row">
+              <div class="section-title">Details & Notes</div>
+              <div class="section-note">This is where you help us understand the real scope: buildup, priorities, or access notes.</div>
+            </div>
+
+            <div class="form">
+              <div class="field span-2">
+                <label for="message">Specific details / priority areas</label>
+                <textarea id="message" name="message" placeholder="Tell us about priority areas, heavy build-up, special requests, pets, or notes about access / building rules."></textarea>
+              </div>
+
+              <div class="field span-2">
+                <label for="referral">How did you hear about us?</label>
+                <input id="referral" type="text" name="referral" placeholder="Google, referral, Nextdoor, Thumbtack, Instagram, etc.">
+              </div>
+            </div>
+          </div>
+
+          <input type="hidden" name="source" value="Website Quote Page" />
+
+          <div class="submit-wrap">
+            <button type="submit" class="btn-submit">Send Request</button>
+            <div class="hint">
+              Prefer text? Message us at <strong>(862) 287-7496</strong>. We usually reply the same day with availability and an estimate range.
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <aside class="quote-side">
+        <div class="side-panel">
+          <div class="panel-title">Good to Know</div>
+          <h3>Photos help a lot.</h3>
+          <p>
+            If your home has heavy buildup, post-construction dust, or special areas you want prioritized, photos help us price tighter and faster.
+          </p>
         </div>
 
-        <div class="field span-2">
-          <label for="referral">How did you hear about us?</label>
-          <input id="referral" type="text" name="referral" placeholder="Google, referral, Nextdoor, Thumbtack, Instagram, etc.">
-        </div>
-
-        <!-- Campo oculto para tracking -->
-        <input type="hidden" name="source" value="Website Quote Page" />
-
-        <div class="submit-row">
-          <button type="submit" class="btn-submit">Send Request</button>
-          <div class="hint">
-            Prefer text? Message us at <strong>(862) 287-7496</strong>.  
-            We usually reply the same day with availability and an estimate range.
+        <div class="side-panel">
+          <div class="panel-title">What We Price Around</div>
+          <div class="mini-list">
+            <div class="mini-line">
+              <strong>Deep Cleaning</strong>
+              <span>Usually based on size, condition, and add-ons.</span>
+            </div>
+            <div class="mini-line">
+              <strong>Move-Out / Turnovers</strong>
+              <span>Priced by vacancy level, interior extras, and timeline.</span>
+            </div>
+            <div class="mini-line">
+              <strong>Recurring Maintenance</strong>
+              <span>Best quoted after the initial deep clean or reset.</span>
+            </div>
           </div>
         </div>
-      </form>
+
+        <div class="side-panel">
+          <div class="panel-title">Best Fit For</div>
+          <div class="mini-list">
+            <div class="mini-line">
+              <strong>Homeowners</strong>
+              <span>Who want more than a surface clean.</span>
+            </div>
+            <div class="mini-line">
+              <strong>Realtors & Landlords</strong>
+              <span>Who need properties reset properly.</span>
+            </div>
+            <div class="mini-line">
+              <strong>Busy Families</strong>
+              <span>Who want structure, consistency, and fewer surprises.</span>
+            </div>
+          </div>
+        </div>
+      </aside>
     </section>
   </main>
 
