@@ -12,23 +12,21 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png?v=3">
 
-  <!-- Fonts (fix “ugly letters”) -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      /* Your brand vibe: Navy + Light Blue (logo) */
       --bg: #020617;
       --bg2:#040b1b;
       --panel: rgba(7, 18, 43, 0.72);
-    
       --panel2: rgba(6, 16, 38, 0.82);
       --stroke: rgba(148,163,184,.22);
       --stroke2: rgba(56,189,248,.22);
 
-      --accent:#38bdf8;        /* logo light blue */
+      --accent:#38bdf8;
       --accent2:#0ea5e9;
       --accentSoft: rgba(56,189,248,.14);
 
@@ -45,7 +43,6 @@
 
       --max: 1120px;
 
-      /* Typography */
       --fontBody: "Inter", system-ui, -apple-system, Segoe UI, sans-serif;
       --fontHead: "Fraunces", ui-serif, Georgia, serif;
     }
@@ -74,7 +71,6 @@
       padding: 22px 16px 70px;
     }
 
-    /* Topbar */
     .topbar{
       display:flex;
       justify-content:flex-end;
@@ -90,7 +86,6 @@
     }
     .topbar a{color: var(--accent); font-weight: 700}
 
-    /* Header */
     header{
       position: sticky;
       top: 12px;
@@ -205,7 +200,6 @@
       box-shadow: 0 22px 52px rgba(56,189,248,.36);
     }
 
-    /* Sections container style */
     section.block{
       margin-top: 18px;
       border-radius: var(--radiusXL);
@@ -218,10 +212,9 @@
       padding: 20px;
     }
 
-    /* HERO */
     .hero{
       display:grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
       gap: 16px;
       align-items: stretch;
       overflow:hidden;
@@ -350,6 +343,18 @@
       gap: 10px;
     }
 
+    .hero-visual{
+      overflow:hidden;
+      border-radius: 18px;
+      border: 1px solid rgba(148,163,184,.16);
+      box-shadow: 0 14px 30px rgba(0,0,0,.28);
+    }
+    .hero-visual img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+
     .hero-right-head{
       display:flex;
       justify-content:space-between;
@@ -412,7 +417,6 @@
     }
     .hero-foot strong{ color: var(--accent) }
 
-    /* SECTION HEADERS */
     .section-head{
       display:flex;
       justify-content:space-between;
@@ -434,11 +438,16 @@
       line-height: 1.45;
     }
 
-    /* GRIDS */
     .grid4{
       display:grid;
       grid-template-columns: repeat(4, minmax(0,1fr));
       gap: 12px;
+    }
+
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap:12px;
     }
 
     .card{
@@ -452,16 +461,33 @@
       display:flex;
       flex-direction:column;
       min-height: 100%;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+
+    .card:hover{
+      transform: translateY(-4px);
+      border-color: rgba(56,189,248,.32);
+      box-shadow: 0 24px 50px rgba(0,0,0,.42);
     }
 
     .media{
       border-bottom: 1px solid rgba(148,163,184,.14);
       background: rgba(2,6,23,.35);
+      overflow:hidden;
     }
-    .media img{ width:100%; height:auto; display:block; }
+    .media img{
+      width:100%;
+      height:auto;
+      display:block;
+      transition: transform .35s ease, filter .25s ease;
+    }
+    .card:hover .media img{
+      transform: scale(1.02);
+      filter: brightness(1.03);
+    }
 
     .card-body{
-      padding: 12px 12px 12px;
+      padding: 12px;
       display:flex;
       flex-direction:column;
       gap: 7px;
@@ -491,8 +517,6 @@
       margin-top: 2px;
     }
 
-    /* How / Why (mini cards) */
-    .grid3{display:grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap:12px;}
     .mini{
       border-radius: var(--radiusLG);
       border: 1px solid rgba(148,163,184,.16);
@@ -520,7 +544,81 @@
       line-height: 1.45;
     }
 
-    /* Reviews */
+    .results-grid{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap:12px;
+    }
+
+    .result-card{
+      overflow:hidden;
+      border-radius: var(--radiusLG);
+      border: 1px solid rgba(148,163,184,.16);
+      background: rgba(5, 14, 35, .55);
+      box-shadow: 0 16px 36px rgba(0,0,0,.28);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+
+    .result-card:hover{
+      transform: translateY(-4px);
+      border-color: rgba(56,189,248,.32);
+      box-shadow: 0 24px 50px rgba(0,0,0,.42);
+    }
+
+    .result-card img{
+      width:100%;
+      height:auto;
+      display:block;
+      transition: transform .35s ease, filter .25s ease;
+    }
+
+    .result-card:hover img{
+      transform: scale(1.02);
+      filter: brightness(1.03);
+    }
+
+    .result-meta{
+      padding: 12px;
+      display:flex;
+      flex-direction:column;
+      gap: 6px;
+    }
+
+    .review-grid{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap:12px;
+      margin-bottom: 12px;
+    }
+
+    .review-card{
+      border-radius: var(--radiusLG);
+      border: 1px solid rgba(148,163,184,.16);
+      background: rgba(5, 14, 35, .55);
+      padding: 14px;
+      box-shadow: 0 16px 36px rgba(0,0,0,.28);
+    }
+
+    .review-stars{
+      color:#facc15;
+      letter-spacing:.10em;
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+
+    .review-quote{
+      color: var(--text);
+      font-size: 13px;
+      line-height: 1.5;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .review-name{
+      color: var(--muted2);
+      font-size: 11px;
+    }
+
     .reviewBox{
       border-radius: var(--radiusXL);
       border: 1px dashed rgba(148,163,184,.35);
@@ -536,9 +634,6 @@
     .reviewTitle{font-weight: 900; font-size: 14px}
     .reviewText{color: var(--muted); font-size: 12.5px; line-height: 1.45}
 
-    /* =========================
-       POLICIES
-    ========================= */
     .policies-grid{
       display:grid;
       grid-template-columns: repeat(3, minmax(0,1fr));
@@ -577,9 +672,6 @@
       font-size: 12px;
     }
 
-    /* =========================
-       FAQ
-    ========================= */
     .faq-grid{
       display:grid;
       grid-template-columns: repeat(2, minmax(0,1fr));
@@ -633,7 +725,6 @@
       margin-top: 14px;
     }
 
-    /* Footer */
     footer{
       margin-top: 22px;
       display:flex;
@@ -645,7 +736,6 @@
       padding: 0 6px;
     }
 
-    /* Responsive */
     @media (max-width: 980px){
       header{
         position: static;
@@ -656,75 +746,55 @@
       }
       .grid4{grid-template-columns: repeat(2,minmax(0,1fr));}
       .grid3{grid-template-columns: repeat(2,minmax(0,1fr));}
+      .results-grid{grid-template-columns: 1fr;}
+      .review-grid{grid-template-columns: 1fr;}
       .policies-grid{grid-template-columns: repeat(2,minmax(0,1fr));}
       .faq-grid{grid-template-columns: 1fr;}
       .topbar{justify-content:center; text-align:center;}
     }
+
     @media (max-width: 720px){
       .grid4{grid-template-columns: 1fr;}
       .grid3{grid-template-columns: 1fr;}
       .policies-grid{grid-template-columns: 1fr;}
       .section-head{flex-direction:column; align-items:flex-start}
       .brand{min-width: auto}
-      .pill{display:none} /* cleaner on mobile */
+      .pill{display:none}
     }
   </style>
+
   <script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "HouseCleaningService",
- "name": "Purelux Cleaning",
- "image": "https://pureluxnj.com/images/purelux-cleaning-logo.png",
- "@id": "https://pureluxnj.com",
- "url": "https://pureluxnj.com",
- "telephone": "+1-862-287-7596",
- "priceRange": "$$",
- "address": {
-   "@type": "PostalAddress",
-   "addressLocality": "North Haledon",
-   "addressRegion": "NJ",
-   "addressCountry": "US"
- },
- "areaServed": [
-   {
-     "@type": "City",
-     "name": "Wayne NJ"
+  {
+   "@context": "https://schema.org",
+   "@type": "HouseCleaningService",
+   "name": "Purelux Cleaning",
+   "image": "https://pureluxnj.com/images/purelux-cleaning-logo.png",
+   "@id": "https://pureluxnj.com",
+   "url": "https://pureluxnj.com",
+   "telephone": "+1-862-287-7596",
+   "priceRange": "$$",
+   "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "North Haledon",
+     "addressRegion": "NJ",
+     "addressCountry": "US"
    },
-   {
-     "@type": "City",
-     "name": "Paramus NJ"
-   },
-   {
-     "@type": "City",
-     "name": "Ridgewood NJ"
-   },
-   {
-     "@type": "City",
-     "name": "Glen Rock NJ"
-   },
-   {
-     "@type": "City",
-     "name": "Fair Lawn NJ"
-   },
-   {
-     "@type": "City",
-     "name": "Clifton NJ"
-   },
-   {
-     "@type": "City",
-     "name": "Wyckoff NJ"
-   },
-   {
-     "@type": "City",
-     "name": "Hawthorne NJ"
-   }
- ],
- "sameAs": [
-   "https://www.instagram.com/",
-   "https://www.facebook.com/"
- ]
-}
-</script>
+   "areaServed": [
+     {"@type":"City","name":"Wayne NJ"},
+     {"@type":"City","name":"Paramus NJ"},
+     {"@type":"City","name":"Ridgewood NJ"},
+     {"@type":"City","name":"Glen Rock NJ"},
+     {"@type":"City","name":"Fair Lawn NJ"},
+     {"@type":"City","name":"Clifton NJ"},
+     {"@type":"City","name":"Wyckoff NJ"},
+     {"@type":"City","name":"Hawthorne NJ"}
+   ],
+   "sameAs": [
+     "https://www.instagram.com/",
+     "https://www.facebook.com/"
+   ]
+  }
+  </script>
 </head>
 
 <body>
@@ -761,20 +831,20 @@
         <div class="kicker"><span class="kdot"></span> STRUCTURED • CONSISTENT • DETAIL-DRIVEN</div>
 
         <h1>
-          Professional Residential &amp; <span class="accent">Post-Construction</span><br>
-          Cleaning in North NJ
+          Deep Cleaning, Move-Outs &amp; <span class="accent">Post-Construction Resets</span><br>
+          Done Properly in North NJ
         </h1>
 
         <p class="lead">
-          Purelux is a structured 3-person team delivering consistent results—deep cleaning, recurring maintenance,
-          move-in/move-out turnovers, and post-construction resets for homeowners who don’t want “random cleaner” results.
+          Purelux is a structured 3-person team delivering consistent results for deep cleaning, recurring maintenance,
+          move-in/move-out turnovers, and post-construction resets for homeowners who want more than surface-level cleaning.
         </p>
 
-       <div class="cta-row">
-  <a class="btn btn-primary" href="quote.html">Get My Custom Quote ↗</a>
-  <a class="btn" href="#services">View Services &amp; Typical Ranges</a>
-  <a class="btn" href="#areas">See Service Areas</a>
-</div>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="quote.html">Get My Custom Quote ↗</a>
+          <a class="btn" href="#results">View Real Results</a>
+          <a class="btn" href="#services">See Services &amp; Typical Ranges</a>
+        </div>
 
         <div class="trust-row">
           <span>Serving North Haledon, Wayne, Glen Rock, Clifton &amp; nearby areas.</span>
@@ -789,41 +859,37 @@
       </div>
 
       <aside class="hero-right">
+        <div class="hero-visual">
+          <img src="./images/Purelux_DeepClean_Bathtub_MidlandPark_BA_01.png" alt="Bathtub before and after deep cleaning by Purelux Cleaning">
+        </div>
+
         <div class="hero-right-head">
-          <div><b>Premium Deep Cleaning, Without Guesswork</b></div>
-          <div>Average deep cleans range from <b>$450–$900*</b></div>
+          <div><b>Real Results, Not Surface-Level Cleaning</b></div>
+          <div>Deep cleaning projects often range from <b>$450–$900+</b></div>
         </div>
 
         <div class="points">
           <div class="point">
             <div class="pnum">1</div>
             <div>
-              <div class="ptitle">Full-property reset</div>
-              <div class="ptext">
-                Kitchens, bathrooms, baseboards, doors, trim, switches, and detail zones.
-                Ideal as a “Day 1” reset before recurring maintenance.
-              </div>
+              <div class="ptitle">Structured Team Workflow</div>
+              <div class="ptext">Every visit follows a zone-based process for consistency, detail control, and cleaner execution.</div>
             </div>
           </div>
 
           <div class="point">
             <div class="pnum">2</div>
             <div>
-              <div class="ptitle">Structured 3-Person Team</div>
-              <div class="ptext">
-                Each tech owns a zone—no chaos, no guessing. Same workflow every time for consistent results,
-                not “hit or miss” cleanings.
-              </div>
+              <div class="ptitle">Built for Real Resets</div>
+              <div class="ptext">Deep cleaning, turnovers, and post-construction cleanup done with real execution—not a quick wipe-down.</div>
             </div>
           </div>
 
           <div class="point">
             <div class="pnum">3</div>
             <div>
-              <div class="ptitle">Ideal for Busy Homeowners &amp; Realtors</div>
-              <div class="ptext">
-                Perfect for listings, turnovers, and families who want the home handled—without managing cleaners.
-              </div>
+              <div class="ptitle">Ideal for Homeowners &amp; Realtors</div>
+              <div class="ptext">For people who want reliability, structure, and visible results without managing the process themselves.</div>
             </div>
           </div>
         </div>
@@ -835,201 +901,45 @@
       </aside>
     </section>
 
-    <!-- SERVICES -->
-    <section class="block" id="services">
+    <!-- REAL RESULTS -->
+    <section class="block" id="results">
       <div class="section-head">
-        <div class="section-title">OUR SERVICES</div>
+        <div class="section-title">REAL TRANSFORMATIONS</div>
         <div class="section-sub">
-          Clear scope. No surprises. We start with a full deep clean or post-construction reset, then move into recurring maintenance on a reliable schedule.
+          What most cleaners don’t show — we do. Real before-and-after results from actual jobs across North NJ.
         </div>
       </div>
 
-      <div class="grid4">
-        <article class="card">
-          <div class="media">
-            <!-- KEEP SAME IMAGE NAMES -->
-            <img src="./images/DEEP CLEANING PORTRAIT.png" alt="Deep Cleaning Service">
+      <div class="results-grid">
+        <article class="result-card">
+          <img src="./images/Purelux_ToiletDetail_BeforeAfter_MidlandPark_01.png" alt="Toilet hardware detail cleaning before and after in Midland Park NJ">
+          <div class="result-meta">
+            <div class="label">DETAIL WORK</div>
+            <div class="title">Toilet Hardware Reset</div>
+            <div class="text">A detail zone most companies skip completely—but exactly the kind of work that defines a high-standard clean.</div>
           </div>
-          <div class="card-body">
+        </article>
+
+        <article class="result-card">
+          <img src="./images/Purelux_DeepClean_Bathtub_MidlandPark_BA_01.png" alt="Bathtub before and after deep cleaning in Midland Park NJ">
+          <div class="result-meta">
+            <div class="label">BATHROOM RESET</div>
+            <div class="title">Tub &amp; Tile Detail Cleaning</div>
+            <div class="text">Built-up residue, edges, and dull surfaces brought back to a cleaner, brighter finish.</div>
+          </div>
+        </article>
+
+        <article class="result-card">
+          <img src="./images/BATHDROOM SINK DEEP CLEANING - PINE BROOK.png" alt="Bathroom sink before and after deep cleaning in Pine Brook NJ">
+          <div class="result-meta">
             <div class="label">DEEP CLEANING</div>
-            <div class="title">Full-Property Reset</div>
-            <div class="text">
-              Detailed cleaning for kitchens, baths, baseboards, trim, fixtures, and high-touch surfaces.
-              Ideal when things haven’t been cleaned “properly” in a while.
-            </div>
-            <div class="foot">Typical range: $450–$900+ depending on size &amp; buildup.</div>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="media">
-            <img src="./images/RECURIN CLEANING PORTRAIT.png" alt="Recurring Cleaning Service">
-          </div>
-          <div class="card-body">
-            <div class="label">RECURRING CLEANING</div>
-            <div class="title">Weekly, Bi-Weekly &amp; Monthly</div>
-            <div class="text">
-              Maintenance visits built on the original deep clean. Same structure each time so the home never “falls behind” again.
-            </div>
-            <div class="foot">Best for busy households that want consistent standards.</div>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="media">
-            <img src="./images/MOVE IN-OUT PORTRAIT.png" alt="Move In / Move Out Cleaning Service">
-          </div>
-          <div class="card-body">
-            <div class="label">MOVE IN / MOVE OUT</div>
-            <div class="title">Turnover-Ready Homes</div>
-            <div class="text">
-              Vacant home resets for buyers, sellers, and tenants. Inside cabinets, appliances, and detailed bathrooms—so the next chapter starts fresh.
-            </div>
-            <div class="foot">Popular for realtors &amp; landlords across North NJ.</div>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="media">
-            <img src="./images/POST-CONTRUCTION PORTRAIT.png" alt="Post-construction Cleaning Service">
-          </div>
-          <div class="card-body">
-            <div class="label">POST-CONSTRUCTION</div>
-            <div class="title">Dust &amp; Debris Removal</div>
-            <div class="text">
-              Multi-stage dust removal, detailed vacuuming, and wipe-downs for newly renovated spaces so they’re actually livable—not just “done.”
-            </div>
-            <div class="foot">Ask about multi-visit options for ongoing projects.</div>
+            <div class="title">Bathroom Sink Restoration</div>
+            <div class="text">Visible buildup removed and surfaces reset to a cleaner, sharper standard that photographs well.</div>
           </div>
         </article>
       </div>
     </section>
 
-<!-- SERVICE AREAS -->
-<section class="block" id="areas">
-  <div class="section-head">
-    <div class="section-title">SERVICE AREAS</div>
-    <div class="section-sub">
-      We provide premium house cleaning across Bergen & Passaic County. Choose your town to learn more.
-    </div>
-  </div>
-
-  <div class="grid4">
-    <article class="card">
-      <div class="card-body">
-        <div class="label">WAYNE, NJ</div>
-        <div class="title">House Cleaning in Wayne</div>
-        <div class="text">Deep cleaning, recurring maintenance, move-in/out and post-construction cleaning.</div>
-        <div class="foot"><a class="btn btn-primary" href="house-cleaning-wayne-nj.html">View Wayne Page ↗</a></div>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-body">
-        <div class="label">PARAMUS, NJ</div>
-        <div class="title">House Cleaning in Paramus</div>
-        <div class="text">Premium home cleaning for busy households and real estate turnovers.</div>
-        <div class="foot"><a class="btn btn-primary" href="house-cleaning-paramus-nj.html">View Paramus Page ↗</a></div>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-body">
-        <div class="label">RIDGEWOOD, NJ</div>
-        <div class="title">House Cleaning in Ridgewood</div>
-        <div class="text">Detail-driven cleaning with checklist execution and consistent standards.</div>
-        <div class="foot"><a class="btn btn-primary" href="house-cleaning-ridgewood-nj.html">View Ridgewood Page ↗</a></div>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-body">
-        <div class="label">GLEN ROCK, NJ</div>
-        <div class="title">House Cleaning in Glen Rock</div>
-        <div class="text">Deep cleans + recurring plans built for families who want reliability.</div>
-        <div class="foot"><a class="btn btn-primary" href="house-cleaning-glen-rock-nj.html">View Glen Rock Page ↗</a></div>
-      </div>
-    </article>
-
-<article class="card">
-  <div class="card-body">
-    <div class="label">FAIR LAWN, NJ</div>
-    <div class="title">House Cleaning in Fair Lawn</div>
-    <div class="text">Deep cleaning, recurring maintenance, move-in/move-out and post-construction resets.</div>
-    <div class="foot"><a class="btn btn-primary" href="house-cleaning-fair-lawn-nj.html">View Fair Lawn Page ↗</a></div>
-  </div>
-</article>
-
-<article class="card">
-  <div class="card-body">
-    <div class="label">CLIFTON, NJ</div>
-    <div class="title">House Cleaning in Clifton</div>
-    <div class="text">Premium, checklist-driven cleanings for busy homes, rentals and turnovers.</div>
-    <div class="foot"><a class="btn btn-primary" href="house-cleaning-clifton-nj.html">View Clifton Page ↗</a></div>
-  </div>
-</article>
-
-<article class="card">
-  <div class="card-body">
-    <div class="label">HAWTHORNE, NJ</div>
-    <div class="title">House Cleaning in Hawthorne</div>
-    <div class="text">Detail-driven deep cleans + recurring plans built for consistency.</div>
-    <div class="foot"><a class="btn btn-primary" href="house-cleaning-hawthorne-nj.html">View Hawthorne Page ↗</a></div>
-  </div>
-</article>
-
-<article class="card">
-  <div class="card-body">
-    <div class="label">WYCKOFF, NJ</div>
-    <div class="title">House Cleaning in Wyckoff</div>
-    <div class="text">Higher-standard home cleaning for families who want reliable results.</div>
-    <div class="foot"><a class="btn btn-primary" href="house-cleaning-wyckoff-nj.html">View Wyckoff Page ↗</a></div>
-  </div>
-</article>
-
-    <article class="card">
-  <div class="card-body">
-    <div class="label">NORTH HALEDON, NJ</div>
-    <div class="title">House Cleaning in North Haledon</div>
-    <div class="text">Deep cleaning, recurring maintenance, move-in/move-out and post-construction cleaning.</div>
-    <div class="foot"><a class="btn btn-primary" href="house-cleaning-north-haledon-nj.html">View North Haledon Page ↗</a></div>
-  </div>
-</article>
-
-<article class="card">
-  <div class="card-body">
-    <div class="label">TOTOWA, NJ</div>
-    <div class="title">House Cleaning in Totowa</div>
-    <div class="text">Premium home cleaning with structured execution and consistent results.</div>
-    <div class="foot"><a class="btn btn-primary" href="house-cleaning-totowa-nj.html">View Totowa Page ↗</a></div>
-  </div>
-</article>
-
-<article class="card">
-  <div class="card-body">
-    <div class="label">FRANKLIN LAKES, NJ</div>
-    <div class="title">House Cleaning in Franklin Lakes</div>
-    <div class="text">Luxury home cleaning services for large homes and busy families.</div>
-    <div class="foot"><a class="btn btn-primary" href="house-cleaning-franklin-lakes-nj.html">View Franklin Lakes Page ↗</a></div>
-  </div>
-</article>
-
-<article class="card">
-  <div class="card-body">
-    <div class="label">MIDLAND PARK, NJ</div>
-    <div class="title">House Cleaning in Midland Park</div>
-    <div class="text">Detailed home cleaning services built for consistency and reliability.</div>
-    <div class="foot"><a class="btn btn-primary" href="house-cleaning-midland-park-nj.html">View Midland Park Page ↗</a></div>
-  </div>
-</article>   
-  </div>
-
-  <div class="policy-note" style="margin-top:12px;">
-    Looking for another town? We also serve North Haledon, Clifton, Totowa, Fair Lawn, Hawthorne, Wyckoff and nearby areas.
-  </div>
-</section>
-    
-    
     <!-- RECENT PROJECTS -->
     <section class="block" id="projects">
       <div class="section-head">
@@ -1094,6 +1004,198 @@
       </div>
     </section>
 
+    <!-- SERVICES -->
+    <section class="block" id="services">
+      <div class="section-head">
+        <div class="section-title">OUR SERVICES</div>
+        <div class="section-sub">
+          Clear scope. No surprises. We start with a full deep clean or post-construction reset, then move into recurring maintenance on a reliable schedule.
+        </div>
+      </div>
+
+      <div class="grid4">
+        <article class="card">
+          <div class="media">
+            <img src="./images/DEEP CLEANING PORTRAIT.png" alt="Deep Cleaning Service">
+          </div>
+          <div class="card-body">
+            <div class="label">DEEP CLEANING</div>
+            <div class="title">Full-Property Reset</div>
+            <div class="text">
+              Not a surface clean. Built for homes that need kitchens, baths, baseboards, trim, fixtures, and detail zones properly reset.
+            </div>
+            <div class="foot">Typical range: $450–$900+ depending on size &amp; buildup.</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="media">
+            <img src="./images/RECURIN CLEANING PORTRAIT.png" alt="Recurring Cleaning Service">
+          </div>
+          <div class="card-body">
+            <div class="label">RECURRING CLEANING</div>
+            <div class="title">Weekly, Bi-Weekly &amp; Monthly</div>
+            <div class="text">
+              Maintenance visits built on the original deep clean so the home stays consistent and never slips behind again.
+            </div>
+            <div class="foot">Best for busy households that want reliability, not random results.</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="media">
+            <img src="./images/MOVE IN-OUT PORTRAIT.png" alt="Move In / Move Out Cleaning Service">
+          </div>
+          <div class="card-body">
+            <div class="label">MOVE IN / MOVE OUT</div>
+            <div class="title">Turnover-Ready Homes</div>
+            <div class="text">
+              Vacancy-ready cleaning for sellers, tenants, landlords, and buyers who need the property reset properly before the next chapter.
+            </div>
+            <div class="foot">Popular for realtors &amp; landlords across North NJ.</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="media">
+            <img src="./images/POST-CONTRUCTION PORTRAIT.png" alt="Post-construction Cleaning Service">
+          </div>
+          <div class="card-body">
+            <div class="label">POST-CONSTRUCTION</div>
+            <div class="title">Dust &amp; Debris Removal</div>
+            <div class="text">
+              Multi-stage dust removal, detailed vacuuming, and wipe-downs for renovated spaces that need real final cleanup—not just a pass-through.
+            </div>
+            <div class="foot">Ask about multi-visit options for ongoing projects.</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SERVICE AREAS -->
+    <section class="block" id="areas">
+      <div class="section-head">
+        <div class="section-title">SERVICE AREAS</div>
+        <div class="section-sub">
+          We provide premium house cleaning across Bergen &amp; Passaic County. Choose your town to learn more.
+        </div>
+      </div>
+
+      <div class="grid4">
+        <article class="card">
+          <div class="card-body">
+            <div class="label">WAYNE, NJ</div>
+            <div class="title">House Cleaning in Wayne</div>
+            <div class="text">Deep cleaning, recurring maintenance, and turnover cleaning in Wayne.</div>
+            <div class="foot"><a class="btn btn-primary" href="house-cleaning-wayne-nj.html">View Wayne Page ↗</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <div class="label">PARAMUS, NJ</div>
+            <div class="title">House Cleaning in Paramus</div>
+            <div class="text">Premium home cleaning for busy households and real estate turnovers.</div>
+            <div class="foot"><a class="btn btn-primary" href="house-cleaning-paramus-nj.html">View Paramus Page ↗</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <div class="label">RIDGEWOOD, NJ</div>
+            <div class="title">House Cleaning in Ridgewood</div>
+            <div class="text">Detail-driven cleaning with checklist execution and consistent standards.</div>
+            <div class="foot"><a class="btn btn-primary" href="house-cleaning-ridgewood-nj.html">View Ridgewood Page ↗</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <div class="label">GLEN ROCK, NJ</div>
+            <div class="title">House Cleaning in Glen Rock</div>
+            <div class="text">Deep cleans and recurring plans built for families who want reliability.</div>
+            <div class="foot"><a class="btn btn-primary" href="house-cleaning-glen-rock-nj.html">View Glen Rock Page ↗</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <div class="label">FAIR LAWN, NJ</div>
+            <div class="title">House Cleaning in Fair Lawn</div>
+            <div class="text">Deep cleaning, recurring maintenance, and move-out resets in Fair Lawn.</div>
+            <div class="foot"><a class="btn btn-primary" href="house-cleaning-fair-lawn-nj.html">View Fair Lawn Page ↗</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <div class="label">CLIFTON, NJ</div>
+            <div class="title">House Cleaning in Clifton</div>
+            <div class="text">Premium, checklist-driven cleanings for busy homes, rentals and turnovers.</div>
+            <div class="foot"><a class="btn btn-primary" href="house-cleaning-clifton-nj.html">View Clifton Page ↗</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <div class="label">HAWTHORNE, NJ</div>
+            <div class="title">House Cleaning in Hawthorne</div>
+            <div class="text">Detail-driven deep cleans and recurring plans built for consistency.</div>
+            <div class="foot"><a class="btn btn-primary" href="house-cleaning-hawthorne-nj.html">View Hawthorne Page ↗</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <div class="label">WYCKOFF, NJ</div>
+            <div class="title">House Cleaning in Wyckoff</div>
+            <div class="text">Higher-standard home cleaning for families who want reliable results.</div>
+            <div class="foot"><a class="btn btn-primary" href="house-cleaning-wyckoff-nj.html">View Wyckoff Page ↗</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <div class="label">NORTH HALEDON, NJ</div>
+            <div class="title">House Cleaning in North Haledon</div>
+            <div class="text">Deep cleaning, recurring maintenance, and post-construction cleaning.</div>
+            <div class="foot"><a class="btn btn-primary" href="house-cleaning-north-haledon-nj.html">View North Haledon Page ↗</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <div class="label">TOTOWA, NJ</div>
+            <div class="title">House Cleaning in Totowa</div>
+            <div class="text">Premium home cleaning with structured execution and consistent results.</div>
+            <div class="foot"><a class="btn btn-primary" href="house-cleaning-totowa-nj.html">View Totowa Page ↗</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <div class="label">FRANKLIN LAKES, NJ</div>
+            <div class="title">House Cleaning in Franklin Lakes</div>
+            <div class="text">Luxury home cleaning services for large homes and busy families.</div>
+            <div class="foot"><a class="btn btn-primary" href="house-cleaning-franklin-lakes-nj.html">View Franklin Lakes Page ↗</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <div class="label">MIDLAND PARK, NJ</div>
+            <div class="title">House Cleaning in Midland Park</div>
+            <div class="text">Detailed home cleaning services built for consistency and reliability.</div>
+            <div class="foot"><a class="btn btn-primary" href="house-cleaning-midland-park-nj.html">View Midland Park Page ↗</a></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="policy-note" style="margin-top:12px;">
+        Looking for another town? We also serve North Haledon, Clifton, Totowa, Fair Lawn, Hawthorne, Wyckoff and nearby areas.
+      </div>
+    </section>
+
     <!-- HOW IT WORKS -->
     <section class="block" id="how">
       <div class="section-head">
@@ -1112,7 +1214,7 @@
         <div class="mini">
           <div class="step">STEP 2</div>
           <div class="mtitle">Confirm Scope &amp; Pricing</div>
-          <div class="mtext">We align on scope, visit length, and any add-ons (inside fridge, oven, cabinets, windows, etc.).</div>
+          <div class="mtext">We align on scope, visit length, and any add-ons such as inside fridge, oven, cabinets, or windows.</div>
         </div>
         <div class="mini">
           <div class="step">STEP 3</div>
@@ -1122,7 +1224,7 @@
         <div class="mini">
           <div class="step">STEP 4</div>
           <div class="mtitle">Walkthrough &amp; Maintenance Plan</div>
-          <div class="mtext">Final walkthrough + touch-ups. Optional recurring plan to keep the home “always ready.”</div>
+          <div class="mtext">Final walkthrough plus touch-ups. Optional recurring plan to keep the home “always ready.”</div>
         </div>
       </div>
     </section>
@@ -1152,7 +1254,7 @@
       </div>
     </section>
 
-    <!-- POLICIES (FIXED: uses your classes + block styling) -->
+    <!-- POLICIES -->
     <section class="block" id="policies">
       <div class="section-head">
         <div class="section-title">POLICIES</div>
@@ -1210,7 +1312,7 @@
       </div>
     </section>
 
-    <!-- FAQ (FIXED: uses your classes + block styling + correct buttons) -->
+    <!-- FAQ -->
     <section class="block" id="faq">
       <div class="section-head">
         <div class="section-title">FREQUENTLY ASKED QUESTIONS</div>
@@ -1270,11 +1372,31 @@
       </div>
     </section>
 
-    <!-- REVIEWS (FIXED: href with quotes, keeps your link) -->
+    <!-- REVIEWS -->
     <section class="block" id="reviews">
       <div class="section-head">
         <div class="section-title">REVIEWS</div>
         <div class="section-sub">Clients come back for consistency—because details don’t lie.</div>
+      </div>
+
+      <div class="review-grid">
+        <article class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-quote">“Attention to detail was incredible. The house looked and felt completely reset.”</div>
+          <div class="review-name">Recent residential client</div>
+        </article>
+
+        <article class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-quote">“Very professional, very thorough, and absolutely worth it for the quality of work.”</div>
+          <div class="review-name">North NJ homeowner</div>
+        </article>
+
+        <article class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-quote">“Best cleaning we’ve had. Structured, reliable, and the results actually lasted.”</div>
+          <div class="review-name">Recurring client</div>
+        </article>
       </div>
 
       <div class="reviewBox">
