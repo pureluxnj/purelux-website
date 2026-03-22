@@ -1,1 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Commercial Quote | Purelux Cleaning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0e1726;
+      color: white;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #b9c7da;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, select, textarea {
+      padding: 14px;
+      border-radius: 10px;
+      border: 1px solid #2a3a55;
+      background: #132238;
+      color: white;
+      font-size: 14px;
+    }
+
+    textarea {
+      min-height: 120px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 16px;
+      border: none;
+      border-radius: 999px;
+      background: #7ec8ff;
+      color: #092033;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Commercial Cleaning Quote</h1>
+  <p>For offices, gyms, studios, and businesses looking for recurring or one-time cleaning.</p>
+
+  <form action="https://formspree.io/f/xreywbnv" method="POST">
+
+    <input type="hidden" name="Lead Type" value="Commercial">
+    <input type="hidden" name="_subject" value="New Commercial Quote - Purelux">
+
+    <input type="text" name="Business Name" placeholder="Business Name" required>
+    <input type="text" name="Contact Name" placeholder="Contact Name" required>
+    <input type="email" name="Email" placeholder="Email" required>
+    <input type="tel" name="Phone" placeholder="Phone" required>
+
+    <input type="text" name="Business Address" placeholder="Business Address" required>
+
+    <select name="Business Type">
+      <option value="">Business Type</option>
+      <option>Office</option>
+      <option>Gym / Fitness Studio</option>
+      <option>Salon / Spa</option>
+      <option>Retail</option>
+      <option>Other</option>
+    </select>
+
+    <input type="text" name="Square Footage" placeholder="Approx Square Footage">
+
+    <select name="Service Type">
+      <option value="">Service Type</option>
+      <option>One-time Deep Cleaning</option>
+      <option>Recurring Cleaning</option>
+      <option>Post Construction</option>
+    </select>
+
+    <select name="Frequency">
+      <option value="">Frequency</option>
+      <option>One-time</option>
+      <option>Weekly</option>
+      <option>Bi-weekly</option>
+      <option>Custom</option>
+    </select>
+
+    <input type="date" name="Preferred Start Date">
+
+    <textarea name="Notes" placeholder="Tell us about your space, expectations, and cleaning needs..."></textarea>
+
+    <button type="submit">Request Quote</button>
+
+  </form>
+</div>
+
+</body>
+</html>
