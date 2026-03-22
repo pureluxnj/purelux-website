@@ -1,229 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Purelux Cleaning | Project Gallery</title>
-<meta name="description" content="Real cleaning projects across Bergen & Passaic County, NJ by Purelux Cleaning.">
+  <title>Purelux Cleaning | Project Gallery</title>
+  <meta name="description" content="Real cleaning projects across Bergen & Passaic County, NJ by Purelux Cleaning. Before-and-after deep cleaning, bathroom restoration, kitchen degreasing, and detailed resets.">
 
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png?v=3">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png?v=3">
 
-<style>
-:root {
-  --bg:#020617;
-  --panel:#071a34;
-  --accent:#38bdf8;
-  --text:#e5e7eb;
-  --text-soft:#9ca3af;
-  --radius:18px;
-}
+  <style>
+    :root{
+      --bg:#020617;
+      --bg2:#040b1b;
+      --panel:#071a34;
+      --panel2:rgba(7,26,52,.78);
+      --accent:#38bdf8;
+      --accent2:#0ea5e9;
+      --text:#e5e7eb;
+      --text-soft:#9ca3af;
+      --stroke:rgba(148,163,184,.18);
+      --radius:18px;
+      --shadow:0 18px 40px rgba(0,0,0,.55);
+      --max:1180px;
+    }
 
-*{box-sizing:border-box;margin:0;padding:0;}
+    *{box-sizing:border-box;margin:0;padding:0;}
 
-body{
-  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  background:radial-gradient(circle at top,#0f172a,#020617 70%);
-  color:var(--text);
-  padding:30px 16px;
-}
+    body{
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:
+        radial-gradient(1200px 700px at 30% 10%, rgba(56,189,248,.16), transparent 55%),
+        radial-gradient(900px 600px at 80% 35%, rgba(14,165,233,.12), transparent 60%),
+        linear-gradient(180deg, var(--bg2), var(--bg));
+      color:var(--text);
+      padding:30px 16px 50px;
+      min-height:100vh;
+    }
 
-.container{
-  max-width:1100px;
-  margin:auto;
-}
+    .container{
+      max-width:var(--max);
+      margin:auto;
+    }
 
-.header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:30px;
-}
+    .header{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:16px;
+      margin-bottom:26px;
+      padding:14px 18px;
+      border-radius:22px;
+      border:1px solid var(--stroke);
+      background:
+        radial-gradient(700px 220px at 15% 10%, rgba(56,189,248,.14), transparent 60%),
+        linear-gradient(180deg, rgba(7,18,43,.84), rgba(2,6,23,.92));
+      box-shadow:var(--shadow);
+    }
 
-.header a{
-  color:var(--accent);
-  text-decoration:none;
-  font-weight:600;
-}
+    .header-left h1{
+      font-size:30px;
+      line-height:1.05;
+      margin-bottom:8px;
+      letter-spacing:-.02em;
+    }
 
-h1{
-  font-size:28px;
-  margin-bottom:10px;
-}
+    .subtitle{
+      color:var(--text-soft);
+      font-size:14px;
+      line-height:1.55;
+      max-width:760px;
+    }
 
-.subtitle{
-  color:var(--text-soft);
-  margin-bottom:30px;
-}
+    .header a{
+      color:var(--accent);
+      text-decoration:none;
+      font-weight:700;
+      white-space:nowrap;
+      border:1px solid rgba(56,189,248,.25);
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(8,20,45,.7);
+      transition:.2s ease;
+    }
 
-.gallery-grid{
-  display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:16px;
-}
+    .header a:hover{
+      transform:translateY(-1px);
+      box-shadow:0 12px 24px rgba(0,0,0,.28);
+      border-color:rgba(56,189,248,.4);
+    }
 
-.gallery-item{
-  border-radius:var(--radius);
-  overflow:hidden;
-  cursor:pointer;
-  background:var(--panel);
-  border:1px solid #1f2a3d;
-  box-shadow:0 18px 40px rgba(0,0,0,.6);
-  transition:.25s ease;
-}
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:16px;
+    }
 
-.gallery-item:hover{
-  transform:translateY(-4px);
-}
+    .gallery-item{
+      border-radius:var(--radius);
+      overflow:hidden;
+      cursor:pointer;
+      background:
+        radial-gradient(600px 220px at 20% 10%, rgba(56,189,248,.08), transparent 55%),
+        linear-gradient(180deg, rgba(7,26,52,.95), rgba(4,11,27,.96));
+      border:1px solid var(--stroke);
+      box-shadow:var(--shadow);
+      transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+      display:flex;
+      flex-direction:column;
+      min-height:100%;
+    }
 
-.gallery-item img{
-  width:100%;
-  height:220px;
-  object-fit:cover;
-  display:block;
-}
+    .gallery-item:hover{
+      transform:translateY(-4px);
+      border-color:rgba(56,189,248,.28);
+      box-shadow:0 24px 48px rgba(0,0,0,.62);
+    }
 
-.caption{
-  padding:10px;
-  font-size:13px;
-  color:var(--text-soft);
-}
+    .gallery-item img{
+      width:100%;
+      height:240px;
+      object-fit:cover;
+      display:block;
+      transition:transform .28s ease, filter .28s ease;
+      background:#081120;
+    }
 
-.caption strong{
-  display:block;
-  color:var(--text);
-  margin-bottom:4px;
-}
+    .gallery-item:hover img{
+      transform:scale(1.02);
+      filter:brightness(1.03);
+    }
 
-/* Lightbox */
-.lightbox{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.85);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  z-index:100;
-}
+    .caption{
+      padding:12px;
+      font-size:13px;
+      color:var(--text-soft);
+      line-height:1.45;
+      flex:1;
+    }
 
-.lightbox img{
-  max-width:90%;
-  max-height:85vh;
-  border-radius:var(--radius);
-}
+    .caption strong{
+      display:block;
+      color:var(--text);
+      margin-bottom:6px;
+      font-size:14px;
+      line-height:1.3;
+    }
 
-.lightbox-close{
-  position:absolute;
-  top:20px;
-  right:30px;
-  color:white;
-  font-size:30px;
-  cursor:pointer;
-}
+    /* Lightbox */
+    .lightbox{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.88);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      z-index:1000;
+      padding:24px;
+    }
 
-@media(max-width:900px){
-  .gallery-grid{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-  }
-}
+    .lightbox img{
+      max-width:92%;
+      max-height:86vh;
+      border-radius:20px;
+      box-shadow:0 24px 60px rgba(0,0,0,.65);
+      border:1px solid rgba(255,255,255,.08);
+    }
 
-@media(max-width:600px){
-  .gallery-grid{
-    grid-template-columns:1fr;
-  }
-}
-</style>
+    .lightbox-close{
+      position:absolute;
+      top:18px;
+      right:26px;
+      color:white;
+      font-size:34px;
+      cursor:pointer;
+      line-height:1;
+      user-select:none;
+    }
+
+    @media(max-width:1050px){
+      .gallery-grid{
+        grid-template-columns:repeat(3,minmax(0,1fr));
+      }
+    }
+
+    @media(max-width:900px){
+      .gallery-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+      .header{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+    }
+
+    @media(max-width:600px){
+      .gallery-grid{
+        grid-template-columns:1fr;
+      }
+      .gallery-item img{
+        height:auto;
+      }
+      .header-left h1{
+        font-size:26px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
+  <div class="container">
 
-<div class="header">
-  <h1>Project Gallery</h1>
-  <a href="/">← Back to Home</a>
-</div>
+    <div class="header">
+      <div class="header-left">
+        <h1>Project Gallery</h1>
+        <p class="subtitle">
+          Real projects across North Haledon, Wayne, Glen Rock, Clifton, Paramus, Midland Park, Pine Brook, and nearby towns.
+          Before-and-after deep cleaning, bathroom restoration, kitchen detail work, and turnover-ready resets.
+        </p>
+      </div>
+      <a href="/">← Back to Home</a>
+    </div>
 
-<p class="subtitle">
-Real work across North Haledon, Wayne, Glen Rock, Clifton and nearby towns.
-Structured. Detailed. Consistent.
-</p>
+    <div class="gallery-grid">
 
-<div class="gallery-grid">
+      <div class="gallery-item" onclick="openLightbox('./images/Purelux_DeepClean_Bathtub_MidlandPark_BA_01.png')">
+        <img src="./images/Purelux_DeepClean_Bathtub_MidlandPark_BA_01.png" alt="Bathtub before and after deep cleaning in Midland Park NJ">
+        <div class="caption">
+          <strong>Bathtub Deep Cleaning • Midland Park</strong>
+          Full tub reset with visible residue removal, edge detailing, and brighter overall finish.
+        </div>
+      </div>
 
-<div class="gallery-item" onclick="openLightbox('./images/Bedroom detailed cleaning and organization service – Northern NJ.png')">
-<img src="./images/Bedroom detailed cleaning and organization service – Northern NJ.png">
-<div class="caption">
-<strong>Bedroom Detail • Glen Rock</strong>
-Full reset before listing photos.
-</div>
-</div>
+      <div class="gallery-item" onclick="openLightbox('./images/Purelux_ToiletDetail_BeforeAfter_MidlandPark_01.png')">
+        <img src="./images/Purelux_ToiletDetail_BeforeAfter_MidlandPark_01.png" alt="Toilet hardware detail before and after in Midland Park NJ">
+        <div class="caption">
+          <strong>Toilet Detail Reset • Midland Park</strong>
+          Hardware and hinge-zone buildup removed in a detail area most companies usually skip.
+        </div>
+      </div>
 
-<div class="gallery-item" onclick="openLightbox('./images/oven-deep-cleaning-monroe-nj-purelux-cleaning.png')">
-<img src="./images/oven-deep-cleaning-monroe-nj-purelux-cleaning.png">
-<div class="caption">
-<strong>Oven Deep Cleaning • Monroe</strong>
-Heavy grease removal & degrease.
-</div>
-</div>
+      <div class="gallery-item" onclick="openLightbox('./images/BATHDROOM SINK DEEP CLEANING - PINE BROOK.png')">
+        <img src="./images/BATHDROOM SINK DEEP CLEANING - PINE BROOK.png" alt="Bathroom sink deep cleaning in Pine Brook NJ">
+        <div class="caption">
+          <strong>Bathroom Sink Restoration • Pine Brook</strong>
+          Mineral deposits, staining, and faucet-area buildup reset to a cleaner, sharper finish.
+        </div>
+      </div>
 
-<div class="gallery-item" onclick="openLightbox('./images/Detail Restoration – Purelux Cleaning.png')">
-<img src="./images/Detail Restoration – Purelux Cleaning.png">
-<div class="caption">
-<strong>Bathroom Restoration • North Haledon</strong>
-Mineral buildup removal & detailing.
-</div>
-</div>
+      <div class="gallery-item" onclick="openLightbox('./images/bathdroom deep cleaning - manhattan.png')">
+        <img src="./images/bathdroom deep cleaning - manhattan.png" alt="Bathroom tub deep cleaning in Manhattan">
+        <div class="caption">
+          <strong>Bathroom Deep Cleaning • Manhattan</strong>
+          Full tub restoration with visible grime removal and detailed cleaning around edges and walls.
+        </div>
+      </div>
 
-<div class="gallery-item" onclick="openLightbox('./images/child room- glen rock.jpeg')">
-<img src="./images/child room- glen rock.jpeg">
-<div class="caption">
-<strong>Kids Room • Glen Rock</strong>
-Organization & maintenance reset.
-</div>
-</div>
+      <div class="gallery-item" onclick="openLightbox('./images/KITCHEN DEEP CLEAN-PARAMUS.png')">
+        <img src="./images/KITCHEN DEEP CLEAN-PARAMUS.png" alt="Kitchen under cabinet and floor detail cleaning in Paramus NJ">
+        <div class="caption">
+          <strong>Kitchen Detail Work • Paramus</strong>
+          Under-cabinet and floor-edge cleanup for grease, dust, debris, and hidden buildup zones.
+        </div>
+      </div>
 
-  <div class="gallery-item" onclick="openLightbox('./images/bathdroom deep cleaning - manhattan.png')">
-  <img src="./images/bathdroom deep cleaning - manhattan.png" alt="Bathroom tub deep cleaning Manhattan NJ">
-  <div class="caption">
-    <strong>Bathroom Deep Cleaning • Manhattan</strong>
-    Full tub restoration — soap scum, grime buildup, and edge detailing reset.
+      <div class="gallery-item" onclick="openLightbox('./images/FRIDGE CLEANING- WOODRIGDE.png')">
+        <img src="./images/FRIDGE CLEANING- WOODRIGDE.png" alt="Fridge interior shelf cleaning before and after in Wood Ridge NJ">
+        <div class="caption">
+          <strong>Fridge Interior Reset • Wood Ridge</strong>
+          Interior glass and shelf detailing for move-outs, deep cleans, and add-on appliance service.
+        </div>
+      </div>
+
+      <div class="gallery-item" onclick="openLightbox('./images/Bedroom detailed cleaning and organization service – Northern NJ.png')">
+        <img src="./images/Bedroom detailed cleaning and organization service – Northern NJ.png" alt="Bedroom detailed cleaning and organization in Northern New Jersey">
+        <div class="caption">
+          <strong>Bedroom Detail • Glen Rock</strong>
+          Full reset before listing photos with decluttering, surface cleaning, and floor detailing.
+        </div>
+      </div>
+
+      <div class="gallery-item" onclick="openLightbox('./images/oven-deep-cleaning-monroe-nj-purelux-cleaning.png')">
+        <img src="./images/oven-deep-cleaning-monroe-nj-purelux-cleaning.png" alt="Oven deep cleaning and degrease in Monroe NJ">
+        <div class="caption">
+          <strong>Oven Deep Cleaning • Monroe</strong>
+          Heavy grease removal, rack degreasing, and interior restoration for a real kitchen reset.
+        </div>
+      </div>
+
+      <div class="gallery-item" onclick="openLightbox('./images/Detail Restoration – Purelux Cleaning.png')">
+        <img src="./images/Detail Restoration – Purelux Cleaning.png" alt="Bathroom restoration and detail cleaning by Purelux Cleaning">
+        <div class="caption">
+          <strong>Bathroom Restoration • North Haledon</strong>
+          Mineral buildup removal, detail cleaning, and restoration of dull bathroom surfaces.
+        </div>
+      </div>
+
+      <div class="gallery-item" onclick="openLightbox('./images/child room- glen rock.jpeg')">
+        <img src="./images/child room- glen rock.jpeg" alt="Kids room cleaning and organization in Glen Rock NJ">
+        <div class="caption">
+          <strong>Kids Room Reset • Glen Rock</strong>
+          Organization, dust removal, and maintenance cleaning for a calmer and easier-to-maintain space.
+        </div>
+      </div>
+
+      <div class="gallery-item" onclick="openLightbox('./images/DEEP CLEANING BATHDROOM - PARAMUS.png')">
+        <img src="./images/DEEP CLEANING BATHDROOM - PARAMUS.png" alt="Shower glass restoration in Paramus NJ">
+        <div class="caption">
+          <strong>Shower Glass Restoration • Paramus</strong>
+          Hard water removal and clarity recovery with frame detailing and shower reset.
+        </div>
+      </div>
+
+    </div>
   </div>
-</div>
 
-  <div class="gallery-item" onclick="openLightbox('./images/BATHDROOM SINK DEEP CLEANING - PINE BROOK.png')">
-  <img src="./images/BATHDROOM SINK DEEP CLEANING - PINE BROOK.png" alt="Bathroom sink deep cleaning Pine Brook NJ">
-  <div class="caption">
-    <strong>Sink Detail Reset • Pine Brook</strong>
-    Mineral deposits, rust stains, and faucet polishing restored to like-new finish.
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">×</span>
+    <img id="lightbox-img" alt="Expanded gallery image">
   </div>
-</div>
 
-  <div class="gallery-item" onclick="openLightbox('./images/DEEP CLEANING BATHDROOM - PARAMUS.png')">
-  <img src="./images/DEEP CLEANING BATHDROOM - PARAMUS.png" alt="Shower glass restoration Paramus NJ">
-  <div class="caption">
-    <strong>Shower Glass Restoration • Paramus</strong>
-    Hard water removal and full glass clarity recovery with frame detailing.
-  </div>
-</div>
+  <script>
+    function openLightbox(src){
+      document.getElementById("lightbox-img").src = src;
+      document.getElementById("lightbox").style.display = "flex";
+    }
 
-</div>
-</div>
+    function closeLightbox(){
+      document.getElementById("lightbox").style.display = "none";
+    }
 
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-<span class="lightbox-close">×</span>
-<img id="lightbox-img">
-</div>
-
-<script>
-function openLightbox(src){
-  document.getElementById("lightbox-img").src = src;
-  document.getElementById("lightbox").style.display="flex";
-}
-function closeLightbox(){
-  document.getElementById("lightbox").style.display="none";
-}
-</script>
+    document.addEventListener("keydown", function(e){
+      if(e.key === "Escape"){
+        closeLightbox();
+      }
+    });
+  </script>
 
 </body>
 </html>
