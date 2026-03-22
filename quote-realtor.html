@@ -1,1 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Realtor Quote | Purelux Cleaning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0e1726;
+      color: white;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #b9c7da;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, select, textarea {
+      padding: 14px;
+      border-radius: 10px;
+      border: 1px solid #2a3a55;
+      background: #132238;
+      color: white;
+      font-size: 14px;
+    }
+
+    textarea {
+      min-height: 120px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 16px;
+      border: none;
+      border-radius: 999px;
+      background: #7ec8ff;
+      color: #092033;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Realtor & Listing Prep Quote</h1>
+  <p>For listing prep, turnovers, move-out cleanings, and show-ready properties.</p>
+
+  <form action="https://formspree.io/f/xzdjlzng" method="POST">
+
+    <input type="hidden" name="Lead Type" value="Realtor">
+    <input type="hidden" name="_subject" value="New Realtor Quote - Purelux">
+
+    <input type="text" name="Name" placeholder="Full Name" required>
+    <input type="text" name="Company" placeholder="Brokerage / Company">
+    <input type="email" name="Email" placeholder="Email" required>
+    <input type="tel" name="Phone" placeholder="Phone" required>
+
+    <input type="text" name="Property Address" placeholder="Property Address" required>
+
+    <select name="Service Type" required>
+      <option value="">Service Needed</option>
+      <option>Pre-listing Cleaning</option>
+      <option>Move-out Cleaning</option>
+      <option>Turnover Cleaning</option>
+      <option>Open House Prep</option>
+    </select>
+
+    <input type="text" name="Size" placeholder="Beds / Baths or Sqft">
+
+    <input type="date" name="Preferred Date">
+
+    <textarea name="Notes" placeholder="Project details, deadlines, access info..."></textarea>
+
+    <button type="submit">Request Quote</button>
+
+  </form>
+</div>
+
+</body>
+</html>
