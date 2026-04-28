@@ -113,16 +113,13 @@
 
     .hero{order:1}
     .stats{order:2}
-    #results{order:3}
-    #services{order:4}
-    #explore-services{order:5}
-    #trust{order:6}
-    #process{order:7}
-    #best-for{order:8}
-    #standards{order:9}
-    #areas{order:10}
-    #faq{order:11}
-    .cta-section{order:12}
+    #services{order:3}
+    #results{order:4}
+    #trust{order:5}
+    #process{order:6}
+    #areas{order:7}
+    #faq{order:8}
+    .cta-section{order:9}
 
     .skip-link{
       position:absolute;
@@ -575,6 +572,33 @@
       line-height:1.5;
     }
 
+    .pricing-card{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      padding:22px;
+      border:1px solid rgba(202,232,255,.10);
+      border-radius:var(--radius);
+      background:
+        linear-gradient(135deg,rgba(103,213,255,.10),rgba(255,255,255,.035)),
+        rgba(3,7,18,.88);
+      box-shadow:0 16px 48px rgba(0,0,0,.20);
+    }
+
+    .pricing-card h2{
+      font-family:var(--font);
+      font-size:20px;
+      line-height:1.28;
+      margin-bottom:6px;
+    }
+
+    .pricing-card p{
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.5;
+    }
+
     section{
       position:relative;
       padding:clamp(54px,8vw,96px) 0;
@@ -918,15 +942,75 @@
       margin-bottom:16px;
     }
 
+    .service-link-card ul{
+      display:grid;
+      gap:6px;
+      margin:0 0 16px;
+      padding:0;
+      list-style:none;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.45;
+    }
+
+    .service-link-card li::before{
+      content:"";
+      width:6px;
+      height:6px;
+      display:inline-block;
+      margin-right:8px;
+      border-radius:50%;
+      background:var(--accent);
+      vertical-align:middle;
+    }
+
     .service-link-card .btn{
       margin-top:auto;
       align-self:flex-start;
       min-height:40px;
     }
 
+    .service-mini-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      margin-top:18px;
+    }
+
+    .service-mini-links span{
+      color:var(--muted);
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.11em;
+      text-transform:uppercase;
+      margin-right:4px;
+    }
+
+    .service-mini-links a{
+      display:inline-flex;
+      align-items:center;
+      min-height:38px;
+      padding:0 14px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.045);
+      color:var(--text);
+      font-size:13px;
+      font-weight:800;
+      transition:transform .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease;
+    }
+
+    .service-mini-links a:hover{
+      transform:translateY(-2px);
+      border-color:rgba(103,213,255,.34);
+      background:rgba(103,213,255,.08);
+      box-shadow:0 14px 30px rgba(12,22,34,.22);
+    }
+
     .process{
       display:grid;
-      grid-template-columns:repeat(4,minmax(0,1fr));
+      grid-template-columns:repeat(3,minmax(0,1fr));
       gap:14px;
       counter-reset:steps;
     }
@@ -1396,6 +1480,7 @@
       .quote-panel-top{grid-template-columns:1fr}
       .final-cta{grid-template-columns:1fr}
       .cta-actions{justify-content:flex-start}
+      .pricing-card{align-items:flex-start;flex-direction:column}
     }
 
     @media (max-width:760px){
@@ -1462,6 +1547,12 @@
       .footer-grid{grid-template-columns:1fr}
       .footer-links{justify-content:flex-start}
       .mobile-cta{display:flex}
+      .hero-cta .btn,
+      .pricing-card .btn,
+      .service-link-card .btn,
+      .cta-actions .btn{
+        width:100%;
+      }
     }
 
     @media (max-width:430px){
@@ -1470,7 +1561,6 @@
       .final-cta h2{font-size:36px}
       .brand-mark{width:40px;height:40px}
       .brand-name{font-size:11px}
-      .hero-cta .btn,
       .service-foot .btn{
         width:100%;
       }
@@ -1561,28 +1651,23 @@
         "mainEntity":[
           {
             "@type":"Question",
-            "name":"What is the best first cleaning for a home that needs a reset?",
-            "acceptedAnswer":{"@type":"Answer","text":"A deep cleaning is usually the best first reset when a home has buildup, missed detail zones, or has not been professionally cleaned recently. After the reset, recurring service keeps the home easier to maintain."}
+            "name":"How much does house cleaning cost?",
+            "acceptedAnswer":{"@type":"Answer","text":"Maintenance cleanings may start around $180. Deep cleanings usually start around $450+ depending on size, condition, service type, add-ons, and frequency."}
           },
           {
             "@type":"Question",
-            "name":"How much does Purelux Cleaning start from?",
-            "acceptedAnswer":{"@type":"Answer","text":"Deep cleaning starts from $450+. Recurring maintenance starts from $150+ after the initial reset. Move-in/move-out and post-construction projects are custom quoted. Pricing depends on size, condition, scope, add-ons, and frequency."}
+            "name":"Do I need to be home?",
+            "acceptedAnswer":{"@type":"Answer","text":"No. Many clients provide entry instructions. We confirm access and priorities before service day."}
           },
           {
             "@type":"Question",
-            "name":"Do you serve Bergen County and Passaic County?",
-            "acceptedAnswer":{"@type":"Answer","text":"Yes. Purelux Cleaning serves North Haledon, Wayne, Paramus, Franklin Lakes, Ridgewood, Fair Lawn, Glen Rock, Wyckoff, Hawthorne, Clifton, Totowa, Bergen County, Passaic County, and nearby North NJ towns."}
+            "name":"Do you bring supplies?",
+            "acceptedAnswer":{"@type":"Answer","text":"Yes. Purelux brings professional supplies and equipment unless you request specific products in advance."}
           },
           {
             "@type":"Question",
-            "name":"Do you offer post-construction cleaning in North NJ?",
-            "acceptedAnswer":{"@type":"Answer","text":"Yes. Post-construction cleaning is quoted by project size, dust level, access, debris, phases, and the detail level required after renovation or construction work."}
-          },
-          {
-            "@type":"Question",
-            "name":"Are you the cheapest cleaning option?",
-            "acceptedAnswer":{"@type":"Answer","text":"No. Purelux is not built to be the cheapest option. The company is built for clients who want structure, consistency, detail, clear communication, and a serious cleaning standard."}
+            "name":"What is included in a deep cleaning?",
+            "acceptedAnswer":{"@type":"Answer","text":"Kitchens, bathrooms, buildup, baseboards, fixtures, floors, touchpoints, and detail zones that need a stronger reset."}
           }
         ]
       }
@@ -1607,19 +1692,18 @@
       </a>
 
       <nav class="nav-links" aria-label="Homepage sections">
-        <a href="#results">Results</a>
         <a href="#services">Services</a>
-        <a href="#trust">Why Purelux</a>
+        <a href="#results">Results</a>
+        <a href="#trust">Standards</a>
         <a href="#process">How It Works</a>
-        <a href="#best-for">Who We Serve</a>
         <a href="#areas">Service Areas</a>
         <a href="#faq">FAQ</a>
       </nav>
 
       <div class="nav-actions">
         <span class="support-badge">English &amp; Spanish Support</span>
-        <a class="btn btn-dark" href="tel:18622877496">Call/Text</a>
-        <a class="btn btn-primary" href="quote.html">Request a Custom Quote</a>
+        <a class="btn btn-dark" href="tel:18622877496">Call Now</a>
+        <a class="btn btn-primary" href="quote.html">Get Quote</a>
       </div>
     </div>
   </header>
@@ -1628,95 +1712,51 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="wrap hero-grid">
         <div class="hero-copy reveal">
-          <div class="eyebrow"><span class="signal"></span> Structured • Detail-Driven • North NJ</div>
-          <h1 id="hero-title">Premium Cleaning Services in North NJ — Built for Homes That Need Real Standards</h1>
-          <p class="hero-lead">
-            From deep cleaning and move-out resets to recurring home care and post-construction cleanup, Purelux Cleaning delivers structured, detail-driven service for homeowners, realtors, landlords, and property professionals across Bergen and Passaic County.
-          </p>
-          <p class="standard-line">We are not built to be the cheapest option. We are built for clients who want structure, consistency, and detail.</p>
-
-          <div class="hero-cta">
-            <a class="btn btn-primary" href="quote.html">Request a Custom Quote</a>
-            <a class="btn btn-dark" href="#results">View Real Results</a>
-            <a class="btn" href="tel:18622877496">Call/Text 862-287-7496</a>
-          </div>
+          <div class="eyebrow"><span class="signal"></span> PREMIUM HOUSE CLEANING IN NORTH NJ</div>
+          <h1 id="hero-title">A Higher Standard of Cleaning for North NJ Homes.</h1>
+          <p class="hero-lead">Detailed deep cleaning, recurring care, and move-ready cleaning handled with structure, checklists, and a final walkthrough.</p>
 
           <div class="hero-note" aria-label="Purelux highlights">
-            <span>Deep cleaning from $450+ for first-visit resets</span>
-            <span>Recurring maintenance from $150+ after initial reset</span>
-            <span>Move-out and post-construction cleaning quoted by scope</span>
+            <span>Deep cleaning &amp; recurring service</span>
+            <span>Serving North NJ homes</span>
+            <span>Final walkthrough included</span>
+          </div>
+
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="quote.html">Get Your Quote</a>
+            <a class="btn btn-dark" href="tel:18622877496">Call Now</a>
           </div>
         </div>
 
         <div class="hero-panel reveal">
-          <img src="./images/Purelux_DeepClean_Bathtub_MidlandPark_BA_01.png" alt="Bathtub before and after deep cleaning by Purelux Cleaning in North New Jersey" fetchpriority="high" />
+          <img src="./images/Purelux_DeepClean_Bathtub_MidlandPark_BA_01.png" alt="Before and after deep cleaning by Purelux Cleaning in North NJ" fetchpriority="high" />
           <div class="floating-proof">
-            <span>Full-service standard</span>
-            <p>Deep cleaning, move-out resets, recurring maintenance, post-construction cleanup, and property-ready service for serious homes and timelines.</p>
+            <span>Before / After Proof</span>
+            <p>Real detail work from homes cleaned across North NJ.</p>
           </div>
           <div class="hero-card">
             <div>
               <small>Premium cleaning company</small>
-              <strong>Deep cleans, recurring care, move-outs, and post-construction cleanup</strong>
-              <p>We match the service to the condition of the property, then clean with structure, detail, and clear expectations.</p>
+              <strong>Deep cleaning, recurring care, move-outs, and post-construction cleanup.</strong>
             </div>
             <div class="mini-price">
               <b>Custom</b>
-              <span>quotes based on size, condition, scope, and frequency</span>
+              <span>quoted by size, condition, and scope</span>
             </div>
           </div>
-        </div>
-
-        <div class="service-visuals" aria-label="Purelux cleaning services">
-          <article class="service-visual-card reveal">
-            <img src="./images/DEEP CLEANING PORTRAIT.png" alt="Deep cleaning service by Purelux Cleaning for a first-visit reset" loading="lazy" decoding="async" />
-            <div>
-              <h3>Deep cleaning</h3>
-              <p>The best first reset for bathrooms, kitchens, buildup, baseboards, and detail zones.</p>
-            </div>
-          </article>
-          <article class="service-visual-card reveal">
-            <img src="./images/RECURIN CLEANING PORTRAIT.png" alt="Recurring house cleaning service by Purelux Cleaning in North NJ" loading="lazy" decoding="async" />
-            <div>
-              <h3>Recurring house cleaning</h3>
-              <p>The long-term maintenance plan after a proper initial reset.</p>
-            </div>
-          </article>
-          <article class="service-visual-card reveal">
-            <img src="./images/MOVE IN-OUT PORTRAIT.png" alt="Move-in and move-out cleaning service for North New Jersey homes" loading="lazy" decoding="async" />
-            <div>
-              <h3>Move-in / move-out</h3>
-              <p>Turnover-ready cleaning for buyers, sellers, tenants, landlords, and realtors.</p>
-            </div>
-          </article>
-          <article class="service-visual-card reveal">
-            <img src="./images/POST-CONTRUCTION PORTRAIT.png" alt="Post-construction cleaning service for dust and renovation cleanup" loading="lazy" decoding="async" />
-            <div>
-              <h3>Post-construction</h3>
-              <p>Fine dust, debris, and final detail cleaning after renovation or construction work.</p>
-            </div>
-          </article>
         </div>
       </div>
     </section>
 
-    <div class="stats" aria-label="Purelux trust markers">
-      <div class="wrap stats-grid">
-        <div class="stat reveal">
-          <b>Full</b>
-          <span>Deep cleaning, recurring house cleaning, move-in/move-out, post-construction, and property-ready cleaning.</span>
-        </div>
-        <div class="stat reveal">
-          <b>12+</b>
-          <span>North NJ towns and county areas served across Bergen and Passaic County.</span>
-        </div>
-        <div class="stat reveal">
-          <b>$450+</b>
-          <span>Deep cleaning from $450+ when the home needs a true first reset before maintenance.</span>
-        </div>
-        <div class="stat reveal">
-          <b>$150+</b>
-          <span>Recurring maintenance from $150+ after initial reset, based on frequency and scope.</span>
+    <div class="stats pricing-anchor" aria-label="Purelux pricing guidance">
+      <div class="wrap">
+        <div class="pricing-card reveal">
+          <div>
+            <div class="section-kicker">Transparent starting point</div>
+            <h2>Maintenance cleanings may start around $180. Deep cleanings usually start around $450+ depending on size, condition, and scope.</h2>
+            <p>Send the details of your home and we'll provide a clear proposal based on the service type, current condition, and priorities.</p>
+          </div>
+          <a class="btn btn-primary" href="quote.html">Get an Accurate Quote</a>
         </div>
       </div>
     </div>
@@ -1725,118 +1765,129 @@
       <div class="wrap">
         <div class="section-head reveal">
           <div>
-            <div class="section-kicker">Full-service cleaning solutions</div>
-            <h2 id="services-title">Full-service cleaning for homes, turnovers, and property-ready resets.</h2>
+            <div class="section-kicker">Cleaning services</div>
+            <h2 id="services-title">Choose the right clean for your home.</h2>
           </div>
-          <p class="section-copy">
-            Purelux Cleaning handles the clean that matches the property: deep cleaning for reset work, recurring service for long-term maintenance, move-in/move-out cleaning for transitions, and post-construction cleaning for dust and renovation cleanup.
-          </p>
-        </div>
-
-        <div class="service-layout">
-          <div class="service-picker reveal" role="tablist" aria-label="Cleaning services">
-            <button class="service-tab" type="button" role="tab" aria-selected="true" data-service="deep">
-              <span>Deep cleaning<small>Best first visit when the home needs a full reset.</small></span>
-              <b>from $450+</b>
-            </button>
-            <button class="service-tab" type="button" role="tab" aria-selected="false" data-service="recurring">
-              <span>Recurring house cleaning<small>Best long-term maintenance after a proper initial reset.</small></span>
-              <b>from $150+</b>
-            </button>
-            <button class="service-tab" type="button" role="tab" aria-selected="false" data-service="move">
-              <span>Move-in / move-out cleaning<small>Real estate, turnover-ready, and property-ready service.</small></span>
-              <b>custom quote</b>
-            </button>
-            <button class="service-tab" type="button" role="tab" aria-selected="false" data-service="post">
-              <span>Post-construction cleaning<small>Fine dust, debris, and renovation cleanup after the work is done.</small></span>
-              <b>custom quote</b>
-            </button>
-          </div>
-
-          <div class="quote-panel reveal" aria-live="polite">
-            <div class="quote-panel-top">
-              <div>
-                <h3 id="service-title">Deep cleaning is the best first reset.</h3>
-                <p id="service-copy">Deep cleaning is built for homes that need more than maintenance: bathrooms, kitchens, baseboards, fixtures, buildup, corners, floors, and detail zones that set the standard before recurring care begins.</p>
-              </div>
-              <div class="price-box">
-                <span>Pricing</span>
-                <b id="service-price">$450+</b>
-                <small id="service-price-note">pricing depends on size, condition, scope, add-ons, and detail level.</small>
-              </div>
-            </div>
-
-            <div class="check-grid" id="service-checks">
-              <div class="check">Bathroom buildup, tubs, showers, sinks, toilets, and fixtures</div>
-              <div class="check">Kitchen surfaces, exterior appliances, sink edges, and detail points</div>
-              <div class="check">Baseboards, corners, trim, dusting, floors, and touchpoints</div>
-              <div class="check">Recommended before recurring service when the home has fallen behind</div>
-            </div>
-
-            <div class="service-foot">
-              <a class="btn btn-primary" href="quote.html">Request a Custom Quote</a>
-              <a class="btn" href="tel:18622877496">Call/Text 862-287-7496</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="explore-services" aria-labelledby="explore-services-title">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <div>
-            <div class="section-kicker">Explore cleaning services</div>
-            <h2 id="explore-services-title">Premium service pages for every kind of clean.</h2>
-          </div>
-          <p class="section-copy">
-            Compare Purelux deep cleaning, recurring cleaning, move-out cleaning, post-construction cleaning, commercial cleaning, realtor cleaning, and apartment turnover cleaning before requesting your custom quote.
-          </p>
+          <p class="section-copy">Premium house cleaning in North NJ for resets, maintenance, move-related cleaning, and renovation cleanup.</p>
         </div>
 
         <div class="service-link-grid">
           <article class="service-link-card reveal">
             <small>Initial reset</small>
-            <h3>Deep Cleaning</h3>
-            <p>Detailed first-visit cleaning for kitchens, bathrooms, buildup, baseboards, fixtures, and the zones that need a real reset.</p>
-            <a class="btn btn-primary" href="deep-cleaning-nj.html">View Service</a>
+            <h3><a href="deep-cleaning-nj.html">Deep Cleaning</a></h3>
+            <p>A detailed reset for homes that need more than maintenance.</p>
+            <ul>
+              <li>Kitchens and bathrooms</li>
+              <li>Buildup and baseboards</li>
+              <li>Detail zones</li>
+            </ul>
+            <a class="btn btn-primary" href="quote.html">Get Quote</a>
           </article>
+
           <article class="service-link-card reveal">
             <small>Ongoing care</small>
-            <h3>Recurring Cleaning</h3>
-            <p>Weekly, bi-weekly, and monthly maintenance built around a structured checklist after the right baseline is established.</p>
-            <a class="btn btn-primary" href="recurring-cleaning-nj.html">View Service</a>
+            <h3><a href="recurring-cleaning-nj.html">Recurring Cleaning</a></h3>
+            <p>Consistent maintenance after the right starting baseline.</p>
+            <ul>
+              <li>Weekly or bi-weekly</li>
+              <li>Checklist-based visits</li>
+              <li>Cleaner home rhythm</li>
+            </ul>
+            <a class="btn btn-primary" href="quote.html">Get Quote</a>
           </article>
+
           <article class="service-link-card reveal">
-            <small>Property transition</small>
-            <h3>Move-Out Cleaning</h3>
-            <p>Vacant-home and move-related cleaning for tenants, landlords, sellers, buyers, realtors, and property managers.</p>
-            <a class="btn btn-primary" href="move-out-cleaning-nj.html">View Service</a>
+            <small>Moving support</small>
+            <h3><a href="move-out-cleaning-nj.html">Move-In / Move-Out Cleaning</a></h3>
+            <p>Property-ready cleaning for transitions and handoffs.</p>
+            <ul>
+              <li>Move-in cleaning</li>
+              <li>Move-out cleaning</li>
+              <li>Vacant home resets</li>
+            </ul>
+            <a class="btn btn-primary" href="quote.html">Get Quote</a>
           </article>
+
           <article class="service-link-card reveal">
-            <small>Renovation cleanup</small>
-            <h3>Post-Construction Cleaning</h3>
-            <p>Dust, trim, floors, vents, fixtures, surfaces, and final detail cleanup after renovation or construction work.</p>
-            <a class="btn btn-primary" href="post-construction-cleaning-nj.html">View Service</a>
+            <small>After renovation</small>
+            <h3><a href="post-construction-cleaning-nj.html">Post-Construction Cleaning</a></h3>
+            <p>Dust and detail cleanup after renovation work.</p>
+            <ul>
+              <li>Fine dust removal</li>
+              <li>Floors and trim</li>
+              <li>Final detail pass</li>
+            </ul>
+            <a class="btn btn-primary" href="quote.html">Get Quote</a>
           </article>
-          <article class="service-link-card reveal">
-            <small>Business cleaning</small>
-            <h3>Commercial Cleaning</h3>
-            <p>Reliable cleaning for offices, gyms, retail spaces, clinics, warehouses, and small businesses that need consistency.</p>
-            <a class="btn btn-primary" href="commercial-cleaning-nj.html">View Service</a>
+        </div>
+
+        <div class="service-mini-links reveal" aria-label="Additional Purelux cleaning services">
+          <span>Also available</span>
+          <a href="commercial-cleaning-nj.html">Commercial Cleaning</a>
+          <a href="realtor-cleaning-nj.html">Realtor Cleaning</a>
+          <a href="apartment-turnover-cleaning-nj.html">Apartment Turnover Cleaning</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="results" aria-labelledby="results-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Before and after</div>
+            <h2 id="results-title">Real Homes. Real Results.</h2>
+          </div>
+          <p class="section-copy">Before-and-after proof from detailed cleanings across North NJ.</p>
+        </div>
+
+        <div class="gallery-row">
+          <article class="project-card reveal">
+            <div class="project-media">
+              <div class="ba-label"><span>Before</span><span>After</span></div>
+              <img src="./images/Purelux_DeepClean_Bathtub_MidlandPark_BA_01.png" alt="Before and after bathtub deep cleaning by Purelux Cleaning" loading="lazy" decoding="async" />
+            </div>
+            <div class="project-body">
+              <small>Bathroom reset</small>
+              <h3>Bathtub detail</h3>
+            </div>
           </article>
-          <article class="service-link-card reveal">
-            <small>Show-ready homes</small>
-            <h3>Realtor Cleaning</h3>
-            <p>Pre-listing, open-house, and property presentation cleaning for homes that need to look ready before buyers see them.</p>
-            <a class="btn btn-primary" href="realtor-cleaning-nj.html">View Service</a>
+
+          <article class="project-card reveal">
+            <div class="project-media">
+              <div class="ba-label"><span>Before</span><span>After</span></div>
+              <img src="./images/Purelux_ToiletDetail_BeforeAfter_MidlandPark_01.png" alt="Before and after toilet detail cleaning by Purelux Cleaning" loading="lazy" decoding="async" />
+            </div>
+            <div class="project-body">
+              <small>Detail zone</small>
+              <h3>Hardware and base</h3>
+            </div>
           </article>
-          <article class="service-link-card reveal">
-            <small>Rental readiness</small>
-            <h3>Apartment Turnover Cleaning</h3>
-            <p>Rental-unit resets for landlords and property managers who need cleaner, tenant-ready apartments between occupants.</p>
-            <a class="btn btn-primary" href="apartment-turnover-cleaning-nj.html">View Service</a>
+
+          <article class="project-card reveal">
+            <div class="project-media">
+              <div class="ba-label"><span>Before</span><span>After</span></div>
+              <img src="./images/BATHDROOM SINK DEEP CLEANING - PINE BROOK.png" alt="Bathroom sink before and after deep cleaning by Purelux Cleaning" loading="lazy" decoding="async" />
+            </div>
+            <div class="project-body">
+              <small>Sink detail</small>
+              <h3>Fixture reset</h3>
+            </div>
           </article>
+
+          <article class="project-card reveal">
+            <div class="project-media">
+              <img src="./images/oven-deep-cleaning-monroe-nj-purelux-cleaning.png" alt="Oven deep cleaning by Purelux Cleaning" loading="lazy" decoding="async" />
+            </div>
+            <div class="project-body">
+              <small>Kitchen reset</small>
+              <h3>Oven detail</h3>
+            </div>
+          </article>
+        </div>
+
+        <div class="hero-cta reveal">
+          <a class="btn btn-primary" href="quote.html">Get Quote</a>
+          <a class="btn btn-dark" href="gallery.html">View More Results</a>
         </div>
       </div>
     </section>
@@ -1846,133 +1897,31 @@
         <div class="section-head reveal">
           <div>
             <div class="section-kicker">Why Purelux</div>
-            <h2 id="trust-title">Premium cleaning is structure, consistency, and detail.</h2>
+            <h2 id="trust-title">Premium Cleaning Is Structure, Consistency, and Detail.</h2>
           </div>
-          <p class="section-copy">
-            We are not built to be the cheapest option. We are built for clients who want structure, consistency, and detail.
-          </p>
+          <p class="section-copy">A better clean comes from clear scope, trained execution, and a final check.</p>
         </div>
 
         <div class="trust-grid">
           <article class="trust-card reveal">
             <span class="trust-num">01</span>
-            <h3>Structured checklist</h3>
-            <p>Every service is organized by zones: kitchens, bathrooms, bedrooms, living areas, floors, fixtures, touchpoints, edges, and finishing passes.</p>
+            <h3>Checklist-Based Work</h3>
+            <p>Each visit follows a room-by-room plan so nothing feels random.</p>
           </article>
           <article class="trust-card reveal">
             <span class="trust-num">02</span>
-            <h3>Real results</h3>
-            <p>Our gallery uses actual project images, including bathroom resets, sink detail, oven work, bedroom organization, and high-touch detail zones.</p>
+            <h3>Trained Team Approach</h3>
+            <p>Our team cleans with structure, timing, and clear expectations.</p>
           </article>
           <article class="trust-card reveal">
             <span class="trust-num">03</span>
-            <h3>Detail zones</h3>
-            <p>We pay attention to the areas many basic cleans skip: baseboards, corners, hardware, sink edges, fixture bases, glass, tile, and buildup points.</p>
+            <h3>Detail-Focused Cleaning</h3>
+            <p>We focus on kitchens, bathrooms, edges, fixtures, floors, and buildup.</p>
           </article>
           <article class="trust-card reveal">
             <span class="trust-num">04</span>
-            <h3>Final walkthrough mindset</h3>
-            <p>The end of the visit is treated as part of the service: finishing touches, visible detail review, and communication before the job is closed.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="results" aria-labelledby="results-title">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <div>
-            <div class="section-kicker">Before and after project highlights</div>
-            <h2 id="results-title">Real homes, real buildup, real resets.</h2>
-          </div>
-          <p class="section-copy">
-            Current Purelux project images from actual cleaning work. This is the standard clients look for when comparing cleaning services North NJ, deep cleaning Bergen County NJ, premium cleaning services Bergen County, and recurring house cleaning near North Haledon NJ.
-          </p>
-        </div>
-
-        <div class="projects">
-          <article class="project-card project-large reveal">
-            <div class="project-media">
-              <div class="ba-label"><span>Before</span><span>After</span></div>
-              <img src="./images/Purelux_DeepClean_Bathtub_MidlandPark_BA_01.png" alt="Before and after bathtub deep cleaning result by Purelux Cleaning" loading="lazy" decoding="async" />
-            </div>
-            <div class="project-body">
-              <small>Bathroom reset</small>
-              <h3>Bathtub and tile brought back to a brighter finish.</h3>
-              <p>Deep cleaning removes dull film, soap residue, buildup, and edge grime so bathrooms feel cleaner at first glance and closer inspection.</p>
-            </div>
-          </article>
-
-          <div class="project-stack">
-            <article class="project-card project-small reveal">
-              <div class="project-media">
-                <div class="ba-label"><span>Before</span><span>After</span></div>
-                <img src="./images/Purelux_ToiletDetail_BeforeAfter_MidlandPark_01.png" alt="Before and after toilet detail cleaning around hardware and base" loading="lazy" decoding="async" />
-              </div>
-              <div class="project-body">
-                <small>Detail zone</small>
-                <h3>Toilet hardware and base detail</h3>
-                <p>Close detail work around hardware, seams, and floor edges is where premium cleaning becomes obvious.</p>
-              </div>
-            </article>
-
-            <article class="project-card project-small reveal">
-              <div class="project-media">
-                <div class="ba-label"><span>Before</span><span>After</span></div>
-                <img src="./images/BATHDROOM SINK DEEP CLEANING - PINE BROOK.png" alt="Bathroom sink before and after deep cleaning by Purelux Cleaning" loading="lazy" decoding="async" />
-              </div>
-              <div class="project-body">
-                <small>Sink restoration</small>
-                <h3>Bathroom sink buildup removed</h3>
-                <p>Faucets, drain edges, counters, and sink bowls receive the extra attention expected in a first-visit reset.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <div class="gallery-row">
-          <article class="project-card reveal">
-            <div class="project-media">
-              <img src="./images/Bedroom detailed cleaning and organization service – Northern NJ.png" alt="Bedroom detailed cleaning and organization service in Northern NJ" loading="lazy" decoding="async" />
-            </div>
-            <div class="project-body">
-              <small>Bedroom detail</small>
-              <h3>Clean, calmer rooms</h3>
-              <p>Surface reset, organization, dusting, and floors for family spaces that need visible order again.</p>
-            </div>
-          </article>
-
-          <article class="project-card reveal">
-            <div class="project-media">
-              <img src="./images/oven-deep-cleaning-monroe-nj-purelux-cleaning.png" alt="Oven deep cleaning and degreasing by Purelux Cleaning" loading="lazy" decoding="async" />
-            </div>
-            <div class="project-body">
-              <small>Kitchen detail</small>
-              <h3>Oven deep cleaning</h3>
-              <p>Grease, racks, glass, and oven interiors can be added when the kitchen needs a deeper reset.</p>
-            </div>
-          </article>
-
-          <article class="project-card reveal">
-            <div class="project-media">
-              <img src="./images/Detail Restoration – Purelux Cleaning.png" alt="Detail restoration cleaning result by Purelux Cleaning" loading="lazy" decoding="async" />
-            </div>
-            <div class="project-body">
-              <small>Detail restoration</small>
-              <h3>Fixtures and finishes</h3>
-              <p>Bathrooms, fixtures, glass, and floors are reviewed for a cleaner final presentation.</p>
-            </div>
-          </article>
-
-          <article class="project-card reveal">
-            <div class="project-media">
-              <img src="./images/child room- glen rock.jpeg" alt="Child room cleaning and organization in Glen Rock NJ" loading="lazy" decoding="async" />
-            </div>
-            <div class="project-body">
-              <small>Family spaces</small>
-              <h3>Child room reset</h3>
-              <p>Organization, dusting, and floor detail for busy homes where maintenance matters.</p>
-            </div>
+            <h3>Final Walkthrough</h3>
+            <p>Before closing the job, we review the visible finish and priority areas.</p>
           </article>
         </div>
       </div>
@@ -1983,112 +1932,24 @@
         <div class="section-head reveal">
           <div>
             <div class="section-kicker">How it works</div>
-            <h2 id="process-title">A controlled process from custom quote to final walkthrough.</h2>
+            <h2 id="process-title">A Simple, Controlled Process</h2>
           </div>
-          <p class="section-copy">
-            Fast quotes only help when the scope is clear. We ask the right questions up front so your price, expectations, and service type make sense before cleaning day.
-          </p>
+          <p class="section-copy">Fast to request, clear to approve, and organized before service day.</p>
         </div>
 
         <div class="process">
           <article class="step reveal">
-            <h3>Request your quote</h3>
-            <p>Send the quote form or text photos, home size, location, and what you want handled first.</p>
+            <h3>Request Your Quote</h3>
+            <p>Tell us the home, condition, timing, and service type.</p>
           </article>
           <article class="step reveal">
-            <h3>Match the scope</h3>
-            <p>We recommend deep cleaning, recurring maintenance, move-in/move-out, post-construction, or property-ready cleaning based on the actual condition.</p>
+            <h3>We Confirm the Details</h3>
+            <p>We review scope, pricing direction, access, and expectations.</p>
           </article>
           <article class="step reveal">
-            <h3>Clean by zones</h3>
-            <p>The visit is organized around rooms, surfaces, detail zones, add-ons, and priority areas.</p>
+            <h3>We Clean + Final Walkthrough</h3>
+            <p>The team cleans by checklist and reviews the finish before completion.</p>
           </article>
-          <article class="step reveal">
-            <h3>Walkthrough and maintain</h3>
-            <p>After the reset or project clean, we review the finish and can move the home into recurring maintenance if that is the right next step.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="best-for" aria-labelledby="best-for-title">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <div>
-            <div class="section-kicker">Who we serve</div>
-            <h2 id="best-for-title">For homes and properties where the standard matters.</h2>
-          </div>
-          <p class="section-copy">
-            Purelux is a strong fit for homeowners, realtors, landlords, tenants, sellers, buyers, builders, and property professionals who need a serious cleaning partner, not a generic quick-clean crew.
-          </p>
-        </div>
-
-        <div class="fit-grid">
-          <article class="fit-card reveal">
-            <small>Homeowners</small>
-            <h3>Deep cleaning and recurring care</h3>
-            <p>First resets, recurring maintenance, and detail-driven house cleaning for busy North NJ homes that need consistent standards.</p>
-            <a class="btn btn-primary" href="quote.html">Request a Custom Quote</a>
-          </article>
-          <article class="fit-card reveal">
-            <small>Realtors and sellers</small>
-            <h3>Property-ready presentation</h3>
-            <p>Cleaning for listings, pre-photo preparation, showings, closings, and homes that need to feel cared for before buyers walk through.</p>
-            <a class="btn btn-primary" href="quote.html">Request a Custom Quote</a>
-          </article>
-          <article class="fit-card reveal">
-            <small>Landlords and tenants</small>
-            <h3>Move-ready turnovers</h3>
-            <p>Move-in and move-out cleaning for vacant homes, apartments, rental turnovers, deposits, and handoff-ready spaces.</p>
-            <a class="btn btn-primary" href="quote.html">Request a Custom Quote</a>
-          </article>
-          <article class="fit-card reveal">
-            <small>Builders and remodels</small>
-            <h3>Post-construction cleanup</h3>
-            <p>Fine dust, debris, surface residue, fixture detail, trim cleanup, and renovation-ready finishing passes.</p>
-            <a class="btn btn-primary" href="quote.html">Request a Custom Quote</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="standards" aria-labelledby="standards-title">
-      <div class="wrap">
-        <div class="reviews">
-          <article class="review-card featured reveal">
-            <div>
-              <small>Detail zones</small>
-              <q>Cleaner rooms are nice. Cleaner edges, fixtures, corners, and final details are what make the whole home feel reset.</q>
-            </div>
-            <p>That is why deep cleaning is the best first reset, recurring cleaning is the maintenance plan after that reset, and property-ready cleaning gets its own controlled scope.</p>
-          </article>
-
-          <div class="detail-list reveal" aria-label="Cleaning detail zones">
-            <div>
-              <b>Kitchens</b>
-              <span>Countertops, exterior appliances, sinks, fixtures, fronts, touchpoints, floors, and optional oven detail.</span>
-            </div>
-            <div>
-              <b>Bathrooms</b>
-              <span>Tubs, showers, toilets, vanities, mirrors, sink edges, fixtures, glass, floors, and buildup zones.</span>
-            </div>
-            <div>
-              <b>Living areas</b>
-              <span>Dusting, surfaces, ledges, furniture touchpoints, floors, common areas, and visible finishing passes.</span>
-            </div>
-            <div>
-              <b>Bedrooms</b>
-              <span>Dusting, surfaces, accessible floors, mirrors, tidy resets, and optional organization support.</span>
-            </div>
-            <div>
-              <b>Move-related cleaning</b>
-              <span>Vacant home resets for buyers, sellers, landlords, tenants, and property professionals.</span>
-            </div>
-            <div>
-              <b>Final walkthrough</b>
-              <span>A finishing review of visible details, priority rooms, and any agreed scope before closing the job.</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -2097,49 +1958,47 @@
       <div class="wrap">
         <div class="section-head reveal">
           <div>
-            <div class="section-kicker">North New Jersey service area</div>
-            <h2 id="areas-title">House cleaning across Bergen County, Passaic County, and nearby towns.</h2>
+            <div class="section-kicker">Service areas</div>
+            <h2 id="areas-title">House Cleaning Across North NJ</h2>
           </div>
-          <p class="section-copy">
-            Purelux Cleaning serves clients searching for cleaning services North NJ, house cleaning North NJ, deep cleaning Bergen County NJ, move out cleaning Passaic County NJ, post construction cleaning North NJ, recurring house cleaning near North Haledon NJ, and premium cleaning services Bergen County.
-          </p>
+          <p class="section-copy">Serving Bergen County, Passaic County, and nearby towns with premium house cleaning North NJ service.</p>
         </div>
 
         <div class="areas">
           <article class="area-card reveal">
             <small>Wayne, NJ</small>
             <h3>House Cleaning in Wayne</h3>
-            <p>Deep cleaning, recurring maintenance, and turnover cleaning for Wayne homes.</p>
+            <p>Deep cleaning, recurring care, and turnovers.</p>
             <a class="btn btn-primary" href="house-cleaning-wayne-nj.html">View Page</a>
           </article>
           <article class="area-card reveal">
             <small>Paramus, NJ</small>
             <h3>House Cleaning in Paramus</h3>
-            <p>Premium cleaning for busy households, resets, and move-related projects.</p>
+            <p>Premium resets and maintenance for busy homes.</p>
             <a class="btn btn-primary" href="house-cleaning-paramus-nj.html">View Page</a>
           </article>
           <article class="area-card reveal">
             <small>Franklin Lakes, NJ</small>
             <h3>House Cleaning in Franklin Lakes</h3>
-            <p>Detail-driven cleaning for larger homes and high-standard households.</p>
+            <p>Detail-driven cleaning for high-standard homes.</p>
             <a class="btn btn-primary" href="house-cleaning-franklin-lakes-nj.html">View Page</a>
           </article>
           <article class="area-card reveal">
             <small>Ridgewood, NJ</small>
             <h3>House Cleaning in Ridgewood</h3>
-            <p>Checklist-based home cleaning with consistent standards and visible results.</p>
+            <p>Checklist-based residential cleaning.</p>
             <a class="btn btn-primary" href="house-cleaning-ridgewood-nj.html">View Page</a>
           </article>
           <article class="area-card reveal">
             <small>North Haledon, NJ</small>
             <h3>House Cleaning in North Haledon</h3>
-            <p>Premium deep cleaning, recurring maintenance, property-ready cleaning, and post-construction service near home base.</p>
+            <p>Premium cleaning near home base.</p>
             <a class="btn btn-primary" href="house-cleaning-north-haledon-nj.html">View Page</a>
           </article>
           <article class="area-card reveal">
             <small>Fair Lawn, NJ</small>
             <h3>House Cleaning in Fair Lawn</h3>
-            <p>Reliable residential cleaning built for maintenance, resets, and detail work.</p>
+            <p>Reliable resets, maintenance, and detail work.</p>
             <a class="btn btn-primary" href="house-cleaning-fair-lawn-nj.html">View Page</a>
           </article>
         </div>
@@ -2167,45 +2026,27 @@
         <div class="section-head reveal">
           <div>
             <div class="section-kicker">FAQ</div>
-            <h2 id="faq-title">Common questions before you book.</h2>
+            <h2 id="faq-title">Quick Answers Before You Book.</h2>
           </div>
-          <p class="section-copy">
-            A clear quote starts with clear expectations. Send details through the form and we will recommend the right level of service.
-          </p>
+          <p class="section-copy">Short answers, clear expectations, and a quote when you are ready.</p>
         </div>
 
         <div class="faq-grid">
           <details class="faq-item reveal">
-            <summary>Should I book deep cleaning or recurring cleaning first?</summary>
-            <div class="faq-answer">If the home has buildup, missed details, or has not been professionally cleaned recently, deep cleaning is usually the best first reset. Recurring cleaning is the long-term maintenance plan after the reset.</div>
+            <summary>How much does house cleaning cost?</summary>
+            <div class="faq-answer">Maintenance cleanings may start around $180. Deep cleanings usually start around $450+ depending on size, condition, service type, add-ons, and frequency.</div>
           </details>
           <details class="faq-item reveal">
-            <summary>How much does Purelux Cleaning start from?</summary>
-            <div class="faq-answer">Deep cleaning starts from $450+. Recurring maintenance starts from $150+ after the initial reset. Move-in/move-out and post-construction projects are custom quoted. Pricing depends on size, condition, scope, add-ons, and frequency.</div>
+            <summary>Do I need to be home?</summary>
+            <div class="faq-answer">No. Many clients provide entry instructions. We confirm access and priorities before service day.</div>
           </details>
           <details class="faq-item reveal">
-            <summary>Do you serve Bergen County and Passaic County?</summary>
-            <div class="faq-answer">Yes. We serve North Haledon, Wayne, Paramus, Franklin Lakes, Ridgewood, Fair Lawn, Glen Rock, Wyckoff, Hawthorne, Clifton, Totowa, Bergen County, Passaic County, and nearby North NJ towns.</div>
+            <summary>Do you bring supplies?</summary>
+            <div class="faq-answer">Yes. Purelux brings professional supplies and equipment unless you request specific products in advance.</div>
           </details>
           <details class="faq-item reveal">
-            <summary>Do I need to be home during the cleaning?</summary>
-            <div class="faq-answer">No. Many clients provide entry instructions ahead of time. We confirm access details before arrival so the appointment is smooth.</div>
-          </details>
-          <details class="faq-item reveal">
-            <summary>Do you bring supplies and equipment?</summary>
-            <div class="faq-answer">Yes. We bring professional supplies and equipment unless you request specific products in advance.</div>
-          </details>
-          <details class="faq-item reveal">
-            <summary>Do you offer move-out cleaning for Passaic County properties?</summary>
-            <div class="faq-answer">Yes. We provide move-in and move-out cleaning for Passaic County and nearby North NJ properties, including vacant homes, turnovers, seller prep, tenant handoffs, and landlord-ready spaces.</div>
-          </details>
-          <details class="faq-item reveal">
-            <summary>Do you offer post-construction cleaning in North NJ?</summary>
-            <div class="faq-answer">Yes. Post-construction cleaning is quoted by project size, dust level, access, debris, phases, and the detail level required after renovation or construction work.</div>
-          </details>
-          <details class="faq-item reveal">
-            <summary>Are you the cheapest cleaning option?</summary>
-            <div class="faq-answer">No. Purelux is not built to be the cheapest option. We are built for clients who want structure, consistency, detail, clear communication, and a serious cleaning standard.</div>
+            <summary>What is included in a deep cleaning?</summary>
+            <div class="faq-answer">Kitchens, bathrooms, buildup, baseboards, fixtures, floors, touchpoints, and detail zones that need a stronger reset.</div>
           </details>
         </div>
       </div>
@@ -2216,13 +2057,12 @@
         <div class="final-cta reveal">
           <div>
             <div class="section-kicker">Get your quote</div>
-            <h2 id="final-cta-title">Ready to put a real cleaning standard behind your home or property?</h2>
-            <p>Tell us your town, home size, condition, cleaning goals, add-ons, and ideal timing. We will guide you toward deep cleaning, recurring maintenance, move-in/move-out cleaning, post-construction cleanup, or realtor-ready service with a clear custom quote.</p>
+            <h2 id="final-cta-title">Ready to Put a Real Cleaning Standard Behind Your Home?</h2>
+            <p>Tell us what you need, and we'll send a clear proposal based on your home, condition, and goals.</p>
           </div>
           <div class="cta-actions">
-            <a class="btn btn-primary" href="quote.html">Request a Custom Quote</a>
-            <a class="btn btn-dark" href="#results">View Real Results</a>
-            <a class="btn" href="tel:18622877496">Call/Text 862-287-7496</a>
+            <a class="btn btn-primary" href="quote.html">Request My Quote</a>
+            <a class="btn btn-dark" href="tel:18622877496">Call Purelux Cleaning</a>
           </div>
         </div>
       </div>
@@ -2245,81 +2085,11 @@
   </footer>
 
   <div class="mobile-cta" aria-label="Mobile quick actions">
-    <a class="btn btn-primary" href="quote.html">Request Quote</a>
+    <a class="btn btn-primary" href="quote.html">Get Quote</a>
     <a class="btn" href="tel:18622877496">Call/Text</a>
   </div>
 
   <script>
-    const serviceData = {
-      deep: {
-        title: "Deep cleaning is the best first reset.",
-        copy: "Deep cleaning is built for homes that need more than maintenance: bathrooms, kitchens, baseboards, fixtures, buildup, corners, floors, and detail zones that set the standard before recurring care begins.",
-        price: "$450+",
-        note: "pricing depends on size, condition, scope, add-ons, and detail level.",
-        checks: [
-          "Bathroom buildup, tubs, showers, sinks, toilets, and fixtures",
-          "Kitchen surfaces, exterior appliances, sink edges, and detail points",
-          "Baseboards, corners, trim, dusting, floors, and touchpoints",
-          "Recommended before recurring service if the home has fallen behind"
-        ]
-      },
-      recurring: {
-        title: "Recurring cleaning is the long-term maintenance plan.",
-        copy: "After a proper initial reset, recurring visits keep the home at a consistent standard with kitchens, bathrooms, bedrooms, living areas, floors, dusting, and detail touchpoints handled on a weekly, bi-weekly, or monthly rhythm.",
-        price: "$150+",
-        note: "recurring maintenance from $150+ after initial reset; pricing depends on size, scope, frequency, pets, and add-ons.",
-        checks: [
-          "Weekly, bi-weekly, or monthly maintenance plans",
-          "Kitchen and bathroom upkeep with visible detail",
-          "Floors, dusting, surfaces, bedrooms, and common spaces",
-          "Best after a deep clean for the cleanest baseline"
-        ]
-      },
-      move: {
-        title: "Move-in and move-out cleaning for property-ready turnover.",
-        copy: "Vacant homes need a different workflow. We focus on presentation, empty-room detail, kitchens, bathrooms, cabinets by request, floors, and the areas buyers, tenants, landlords, realtors, and listing photos notice first.",
-        price: "Custom quote",
-        note: "move-in / move-out pricing depends on property size, condition, vacancy, cabinet scope, appliance scope, add-ons, and timing.",
-        checks: [
-          "Vacant house and apartment cleaning",
-          "Seller, buyer, tenant, landlord, and realtor-ready support",
-          "Kitchen, bathroom, floors, trim, surfaces, and touchpoints",
-          "Optional appliance and cabinet interior add-ons"
-        ]
-      },
-      post: {
-        title: "Post-construction cleaning for dust, debris, and final detail.",
-        copy: "Renovation dust settles everywhere. We clean visible surfaces, floors, trim, fixtures, cabinets by request, and detail zones so the home feels finished after the project.",
-        price: "Custom quote",
-        note: "post-construction pricing depends on project size, dust level, phases, access, debris, add-ons, and requested detail level.",
-        checks: [
-          "Fine dust removal from accessible surfaces",
-          "Floors, trim, fixtures, counters, and detail wipe-downs",
-          "Renovation cleanup after contractors finish",
-          "Staged cleanup options for larger projects"
-        ]
-      }
-    };
-
-    const title = document.getElementById("service-title");
-    const copy = document.getElementById("service-copy");
-    const price = document.getElementById("service-price");
-    const note = document.getElementById("service-price-note");
-    const checks = document.getElementById("service-checks");
-
-    document.querySelectorAll("[data-service]").forEach((button) => {
-      button.addEventListener("click", () => {
-        const data = serviceData[button.dataset.service];
-        document.querySelectorAll("[data-service]").forEach((tab) => tab.setAttribute("aria-selected", "false"));
-        button.setAttribute("aria-selected", "true");
-        title.textContent = data.title;
-        copy.textContent = data.copy;
-        price.textContent = data.price;
-        note.textContent = data.note;
-        checks.innerHTML = data.checks.map((item) => `<div class="check">${item}</div>`).join("");
-      });
-    });
-
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
