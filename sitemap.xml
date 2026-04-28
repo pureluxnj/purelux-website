@@ -1,106 +1,145 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://pureluxnj.com/</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <url>
-    <loc>https://pureluxnj.com/gallery.html</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://pureluxnj.com/quote.html</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://pureluxnj.com/house-cleaning-wayne-nj.html</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://pureluxnj.com/house-cleaning-paramus-nj.html</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://pureluxnj.com/house-cleaning-ridgewood-nj.html</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://pureluxnj.com/house-cleaning-glen-rock-nj.html</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-  <loc>https://pureluxnj.com/house-cleaning-fair-lawn-nj.html</loc>
-  <lastmod>2026-03-04</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
+urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>https://pureluxnj.com/</loc>
+<lastmod>2026-04-28</lastmod>
+<changefreq>weekly</changefreq>
+<priority>1.0</priority>
 </url>
-
-  <url>
+<url>
+<loc>https://pureluxnj.com/index.html</loc>
+<lastmod>2026-04-28</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://pureluxnj.com/quote.html</loc>
+<lastmod>2026-04-28</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://pureluxnj.com/thank-you.html</loc>
+<lastmod>2026-04-28</lastmod>
+<changefreq>yearly</changefreq>
+<priority>0.3</priority>
+</url>
+<url>
+<loc>https://pureluxnj.com/gallery.html</loc>
+<lastmod>2026-04-28</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://pureluxnj.com/deep-cleaning-nj.html</loc>
+<lastmod>2026-04-28</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://pureluxnj.com/recurring-cleaning-nj.html</loc>
+<lastmod>2026-04-28</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://pureluxnj.com/move-out-cleaning-nj.html</loc>
+<lastmod>2026-04-28</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://pureluxnj.com/post-construction-cleaning-nj.html</loc>
+<lastmod>2026-04-28</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://pureluxnj.com/commercial-cleaning-nj.html</loc>
+<lastmod>2026-04-28</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://pureluxnj.com/realtor-cleaning-nj.html</loc>
+<lastmod>2026-04-28</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://pureluxnj.com/apartment-turnover-cleaning-nj.html</loc>
+<lastmod>2026-04-28</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
 <loc>https://pureluxnj.com/house-cleaning-clifton-nj.html</loc>
-<lastmod>2026-03-04</lastmod>
+<lastmod>2026-04-28</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
-
 <url>
-<loc>https://pureluxnj.com/house-cleaning-hawthorne-nj.html</loc>
-<lastmod>2026-03-04</lastmod>
+<loc>https://pureluxnj.com/house-cleaning-fair-lawn-nj.html</loc>
+<lastmod>2026-04-28</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
-
-<url>
-<loc>https://pureluxnj.com/house-cleaning-wyckoff-nj.html</loc>
-<lastmod>2026-03-04</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-
-<url>
-<loc>https://pureluxnj.com/house-cleaning-north-haledon-nj.html</loc>
-<lastmod>2026-03-04</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-
-<url>
-<loc>https://pureluxnj.com/house-cleaning-totowa-nj.html</loc>
-<lastmod>2026-03-04</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-
 <url>
 <loc>https://pureluxnj.com/house-cleaning-franklin-lakes-nj.html</loc>
-<lastmod>2026-03-04</lastmod>
+<lastmod>2026-04-28</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
-
+<url>
+<loc>https://pureluxnj.com/house-cleaning-glen-rock-nj.html</loc>
+<lastmod>2026-04-28</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://pureluxnj.com/house-cleaning-hawthorne-nj.html</loc>
+<lastmod>2026-04-28</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
 <url>
 <loc>https://pureluxnj.com/house-cleaning-midland-park-nj.html</loc>
-<lastmod>2026-03-04</lastmod>
+<lastmod>2026-04-28</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://pureluxnj.com/house-cleaning-north-haledon-nj.html</loc>
+<lastmod>2026-04-28</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://pureluxnj.com/house-cleaning-paramus-nj.html</loc>
+<lastmod>2026-04-28</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://pureluxnj.com/house-cleaning-ridgewood-nj.html</loc>
+<lastmod>2026-04-28</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://pureluxnj.com/house-cleaning-totowa-nj.html</loc>
+<lastmod>2026-04-28</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://pureluxnj.com/house-cleaning-wayne-nj.html</loc>
+<lastmod>2026-04-28</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://pureluxnj.com/house-cleaning-wyckoff-nj.html</loc>
+<lastmod>2026-04-28</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
