@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -19,70 +19,26 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png?v=3" />
   <link rel="preload" as="image" href="/favicon.png" />
 
-  <style>
-    :root{--bg:#020617;--bg2:#040b1b;--panel:rgba(7,18,43,.72);--stroke:rgba(148,163,184,.22);--accent:#38bdf8;--accent2:#0ea5e9;--accentSoft:rgba(56,189,248,.14);--text:#e5e7eb;--muted:#9ca3af;--muted2:#6b7280;--shadow:0 22px 70px rgba(0,0,0,.55);--shadow2:0 18px 45px rgba(0,0,0,.45);--radius:8px;--max:1120px;--fontBody:Inter, system-ui, -apple-system, Segoe UI, sans-serif;--fontHead:Georgia, "Times New Roman", serif}
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:var(--fontBody);color:var(--text);background:linear-gradient(180deg,rgba(2,6,23,.70),rgba(2,6,23,.96) 48%,#020617 100%),repeating-linear-gradient(90deg,rgba(255,255,255,.024) 0 1px,transparent 1px 132px),linear-gradient(135deg,var(--bg2),var(--bg));min-height:100vh;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-    a{color:inherit;text-decoration:none}
-    img{display:block;max-width:100%}
-    .page{max-width:var(--max);margin:0 auto;padding:22px 16px 76px}
-    .topbar{display:flex;justify-content:flex-end;gap:10px;font-size:12px;color:var(--muted);margin-bottom:10px}
-    .topbar span + span::before{content:"\2022";margin:0 10px;color:var(--muted2)}
-    .topbar a{color:var(--accent);font-weight:800}
-    header{position:sticky;top:12px;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:12px 16px;border-radius:999px;border:1px solid var(--stroke);background:linear-gradient(90deg,rgba(2,6,23,.90),rgba(4,11,27,.84));backdrop-filter:blur(18px);box-shadow:var(--shadow2)}
-    .brand{display:flex;align-items:center;gap:10px;min-width:260px}
-    .brand-mark{width:44px;height:44px;border-radius:999px;overflow:hidden;background:rgba(9,24,54,.95);border:1px solid rgba(56,189,248,.22);box-shadow:0 14px 30px rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center}
-    .brand-mark img{width:100%;height:100%;object-fit:cover;transform:scale(1.2)}
-    .brand-name{font-size:12px;letter-spacing:0;text-transform:uppercase;font-weight:900}
-    .brand-sub{font-size:11px;color:var(--muted2);margin-top:2px}
-    .nav-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;border-radius:999px;padding:0 14px;font-size:13px;font-weight:800;border:1px solid rgba(148,163,184,.22);background:rgba(9,22,48,.72);color:var(--text);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease,filter .18s ease;cursor:pointer;white-space:nowrap}
-    .btn:hover{transform:translateY(-1px);border-color:rgba(56,189,248,.35);box-shadow:0 16px 30px rgba(0,0,0,.35);filter:brightness(1.03)}
-    .btn-primary{border:1px solid rgba(56,189,248,.45);background:linear-gradient(90deg,var(--accent),var(--accent2));color:#04101f;box-shadow:0 18px 38px rgba(56,189,248,.32)}
-    section.block{margin-top:18px;border-radius:var(--radius);border:1px solid var(--stroke);background:linear-gradient(145deg,rgba(56,189,248,.10),rgba(255,255,255,.025) 42%,rgba(14,165,233,.08)),linear-gradient(180deg,rgba(6,16,38,.84),rgba(2,6,23,.92));box-shadow:var(--shadow);padding:22px}
-    .section-head{display:flex;justify-content:space-between;align-items:baseline;gap:18px;margin-bottom:12px}
-    .section-title{font-weight:900;text-transform:uppercase;font-size:12px;color:var(--accent)}
-    .section-sub{color:var(--muted);font-size:12px;max-width:540px;line-height:1.5;text-align:right}
-    h1{max-width:860px;font-family:var(--fontHead);font-weight:700;letter-spacing:0;line-height:1.04;font-size:44px}
-    h2{margin-top:8px;font-weight:900;font-size:22px;line-height:1.22;color:var(--text)}
-    h3{font-size:16px;line-height:1.28;color:var(--text);margin-bottom:7px}
-    .lead{color:var(--muted);font-size:16px;line-height:1.7;max-width:860px;margin-top:12px}
-    .hero-points{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-    .pill{min-height:34px;display:inline-flex;align-items:center;padding:0 12px;border:1px solid rgba(148,163,184,.16);border-radius:999px;background:rgba(7,18,43,.50);color:#d1d5db;font-size:12px;font-weight:800}
-    .breadcrumb{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:14px;color:var(--muted2);font-size:12px;font-weight:800}
-    .breadcrumb a{color:#dbe8f2}
-    .breadcrumb span[aria-hidden="true"]{color:var(--accent)}
-    .grid2,.cards-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px}
-    .cards-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .mini,.industry-card{border-radius:var(--radius);border:1px solid rgba(148,163,184,.16);background:rgba(5,14,35,.55);padding:16px;box-shadow:0 16px 36px rgba(0,0,0,.28);transition:transform .2s ease,border-color .2s ease,background .2s ease,box-shadow .2s ease}
-    .mini:hover,.industry-card:hover{transform:translateY(-3px);border-color:rgba(56,189,248,.34);background:rgba(7,18,43,.76);box-shadow:0 20px 44px rgba(0,0,0,.36)}
-    .mini .mtext{color:var(--muted);font-size:13px;line-height:1.6}
-    .cta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
-    .note{margin-top:14px;padding:13px 14px;border-radius:var(--radius);border:1px solid rgba(56,189,248,.18);background:rgba(7,18,43,.55);color:var(--muted);font-size:13px;line-height:1.55}
-    .nearby-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-    .nearby-links a{min-height:38px;display:inline-flex;align-items:center;padding:0 12px;border:1px solid rgba(148,163,184,.16);border-radius:999px;background:rgba(7,18,43,.46);color:#dbe8f2;font-size:12px;font-weight:800;transition:transform .18s ease,border-color .18s ease,background .18s ease}
-    .nearby-links a:hover{transform:translateY(-1px);border-color:rgba(56,189,248,.34);background:rgba(7,18,43,.72)}
-    .process-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px;counter-reset:quoteSteps}
-    .process-step{position:relative;border-radius:var(--radius);border:1px solid rgba(148,163,184,.16);background:rgba(5,14,35,.55);padding:16px;box-shadow:0 16px 36px rgba(0,0,0,.28);transition:transform .2s ease,border-color .2s ease,background .2s ease}
-    .process-step:hover{transform:translateY(-2px);border-color:rgba(56,189,248,.28);background:rgba(7,18,43,.72)}
-    .process-step::before{counter-increment:quoteSteps;content:counter(quoteSteps);width:28px;height:28px;display:grid;place-items:center;border-radius:50%;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#04101f;font-size:12px;font-weight:900;margin-bottom:12px}
-    .industry-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px}
-    .industry-card{min-height:92px;display:flex;align-items:flex-end;background:linear-gradient(145deg,rgba(56,189,248,.13),rgba(5,14,35,.58)),rgba(5,14,35,.55)}
-    .industry-card span{font-size:15px;font-weight:900;color:#eaf7ff}
-    .faq-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px}
-    .faq-item{border-radius:var(--radius);border:1px solid rgba(148,163,184,.16);background:rgba(5,14,35,.55);padding:15px 16px;box-shadow:0 16px 36px rgba(0,0,0,.28)}
-    .faq-item h3{font-size:15px;margin-bottom:8px}
-    .faq-item p{color:var(--muted);font-size:13px;line-height:1.6}
-    .final-cta{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:center}
-    footer{margin-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:var(--muted2);font-size:11px;padding:0 6px}
-    .mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:80;display:none;gap:8px;padding:10px 12px 12px;border-top:1px solid rgba(148,163,184,.22);background:rgba(2,6,23,.88);backdrop-filter:blur(16px)}
-    .reveal{opacity:1;transform:none}
-    .js .reveal{opacity:0;transform:translateY(16px);transition:opacity .58s ease,transform .58s ease;transition-delay:var(--delay,0ms)}
-    .js .reveal.is-visible{opacity:1;transform:none}
-    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.mini,.process-step,.nearby-links a,.industry-card,.reveal{transition:none}.btn:hover,.mini:hover,.process-step:hover,.nearby-links a:hover,.industry-card:hover{transform:none}.js .reveal{opacity:1;transform:none}}
-    @media (max-width:980px){header{position:static;border-radius:var(--radius);align-items:flex-start;flex-direction:column}.brand{min-width:0}.nav-actions{justify-content:flex-start}.grid2,.cards-grid,.cards-grid.three,.process-grid,.faq-grid,.final-cta,.industry-grid{grid-template-columns:1fr}.section-head{flex-direction:column;align-items:flex-start}.section-sub{text-align:left}.topbar{justify-content:center;text-align:center;flex-wrap:wrap}}
-    @media (max-width:720px){body{padding-bottom:74px}h1{font-size:36px}h2{font-size:20px}.lead{font-size:15px}section.block{padding:18px}.btn{width:100%}.nav-actions{width:100%}.mobile-cta{display:flex}.mobile-cta .btn{width:auto;flex:1;min-width:0;padding:0 10px}}
+        <style>
+    :root{--bg:#030712;--bg2:#06111f;--surface:#081423;--surface2:#0b1b30;--line:rgba(202,232,255,.14);--line2:rgba(202,232,255,.24);--text:#f4f8fb;--muted:#aab8c6;--muted2:#718294;--accent:#67d5ff;--accent2:#1da9f2;--accent3:#b9ecff;--shadow:0 24px 80px rgba(0,0,0,.42);--shadow2:0 16px 44px rgba(0,0,0,.28);--radius:8px;--max:1180px;--font:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;--serif:Georgia,"Times New Roman",serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;color:var(--text);background:linear-gradient(180deg,rgba(3,7,18,.70),rgba(3,7,18,.96) 46%,#030712 100%),repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0 1px,transparent 1px 140px),linear-gradient(135deg,#020817 0%,#07172a 38%,#020817 100%);font-family:var(--font);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+    body::before{content:"";position:fixed;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 0%,rgba(103,213,255,.08) 44%,transparent 56%),linear-gradient(180deg,rgba(255,255,255,.04),transparent 34%);opacity:.5;transform:translateX(-30%);animation:ambient-sweep 12s ease-in-out infinite alternate;z-index:-1}@keyframes ambient-sweep{from{transform:translateX(-32%)}to{transform:translateX(22%)}}@keyframes accent-line{from{transform:scaleX(0);opacity:.3}to{transform:scaleX(1);opacity:1}}
+    @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}}
+    a{color:inherit;text-decoration:none}img{display:block;max-width:100%}.skip-link{position:absolute;left:14px;top:-44px;z-index:100;padding:10px 12px;background:var(--accent);color:#04111f;border-radius:var(--radius);font-weight:800}.skip-link:focus{top:14px}.wrap{width:min(var(--max),calc(100% - 32px));margin:0 auto}
+    .site-header{position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(202,232,255,.10);background:rgba(3,7,18,.78);backdrop-filter:blur(18px)}.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:12px;min-width:0}.brand-mark{width:46px;height:46px;overflow:hidden;border-radius:50%;border:1px solid var(--line);background:#081423;box-shadow:0 12px 30px rgba(0,0,0,.26);flex:0 0 auto}.brand-mark img{width:100%;height:100%;object-fit:cover;transform:scale(1.12)}.brand-name{display:block;color:#fff;font-size:13px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;line-height:1.1}.brand-sub{display:block;margin-top:4px;color:var(--muted2);font-size:12px}.nav-links,.nav-actions{display:flex;align-items:center;gap:18px;color:#c8d7e4;font-size:13px;font-weight:700}.nav-actions{gap:10px}.nav-links a{position:relative;padding:8px 0}.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .2s ease}.nav-links a:hover::after{transform:scaleX(1)}
+    .btn{min-height:46px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:0 18px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.045);color:var(--text);font-weight:850;font-size:14px;white-space:nowrap;transition:transform .2s ease,border-color .2s ease,background .2s ease,box-shadow .2s ease}.btn:hover{transform:translateY(-2px);border-color:rgba(103,213,255,.38);background:rgba(103,213,255,.08);box-shadow:0 18px 38px rgba(0,0,0,.26)}.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));border-color:rgba(103,213,255,.7);color:#04111f;box-shadow:0 18px 42px rgba(29,169,242,.24)}
+    .breadcrumb{width:min(var(--max),calc(100% - 32px));margin:18px auto 0;display:flex;flex-wrap:wrap;gap:8px;align-items:center;color:var(--muted2);font-size:12px;font-weight:800}.breadcrumb a{color:#dbe8f2}.breadcrumb span[aria-hidden="true"]{color:var(--accent)}
+    .hero{padding:clamp(34px,6vw,78px) 0 34px}.hero-grid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(390px,.98fr);gap:clamp(24px,5vw,58px);align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:10px;min-height:34px;padding:0 12px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.045);color:var(--accent3);font-size:12px;font-weight:900;letter-spacing:.13em;text-transform:uppercase}.signal{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 18px var(--accent)}
+    h1{margin:18px 0 0;max-width:920px;font-family:var(--serif);font-size:clamp(44px,6vw,84px);line-height:.96;letter-spacing:0;font-weight:700}h2{margin:0;font-size:clamp(28px,3.2vw,46px);line-height:1.04;font-weight:900}h3{margin:0;color:#fff;font-size:18px;line-height:1.25}p{margin:0}.hero-lead{max-width:720px;margin-top:18px;color:#c4d2df;font-size:clamp(17px,2vw,21px);line-height:1.52}.hero-note,.chip-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}.hero-note span,.chip{display:inline-flex;align-items:center;gap:7px;min-height:36px;padding:0 12px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.045);color:#dbe7f2;font-size:13px;font-weight:800}.chip::before,.hero-note span::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px rgba(103,213,255,.55)}.hero-cta,.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+    .hero-panel{position:relative;min-height:560px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:linear-gradient(145deg,rgba(103,213,255,.13),rgba(255,255,255,.035)),rgba(8,20,35,.92);box-shadow:var(--shadow)}.hero-panel img{width:100%;height:100%;min-height:560px;object-fit:cover;filter:saturate(1.08) contrast(1.12) brightness(.86);transform:scale(1.035);transition:transform 1.15s ease,filter .55s ease;will-change:transform}.hero-panel:hover img{transform:scale(1.07);filter:saturate(1.1) contrast(1.15) brightness(.9)}.hero-panel::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,7,18,.12) 0%,rgba(3,7,18,.38) 42%,rgba(3,7,18,.88) 100%),linear-gradient(90deg,rgba(3,7,18,.62),rgba(3,7,18,.08) 58%,rgba(3,7,18,.34));pointer-events:none}.hero-panel.image-missing>img{display:none}.hero-fallback{display:none;position:absolute;inset:0;z-index:1;padding:22px;place-items:stretch}.hero-panel.image-missing .hero-fallback{display:grid}.visual-stack{display:grid;gap:12px;align-content:center}.visual-tile{border:1px solid var(--line);border-radius:var(--radius);background:rgba(255,255,255,.055);padding:16px}.visual-tile b{display:block;color:var(--accent);font-size:12px;text-transform:uppercase;letter-spacing:.13em}.visual-tile span{display:block;margin-top:8px;color:#eef7ff;font-weight:850;line-height:1.25}
+    .hero-card,.floating-proof,.hero-status{position:absolute;z-index:2;border:1px solid var(--line);background:rgba(3,7,18,.74);backdrop-filter:blur(18px);box-shadow:var(--shadow2);border-radius:var(--radius)}.floating-proof{top:18px;right:18px;width:min(300px,calc(100% - 36px));padding:14px}.floating-proof span,.service-card small{display:block;color:var(--accent);font-size:12px;font-weight:900;letter-spacing:.13em;text-transform:uppercase}.floating-proof p{margin-top:8px;color:#dbe7f2;font-size:13px;line-height:1.45}.hero-status{top:122px;right:18px;min-width:156px;padding:12px 14px;background:linear-gradient(145deg,rgba(103,213,255,.18),rgba(3,7,18,.74));box-shadow:0 18px 42px rgba(29,169,242,.20),var(--shadow2)}.hero-status b{display:block;color:var(--accent);font-size:11px;font-weight:950;letter-spacing:.14em;text-transform:uppercase}.hero-status span{display:block;margin-top:5px;color:#f4f8fb;font-size:17px;font-weight:900;line-height:1.15}.hero-card{left:18px;right:18px;bottom:18px;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:end;padding:18px}.hero-card small{display:block;color:var(--muted);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.12em}.hero-card strong{display:block;margin-top:7px;font-size:20px;line-height:1.18}.mini-price{min-width:146px;padding:12px;border-radius:var(--radius);border:1px solid rgba(103,213,255,.24);background:rgba(103,213,255,.10)}.mini-price b{display:block;color:var(--accent);font-size:18px}.mini-price span{display:block;margin-top:4px;color:var(--muted);font-size:12px;line-height:1.35}
+    section{padding:38px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:18px}.section-kicker{color:var(--accent);font-size:12px;line-height:1.2;letter-spacing:.14em;text-transform:uppercase;font-weight:900;margin-bottom:10px}.section-copy{max-width:560px;color:var(--muted);font-size:15px;line-height:1.6}.accent-line{height:1px;width:100%;background:linear-gradient(90deg,var(--accent),transparent);transform-origin:left;animation:accent-line .8s ease both;margin-top:16px}
+    .card-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.card-grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.card-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.service-card,.project-card,.step-card,.link-panel,.faq-item,.feature-board{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:var(--radius);background:radial-gradient(circle at 82% -18%,rgba(103,213,255,.14),transparent 36%),linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.025)),rgba(8,20,35,.72);box-shadow:var(--shadow2);transition:transform .24s ease,border-color .24s ease,background .24s ease,box-shadow .24s ease}.service-card,.step-card,.link-panel,.faq-item,.feature-board{padding:18px}.service-card:hover,.project-card:hover,.step-card:hover,.feature-board:hover,.link-panel a:hover,.faq-item:hover{transform:translateY(-3px);border-color:rgba(103,213,255,.34);background:rgba(11,27,48,.82);box-shadow:0 20px 44px rgba(0,0,0,.34)}.service-card p,.step-card p,.faq-item p,.feature-board p{margin-top:10px;color:var(--muted);font-size:14px;line-height:1.55}.service-card ul,.feature-board ul{display:grid;gap:6px;margin:14px 0 0;padding:0;list-style:none;color:var(--muted);font-size:13px;line-height:1.45}.service-card li::before,.feature-board li::before{content:"";width:6px;height:6px;display:inline-block;margin-right:8px;border-radius:50%;background:var(--accent);vertical-align:middle}
+    .feature-strip{display:grid;grid-template-columns:1.1fr .9fr;gap:14px;margin-bottom:14px}.feature-board{position:relative;overflow:hidden}.feature-board::after{content:"";position:absolute;inset:auto -30% -50% 35%;height:180px;background:radial-gradient(circle,rgba(103,213,255,.18),transparent 66%);pointer-events:none}.feature-board h3{font-size:22px}.feature-board .big{display:block;margin-bottom:12px;color:var(--accent);font-size:12px;font-weight:950;letter-spacing:.14em;text-transform:uppercase}
+    .project-card{overflow:hidden}.project-media{position:relative;height:clamp(220px,28vw,330px);background:#07111f;overflow:hidden}.project-media img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease}.project-card:hover .project-media img{transform:scale(1.025)}.fallback-visual{display:none;position:absolute;inset:0;place-items:center;padding:20px;text-align:center;background:linear-gradient(145deg,rgba(103,213,255,.12),rgba(255,255,255,.035)),#07111f}.project-card.image-missing .project-media img{display:none}.project-card.image-missing .fallback-visual{display:grid}.fallback-visual b{display:block;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;font-size:12px}.fallback-visual span{display:block;margin-top:8px;color:#f4f8fb;font-size:18px;font-weight:900}.project-body{padding:14px 16px}.project-body h3{font-size:16px}
+    .process-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;counter-reset:steps}.step-card::before{counter-increment:steps;content:counter(steps);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#04111f;font-weight:950;margin-bottom:16px}.link-panel{display:grid;gap:16px}.link-cloud{display:flex;flex-wrap:wrap;gap:10px}.link-cloud a{display:inline-flex;align-items:center;min-height:38px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.045);color:#dce8f3;font-size:13px;font-weight:800;transition:transform .2s ease,border-color .2s ease,background .2s ease}.faq-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.cta-section{padding:42px 0 64px}.final-cta{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:center;padding:30px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(145deg,rgba(103,213,255,.13),rgba(255,255,255,.04)),rgba(8,20,35,.88);box-shadow:var(--shadow)}.final-cta h2{max-width:780px}.final-cta p{max-width:680px;margin-top:12px;color:var(--muted);font-size:16px;line-height:1.6}.site-footer{border-top:1px solid rgba(202,232,255,.10);padding:24px 0 34px;color:var(--muted2);font-size:12px}.footer-grid{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}.footer-links{display:flex;gap:14px;flex-wrap:wrap}.mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:80;display:none;gap:8px;padding:10px 12px 12px;border-top:1px solid var(--line);background:rgba(3,7,18,.88);backdrop-filter:blur(16px)}.mobile-cta .btn{flex:1;min-height:46px;padding:0 10px;font-size:13px}.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;transition-delay:var(--delay,0ms)}.reveal.is-visible{opacity:1;transform:none}
+    @media (max-width:1060px){.nav-links{display:none}.hero-grid{grid-template-columns:1fr}.hero-panel{min-height:460px}.hero-panel img{min-height:460px}.card-grid,.card-grid.two,.card-grid.three,.feature-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.final-cta{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}}
+    @media (max-width:720px){body{padding-bottom:74px}.nav{min-height:70px}.brand-sub{display:none}.nav-actions .btn:not(.btn-primary){display:none}.hero{padding-top:26px}h1{font-size:43px}.hero-lead{font-size:16px}.hero-cta .btn,.final-cta .btn,.cta-row .btn{width:100%}.hero-card{grid-template-columns:1fr;left:12px;right:12px;bottom:12px;padding:14px}.floating-proof{top:12px;left:12px;right:12px;width:auto}.hero-status{top:auto;right:12px;left:12px;bottom:122px;min-width:0}.hero-panel,.hero-panel img{min-height:430px}.card-grid,.card-grid.two,.card-grid.three,.feature-strip,.process-grid,.faq-grid{grid-template-columns:1fr}.project-media{height:auto;min-height:220px}.project-media img{height:auto;min-height:220px}.final-cta{padding:22px}.mobile-cta{display:flex}.site-footer{padding-bottom:92px}}
   </style>
 
   <script type="application/ld+json">
@@ -175,7 +131,7 @@
                         ]
 }
   </script>
-  <script type="application/ld+json">
+        <script type="application/ld+json">
 {
     "@context":  "https://schema.org",
     "@type":  "FAQPage",
@@ -185,7 +141,7 @@
                            "name":  "What types of businesses do you clean?",
                            "acceptedAnswer":  {
                                                   "@type":  "Answer",
-                                                  "text":  "Purelux Cleaning serves offices, gyms, retail spaces, clinics, warehouses, and small businesses across North NJ when the scope and schedule are the right fit."
+                                                  "text":  "Offices, gyms, retail spaces, clinics, warehouses, and small businesses may be a fit."
                                               }
                        },
                        {
@@ -193,7 +149,7 @@
                            "name":  "Do you offer day porter service?",
                            "acceptedAnswer":  {
                                                   "@type":  "Answer",
-                                                  "text":  "Yes. Day porter service can support restrooms, trash, common areas, spills, touchpoints, and presentation during business hours."
+                                                  "text":  "Yes. Day porter service can support restrooms, trash, common areas, spills, and presentation."
                                               }
                        },
                        {
@@ -201,349 +157,121 @@
                            "name":  "Do you offer night cleaning?",
                            "acceptedAnswer":  {
                                                   "@type":  "Answer",
-                                                  "text":  "Yes. Night cleaning is available for businesses that prefer service after closing or outside normal customer and staff activity."
+                                                  "text":  "Yes. Night cleaning is available for businesses that prefer after-hours service."
                                               }
                        },
                        {
                            "@type":  "Question",
-                           "name":  "Can you provide recurring commercial cleaning contracts?",
+                           "name":  "Can you provide recurring contracts?",
                            "acceptedAnswer":  {
                                                   "@type":  "Answer",
-                                                  "text":  "Yes. We can build recurring commercial cleaning proposals with defined scope, frequency, access expectations, and communication standards."
-                                              }
-                       },
-                       {
-                           "@type":  "Question",
-                           "name":  "How do I request a commercial cleaning proposal?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "Submit the quote form, call 862-287-7496, or text facility details to 862-287-7496 so we can review scope, schedule, and service fit."
+                                                  "text":  "Yes. We can propose defined scope, frequency, access, and communication standards."
                                               }
                        }
                    ]
 }
   </script>
+
   <script>
-    document.documentElement.classList.add('js');
-    document.addEventListener('DOMContentLoaded', function(){
-      var items = document.querySelectorAll('.reveal');
-      if (!('IntersectionObserver' in window)) {
-        items.forEach(function(item){ item.classList.add('is-visible'); });
+    document.addEventListener("DOMContentLoaded", function(){
+      document.querySelectorAll("img[data-fallback]").forEach(function(img){
+        img.addEventListener("error", function(){
+          var card = img.closest(".hero-panel, .project-card");
+          if (card) card.classList.add("image-missing");
+        });
+      });
+      var items = document.querySelectorAll(".reveal");
+      if (!("IntersectionObserver" in window)) {
+        items.forEach(function(item){ item.classList.add("is-visible"); });
         return;
       }
       var observer = new IntersectionObserver(function(entries){
         entries.forEach(function(entry){
           if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
+            entry.target.classList.add("is-visible");
             observer.unobserve(entry.target);
           }
         });
-      }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
-      items.forEach(function(item){ observer.observe(item); });
+      }, {threshold:.12, rootMargin:"0px 0px -40px 0px"});
+      items.forEach(function(item, index){
+        if (!item.style.getPropertyValue("--delay")) item.style.setProperty("--delay", Math.min(index * 20, 180) + "ms");
+        observer.observe(item);
+      });
     });
   </script>
 </head>
 
-<body class="commercial-page">
-  <div class="page">
-    <div class="topbar">
-      <span>Call or Text: <a href="tel:18622877496">862-287-7496</a></span>
-      <span>Email: <a href="mailto:info@pureluxnj.com">info@pureluxnj.com</a></span>
-    </div>
-
-    <header>
-      <a class="brand" href="index.html" aria-label="Purelux Cleaning home">
-        <div class="brand-mark">
-          <img src="/favicon.png" alt="Purelux Cleaning logo" />
-        </div>
-        <div>
-          <div class="brand-name">Purelux Cleaning</div>
-          <div class="brand-sub">Premium cleaning services across North NJ</div>
-        </div>
-      </a>
-
-      <nav class="nav-actions" aria-label="Commercial Cleaning page navigation">
-        <a class="btn" href="index.html">Home</a>
-        <a class="btn" href="index.html#services">Services</a>
-        <a class="btn" href="gallery.html">View Gallery</a>
-        <a class="btn" href="sms:+18622877496" aria-label="Text">Text</a>
-        <a class="btn btn-primary" href="quote.html" aria-label="Get a Quote">Get a Quote</a>
-      </nav>
-    </header>
-
-    <main>
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="index.html">Home</a>
-        <span aria-hidden="true">&gt;</span>
-        <a href="index.html#services">Services</a>
-        <span aria-hidden="true">&gt;</span>
-        <span>Commercial Cleaning</span>
-      </nav>
-
-      <section class="block reveal" id="top">
-        <div class="section-head">
-          <div class="section-title">Reliable cleaning for professional spaces</div>
-          <div class="section-sub">Contract-ready cleaning for offices, gyms, retail spaces, clinics, warehouses, and small businesses that need consistency, communication, and detail.</div>
-        </div>
-        <h1>Commercial Cleaning Services in North NJ</h1>
-        <p class="lead">Purelux Cleaning provides commercial cleaning for North NJ businesses that need a dependable partner, not a generic cleaning crew. We build clear scopes for offices, gyms, retail spaces, clinics, warehouses, and small businesses, with day porter support, night cleaning, and recurring contract options available by fit.</p>
-        <div class="hero-points" aria-label="Commercial Cleaning strengths">
-          <span class="pill">Day porter service</span>
-          <span class="pill">Night cleaning</span>
-          <span class="pill">Contract-ready plans</span>
-          <span class="pill">Offices, gyms, retail, clinics</span>
-        </div>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="quote.html" aria-label="Get a Quote">Get a Quote</a>
-          <a class="btn" href="tel:18622877496" aria-label="Call">Call</a>
-          <a class="btn" href="sms:+18622877496" aria-label="Text">Text</a>
-        </div>
-      </section>
-
-      <section class="block reveal" id="overview">
-        <div class="section-head">
-          <div>
-            <div class="section-title">Service overview</div>
-            <h2>Commercial cleaning built around reliability and repeatable standards.</h2>
-          </div>
-          <div class="section-sub">North NJ service for Bergen County, Passaic County, and nearby towns.</div>
-        </div>
-        <p class="lead">A business cleaning program needs more than a checklist. It needs the right frequency, clear areas of responsibility, dependable communication, and a team that understands how your space is used by employees, customers, patients, members, or visitors.</p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="quote.html" aria-label="Get a Quote">Get a Quote</a>
-          <a class="btn" href="tel:18622877496" aria-label="Call">Call</a>
-          <a class="btn" href="sms:+18622877496" aria-label="Text">Text</a>
-        </div>
-      </section>
-
-      <section class="block reveal" id="included">
-        <div class="section-head">
-          <div>
-            <div class="section-title">What is included</div>
-            <h2>What is included in commercial cleaning</h2>
-          </div>
-          <div class="section-sub">Commercial scope is customized by business type, hours, traffic, surface needs, and whether service happens during the day or after closing.</div>
-        </div>
-        <div class="cards-grid three">
-          <article class="mini reveal service-card" style="--delay:0ms">
-            <h3>Office cleaning</h3>
-            <p class="mtext">Workstations, conference rooms, reception areas, breakrooms, restrooms, floors, trash removal, and high-touch surfaces can be included.</p>
-          </article>
-          <article class="mini reveal service-card" style="--delay:45ms">
-            <h3>Day porter support</h3>
-            <p class="mtext">Day porter service helps maintain restrooms, common areas, trash, spills, touchpoints, and presentation during business hours.</p>
-          </article>
-          <article class="mini reveal service-card" style="--delay:90ms">
-            <h3>Night cleaning</h3>
-            <p class="mtext">After-hours cleaning supports offices, gyms, retail spaces, clinics, and small businesses that need a clean reset before the next day.</p>
-          </article>
-          <article class="mini reveal service-card" style="--delay:135ms">
-            <h3>Restroom standards</h3>
-            <p class="mtext">Restrooms are handled with extra attention to sinks, counters, toilets, fixtures, mirrors, floors, and restocking expectations by agreement.</p>
-          </article>
-          <article class="mini reveal service-card" style="--delay:180ms">
-            <h3>Floors and common areas</h3>
-            <p class="mtext">Vacuuming, mopping, entry areas, lobbies, hallways, breakrooms, and high-traffic zones are organized around use and frequency.</p>
-          </article>
-          <article class="mini reveal service-card" style="--delay:225ms">
-            <h3>Contract consistency</h3>
-            <p class="mtext">Recurring commercial plans can define scope, schedule, access, reporting, and expectations so service stays predictable.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="block reveal" id="industries">
-        <div class="section-head">
-          <div>
-            <div class="section-title">Industries We Serve</div>
-            <h2>Commercial cleaning for spaces where consistency matters.</h2>
-          </div>
-          <div class="section-sub">Different businesses need different service windows, surface priorities, and communication expectations.</div>
-        </div>
-        <div class="industry-grid" aria-label="Industries Purelux Cleaning serves">
-          <article class="industry-card reveal" style="--delay:0ms"><span>Offices</span></article>
-          <article class="industry-card reveal" style="--delay:55ms"><span>Gyms</span></article>
-          <article class="industry-card reveal" style="--delay:110ms"><span>Retail</span></article>
-          <article class="industry-card reveal" style="--delay:165ms"><span>Clinics</span></article>
-          <article class="industry-card reveal" style="--delay:220ms"><span>Warehouses</span></article>
-          <article class="industry-card reveal" style="--delay:275ms"><span>Small Businesses</span></article>
-        </div>
-      </section>
-
-      <section class="block reveal" id="best-for">
-        <div class="section-head">
-          <div>
-            <div class="section-title">Best for / when to use</div>
-            <h2>Best for businesses that need consistency</h2>
-          </div>
-          <div class="section-sub">Commercial cleaning works best when the scope is clear and the schedule supports how the business operates.</div>
-        </div>
-        <div class="grid2">
-          <article class="mini reveal service-card" style="--delay:0ms">
-            <h3>Client-facing spaces</h3>
-            <p class="mtext">Reception areas, showrooms, waiting rooms, and sales floors need a cleaner presentation before people walk in.</p>
-          </article>
-          <article class="mini reveal service-card" style="--delay:45ms">
-            <h3>High-traffic workplaces</h3>
-            <p class="mtext">Offices, gyms, clinics, and shared workspaces benefit from repeatable cleaning routines and high-touch attention.</p>
-          </article>
-          <article class="mini reveal service-card" style="--delay:90ms">
-            <h3>After-hours operations</h3>
-            <p class="mtext">Night cleaning lets the space reset without interrupting customers, staff, appointments, or daily workflow.</p>
-          </article>
-          <article class="mini reveal service-card" style="--delay:135ms">
-            <h3>Ongoing service contracts</h3>
-            <p class="mtext">Businesses that need consistency can set recurring service expectations, access details, and communication preferences upfront.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="block reveal" id="why-purelux">
-        <div class="section-head">
-          <div>
-            <div class="section-title">Why Purelux</div>
-            <h2>Why Purelux for commercial cleaning</h2>
-          </div>
-          <div class="section-sub">Commercial service depends on reliability as much as cleaning detail.</div>
-        </div>
-        <div class="grid2">
-          <article class="mini reveal service-card" style="--delay:0ms">
-            <h3>Scope before service</h3>
-            <p class="mtext">We define what is included, how often it is handled, when service happens, and which areas need the highest attention.</p>
-          </article>
-          <article class="mini reveal service-card" style="--delay:45ms">
-            <h3>Professional communication</h3>
-            <p class="mtext">Clear proposals and expectations help owners, managers, and operators understand the plan before service begins.</p>
-          </article>
-          <article class="mini reveal service-card" style="--delay:90ms">
-            <h3>Repeatable execution</h3>
-            <p class="mtext">Recurring commercial cleaning is built around consistency, not improvisation from visit to visit.</p>
-          </article>
-          <article class="mini reveal service-card" style="--delay:135ms">
-            <h3>Flexible service windows</h3>
-            <p class="mtext">Day porter and night cleaning options can be discussed based on access, staffing, hours, and the type of facility.</p>
-          </article>
-        </div>
-        <div class="note">Purelux is not built to be the cheapest option. We are built for clients who want structure, consistency, communication, and detail.</div>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="quote.html" aria-label="Get a Quote">Get a Quote</a>
-          <a class="btn" href="tel:18622877496" aria-label="Call">Call</a>
-          <a class="btn" href="sms:+18622877496" aria-label="Text">Text</a>
-        </div>
-      </section>
-
-      <section class="block reveal" id="quote-process">
-        <div class="section-head">
-          <div>
-            <div class="section-title">How quote process works</div>
-            <h2>Clear scope before service day.</h2>
-          </div>
-          <div class="section-sub">A simple process designed to protect your time, expectations, and preferred cleaning window.</div>
-        </div>
+<body class="internal-page service-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="wrap nav"><a class="brand" href="index.html" aria-label="Purelux Cleaning home"><span class="brand-mark"><img src="/favicon.png" alt="Purelux Cleaning logo" width="46" height="46" /></span><span><span class="brand-name">Purelux Cleaning</span><span class="brand-sub">Premium cleaning services across North NJ</span></span></a><nav class="nav-links" aria-label="Commercial Cleaning sections"><a href="#included">Included</a><a href="#proof">Results</a><a href="#why-purelux">Standards</a><a href="#process">How It Works</a><a href="#faq">FAQ</a></nav><div class="nav-actions"><a class="btn" href="tel:18622877496">Call Now</a><a class="btn btn-primary" href="quote.html">Get Quote</a></div></div></header>
+  <main id="main">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">&gt;</span><a href="index.html#services">Services</a><span aria-hidden="true">&gt;</span><span>Commercial Cleaning</span></nav>
+    <section class="hero" aria-labelledby="hero-title"><div class="wrap hero-grid"><div class="hero-copy reveal"><div class="eyebrow"><span class="signal"></span> Commercial cleaning North NJ</div><h1 id="hero-title">Commercial Cleaning Services in North NJ</h1><p class="hero-lead">Offices, gyms, clinics, retail, restrooms, high-touch areas, day porter support, night cleaning, and reliable schedules.</p><div class="hero-note" aria-label="Service highlights"><span>Offices and retail</span>
+            <span>Restrooms and touchpoints</span>
+            <span>Day porter / night cleaning</span></div><div class="hero-cta"><a class="btn btn-primary" href="quote.html">Get Your Quote</a><a class="btn" href="tel:18622877496">Call Now</a></div></div><div class="hero-panel reveal"><img src="./images/commercial-cleaning-office-hero.webp" alt="Commercial office cleaning in North NJ by Purelux Cleaning" fetchpriority="high" data-fallback="true" /><div class="hero-fallback"><div class="visual-stack"><div class="visual-tile"><b>Commercial Cleaning</b><span>Commercial cleaning needs reliability more than guesswork.</span></div><div class="visual-tile"><b>Scope</b><span>Office, restroom, and high-touch cleaning / Day porter or night cleaning options / Contract-ready recurring schedules</span></div></div></div><div class="floating-proof"><span>Commercial Cleaning</span><p>Business cleaning built around reliability, scope, and communication.</p></div><div class="hero-status"><b>Status</b><span>Service Plan Set</span></div><div class="hero-card"><div><small>Premium scope</small><strong>Business cleaning built around reliability, scope, and communication.</strong></div><div class="mini-price"><b>Proposal</b><span>based on facility, frequency, and schedule</span></div></div></div></div></section>
+    <section id="included" aria-labelledby="included-title"><div class="wrap"><div class="section-head reveal"><div><div class="section-kicker">What's included</div><h2 id="included-title">Commercial Cleaning built around the right scope.</h2><div class="accent-line"></div></div><p class="section-copy">Short checklist previews, priority zones, and clear expectations.</p></div><div class="feature-strip"><article class="feature-board reveal"><span class="big">Facility plan</span><h3>Commercial cleaning needs reliability more than guesswork.</h3><p>We define scope, access, service windows, and communication before work begins.</p><ul><li>Office, restroom, and high-touch cleaning</li><li>Day porter or night cleaning options</li><li>Contract-ready recurring schedules</li></ul></article><article class="feature-board reveal"><span class="big">Schedule</span><h3>Day porter / night cleaning</h3><p>Service windows can match your business operations.</p></article><article class="feature-board reveal"><span class="big">Standards</span><h3>Restrooms and touchpoints</h3><p>High-use areas get clear, repeatable attention.</p></article></div><div class="card-grid">
+          <article class="service-card reveal"><small>Office</small><h3>Office Areas</h3><p>Workstations, reception, conference rooms, breakrooms, floors, and trash.</p><ul><li>Work areas</li><li>Breakrooms</li><li>Floors</li></ul></article>
+          <article class="service-card reveal"><small>Restrooms</small><h3>Restroom Standards</h3><p>Sinks, counters, toilets, mirrors, fixtures, floors, and restocking expectations.</p><ul><li>Toilets</li><li>Mirrors</li><li>Floors</li></ul></article>
+          <article class="service-card reveal"><small>Touchpoints</small><h3>High-Touch Areas</h3><p>Shared handles, counters, entry points, and common areas receive repeatable attention.</p><ul><li>Handles</li><li>Counters</li><li>Entries</li></ul></article>
+          <article class="service-card reveal"><small>Schedule</small><h3>Contracts + Service Windows</h3><p>Recurring plans can define frequency, access, reporting, and timing.</p><ul><li>Contracts</li><li>Day porter</li><li>Night cleaning</li></ul></article>
+        </div></div></section>
+        <section id="proof" aria-labelledby="proof-title">
+      <div class="wrap">
+        <div class="section-head reveal"><div><div class="section-kicker">Visual proof</div><h2 id="proof-title">Real Results. Clear Standards.</h2><div class="accent-line"></div></div><p class="section-copy">Visual proof from detailed cleaning standards applied to high-use spaces and surfaces.</p></div>
+        <div class="card-grid"><article class="project-card reveal"><div class="project-media"><img src="./images/commercial-restroom-clean.webp" alt="Commercial restroom cleaning by Purelux Cleaning" loading="lazy" decoding="async" data-fallback="true" /><div class="fallback-visual"><div><b>Commercial</b><span>Restroom Clean</span></div></div></div><div class="project-body"><h3>Restroom Clean</h3></div></article>
+          <article class="project-card reveal"><div class="project-media"><img src="./images/commercial-high-touch-cleaning.webp" alt="Commercial high-touch surface cleaning by Purelux Cleaning" loading="lazy" decoding="async" data-fallback="true" /><div class="fallback-visual"><div><b>Commercial</b><span>High-Touch Cleaning</span></div></div></div><div class="project-body"><h3>High-Touch Cleaning</h3></div></article>
+          <article class="project-card reveal"><div class="project-media"><img src="./images/commercial-office-clean.webp" alt="Commercial office cleaning by Purelux Cleaning" loading="lazy" decoding="async" data-fallback="true" /><div class="fallback-visual"><div><b>Commercial</b><span>Office Clean</span></div></div></div><div class="project-body"><h3>Office Clean</h3></div></article>
+          <article class="project-card reveal"><div class="project-media"><img src="./images/commercial-breakroom-clean.webp" alt="Commercial breakroom cleaning by Purelux Cleaning" loading="lazy" decoding="async" data-fallback="true" /><div class="fallback-visual"><div><b>Commercial</b><span>Breakroom Clean</span></div></div></div><div class="project-body"><h3>Breakroom Clean</h3></div></article>
+          <article class="project-card reveal"><div class="project-media"><img src="./images/commercial-floor-cleaning.webp" alt="Commercial floor cleaning by Purelux Cleaning" loading="lazy" decoding="async" data-fallback="true" /><div class="fallback-visual"><div><b>Commercial</b><span>Floor Cleaning</span></div></div></div><div class="project-body"><h3>Floor Cleaning</h3></div></article></div>
+      </div>
+    </section>
+    <section id="best-fit" aria-labelledby="best-title"><div class="wrap"><div class="section-head reveal"><div><div class="section-kicker">Best fit</div><h2 id="best-title">When this service makes sense.</h2></div><p class="section-copy">Match the service to the property condition and the goal.</p></div><div class="card-grid">
+          <article class="service-card reveal"><h3>Offices</h3><p>Clean workspaces support staff, clients, and daily presentation.</p></article>
+          <article class="service-card reveal"><h3>Gyms + Clinics</h3><p>High-use spaces need reliable routines and touchpoint focus.</p></article>
+          <article class="service-card reveal"><h3>Retail</h3><p>Customer-facing areas need a polished, dependable finish.</p></article>
+          <article class="service-card reveal"><h3>Small Businesses</h3><p>Recurring plans reduce management friction.</p></article>
+        </div></div></section>
+    <section id="why-purelux" aria-labelledby="why-title"><div class="wrap"><div class="section-head reveal"><div><div class="section-kicker">Why Purelux</div><h2 id="why-title">Structure, consistency, and detail.</h2></div><p class="section-copy">Premium cleaning is a controlled process, not a rushed pass.</p></div><div class="card-grid">
+          <article class="service-card reveal"><h3>Defined Scope</h3><p>Responsibilities, access, timing, and priorities are set first.</p></article>
+          <article class="service-card reveal"><h3>Reliable Scheduling</h3><p>Day porter and night cleaning can match operations.</p></article>
+          <article class="service-card reveal"><h3>Clear Communication</h3><p>Owners and managers know the plan before service starts.</p></article>
+          <article class="service-card reveal"><h3>Contract-Ready</h3><p>Recurring service is built for consistency.</p></article>
+        </div><div class="cta-row reveal"><a class="btn btn-primary" href="quote.html">Get a Quote</a><a class="btn" href="tel:18622877496">Call Now</a><a class="btn" href="sms:+18622877496">Text Us</a></div></div></section>
+        <section id="process" aria-labelledby="process-title">
+      <div class="wrap">
+        <div class="section-head reveal"><div><div class="section-kicker">How it works</div><h2 id="process-title">A Simple, Controlled Process</h2></div><p class="section-copy">Commercial cleaning should be predictable before the first visit.</p></div>
         <div class="process-grid">
-          <article class="process-step reveal">
-            <h3>Share your facility needs</h3>
-            <p class="mtext">Tell us the business type, square footage, hours, traffic level, restrooms, floors, and preferred service window.</p>
-          </article>
-          <article class="process-step reveal">
-            <h3>Receive a commercial proposal</h3>
-            <p class="mtext">We recommend scope, frequency, day porter or night cleaning options, and contract expectations based on the facility.</p>
-          </article>
-          <article class="process-step reveal">
-            <h3>Approve the plan</h3>
-            <p class="mtext">Once the proposal is accepted, we confirm access, schedule, communication, and any deposit or setup details required.</p>
-          </article>
+          <article class="step-card reveal"><h3>Request Your Quote</h3><p>Send facility type, square footage, hours, and cleaning goals.</p></article>
+          <article class="step-card reveal"><h3>We Confirm the Details</h3><p>We confirm scope, schedule, access, communication, and service frequency.</p></article>
+          <article class="step-card reveal"><h3>We Clean + Final Walkthrough</h3><p>The team cleans to the plan and reports any scope issues clearly.</p></article>
         </div>
-        <div class="note">A deposit may be requested only after the proposal is approved to secure the appointment.</div>
-      </section>
-
-      <section class="block reveal" id="related-services">
-        <div class="section-head">
-          <div>
-            <div class="section-title">Related services</div>
-            <h2>Choose the cleaning service that fits the property.</h2>
-          </div>
-          <div class="section-sub">Explore related Purelux services and nearby North NJ service areas.</div>
-        </div>
-        <div class="nearby-links" aria-label="Related Purelux service pages">
-          <a href="deep-cleaning-nj.html">Deep Cleaning</a>
-          <a href="recurring-cleaning-nj.html">Recurring Cleaning</a>
-          <a href="move-out-cleaning-nj.html">Move-Out Cleaning</a>
-          <a href="post-construction-cleaning-nj.html">Post-Construction Cleaning</a>
-          <a href="realtor-cleaning-nj.html">Realtor Cleaning</a>
-          <a href="apartment-turnover-cleaning-nj.html">Apartment Turnover Cleaning</a>
-        </div>
-        <div class="nearby-links" aria-label="Purelux local service pages">
-          <a href="index.html">Purelux Cleaning Home</a>
-          <a href="quote.html">Request a Cleaning Quote</a>
-          <a href="gallery.html">View Real Results</a>
-          <a href="house-cleaning-north-haledon-nj.html">North Haledon</a>
-          <a href="house-cleaning-wayne-nj.html">Wayne</a>
-          <a href="house-cleaning-paramus-nj.html">Paramus</a>
-          <a href="house-cleaning-ridgewood-nj.html">Ridgewood</a>
-          <a href="house-cleaning-franklin-lakes-nj.html">Franklin Lakes</a>
-          <a href="house-cleaning-clifton-nj.html">Clifton</a>
-          <a href="house-cleaning-glen-rock-nj.html">Glen Rock</a>
-          <a href="house-cleaning-fair-lawn-nj.html">Fair Lawn</a>
-        </div>
-      </section>
-
-      <section class="block reveal" id="faq">
-        <div class="section-head">
-          <div>
-            <div class="section-title">FAQ</div>
-            <h2>Commercial Cleaning FAQ</h2>
-          </div>
-          <div class="section-sub">Straight answers before you request a custom Purelux quote.</div>
-        </div>
-        <div class="faq-grid">
-          <article class="faq-item reveal">
-            <h3>What types of businesses do you clean?</h3>
-            <p>Purelux Cleaning serves offices, gyms, retail spaces, clinics, warehouses, and small businesses across North NJ when the scope and schedule are the right fit.</p>
-          </article>
-          <article class="faq-item reveal">
-            <h3>Do you offer day porter service?</h3>
-            <p>Yes. Day porter service can support restrooms, trash, common areas, spills, touchpoints, and presentation during business hours.</p>
-          </article>
-          <article class="faq-item reveal">
-            <h3>Do you offer night cleaning?</h3>
-            <p>Yes. Night cleaning is available for businesses that prefer service after closing or outside normal customer and staff activity.</p>
-          </article>
-          <article class="faq-item reveal">
-            <h3>Can you provide recurring commercial cleaning contracts?</h3>
-            <p>Yes. We can build recurring commercial cleaning proposals with defined scope, frequency, access expectations, and communication standards.</p>
-          </article>
-          <article class="faq-item reveal">
-            <h3>How do I request a commercial cleaning proposal?</h3>
-            <p>Submit the quote form, call 862-287-7496, or text facility details to 862-287-7496 so we can review scope, schedule, and service fit.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="block final-cta reveal" id="quote">
-        <div>
-          <div class="section-title">Request your custom quote</div>
-          <h2>Ready for a commercial cleaning partner with real structure?</h2>
-          <p class="lead">Send your facility details, schedule needs, and preferred service window. Purelux will prepare a tailored commercial cleaning proposal built around reliability and consistency.</p>
-        </div>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="quote.html" aria-label="Get a Quote">Get a Quote</a>
-          <a class="btn" href="tel:18622877496" aria-label="Call">Call</a>
-          <a class="btn" href="sms:+18622877496" aria-label="Text">Text</a>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <span>&copy; 2026 Purelux Cleaning &middot; Serving Bergen &amp; Passaic County, NJ</span>
-      <span>Fully insured &middot; Structured workflow &middot; Detail-driven results</span>
-    </footer>
-  </div>
-
-  <div class="mobile-cta" aria-label="Mobile quick actions">
-    <a class="btn" href="tel:18622877496" aria-label="Mobile Call">Call</a>
-    <a class="btn" href="sms:+18622877496" aria-label="Mobile Text">Text</a>
-    <a class="btn btn-primary" href="quote.html" aria-label="Mobile Quote">Quote</a>
-  </div>
+      </div>
+    </section>
+    <section id="related" aria-labelledby="related-title"><div class="wrap"><div class="section-head reveal"><div><div class="section-kicker">Explore more</div><h2 id="related-title">Related services and nearby areas.</h2></div><p class="section-copy">Keep moving through the Purelux service system.</p></div><div class="link-panel reveal"><div class="link-cloud"><a href="index.html">Home</a><a href="quote.html">Quote</a><a href="gallery.html">Gallery</a><a href="deep-cleaning-nj.html">Deep Cleaning</a>
+            <a href="recurring-cleaning-nj.html">Recurring Cleaning</a>
+            <a href="move-out-cleaning-nj.html">Move-In / Move-Out Cleaning</a>
+            <a href="post-construction-cleaning-nj.html">Post-Construction Cleaning</a>
+            <a href="realtor-cleaning-nj.html">Realtor Cleaning</a>
+            <a href="apartment-turnover-cleaning-nj.html">Apartment Turnover Cleaning</a></div><div class="link-cloud"><a href="house-cleaning-north-haledon-nj.html">North Haledon</a>
+            <a href="house-cleaning-wayne-nj.html">Wayne</a>
+            <a href="house-cleaning-paramus-nj.html">Paramus</a>
+            <a href="house-cleaning-ridgewood-nj.html">Ridgewood</a>
+            <a href="house-cleaning-franklin-lakes-nj.html">Franklin Lakes</a>
+            <a href="house-cleaning-clifton-nj.html">Clifton</a>
+            <a href="house-cleaning-glen-rock-nj.html">Glen Rock</a>
+            <a href="house-cleaning-fair-lawn-nj.html">Fair Lawn</a></div></div></div></section>
+        <section id="faq" aria-labelledby="faq-title">
+      <div class="wrap">
+        <div class="section-head reveal"><div><div class="section-kicker">FAQ</div><h2 id="faq-title">Commercial Cleaning FAQ</h2></div><p class="section-copy">Short answers before you request a Purelux quote.</p></div>
+        <div class="faq-grid"><article class="faq-item reveal"><h3>What types of businesses do you clean?</h3><p>Offices, gyms, retail spaces, clinics, warehouses, and small businesses may be a fit.</p></article>
+          <article class="faq-item reveal"><h3>Do you offer day porter service?</h3><p>Yes. Day porter service can support restrooms, trash, common areas, spills, and presentation.</p></article>
+          <article class="faq-item reveal"><h3>Do you offer night cleaning?</h3><p>Yes. Night cleaning is available for businesses that prefer after-hours service.</p></article>
+          <article class="faq-item reveal"><h3>Can you provide recurring contracts?</h3><p>Yes. We can propose defined scope, frequency, access, and communication standards.</p></article></div>
+      </div>
+    </section>
+    <section class="cta-section" aria-labelledby="final-cta-title"><div class="wrap"><div class="final-cta reveal"><div><div class="section-kicker">Request your quote</div><h2 id="final-cta-title">Need a More Reliable Commercial Cleaning Partner?</h2><p>Share your facility needs and service window, and we will send a structured commercial cleaning proposal.</p></div><div class="cta-row"><a class="btn btn-primary" href="quote.html">Request My Quote</a><a class="btn" href="tel:18622877496">Call Purelux Cleaning</a></div></div></div></section>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-grid"><span>&copy; 2026 Purelux Cleaning &middot; Serving Bergen &amp; Passaic County, NJ</span><span class="footer-links"><a href="index.html">Home</a><a href="quote.html">Quote</a><a href="gallery.html">Gallery</a><a href="mailto:info@pureluxnj.com">Email</a></span></div></footer>
+  <div class="mobile-cta" aria-label="Mobile quick actions"><a class="btn" href="tel:18622877496">Call</a><a class="btn" href="sms:+18622877496">Text</a><a class="btn btn-primary" href="quote.html">Quote</a></div>
 </body>
 </html>
