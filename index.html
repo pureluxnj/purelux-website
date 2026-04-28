@@ -115,13 +115,14 @@
     .stats{order:2}
     #results{order:3}
     #services{order:4}
-    #trust{order:5}
-    #process{order:6}
-    #best-for{order:7}
-    #standards{order:8}
-    #areas{order:9}
-    #faq{order:10}
-    .cta-section{order:11}
+    #explore-services{order:5}
+    #trust{order:6}
+    #process{order:7}
+    #best-for{order:8}
+    #standards{order:9}
+    #areas{order:10}
+    #faq{order:11}
+    .cta-section{order:12}
 
     .skip-link{
       position:absolute;
@@ -828,6 +829,7 @@
     }
 
     .trust-card,
+    .service-link-card,
     .fit-card,
     .step,
     .project-card,
@@ -872,6 +874,54 @@
       color:var(--muted);
       font-size:13px;
       line-height:1.62;
+    }
+
+    .service-link-grid{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:14px;
+    }
+
+    .service-link-card{
+      min-height:236px;
+      padding:18px;
+      display:flex;
+      flex-direction:column;
+      transition:transform .25s ease,border-color .25s ease,background .25s ease,box-shadow .25s ease;
+    }
+
+    .service-link-card:hover{
+      transform:translateY(-4px);
+      border-color:rgba(103,213,255,.28);
+      background:linear-gradient(180deg,rgba(103,213,255,.075),rgba(255,255,255,.025));
+      box-shadow:0 20px 58px rgba(0,0,0,.26);
+    }
+
+    .service-link-card small{
+      color:var(--accent);
+      font-size:11px;
+      font-weight:900;
+      text-transform:uppercase;
+    }
+
+    .service-link-card h3{
+      margin-top:16px;
+      font-size:18px;
+      line-height:1.25;
+    }
+
+    .service-link-card p{
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.6;
+      margin-top:8px;
+      margin-bottom:16px;
+    }
+
+    .service-link-card .btn{
+      margin-top:auto;
+      align-self:flex-start;
+      min-height:40px;
     }
 
     .process{
@@ -1157,7 +1207,7 @@
       margin-top:22px;
     }
 
-    .town-cloud span{
+    .town-cloud a{
       min-height:34px;
       display:inline-flex;
       align-items:center;
@@ -1168,6 +1218,13 @@
       background:rgba(255,255,255,.035);
       font-size:12px;
       font-weight:800;
+      transition:transform .2s ease,border-color .2s ease,background .2s ease;
+    }
+
+    .town-cloud a:hover{
+      transform:translateY(-2px);
+      border-color:rgba(103,213,255,.34);
+      background:rgba(103,213,255,.08);
     }
 
     .faq-grid{
@@ -1384,6 +1441,7 @@
       }
       .stats-grid,
       .trust-grid,
+      .service-link-grid,
       .process,
       .fit-grid,
       .service-visuals,
@@ -1724,6 +1782,65 @@
       </div>
     </section>
 
+    <section id="explore-services" aria-labelledby="explore-services-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Explore cleaning services</div>
+            <h2 id="explore-services-title">Premium service pages for every kind of clean.</h2>
+          </div>
+          <p class="section-copy">
+            Compare Purelux deep cleaning, recurring cleaning, move-out cleaning, post-construction cleaning, commercial cleaning, realtor cleaning, and apartment turnover cleaning before requesting your custom quote.
+          </p>
+        </div>
+
+        <div class="service-link-grid">
+          <article class="service-link-card reveal">
+            <small>Initial reset</small>
+            <h3>Deep Cleaning</h3>
+            <p>Detailed first-visit cleaning for kitchens, bathrooms, buildup, baseboards, fixtures, and the zones that need a real reset.</p>
+            <a class="btn btn-primary" href="deep-cleaning-nj.html">View Service</a>
+          </article>
+          <article class="service-link-card reveal">
+            <small>Ongoing care</small>
+            <h3>Recurring Cleaning</h3>
+            <p>Weekly, bi-weekly, and monthly maintenance built around a structured checklist after the right baseline is established.</p>
+            <a class="btn btn-primary" href="recurring-cleaning-nj.html">View Service</a>
+          </article>
+          <article class="service-link-card reveal">
+            <small>Property transition</small>
+            <h3>Move-Out Cleaning</h3>
+            <p>Vacant-home and move-related cleaning for tenants, landlords, sellers, buyers, realtors, and property managers.</p>
+            <a class="btn btn-primary" href="move-out-cleaning-nj.html">View Service</a>
+          </article>
+          <article class="service-link-card reveal">
+            <small>Renovation cleanup</small>
+            <h3>Post-Construction Cleaning</h3>
+            <p>Dust, trim, floors, vents, fixtures, surfaces, and final detail cleanup after renovation or construction work.</p>
+            <a class="btn btn-primary" href="post-construction-cleaning-nj.html">View Service</a>
+          </article>
+          <article class="service-link-card reveal">
+            <small>Business cleaning</small>
+            <h3>Commercial Cleaning</h3>
+            <p>Reliable cleaning for offices, gyms, retail spaces, clinics, warehouses, and small businesses that need consistency.</p>
+            <a class="btn btn-primary" href="commercial-cleaning-nj.html">View Service</a>
+          </article>
+          <article class="service-link-card reveal">
+            <small>Show-ready homes</small>
+            <h3>Realtor Cleaning</h3>
+            <p>Pre-listing, open-house, and property presentation cleaning for homes that need to look ready before buyers see them.</p>
+            <a class="btn btn-primary" href="realtor-cleaning-nj.html">View Service</a>
+          </article>
+          <article class="service-link-card reveal">
+            <small>Rental readiness</small>
+            <h3>Apartment Turnover Cleaning</h3>
+            <p>Rental-unit resets for landlords and property managers who need cleaner, tenant-ready apartments between occupants.</p>
+            <a class="btn btn-primary" href="apartment-turnover-cleaning-nj.html">View Service</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section id="trust" aria-labelledby="trust-title">
       <div class="wrap">
         <div class="section-head reveal">
@@ -2028,19 +2145,19 @@
         </div>
 
         <div class="town-cloud" aria-label="Additional service areas">
-          <span>Glen Rock</span>
-          <span>Wyckoff</span>
-          <span>Hawthorne</span>
-          <span>Clifton</span>
-          <span>Totowa</span>
-          <span>Bergen County</span>
-          <span>Passaic County</span>
-          <span>North Haledon</span>
-          <span>Wayne</span>
-          <span>Paramus</span>
-          <span>Franklin Lakes</span>
-          <span>Ridgewood</span>
-          <span>Fair Lawn</span>
+          <a href="house-cleaning-glen-rock-nj.html">Glen Rock</a>
+          <a href="house-cleaning-wyckoff-nj.html">Wyckoff</a>
+          <a href="house-cleaning-hawthorne-nj.html">Hawthorne</a>
+          <a href="house-cleaning-clifton-nj.html">Clifton</a>
+          <a href="house-cleaning-totowa-nj.html">Totowa</a>
+          <a href="index.html#areas">Bergen County</a>
+          <a href="index.html#areas">Passaic County</a>
+          <a href="house-cleaning-north-haledon-nj.html">North Haledon</a>
+          <a href="house-cleaning-wayne-nj.html">Wayne</a>
+          <a href="house-cleaning-paramus-nj.html">Paramus</a>
+          <a href="house-cleaning-franklin-lakes-nj.html">Franklin Lakes</a>
+          <a href="house-cleaning-ridgewood-nj.html">Ridgewood</a>
+          <a href="house-cleaning-fair-lawn-nj.html">Fair Lawn</a>
         </div>
       </div>
     </section>
