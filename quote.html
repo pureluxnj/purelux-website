@@ -633,7 +633,8 @@
       margin-top:16px;
     }
 
-    .area-line span{
+    .area-line span,
+    .area-line a{
       min-height:32px;
       display:inline-flex;
       align-items:center;
@@ -644,6 +645,14 @@
       background:rgba(255,255,255,.03);
       font-size:12px;
       font-weight:800;
+      transition:border-color .18s ease,box-shadow .18s ease,background .18s ease,transform .18s ease;
+    }
+
+    .area-line a:hover{
+      transform:translateY(-1px);
+      border-color:rgba(103,213,255,.38);
+      background:rgba(103,213,255,.07);
+      box-shadow:0 0 18px rgba(103,213,255,.12);
     }
 
     footer{
@@ -817,7 +826,13 @@
           <div class="eyebrow"><span class="signal"></span> Structured • Detail-Driven • North NJ</div>
           <h1 id="page-title">Request Your Custom Cleaning Quote</h1>
           <p class="hero-lead">
+            Limited availability this week — we recommend requesting your quote today to secure a spot.
+          </p>
+          <p class="hero-lead">
             Tell us a few details about your home or property and we’ll recommend the right service, scope, and pricing.
+          </p>
+          <p class="hero-lead">
+            Clear, upfront pricing based on your home, condition, and service needs. No hidden fees. No rushed work.
           </p>
 
           <div class="trust-row" aria-label="Purelux quote services">
@@ -832,8 +847,8 @@
         <aside class="quote-card" aria-label="Fast quote alternative">
           <div>
             <small>Fast estimate option</small>
-            <h2>Want a faster estimate?</h2>
-            <p>Text photos to <a href="sms:18622877496">862-287-7496</a>.</p>
+            <h2>Need a faster quote?</h2>
+            <p>Text photos now: <a href="sms:+18622877496">862-287-7496</a><br />We can often provide a rough estimate the same day.</p>
           </div>
           <div class="quick-callout">
             <strong>Best photos to send</strong>
@@ -931,8 +946,8 @@
                 </div>
 
                 <div class="field span-2">
-                  <label for="square_footage">Approximate Square Footage <span aria-hidden="true">(optional)</span></label>
-                  <input id="square_footage" name="approximate_square_footage" type="text" inputmode="numeric" placeholder="Example: 1,800 sq ft" />
+                  <label for="square_footage">Approximate Square Footage <span aria-hidden="true">(optional — estimate is fine)</span></label>
+                  <input id="square_footage" name="approximate_square_footage" type="text" inputmode="numeric" placeholder="Example: 1,800 sq ft, or leave blank if unsure" />
                 </div>
               </div>
             </fieldset>
@@ -985,11 +1000,11 @@
             </fieldset>
 
             <fieldset>
-              <legend>Message / Notes</legend>
-              <p class="fieldset-note">Tell us about priority rooms, buildup, pets, access, parking, deadlines, or anything we should know.</p>
+              <legend>Message / Notes <span aria-hidden="true">(optional)</span></legend>
+              <p class="fieldset-note">Optional, but helpful: tell us about priority rooms, buildup, pets, access, parking, deadlines, or anything we should know.</p>
               <div class="field">
-                <label for="message">Message / Notes</label>
-                <textarea id="message" name="message_notes" placeholder="Share details about the property, your goals, priority areas, or any special requests."></textarea>
+                <label for="message">Message / Notes <span aria-hidden="true">(optional)</span></label>
+                <textarea id="message" name="message_notes" placeholder="Optional: share details about the property, your goals, priority areas, or any special requests."></textarea>
               </div>
             </fieldset>
 
@@ -998,11 +1013,16 @@
             <input type="hidden" name="_subject" value="New Purelux Cleaning Quote Request" />
 
             <div class="submit-zone">
-              <button type="submit" class="btn btn-primary">Request My Custom Quote</button>
+              <p class="microcopy">No obligation. We’ll review your request and send a clear recommendation before anything is scheduled.</p>
+              <button type="submit" class="btn btn-primary">Get My Quote</button>
+              <p class="microcopy">
+                Takes less than 60 seconds to request your quote.
+              </p>
               <p class="microcopy">
                 Final pricing depends on size, condition, scope, add-ons, and frequency. We’ll guide you to the right service before confirming anything.
               </p>
               <p class="privacy-note">We only use your information to respond to your cleaning request.</p>
+              <p class="microcopy">“Great attention to detail and very professional. The house looked amazing.”<br />– Client in North NJ</p>
             </div>
           </form>
         </div>
@@ -1041,8 +1061,8 @@
 
           <section class="panel" aria-labelledby="text-title">
             <small class="section-kicker">Fast quote alternative</small>
-            <h3 id="text-title">Text photos for a faster estimate.</h3>
-            <p>Send photos to <a href="sms:18622877496">862-287-7496</a> if the property has heavy buildup, is empty, was recently renovated, or has detail zones you want quoted accurately.</p>
+            <h3 id="text-title">Need a faster quote?</h3>
+            <p>Text photos now: <a href="sms:+18622877496">862-287-7496</a><br />We can often provide a rough estimate the same day.</p>
           </section>
         </aside>
       </div>
@@ -1058,17 +1078,17 @@
             <span>North NJ</span>
             <span>Bergen County</span>
             <span>Passaic County</span>
-            <span>North Haledon</span>
-            <span>Wayne</span>
-            <span>Paramus</span>
-            <span>Franklin Lakes</span>
-            <span>Ridgewood</span>
-            <span>Fair Lawn</span>
-            <span>Glen Rock</span>
-            <span>Wyckoff</span>
-            <span>Hawthorne</span>
-            <span>Clifton</span>
-            <span>Totowa</span>
+            <a href="/house-cleaning-north-haledon-nj.html">North Haledon</a>
+            <a href="/house-cleaning-wayne-nj.html">Wayne</a>
+            <a href="/house-cleaning-paramus-nj.html">Paramus</a>
+            <a href="/house-cleaning-franklin-lakes-nj.html">Franklin Lakes</a>
+            <a href="/house-cleaning-ridgewood-nj.html">Ridgewood</a>
+            <a href="/house-cleaning-fair-lawn-nj.html">Fair Lawn</a>
+            <a href="/house-cleaning-glen-rock-nj.html">Glen Rock</a>
+            <a href="/house-cleaning-wyckoff-nj.html">Wyckoff</a>
+            <a href="/house-cleaning-hawthorne-nj.html">Hawthorne</a>
+            <a href="/house-cleaning-clifton-nj.html">Clifton</a>
+            <a href="/house-cleaning-totowa-nj.html">Totowa</a>
           </div>
         </section>
       </div>
@@ -1127,7 +1147,7 @@
 
         if (button) {
           button.disabled = false;
-          button.innerText = originalText || "Request My Custom Quote";
+          button.innerText = originalText || "Get My Quote";
         }
       });
     }
