@@ -39,8 +39,8 @@
       --accent-3:#b9ecff;
       --good:#8df0c4;
       --warn:#ffd48a;
-      --shadow:0 24px 80px rgba(0,0,0,.42);
-      --shadow-soft:0 16px 44px rgba(0,0,0,.28);
+      --shadow:0 20px 64px rgba(0,0,0,.34);
+      --shadow-soft:0 14px 34px rgba(0,0,0,.22);
       --radius:8px;
       --max:1180px;
       --pad:clamp(18px,4vw,56px);
@@ -56,7 +56,7 @@
       color:var(--text);
       background:
         linear-gradient(180deg,rgba(3,7,18,.70),rgba(3,7,18,.96) 46%,#030712 100%),
-        repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0 1px,transparent 1px 140px),
+        repeating-linear-gradient(90deg,rgba(255,255,255,.014) 0 1px,transparent 1px 180px),
         linear-gradient(135deg,#020817 0%,#07172a 38%,#020817 100%);
       font-family:var(--font);
       -webkit-font-smoothing:antialiased;
@@ -70,27 +70,11 @@
       inset:0;
       pointer-events:none;
       background:
-        linear-gradient(115deg,transparent 0%,rgba(103,213,255,.08) 44%,transparent 56%),
-        linear-gradient(180deg,rgba(255,255,255,.04),transparent 34%);
-      opacity:.5;
+        linear-gradient(115deg,transparent 0%,rgba(103,213,255,.038) 44%,transparent 56%),
+        linear-gradient(180deg,rgba(255,255,255,.026),transparent 34%);
+      opacity:.24;
       transform:translateX(-30%);
-      animation:ambient-sweep 12s ease-in-out infinite alternate;
       z-index:-1;
-    }
-
-    @keyframes ambient-sweep{
-      from{transform:translateX(-32%)}
-      to{transform:translateX(22%)}
-    }
-
-    @keyframes soft-float{
-      0%,100%{transform:translateY(0)}
-      50%{transform:translateY(-8px)}
-    }
-
-    @keyframes line-draw{
-      from{transform:scaleX(0)}
-      to{transform:scaleX(1)}
     }
 
     @media (prefers-reduced-motion:reduce){
@@ -114,9 +98,9 @@
     .hero{order:1}
     .stats{order:2}
     #services{order:3}
-    #results{order:4}
-    #trust{order:5}
-    #process{order:6}
+    #trust{order:4}
+    #process{order:5}
+    #results{order:6}
     #areas{order:7}
     #faq{order:8}
     .cta-section{order:9}
@@ -146,7 +130,7 @@
       top:0;
       z-index:50;
       border-bottom:1px solid rgba(202,232,255,.10);
-      background:rgba(3,7,18,.78);
+      background:rgba(3,7,18,.84);
       backdrop-filter:blur(18px);
     }
 
@@ -247,7 +231,7 @@
       border-radius:999px;
       background:rgba(255,255,255,.04);
       color:#d8e8f4;
-      font-size:11px;
+      font-size:10px;
       font-weight:900;
       letter-spacing:.08em;
       text-transform:uppercase;
@@ -282,22 +266,21 @@
     }
 
     .btn:hover{
-      transform:translateY(-2px);
       border-color:rgba(103,213,255,.42);
       background:rgba(103,213,255,.08);
-      box-shadow:0 16px 34px rgba(0,0,0,.22);
+      box-shadow:0 10px 24px rgba(0,0,0,.18);
     }
 
     .btn-primary{
       border-color:transparent;
       color:#03111f;
       background:linear-gradient(135deg,var(--accent),var(--accent-2));
-      box-shadow:0 14px 32px rgba(29,169,242,.24);
+      box-shadow:0 12px 28px rgba(29,169,242,.18);
     }
 
     .btn-primary:hover{
       background:linear-gradient(135deg,var(--accent-3),var(--accent-2));
-      box-shadow:0 18px 42px rgba(29,169,242,.30);
+      box-shadow:0 14px 32px rgba(29,169,242,.24);
     }
 
     .btn-dark{
@@ -307,7 +290,7 @@
 
     .hero{
       position:relative;
-      padding:clamp(34px,7vw,88px) 0 clamp(28px,6vw,74px);
+      padding:clamp(46px,7vw,94px) 0 clamp(42px,6vw,82px);
       overflow:hidden;
     }
 
@@ -348,8 +331,8 @@
       max-width:760px;
       margin-top:18px;
       font-family:var(--serif);
-      font-size:76px;
-      line-height:.98;
+      font-size:70px;
+      line-height:1;
       letter-spacing:0;
       text-wrap:balance;
     }
@@ -361,7 +344,7 @@
       margin-top:20px;
       color:#c7d5e1;
       font-size:18px;
-      line-height:1.72;
+      line-height:1.68;
     }
 
     .hero-copy strong{color:#fff}
@@ -384,6 +367,21 @@
       align-items:center;
       gap:12px;
       margin-top:24px;
+    }
+
+    .hero-secondary-link{
+      min-height:44px;
+      display:inline-flex;
+      align-items:center;
+      color:#dcecf8;
+      font-size:13px;
+      font-weight:900;
+      border-bottom:1px solid rgba(185,236,255,.42);
+    }
+
+    .hero-secondary-link:hover{
+      color:#fff;
+      border-color:var(--accent-3);
     }
 
     .hero-note{
@@ -417,7 +415,7 @@
 
     .hero-panel{
       position:relative;
-      min-height:610px;
+      min-height:580px;
       border:1px solid var(--line);
       border-radius:var(--radius);
       overflow:hidden;
@@ -440,7 +438,7 @@
     .hero-panel img{
       width:100%;
       height:100%;
-      min-height:610px;
+      min-height:580px;
       object-fit:cover;
       transform:scale(1.02);
       filter:saturate(1.08) contrast(1.02);
@@ -475,7 +473,7 @@
 
     .hero-card strong{
       display:block;
-      font-size:24px;
+      font-size:22px;
       line-height:1.1;
     }
 
@@ -520,7 +518,6 @@
       border-radius:var(--radius);
       background:rgba(4,12,24,.70);
       backdrop-filter:blur(16px);
-      animation:soft-float 5.5s ease-in-out infinite;
     }
 
     .floating-proof span{
@@ -540,9 +537,10 @@
     }
 
     .stats{
+      padding:18px 0;
       border-top:1px solid rgba(202,232,255,.10);
       border-bottom:1px solid rgba(202,232,255,.10);
-      background:rgba(255,255,255,.025);
+      background:rgba(255,255,255,.018);
     }
 
     .stats-grid{
@@ -577,13 +575,13 @@
       align-items:center;
       justify-content:space-between;
       gap:18px;
-      padding:22px;
+      padding:24px;
       border:1px solid rgba(202,232,255,.10);
       border-radius:var(--radius);
       background:
-        linear-gradient(135deg,rgba(103,213,255,.10),rgba(255,255,255,.035)),
+        linear-gradient(135deg,rgba(103,213,255,.065),rgba(255,255,255,.028)),
         rgba(3,7,18,.88);
-      box-shadow:0 16px 48px rgba(0,0,0,.20);
+      box-shadow:0 14px 42px rgba(0,0,0,.16);
     }
 
     .pricing-card h2{
@@ -601,7 +599,7 @@
 
     section{
       position:relative;
-      padding:clamp(54px,8vw,96px) 0;
+      padding:clamp(64px,8vw,108px) 0;
     }
 
     .section-kicker{
@@ -618,12 +616,12 @@
       grid-template-columns:minmax(0,.92fr) minmax(280px,.68fr);
       gap:clamp(20px,4vw,54px);
       align-items:end;
-      margin-bottom:28px;
+      margin-bottom:34px;
     }
 
     h2{
       font-family:var(--serif);
-      font-size:56px;
+      font-size:52px;
       line-height:1.02;
       letter-spacing:0;
       text-wrap:balance;
@@ -848,7 +846,7 @@
 
     .trust-grid{
       display:grid;
-      grid-template-columns:repeat(4,minmax(0,1fr));
+      grid-template-columns:repeat(3,minmax(0,1fr));
       gap:14px;
     }
 
@@ -862,13 +860,13 @@
     .review-card{
       border:1px solid var(--line);
       border-radius:var(--radius);
-      background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.025));
-      box-shadow:0 16px 48px rgba(0,0,0,.20);
+      background:rgba(255,255,255,.032);
+      box-shadow:0 12px 34px rgba(0,0,0,.16);
     }
 
     .trust-card{
-      min-height:250px;
-      padding:18px;
+      min-height:224px;
+      padding:22px;
       display:flex;
       flex-direction:column;
       gap:14px;
@@ -907,18 +905,17 @@
     }
 
     .service-link-card{
-      min-height:236px;
-      padding:18px;
+      min-height:260px;
+      padding:20px;
       display:flex;
       flex-direction:column;
       transition:transform .25s ease,border-color .25s ease,background .25s ease,box-shadow .25s ease;
     }
 
     .service-link-card:hover{
-      transform:translateY(-4px);
       border-color:rgba(103,213,255,.28);
-      background:linear-gradient(180deg,rgba(103,213,255,.075),rgba(255,255,255,.025));
-      box-shadow:0 20px 58px rgba(0,0,0,.26);
+      background:rgba(103,213,255,.045);
+      box-shadow:0 14px 38px rgba(0,0,0,.20);
     }
 
     .service-link-card small{
@@ -970,6 +967,30 @@
       min-height:40px;
     }
 
+    .text-link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-top:auto;
+      color:var(--accent-3);
+      font-size:13px;
+      font-weight:900;
+    }
+
+    .text-link::after{
+      content:"";
+      width:18px;
+      height:1px;
+      background:currentColor;
+      opacity:.7;
+      transition:width .2s ease,opacity .2s ease;
+    }
+
+    .text-link:hover::after{
+      width:28px;
+      opacity:1;
+    }
+
     .service-mini-links{
       display:flex;
       flex-wrap:wrap;
@@ -1002,10 +1023,9 @@
     }
 
     .service-mini-links a:hover{
-      transform:translateY(-2px);
       border-color:rgba(103,213,255,.34);
       background:rgba(103,213,255,.08);
-      box-shadow:0 14px 30px rgba(12,22,34,.22);
+      box-shadow:0 10px 24px rgba(12,22,34,.16);
     }
 
     .process{
@@ -1041,8 +1061,6 @@
       right:20px;
       height:1px;
       background:linear-gradient(90deg,var(--accent),transparent);
-      transform-origin:left;
-      animation:line-draw 1.2s ease both;
     }
 
     .step h3{
@@ -1075,7 +1093,6 @@
     }
 
     .project-card:hover{
-      transform:translateY(-4px);
       border-color:rgba(103,213,255,.34);
     }
 
@@ -1092,7 +1109,7 @@
       transition:transform .35s ease;
     }
 
-    .project-card:hover .project-media img{transform:scale(1.025)}
+    .project-card:hover .project-media img{transform:scale(1.012)}
 
     .project-large .project-media{height:min(560px,62vw)}
     .project-small .project-media{height:250px}
@@ -1159,6 +1176,33 @@
     }
 
     .gallery-row .project-media{height:210px}
+
+    .proof-note,
+    .quality-note{
+      margin-top:20px;
+      padding:20px;
+      border:1px solid rgba(202,232,255,.10);
+      border-radius:var(--radius);
+      background:rgba(255,255,255,.025);
+      color:#c7d5e1;
+      font-size:14px;
+      line-height:1.7;
+    }
+
+    #trust{
+      padding:clamp(78px,9vw,124px) 0;
+      border-top:1px solid rgba(202,232,255,.08);
+      border-bottom:1px solid rgba(202,232,255,.08);
+      background:rgba(255,255,255,.014);
+    }
+
+    #trust .section-head{
+      margin-bottom:38px;
+    }
+
+    .quality-note{
+      max-width:760px;
+    }
 
     .fit-grid{
       display:grid;
@@ -1284,6 +1328,10 @@
       min-height:40px;
     }
 
+    .area-card .text-link{
+      margin-top:auto;
+    }
+
     .town-cloud{
       display:flex;
       flex-wrap:wrap;
@@ -1306,7 +1354,6 @@
     }
 
     .town-cloud a:hover{
-      transform:translateY(-2px);
       border-color:rgba(103,213,255,.34);
       background:rgba(103,213,255,.08);
     }
@@ -1373,15 +1420,15 @@
       border:1px solid rgba(103,213,255,.22);
       border-radius:var(--radius);
       background:
-        linear-gradient(135deg,rgba(103,213,255,.15),rgba(255,255,255,.04) 45%,rgba(103,213,255,.08)),
+        linear-gradient(135deg,rgba(103,213,255,.105),rgba(255,255,255,.035) 45%,rgba(103,213,255,.055)),
         #071222;
-      box-shadow:var(--shadow);
+      box-shadow:var(--shadow-soft);
       overflow:hidden;
     }
 
     .final-cta h2{
       max-width:780px;
-      font-size:62px;
+      font-size:56px;
     }
 
     .final-cta p{
@@ -1687,23 +1734,20 @@
         </span>
         <span>
           <span class="brand-name">Purelux Cleaning</span>
-          <span class="brand-sub">Premium cleaning services across North NJ</span>
+          <span class="brand-sub">Structured home care across North NJ</span>
         </span>
       </a>
 
       <nav class="nav-links" aria-label="Homepage sections">
         <a href="#services">Services</a>
-        <a href="#results">Results</a>
-        <a href="#trust">Standards</a>
-        <a href="#process">How It Works</a>
-        <a href="#areas">Service Areas</a>
-        <a href="#faq">FAQ</a>
+        <a href="#trust">Quality Standard</a>
+        <a href="#process">Process</a>
+        <a href="#areas">Areas</a>
       </nav>
 
       <div class="nav-actions">
-        <span class="support-badge">English &amp; Spanish Support</span>
-        <a class="btn btn-dark" href="tel:18622877496">Call Now</a>
-        <a class="btn btn-primary" href="quote.html">Get Quote</a>
+        <span class="support-badge">English &amp; Spanish</span>
+        <a class="btn btn-primary" href="quote.html">Personalized Estimate</a>
       </div>
     </div>
   </header>
@@ -1712,51 +1756,50 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="wrap hero-grid">
         <div class="hero-copy reveal">
-          <div class="eyebrow"><span class="signal"></span> PREMIUM HOUSE CLEANING IN NORTH NJ</div>
-          <h1 id="hero-title">A Higher Standard of Cleaning for North NJ Homes.</h1>
-          <p class="hero-lead">Detailed deep cleaning, recurring care, and move-ready cleaning handled with structure, checklists, and a final walkthrough.</p>
+          <div class="eyebrow"><span class="signal"></span> STRUCTURED PREMIUM HOME CARE</div>
+          <h1 id="hero-title">A Cleaning Standard You Do Not Have to Manage.</h1>
+          <p class="hero-lead">Purelux Cleaning delivers deep resets, recurring care, move-related cleaning, and post-construction detail with clear scope, calm communication, and a final walkthrough mindset.</p>
 
           <div class="hero-note" aria-label="Purelux highlights">
-            <span>Deep cleaning &amp; recurring service</span>
-            <span>Serving North NJ homes</span>
-            <span>Final walkthrough included</span>
+            <span>Communication before arrival</span>
+            <span>Checklist-led detail work</span>
+            <span>Final walkthrough mindset</span>
           </div>
 
           <div class="hero-cta">
-            <a class="btn btn-primary" href="quote.html">Get Your Quote</a>
-            <a class="btn btn-dark" href="tel:18622877496">Call Now</a>
+            <a class="btn btn-primary" href="quote.html">Request a Personalized Estimate</a>
+            <a class="hero-secondary-link" href="#trust">Explore the Purelux Standard</a>
           </div>
         </div>
 
         <div class="hero-panel reveal">
           <img src="./images/Purelux_DeepClean_Bathtub_MidlandPark_BA_01.png" alt="Before and after deep cleaning by Purelux Cleaning in North NJ" fetchpriority="high" />
           <div class="floating-proof">
-            <span>Before / After Proof</span>
-            <p>Real detail work from homes cleaned across North NJ.</p>
+            <span>Purelux standard</span>
+            <p>Edges, fixtures, sinks, floors, and presentation details are checked before the visit feels complete.</p>
           </div>
           <div class="hero-card">
             <div>
-              <small>Premium cleaning company</small>
-              <strong>Deep cleaning, recurring care, move-outs, and post-construction cleanup.</strong>
+              <small>Concierge-level cleaning</small>
+              <strong>Clear scope, calm communication, and a polished finish for high-standard homes.</strong>
             </div>
             <div class="mini-price">
-              <b>Custom</b>
-              <span>quoted by size, condition, and scope</span>
+              <b>Personalized</b>
+              <span>quoted by home, condition, priorities, and frequency</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="stats pricing-anchor" aria-label="Purelux pricing guidance">
+    <div class="stats pricing-anchor" aria-label="Purelux estimate guidance">
       <div class="wrap">
         <div class="pricing-card reveal">
           <div>
-            <div class="section-kicker">Transparent starting point</div>
-            <h2>Maintenance cleanings may start around $180. Deep cleanings usually start around $450+ depending on size, condition, and scope.</h2>
-            <p>Send the details of your home and we'll provide a clear proposal based on the service type, current condition, and priorities.</p>
+            <div class="section-kicker">Personalized estimating</div>
+            <h2>No one-size-fits-all clean. Every visit starts with the right scope.</h2>
+            <p>We review the home, current condition, priorities, access, and frequency so the team arrives with clear expectations before service day.</p>
           </div>
-          <a class="btn btn-primary" href="quote.html">Get an Accurate Quote</a>
         </div>
       </div>
     </div>
@@ -1765,59 +1808,59 @@
       <div class="wrap">
         <div class="section-head reveal">
           <div>
-            <div class="section-kicker">Cleaning services</div>
-            <h2 id="services-title">Choose the right clean for your home.</h2>
+            <div class="section-kicker">Services</div>
+            <h2 id="services-title">Four structured ways to care for the home.</h2>
           </div>
-          <p class="section-copy">Premium house cleaning in North NJ for resets, maintenance, move-related cleaning, and renovation cleanup.</p>
+          <p class="section-copy">Start with the service that matches the condition of the home. Purelux handles the scope, priorities, and expectations from there.</p>
         </div>
 
         <div class="service-link-grid">
           <article class="service-link-card reveal">
             <small>Initial reset</small>
             <h3><a href="deep-cleaning-nj.html">Deep Cleaning</a></h3>
-            <p>A detailed reset for homes that need more than maintenance.</p>
+            <p>A deeper first visit for homes that need buildup, edges, fixtures, and high-use rooms brought back under control.</p>
             <ul>
-              <li>Kitchens and bathrooms</li>
-              <li>Buildup and baseboards</li>
-              <li>Detail zones</li>
+              <li>Best for visible buildup</li>
+              <li>Creates a cleaner baseline</li>
+              <li>Prepares the home for maintenance</li>
             </ul>
-            <a class="btn btn-primary" href="quote.html">Get Quote</a>
+            <a class="text-link" href="deep-cleaning-nj.html">View service details</a>
           </article>
 
           <article class="service-link-card reveal">
             <small>Ongoing care</small>
             <h3><a href="recurring-cleaning-nj.html">Recurring Cleaning</a></h3>
-            <p>Consistent maintenance after the right starting baseline.</p>
+            <p>A steady weekly or bi-weekly rhythm for clients who want consistency without managing the details.</p>
             <ul>
-              <li>Weekly or bi-weekly</li>
-              <li>Checklist-based visits</li>
-              <li>Cleaner home rhythm</li>
+              <li>Clear recurring checklist</li>
+              <li>Priority rotation when needed</li>
+              <li>Consistent visible finish</li>
             </ul>
-            <a class="btn btn-primary" href="quote.html">Get Quote</a>
+            <a class="text-link" href="recurring-cleaning-nj.html">View service details</a>
           </article>
 
           <article class="service-link-card reveal">
             <small>Moving support</small>
             <h3><a href="move-out-cleaning-nj.html">Move-In / Move-Out Cleaning</a></h3>
-            <p>Property-ready cleaning for transitions and handoffs.</p>
+            <p>A focused transition clean for move dates, vacant homes, closings, keys, and property handoffs.</p>
             <ul>
-              <li>Move-in cleaning</li>
-              <li>Move-out cleaning</li>
-              <li>Vacant home resets</li>
+              <li>Move-in and move-out scope</li>
+              <li>Vacant-home presentation</li>
+              <li>Deadline-aware planning</li>
             </ul>
-            <a class="btn btn-primary" href="quote.html">Get Quote</a>
+            <a class="text-link" href="move-out-cleaning-nj.html">View service details</a>
           </article>
 
           <article class="service-link-card reveal">
             <small>After renovation</small>
             <h3><a href="post-construction-cleaning-nj.html">Post-Construction Cleaning</a></h3>
-            <p>Dust and detail cleanup after renovation work.</p>
+            <p>A controlled cleanup for renovation dust, surfaces, floors, trim, fixtures, and final presentation.</p>
             <ul>
-              <li>Fine dust removal</li>
-              <li>Floors and trim</li>
-              <li>Final detail pass</li>
+              <li>Fine dust detail pass</li>
+              <li>Surfaces, floors, and trim</li>
+              <li>Project-ready finish</li>
             </ul>
-            <a class="btn btn-primary" href="quote.html">Get Quote</a>
+            <a class="text-link" href="post-construction-cleaning-nj.html">View service details</a>
           </article>
         </div>
 
@@ -1834,10 +1877,10 @@
       <div class="wrap">
         <div class="section-head reveal">
           <div>
-            <div class="section-kicker">Before and after</div>
-            <h2 id="results-title">Real Homes. Real Results.</h2>
+            <div class="section-kicker">Visible proof</div>
+            <h2 id="results-title">Detail that holds up close.</h2>
           </div>
-          <p class="section-copy">Before-and-after proof from detailed cleanings across North NJ.</p>
+          <p class="section-copy">The work should look controlled in the places clients notice first: fixtures, sinks, edges, bathrooms, kitchens, and floors.</p>
         </div>
 
         <div class="gallery-row">
@@ -1885,9 +1928,8 @@
           </article>
         </div>
 
-        <div class="hero-cta reveal">
-          <a class="btn btn-primary" href="quote.html">Get Quote</a>
-          <a class="btn btn-dark" href="gallery.html">View More Results</a>
+        <div class="proof-note reveal">
+          Proof is used with restraint. It supports the standard: visible detail, presentation-ready rooms, and a finish that feels complete before the team leaves.
         </div>
       </div>
     </section>
@@ -1896,34 +1938,46 @@
       <div class="wrap">
         <div class="section-head reveal">
           <div>
-            <div class="section-kicker">Why Purelux</div>
-            <h2 id="trust-title">Premium Cleaning Is Structure, Consistency, and Detail.</h2>
+            <div class="section-kicker">Purelux Quality Standard</div>
+            <h2 id="trust-title">The finish we look for before we call the home complete.</h2>
           </div>
-          <p class="section-copy">A better clean comes from clear scope, trained execution, and a final check.</p>
+          <p class="section-copy">Premium cleaning is not louder or flashier. It is a repeatable standard in the small details that make the home feel cared for.</p>
         </div>
 
         <div class="trust-grid">
           <article class="trust-card reveal">
             <span class="trust-num">01</span>
-            <h3>Checklist-Based Work</h3>
-            <p>Each visit follows a room-by-room plan so nothing feels random.</p>
+            <h3>No visible dust on edges</h3>
+            <p>Baseboards, corners, ledges, frames, and transitions get checked because edges reveal the quality of the clean.</p>
           </article>
           <article class="trust-card reveal">
             <span class="trust-num">02</span>
-            <h3>Trained Team Approach</h3>
-            <p>Our team cleans with structure, timing, and clear expectations.</p>
+            <h3>Kitchen sinks dry and polished</h3>
+            <p>The kitchen finish should feel intentional, with sink areas left clean, dry, and presentation-ready.</p>
           </article>
           <article class="trust-card reveal">
             <span class="trust-num">03</span>
-            <h3>Detail-Focused Cleaning</h3>
-            <p>We focus on kitchens, bathrooms, edges, fixtures, floors, and buildup.</p>
+            <h3>Straight vacuum lines</h3>
+            <p>Floors are finished with visible order, especially in bedrooms, living areas, rugs, and high-traffic spaces.</p>
           </article>
           <article class="trust-card reveal">
             <span class="trust-num">04</span>
-            <h3>Final Walkthrough</h3>
-            <p>Before closing the job, we review the visible finish and priority areas.</p>
+            <h3>Bathrooms presentation-ready</h3>
+            <p>Mirrors, fixtures, vanities, toilets, tubs, and showers should look ready for guests, not merely wiped down.</p>
+          </article>
+          <article class="trust-card reveal">
+            <span class="trust-num">05</span>
+            <h3>Communication before arrival</h3>
+            <p>Access, timing, service type, priorities, and expectations are clarified before the team begins.</p>
+          </article>
+          <article class="trust-card reveal">
+            <span class="trust-num">06</span>
+            <h3>Final walkthrough mindset</h3>
+            <p>The visible finish is reviewed before completion so the client is not left managing loose ends.</p>
           </article>
         </div>
+
+        <div class="quality-note reveal">The home should smell freshly cleaned, never overpowering. The goal is calm, polished, and cared for.</div>
       </div>
     </section>
 
@@ -1932,23 +1986,23 @@
         <div class="section-head reveal">
           <div>
             <div class="section-kicker">How it works</div>
-            <h2 id="process-title">A Simple, Controlled Process</h2>
+            <h2 id="process-title">A simple process, managed before service day.</h2>
           </div>
-          <p class="section-copy">Fast to request, clear to approve, and organized before service day.</p>
+          <p class="section-copy">From estimate to arrival, the goal is simple: you should not have to manage the cleaning company.</p>
         </div>
 
         <div class="process">
           <article class="step reveal">
-            <h3>Request Your Quote</h3>
-            <p>Tell us the home, condition, timing, and service type.</p>
+            <h3>Request a Personalized Estimate</h3>
+            <p>Share the home, condition, timing, and service type so we can recommend the right scope.</p>
           </article>
           <article class="step reveal">
-            <h3>We Confirm the Details</h3>
-            <p>We review scope, pricing direction, access, and expectations.</p>
+            <h3>We Set the Scope</h3>
+            <p>We confirm priorities, access, expectations, add-ons, and the service plan before arrival.</p>
           </article>
           <article class="step reveal">
-            <h3>We Clean + Final Walkthrough</h3>
-            <p>The team cleans by checklist and reviews the finish before completion.</p>
+            <h3>We Clean With the Standard</h3>
+            <p>The team follows the plan, finishes the visible details, and reviews the home with a walkthrough mindset.</p>
           </article>
         </div>
       </div>
@@ -1959,47 +2013,47 @@
         <div class="section-head reveal">
           <div>
             <div class="section-kicker">Service areas</div>
-            <h2 id="areas-title">House Cleaning Across North NJ</h2>
+            <h2 id="areas-title">Serving high-standard homes across North Jersey.</h2>
           </div>
-          <p class="section-copy">Serving Bergen County, Passaic County, and nearby towns with premium house cleaning North NJ service.</p>
+          <p class="section-copy">Based in North NJ and serving Bergen County, Passaic County, and nearby towns with a structured residential cleaning standard.</p>
         </div>
 
         <div class="areas">
           <article class="area-card reveal">
             <small>Wayne, NJ</small>
-            <h3>House Cleaning in Wayne</h3>
+            <h3>Wayne</h3>
             <p>Deep cleaning, recurring care, and turnovers.</p>
-            <a class="btn btn-primary" href="house-cleaning-wayne-nj.html">View Page</a>
+            <a class="text-link" href="house-cleaning-wayne-nj.html">Local details</a>
           </article>
           <article class="area-card reveal">
             <small>Paramus, NJ</small>
-            <h3>House Cleaning in Paramus</h3>
+            <h3>Paramus</h3>
             <p>Premium resets and maintenance for busy homes.</p>
-            <a class="btn btn-primary" href="house-cleaning-paramus-nj.html">View Page</a>
+            <a class="text-link" href="house-cleaning-paramus-nj.html">Local details</a>
           </article>
           <article class="area-card reveal">
             <small>Franklin Lakes, NJ</small>
-            <h3>House Cleaning in Franklin Lakes</h3>
+            <h3>Franklin Lakes</h3>
             <p>Detail-driven cleaning for high-standard homes.</p>
-            <a class="btn btn-primary" href="house-cleaning-franklin-lakes-nj.html">View Page</a>
+            <a class="text-link" href="house-cleaning-franklin-lakes-nj.html">Local details</a>
           </article>
           <article class="area-card reveal">
             <small>Ridgewood, NJ</small>
-            <h3>House Cleaning in Ridgewood</h3>
+            <h3>Ridgewood</h3>
             <p>Checklist-based residential cleaning.</p>
-            <a class="btn btn-primary" href="house-cleaning-ridgewood-nj.html">View Page</a>
+            <a class="text-link" href="house-cleaning-ridgewood-nj.html">Local details</a>
           </article>
           <article class="area-card reveal">
             <small>North Haledon, NJ</small>
-            <h3>House Cleaning in North Haledon</h3>
+            <h3>North Haledon</h3>
             <p>Premium cleaning near home base.</p>
-            <a class="btn btn-primary" href="house-cleaning-north-haledon-nj.html">View Page</a>
+            <a class="text-link" href="house-cleaning-north-haledon-nj.html">Local details</a>
           </article>
           <article class="area-card reveal">
             <small>Fair Lawn, NJ</small>
-            <h3>House Cleaning in Fair Lawn</h3>
+            <h3>Fair Lawn</h3>
             <p>Reliable resets, maintenance, and detail work.</p>
-            <a class="btn btn-primary" href="house-cleaning-fair-lawn-nj.html">View Page</a>
+            <a class="text-link" href="house-cleaning-fair-lawn-nj.html">Local details</a>
           </article>
         </div>
 
@@ -2026,9 +2080,9 @@
         <div class="section-head reveal">
           <div>
             <div class="section-kicker">FAQ</div>
-            <h2 id="faq-title">Quick Answers Before You Book.</h2>
+            <h2 id="faq-title">Good questions before the estimate.</h2>
           </div>
-          <p class="section-copy">Short answers, clear expectations, and a quote when you are ready.</p>
+          <p class="section-copy">Clear expectations matter before the team arrives. These are the questions most clients ask first.</p>
         </div>
 
         <div class="faq-grid">
@@ -2056,13 +2110,12 @@
       <div class="wrap">
         <div class="final-cta reveal">
           <div>
-            <div class="section-kicker">Get your quote</div>
-            <h2 id="final-cta-title">Ready to Put a Real Cleaning Standard Behind Your Home?</h2>
-            <p>Tell us what you need, and we'll send a clear proposal based on your home, condition, and goals.</p>
+            <div class="section-kicker">Personalized estimate</div>
+            <h2 id="final-cta-title">Ready for a cleaning company that manages the details?</h2>
+            <p>Tell us about the home, condition, timing, and priorities. We will recommend the right scope before anything is scheduled.</p>
           </div>
           <div class="cta-actions">
-            <a class="btn btn-primary" href="quote.html">Request My Quote</a>
-            <a class="btn btn-dark" href="tel:18622877496">Call Purelux Cleaning</a>
+            <a class="btn btn-primary" href="quote.html">Request a Personalized Estimate</a>
           </div>
         </div>
       </div>
@@ -2073,11 +2126,11 @@
     <div class="wrap footer-grid">
       <div>
         <strong>Purelux Cleaning</strong><br />
-        Premium cleaning services across North Haledon, Bergen County, Passaic County, and North New Jersey.
+        Structured cleaning care for homes across North Haledon, Bergen County, Passaic County, and North Jersey.
       </div>
       <div class="footer-links">
-        <a href="quote.html">Quote</a>
-        <a href="gallery.html">Gallery</a>
+        <a href="quote.html">Estimate</a>
+        <a href="#results">Results</a>
         <a href="mailto:info@pureluxnj.com">Email</a>
         <a href="tel:18622877496">862-287-7496</a>
       </div>
@@ -2085,7 +2138,7 @@
   </footer>
 
   <div class="mobile-cta" aria-label="Mobile quick actions">
-    <a class="btn btn-primary" href="quote.html">Get Quote</a>
+    <a class="btn btn-primary" href="quote.html">Estimate</a>
     <a class="btn" href="tel:18622877496">Call/Text</a>
   </div>
 
