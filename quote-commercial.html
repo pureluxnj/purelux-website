@@ -1,108 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Commercial Quote | Purelux Cleaning</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0e1726;
-      color: white;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-
-    p {
-      color: #b9c7da;
-      margin-bottom: 30px;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    input, select, textarea {
-      padding: 14px;
-      border-radius: 10px;
-      border: 1px solid #2a3a55;
-      background: #132238;
-      color: white;
-      font-size: 14px;
-    }
-
-    textarea {
-      min-height: 120px;
-    }
-
-    button {
-      margin-top: 20px;
-      padding: 16px;
-      border: none;
-      border-radius: 999px;
-      background: #7ec8ff;
-      color: #092033;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    button:hover {
-      opacity: 0.9;
-    }
-  </style>
-</head>
-
-<body>
-
-<!-- Back button -->
-<div style="
-  padding:20px;
-  max-width:1080px;
-  margin:auto;
-">
-  <a href="/" style="
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    font-size:14px;
-    color:#cbd5e1;
-    text-decoration:none;
-    font-weight:700;
-  ">
-    ← Back to Home
-  </a>
-</div>
-
-<div class="container">
-  <h1>Commercial Cleaning Quote</h1>
-  <p>For offices, gyms, studios, and businesses looking for recurring or one-time cleaning.</p>
-
-  <form action="https://formspree.io/f/xreywbnv" method="POST">
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#030712"><meta name="description" content="Tell us about your workplace, access, schedule, and cleaning priorities."><title>Commercial Cleaning Request | Purelux Cleaning</title><link rel="stylesheet" href="styles.css"><link rel="canonical" href="https://pureluxnj.com/quote-commercial.html"><meta name="robots" content="index, follow"></head><body><a class="skip-link" href="#main-content">Skip to content</a><header><a class="brand" href="index.html" aria-label="Purelux home"><img class="real-logo" src="assets/purelux-logo.webp" alt="" width="120" height="79" decoding="async"><span>PURELUX CLEANING<small>STRUCTURED HOME CARE · NORTH NJ</small></span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu <span>☰</span></button><nav id="main-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="services.html" aria-current="page">Services</a><a href="areas.html">Service Areas</a><a href="gallery.html">Our Work</a></nav><a class="button small" href="quote.html">Get an estimate <span>→</span></a></header><main id="main-content" tabindex="-1"><section class="wrap page-title specialty-intake"><p class="eyebrow">YOUR PROPERTY · YOUR PRIORITIES</p><h1>Commercial cleaning request</h1><p class="lead">Tell us about your workplace, access, schedule, and cleaning priorities.</p><form action="https://formspree.io/f/xreywbnv" method="POST" class="specialty-form">
 
     <input type="hidden" name="Lead Type" value="Commercial">
     <input type="hidden" name="_subject" value="New Commercial Quote - Purelux">
 
-    <input type="text" name="Business Name" placeholder="Business Name" required>
-    <input type="text" name="Contact Name" placeholder="Contact Name" required>
-    <input type="email" name="Email" placeholder="Email" required>
-    <input type="tel" name="Phone" placeholder="Phone" required>
+    <label for="specialty-0">Business Name *</label><input type="text" name="Business Name" placeholder="Business Name" required id="specialty-0">
+    <label for="specialty-1">Contact Name *</label><input type="text" name="Contact Name" placeholder="Contact Name" required id="specialty-1">
+    <label for="specialty-2">Email *</label><input type="email" name="Email" placeholder="Email" required id="specialty-2">
+    <label for="specialty-3">Phone *</label><input type="tel" name="Phone" placeholder="Phone" required id="specialty-3">
 
-    <input type="text" name="Business Address" placeholder="Business Address" required>
+    <label for="specialty-4">Business Address *</label><input type="text" name="Business Address" placeholder="Business Address" required id="specialty-4">
 
-    <select name="Business Type">
+    <label for="specialty-5">Business Type (optional)</label><select name="Business Type" id="specialty-5">
       <option value="">Business Type</option>
       <option>Office</option>
       <option>Gym / Fitness Studio</option>
@@ -111,16 +20,16 @@
       <option>Other</option>
     </select>
 
-    <input type="text" name="Square Footage" placeholder="Approx Square Footage">
+    <label for="specialty-6">Square Footage (optional)</label><input type="text" name="Square Footage" placeholder="Approx Square Footage" id="specialty-6">
 
-    <select name="Service Type">
+    <label for="specialty-7">Service Type (optional)</label><select name="Service Type" id="specialty-7">
       <option value="">Service Type</option>
       <option>One-time Deep Cleaning</option>
       <option>Recurring Cleaning</option>
       <option>Post Construction</option>
     </select>
 
-    <select name="Frequency">
+    <label for="specialty-8">Frequency (optional)</label><select name="Frequency" id="specialty-8">
       <option value="">Frequency</option>
       <option>One-time</option>
       <option>Weekly</option>
@@ -128,14 +37,11 @@
       <option>Custom</option>
     </select>
 
-    <input type="date" name="Preferred Start Date">
+    <label for="specialty-9">Preferred Start Date (optional)</label><input type="date" name="Preferred Start Date" id="specialty-9">
 
-    <textarea name="Notes" placeholder="Tell us about your space, expectations, and cleaning needs..."></textarea>
+    <label for="specialty-10">Notes (optional)</label><textarea name="Notes" placeholder="Tell us about your space, expectations, and cleaning needs..." id="specialty-10"></textarea>
 
     <button type="submit">Request Quote</button>
 
   </form>
-</div>
-
-</body>
-</html>
+</section></main><div class="mobile-bottom"><a href="quote.html">Build my cleaning plan →</a><span>Scope agreed before scheduling</span></div><footer class="wrap multi-footer"><div><a class="footer-brand" href="index.html">PURELUX <span>CLEANING</span></a><p>Structured home care across North NJ.</p></div><div class="footer-nav"><a href="services.html">All services</a><a href="areas.html">Service areas</a><a href="gallery.html">Our Work</a><a href="quote.html">Personalized estimate</a></div><span>Bergen &amp; Passaic Counties · North Jersey</span><div class="footer-nav"><a href="tel:+18622877496">Call 862-287-7496</a><a href="sms:+18622877496">Text us</a></div></footer><dialog id="photo-modal"><button id="close-modal" aria-label="Close project photo">×</button><img id="modal-image" alt=""><p id="modal-title"></p></dialog><script src="app.js"></script></body></html>

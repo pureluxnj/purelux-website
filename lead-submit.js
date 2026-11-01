@@ -1,0 +1,1 @@
+async function PureluxLeadTransport(action,data,fetchImpl=fetch){const response=await fetchImpl(action,{method:'POST',body:data,headers:{Accept:'application/json'}});if(!response.ok)throw new Error('Submission not accepted');return true;}
